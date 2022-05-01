@@ -186,8 +186,8 @@
         "type": "header-panda",
         "settings": {
           "main_linklist": "",
-          "logo_svg": "logo-panda-tea",
-          "cart_svg": "cart-panda-tea",
+          "logo_svg": "oshiruko",
+          "cart_svg": "Shopping-Cart",
           "login_svg": "compte-panda-tea",
           "faq_svg": "faq-panda-tea",
           "faq_text": "Aide & questions",
@@ -206,9 +206,9 @@
         "type": "footer-panda",
         "settings": {
           "title_menu_1": "AIDE",
-          "menu_1": "aide-gradi",
+          "menu_1": "",
           "title_menu_2": "Panda tea",
-          "menu_2": "plus-dinfos-gradi",
+          "menu_2": "",
           "title_newslatter": "Infos toutes fraiches",
           "title_currency": "Modifier le pays :",
           "title_copyrigth": "© 2020 PANDA SAS",
