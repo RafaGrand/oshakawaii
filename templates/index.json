@@ -56,7 +56,7 @@
         "3fb3c7e5-a551-43df-80f1-b5838a3fd4e0": {
           "type": "iconText",
           "settings": {
-            "text_icon": "livraison-icon",
+            "text_icon": "shipping",
             "text_block": "<p>Une livraison rapide <br\/>en France et en Europe (2 à 4 jours)<\/p>"
           }
         },
