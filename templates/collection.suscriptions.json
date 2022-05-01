@@ -1,0 +1,132 @@
+{
+  "sections": {
+    "hero": {
+      "type": "main-suscription",
+      "settings": {
+        "title_hero": "Simplifiez vous la vie, abonnez-vous !",
+        "subtitle_hero": "Économisez jusqu'à 20%.",
+        "background_image": "shopify:\/\/shop_images\/hero-recharge.jpg"
+      }
+    },
+    "icons": {
+      "type": "icons-suscription",
+      "blocks": {
+        "71805998-65e2-4620-a0f4-e4219e91bcb9": {
+          "type": "iconText",
+          "settings": {
+            "text_icon": "livraison-icon",
+            "text_block": "<p>Toutes vos livraisons gratuites<\/p>"
+          }
+        },
+        "59bad023-6669-4b1a-bbc4-150ad70174fe": {
+          "type": "iconText",
+          "settings": {
+            "text_icon": "the-icon",
+            "text_block": "<p>Choisissez parmi tous nos thés<\/p>"
+          }
+        },
+        "9ef0d61a-e05c-48bf-a809-418beaf9c8d0": {
+          "type": "iconText",
+          "settings": {
+            "text_icon": "blocked-icon",
+            "text_block": "<p>Changez ou annulez votre commande à tout moment<\/p>"
+          }
+        },
+        "e9a077d1-557f-45da-ac6c-b728e8026674": {
+          "type": "iconText",
+          "settings": {
+            "text_icon": "discount-icon",
+            "text_block": "<p>Économisez 25% à chaque commande.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "71805998-65e2-4620-a0f4-e4219e91bcb9",
+        "59bad023-6669-4b1a-bbc4-150ad70174fe",
+        "9ef0d61a-e05c-48bf-a809-418beaf9c8d0",
+        "e9a077d1-557f-45da-ac6c-b728e8026674"
+      ],
+      "settings": {
+        "title_icons_suscription": "Profitez de tous les avantages",
+        "subtitle_icons_suscription": "Sans engagement, arrêtez quand vous voulez !"
+      }
+    },
+    "frequency": {
+      "type": "suscription-frequency",
+      "blocks": {
+        "3fc726f3-6d4c-4851-86e0-ed92ee58bf2a": {
+          "type": "frequency",
+          "settings": {
+            "frequency_number": 1,
+            "frequency_text": "<p>Livraison tous les <strong>Mois<\/strong><\/p>",
+            "text_icon": "the-icon",
+            "icon_text_frequency": ""
+          }
+        },
+        "3d589e20-4d62-4762-b0e8-3347099d8a88": {
+          "type": "frequency",
+          "settings": {
+            "frequency_number": 2,
+            "frequency_text": "<p>Livraison tous les <strong>2 Mois<\/strong><\/p>",
+            "text_icon": "star-suscription",
+            "icon_text_frequency": "Le plus populaire"
+          }
+        },
+        "384a3341-25c3-4878-82cf-87ffbde15924": {
+          "type": "frequency",
+          "settings": {
+            "frequency_number": 3,
+            "frequency_text": "<p>Livraison tous les <strong>3 Mois<\/strong><\/p>",
+            "text_icon": "star-suscription",
+            "icon_text_frequency": ""
+          }
+        }
+      },
+      "block_order": [
+        "3fc726f3-6d4c-4851-86e0-ed92ee58bf2a",
+        "3d589e20-4d62-4762-b0e8-3347099d8a88",
+        "384a3341-25c3-4878-82cf-87ffbde15924"
+      ],
+      "settings": {
+        "title_frequency": "À quelle fréquence souhaitez-vous être livré(e) ?",
+        "subtitle_frequency": "Changez à tous moment",
+        "frequency_unit": "month",
+        "text_icon": "step-1-suscription"
+      }
+    },
+    "collection": {
+      "type": "collection-suscription",
+      "settings": {
+        "title_collection": "<p>Choisissez vos thés préférés<br\/>(1 panda = 28 sachets) :<\/p>",
+        "subtitle_collection": "Si vous le souhaitez vous pouvez changer de mélange avant chaque envois en vous connectant sur mon compte",
+        "text_icon": "step-2-suscription",
+        "resume_title": "Résumé de mon choix :",
+        "resume_message": "Panda Tea tous les|mois",
+        "resume_button": "VOIR MON PANIER",
+        "resume_button_empty": "Ajouter au pack",
+        "discount_text": "<p>Vous bénéficiez de <strong>-15%<\/strong> sur les prix habituels.<\/p>"
+      }
+    },
+    "faq": {
+      "type": "faq-suscription",
+      "settings": {
+        "title_faq": "Questions fréquentes"
+      }
+    },
+    "preview": {
+      "type": "preview-product",
+      "settings": {
+        "title_reviews": "Avis clients",
+        "subtitle_reviews": "Plus de 3000 avis clients positifs sur les mélanges Panda Tea :)"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "icons",
+    "frequency",
+    "collection",
+    "faq",
+    "preview"
+  ]
+}

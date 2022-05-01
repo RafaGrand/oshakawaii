@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://modules/./src/styles/preview-product.css"],"names":[],"mappings":"AACA,sBAAuB,YAAc","file":"bundle.css","sourcesContent":["/* index product section */\n.table-variant-select {display: none;}"],"sourceRoot":""}

@@ -1,0 +1,14 @@
+{% section 'product-index' %}
+{% section 'icons-product' %}
+{% section 'accordions-product' %}
+{% section 'ingredient-product' %}
+{% section 'reviews-product' %}
+{% comment %} {% section 'product-recommendations' %} {% endcomment %}
+{% section 'recomendation-by-tag' %}
+
+
+<script src="{{ 'product.js' | asset_url }}" defer="defer"></script>
+
+{% render 'klaviyo-product' product: product %}
+
+{% assign current_variant = product.selected_or_first_available_variant %}

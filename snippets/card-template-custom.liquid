@@ -1,0 +1,81 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid 
+  assign call_to_ = call_to | split: '|'
+  if call_to != blank
+    assign tag_container = "div"
+  else
+    assign tag_container = "a"
+  endif
+%}
+
+<{{ tag_container }}
+  {% if call_to == blank %} href="{{ url }}" title="{{ title }}" {% endif %}
+  class="card-container-custom"
+>
+  <div
+    class="backimage-absolute background-clases lazyload js"
+    data-bg="{{ img_bg | img_url: 'medium' }}"
+    data-bgset="{% render 'bgset', image: img_bg %}"
+    data-sizes="auto"
+    data-parent-fit="cover"
+    data-image-loading-animation
+  >
+    {% if call_to != blank %}
+      <a href="{{ url }}" title="{{ title }}" class="url-backimage"></a>
+    {% endif %}
+  </div>
+
+  <div 
+    style="{% if section.settings.center_call_to or call_to == blank %}flex-wrap: wrap; justify-content: center; text-align: center;{% endif %}"
+    class="call-to-custom card_bg-custom_{{ section.id }}"
+  >
+    <div
+      style="{% if section.settings.center_call_to or call_to == blank %}width: 100%;{% endif %}"
+      class="info-container-custom"
+    >
+      {% if tag != blank %}
+        <span class="style_tag_{{ section.id }} tag-color">
+          {{ tag }}
+        </span>  
+      {% endif %}
+      {% if title != blank %}
+        <p class="style_title_{{ section.id }} title-card-custom bold-font">{{ title }}</p>
+      {% endif %}
+      {% if subtitle != blank %}
+        <p class="style_subtitle_{{ section.id }} subtitle-card-custom">{{ subtitle }}</p>
+      {% endif %}
+    </div>
+    {% if call_to != blank %}
+
+      {% capture class %}style_btn_{{ section.id }} container-btn-customBlock{% endcapture %}
+      <div 
+        style="{% if section.settings.center_call_to %}margin-top: 10px;{% endif %}"
+        class="button-desktop"
+      >
+        {% render 'btn-link-panda' url: url, call_to: call_to_[0], class: class %}
+      </div>
+      <div
+        style="{% if section.settings.center_call_to %}margin-top: 10px;{% endif %}"
+        class="button-movil">
+        {% render 'btn-link-panda' url: url, call_to: call_to_[1], class: class %}
+      </div>
+      
+    {% endif %}
+  </div>
+</{{ tag_container }}>

@@ -1,0 +1,47 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda">
+  <div class="paddings-article-template">
+  
+    <article aria-labelledby="title-0">
+      {% render 'article-template' article: article %}
+    </article>
+    
+    <div class="previous_next_buttons">
+      <button class="btn-nostyle">
+        <a href="{{ blog.previous_article }}" class="btn_article prevs">
+          {% comment %}ly_i18n_replace_for_[ "blogs.article.previous_post" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "blogs.article.previous_post" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844450' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        </a>
+      </button>
+      <button class="btn-nostyle">
+        <a href="{{ blog.next_article }}" class="btn_article nexts">
+          {% comment %}ly_i18n_replace_for_[ "blogs.article.next_post" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "blogs.article.next_post" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844451' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        </a>
+      </button>
+    </div>
+
+    <div class="container-retour_blog">
+      <button class="btn-nostyle">
+        <a href="{{ blog.url }}" class="btn_article underline">
+          {% comment %}ly_i18n_replace_for_[ 'blogs.article.back_to_blog' | t: title: blog.title ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.back_to_blog' | t: title: blog.title }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844449' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% capture ly_translation %}{% render 'ly-title' with blog render:true %}{% endcapture %}{% assign replacement = ly_translation %}{% assign ly_template = ly_template | replace: '[[title]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        </a>
+      </button>
+    </div>
+
+  </div>
+</div>

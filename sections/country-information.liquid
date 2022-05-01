@@ -1,0 +1,70 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<script>
+var countryObject = {
+  {% for currency in section.blocks %}
+    {{ currency.settings.country_code }}: [{{ currency.settings.shipping_start }}, "{{ currency.settings.shipping_cost | times: 100 | money }}", "{{ currency.settings.message }}"],
+  {% endfor %}
+}
+</script>
+
+{% schema %}
+  {
+    "name": "Country APP",
+    "blocks": [
+      {
+        "type": "Country",
+        "name": "Country information",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Country name",
+            "default": "France",
+            "info": "Use name country"
+          },
+          {
+            "type": "text",
+            "id": "country_code",
+            "label": "Country code",
+            "default": "FR",
+            "info": "Use code [country](https:\/\/shopify.dev\/api\/storefront\/reference\/common-objects\/countrycode)"
+          },
+          {
+            "type": "number",
+            "id": "shipping_start",
+            "label": "Free shipping start",
+            "default": 40
+          },
+          {
+            "type": "number",
+            "id": "shipping_cost",
+            "label": "Shipping cost",
+            "default": 4
+          },
+          {
+            "type": "text",
+            "id": "message",
+            "label": "Country message",
+            "default": "Livraison offerte dès 49€ d’achat"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

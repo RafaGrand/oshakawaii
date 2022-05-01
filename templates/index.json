@@ -1,0 +1,820 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-primary",
+      "blocks": {
+        "cf9b46d5-440a-4d15-9080-294fdfab6426": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image_bg": "shopify:\/\/shop_images\/hero2.jpg"
+          }
+        },
+        "7020f74b-447e-4481-af58-a13f4b3b5c44": {
+          "type": "image",
+          "settings": {
+            "image_bg": "shopify:\/\/shop_images\/hero1.jpg"
+          }
+        },
+        "8c2a3282-d07e-472b-beab-c35d38dbc371": {
+          "type": "heading",
+          "settings": {
+            "heading_block": "Thés & infusiones",
+            "subtext_block": "L’infusion des sportifs",
+            "text_url_block": "Shop now",
+            "url_link_block": "shopify:\/\/collections\/all-tea-blends"
+          }
+        }
+      },
+      "block_order": [
+        "cf9b46d5-440a-4d15-9080-294fdfab6426",
+        "7020f74b-447e-4481-af58-a13f4b3b5c44",
+        "8c2a3282-d07e-472b-beab-c35d38dbc371"
+      ],
+      "settings": {
+        "hero_bg": "#f6f6f6",
+        "title_block": "Thés & infusiones",
+        "hero_title_size": 40,
+        "hero_title_size_movil": 30,
+        "hero_title_color": "#000000",
+        "subtitle_block": "L’infusion des sportifs",
+        "hero_subtitle_size": 18,
+        "hero_subtitle_size_movil": 16,
+        "hero_subtitle_color": "#000000",
+        "url_btn": "shopify:\/\/collections\/all-tea-blends",
+        "text_btn": "Shop now",
+        "hero_btn_size": 16,
+        "hero_btn_size_movil": 16,
+        "hero_btn_bg": "#45c391",
+        "hero_btn_color": "#ffffff"
+      }
+    },
+    "icons": {
+      "type": "icon-text-box",
+      "blocks": {
+        "3fb3c7e5-a551-43df-80f1-b5838a3fd4e0": {
+          "type": "iconText",
+          "settings": {
+            "text_icon": "livraison-icon",
+            "text_block": "<p>Une livraison rapide <br\/>en France et en Europe (2 à 4 jours)<\/p>"
+          }
+        },
+        "78351df4-6e80-43cd-97b8-aa48c186fefb": {
+          "type": "iconText",
+          "settings": {
+            "text_icon": "the-icon",
+            "text_block": "<p>Choisissez parmi tous nos thés<\/p>"
+          }
+        },
+        "55d55808-7a3f-4539-8193-2e9d4527cd5d": {
+          "type": "iconText",
+          "settings": {
+            "text_icon": "etoile-icon",
+            "text_block": "<p>Choisissez parmi tous nos thés<\/p>"
+          }
+        },
+        "cc5ec916-b9fc-4455-ba00-18d9ee322965": {
+          "type": "iconText",
+          "settings": {
+            "text_icon": "reductions-icon",
+            "text_block": "<p>Une marque engagée partenaires de 1% for the Planet<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "3fb3c7e5-a551-43df-80f1-b5838a3fd4e0",
+        "78351df4-6e80-43cd-97b8-aa48c186fefb",
+        "55d55808-7a3f-4539-8193-2e9d4527cd5d",
+        "cc5ec916-b9fc-4455-ba00-18d9ee322965"
+      ],
+      "settings": {
+        "icon_text_size": 16,
+        "icon_text_size_movil": 16,
+        "icon_text_color": "#000000"
+      }
+    },
+    "carrousels-1": {
+      "type": "carrusels-products",
+      "blocks": {
+        "eb55217b-6b5f-4569-9561-043089200874": {
+          "type": "product",
+          "settings": {
+            "product_id": "choco-zen"
+          }
+        },
+        "47ce7ed3-2b09-4685-a3b3-13946cc39da3": {
+          "type": "product",
+          "settings": {
+            "product_id": "cozy-chai"
+          }
+        },
+        "504a0ef0-14c5-44fe-b4a6-73fcc8c7f475": {
+          "type": "product",
+          "settings": {
+            "product_id": "panda-fresh-skin-beauty-challenge"
+          }
+        },
+        "815e915c-6767-4624-bf26-80186611b02d": {
+          "type": "product",
+          "settings": {
+            "product_id": "digestea"
+          }
+        }
+      },
+      "block_order": [
+        "eb55217b-6b5f-4569-9561-043089200874",
+        "47ce7ed3-2b09-4685-a3b3-13946cc39da3",
+        "504a0ef0-14c5-44fe-b4a6-73fcc8c7f475",
+        "815e915c-6767-4624-bf26-80186611b02d"
+      ],
+      "settings": {
+        "carrusels_movil": false,
+        "title_section": "Infusiones PandaTea",
+        "size_title_section": 25,
+        "size_title_section_movil": 25,
+        "color_title_section": "#000000",
+        "subtitle_section": "Faucibus ut a in phasellus.",
+        "size_subtitle_section": 16,
+        "size_subtitle_section_movil": 16,
+        "color_subtitle_section": "#000000",
+        "collection_id": "all-tea-blends",
+        "url_section": "Voir tous",
+        "size_link_section": 16,
+        "size_link_section_movil": 16,
+        "color_link_section": "#45c391"
+      }
+    },
+    "customs": {
+      "type": "custom-blocks",
+      "blocks": {
+        "91dde90b-e6b4-42a6-a540-9740ab2c10b1": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 625,
+            "height_block_movil": 470,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card1.jpg",
+            "text_tag": "",
+            "title_block": "Achetex un pack",
+            "subtitle_block": "Choisissez parmis notre selection",
+            "url_btn": "shopify:\/\/collections\/creer-son-coffret",
+            "text_btn": "Créer UN PACK|Créer"
+          }
+        },
+        "37d33da6-c6a5-4bd1-a6c9-7bc6ccc9edfd": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 625,
+            "height_block_movil": 470,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card2.jpg",
+            "text_tag": "",
+            "title_block": "Simplifiez vous la vie, abonnez-vous !",
+            "subtitle_block": "",
+            "url_btn": "shopify:\/\/collections\/creer-son-coffret",
+            "text_btn": "Créer un abonnement|Créer"
+          }
+        }
+      },
+      "block_order": [
+        "91dde90b-e6b4-42a6-a540-9740ab2c10b1",
+        "37d33da6-c6a5-4bd1-a6c9-7bc6ccc9edfd"
+      ],
+      "settings": {
+        "grid_value": 2,
+        "margin_bottom": 50,
+        "title_section": "",
+        "size_title_section": 30,
+        "size_title_section_movil": 25,
+        "color_title_section": "#000000",
+        "subtitle_section": "",
+        "size_subtitle_section": 16,
+        "size_subtitle_section_movil": 16,
+        "color_subtitle_section": "#000000",
+        "url_head": "",
+        "url_section": "",
+        "size_link_section": 16,
+        "size_link_section_movil": 16,
+        "color_link_section": "#45c391",
+        "center_call_to": false,
+        "size_tag": 14,
+        "size_tag_movil": 14,
+        "color_text_tag": "#7e7cb3",
+        "color_bg_tag": "#ffffff",
+        "size_title": 20,
+        "size_title_movil": 16,
+        "color_title": "#000000",
+        "size_subtitle": 16,
+        "size_subtitle_movil": 14,
+        "color_subtitle": "#000000",
+        "size_btn": 16,
+        "size_btn_movil": 16,
+        "color_btn_font": "#ffffff",
+        "color_btn_bg": "#45c391"
+      }
+    },
+    "16281143913e398fd4": {
+      "type": "carrusels-products",
+      "blocks": {
+        "4c562bd9-24f7-4858-83e0-9118bbf36e74": {
+          "type": "product",
+          "settings": {
+            "product_id": "panda-bundle-slim-fit"
+          }
+        },
+        "d68fee46-52fb-4f7d-9e48-816781ab20ff": {
+          "type": "product",
+          "settings": {
+            "product_id": "green-energy"
+          }
+        },
+        "04fd73ea-3e0e-4f30-a347-86f71945489b": {
+          "type": "product",
+          "settings": {
+            "product_id": "choco-zen"
+          }
+        },
+        "24cc0ade-b61a-49f9-8601-c1c35bf1c7cf": {
+          "type": "product",
+          "settings": {
+            "product_id": "flower-power"
+          }
+        }
+      },
+      "block_order": [
+        "4c562bd9-24f7-4858-83e0-9118bbf36e74",
+        "d68fee46-52fb-4f7d-9e48-816781ab20ff",
+        "04fd73ea-3e0e-4f30-a347-86f71945489b",
+        "24cc0ade-b61a-49f9-8601-c1c35bf1c7cf"
+      ],
+      "settings": {
+        "carrusels_movil": true,
+        "title_section": "Thés PandaTea",
+        "size_title_section": 30,
+        "size_title_section_movil": 25,
+        "color_title_section": "#000000",
+        "subtitle_section": "Faucibus ut a in phasellus.",
+        "size_subtitle_section": 16,
+        "size_subtitle_section_movil": 16,
+        "color_subtitle_section": "#000000",
+        "collection_id": "the-infusion-vrac",
+        "url_section": "Voir tous",
+        "size_link_section": 16,
+        "size_link_section_movil": 16,
+        "color_link_section": "#45c391"
+      }
+    },
+    "category-list": {
+      "type": "categories-icons",
+      "blocks": {
+        "006fb8d6-9e62-477e-aa71-c3734015673f": {
+          "type": "categories",
+          "settings": {
+            "text_icon_categorie": "energy-icon-tag",
+            "text_block_category": "Energy",
+            "url_category": "shopify:\/\/collections\/accessoires",
+            "text_link": "Voir tous"
+          }
+        },
+        "c09d0e0c-0d2e-49d3-9b0c-68f2dff24218": {
+          "type": "categories",
+          "settings": {
+            "text_icon_categorie": "sleep-icon-tag",
+            "text_block_category": "Sleep",
+            "url_category": "shopify:\/\/collections\/accessoires",
+            "text_link": "Voir tous"
+          }
+        },
+        "b3960ba7-48b1-4ae0-8d4e-071700011f11": {
+          "type": "categories",
+          "settings": {
+            "text_icon_categorie": "beauty-icon-tag",
+            "text_block_category": "Beauty",
+            "url_category": "shopify:\/\/collections\/accessoires",
+            "text_link": "Voir tous"
+          }
+        },
+        "3e41fe4f-0cbe-419a-9f8e-500c9aa030d9": {
+          "type": "categories",
+          "settings": {
+            "text_icon_categorie": "digestea-icon-tag",
+            "text_block_category": "Digestea",
+            "url_category": "shopify:\/\/collections\/accessoires",
+            "text_link": "Voir tous"
+          }
+        },
+        "b59c61d3-1807-42ab-a63b-2ce47736c871": {
+          "type": "categories",
+          "settings": {
+            "text_icon_categorie": "relax-icon-tag",
+            "text_block_category": "Relax",
+            "url_category": "shopify:\/\/collections\/accessoires",
+            "text_link": "Voir tous"
+          }
+        },
+        "4c20f314-5fa4-4e85-897f-31a5f8caf89b": {
+          "type": "categories",
+          "settings": {
+            "text_icon_categorie": "beauty-icon-tag",
+            "text_block_category": "Beauty",
+            "url_category": "shopify:\/\/collections\/accessoires",
+            "text_link": "Voir tous"
+          }
+        },
+        "e2b6d0cc-33f3-458f-8306-ae28c34470e0": {
+          "type": "categories",
+          "settings": {
+            "text_icon_categorie": "energy-icon-tag",
+            "text_block_category": "Energy",
+            "url_category": "shopify:\/\/collections\/accessoires",
+            "text_link": "Voir tous"
+          }
+        },
+        "f260bcad-a0e9-48eb-a7d4-e8e480778655": {
+          "type": "categories",
+          "settings": {
+            "text_icon_categorie": "energy-icon-tag",
+            "text_block_category": "Energy",
+            "url_category": "shopify:\/\/collections\/accessoires",
+            "text_link": "Voir tous"
+          }
+        }
+      },
+      "block_order": [
+        "006fb8d6-9e62-477e-aa71-c3734015673f",
+        "c09d0e0c-0d2e-49d3-9b0c-68f2dff24218",
+        "b3960ba7-48b1-4ae0-8d4e-071700011f11",
+        "3e41fe4f-0cbe-419a-9f8e-500c9aa030d9",
+        "b59c61d3-1807-42ab-a63b-2ce47736c871",
+        "4c20f314-5fa4-4e85-897f-31a5f8caf89b",
+        "e2b6d0cc-33f3-458f-8306-ae28c34470e0",
+        "f260bcad-a0e9-48eb-a7d4-e8e480778655"
+      ],
+      "settings": {
+        "title_category_section": "Thés & Infusions for :",
+        "title_categories_size": 30,
+        "title_categories_size_movil": 25,
+        "title_categories_color": "#000000",
+        "name_categories_size": 20,
+        "name_categories_size_movil": 16,
+        "name_categories_color": "#000000",
+        "link_categories_size": 16,
+        "link_categories_size_movil": 16,
+        "link_categories_color": "#45c391"
+      }
+    },
+    "162811182385b2aca4": {
+      "type": "custom-blocks",
+      "blocks": {
+        "e9f61b85-a367-4009-a026-05afeca602ee": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 430,
+            "height_block_movil": 300,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card3.jpg",
+            "text_tag": "",
+            "title_block": "Thés & infusiones",
+            "subtitle_block": "L’infusion des sportifs",
+            "url_btn": "shopify:\/\/collections\/all-tea-blends",
+            "text_btn": "voir tous|voir"
+          }
+        },
+        "54c55183-eb5d-4814-a555-eca3a08a25c7": {
+          "type": "two-rows",
+          "settings": {
+            "height_block": 430,
+            "height_block_movil": 395,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card4.jpg",
+            "text_tag": "",
+            "title_block": "Thés & infusiones",
+            "subtitle_block": "L’infusion des sportifs",
+            "url_btn": "shopify:\/\/collections\/accessoires",
+            "text_btn": "Shop now|Show",
+            "image_bg_2": "shopify:\/\/shop_images\/panda-images-card5.jpg",
+            "text_tag_2": "",
+            "title_block_2": "Thés & infusiones",
+            "subtitle_block_2": "L’infusion des sportifs",
+            "url_btn_2": "shopify:\/\/collections\/accessoires",
+            "text_btn_2": "Shop now|Show"
+          }
+        }
+      },
+      "block_order": [
+        "e9f61b85-a367-4009-a026-05afeca602ee",
+        "54c55183-eb5d-4814-a555-eca3a08a25c7"
+      ],
+      "settings": {
+        "grid_value": 2,
+        "margin_bottom": 50,
+        "title_section": "",
+        "size_title_section": 30,
+        "size_title_section_movil": 25,
+        "color_title_section": "#000000",
+        "subtitle_section": "",
+        "size_subtitle_section": 16,
+        "size_subtitle_section_movil": 16,
+        "color_subtitle_section": "#000000",
+        "url_head": "",
+        "url_section": "",
+        "size_link_section": 16,
+        "size_link_section_movil": 16,
+        "color_link_section": "#45c391",
+        "center_call_to": false,
+        "size_tag": 14,
+        "size_tag_movil": 14,
+        "color_text_tag": "#7e7cb3",
+        "color_bg_tag": "#ffffff",
+        "size_title": 20,
+        "size_title_movil": 16,
+        "color_title": "#000000",
+        "size_subtitle": 16,
+        "size_subtitle_movil": 14,
+        "color_subtitle": "#000000",
+        "size_btn": 16,
+        "size_btn_movil": 16,
+        "color_btn_font": "#ffffff",
+        "color_btn_bg": "#45c391"
+      }
+    },
+    "1628114611d9b6b299": {
+      "type": "custom-blocks",
+      "blocks": {
+        "23151518-669e-45f0-a9f4-8a15e8912967": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 475,
+            "height_block_movil": 190,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card6.jpg",
+            "text_tag": "",
+            "title_block": "Produit en vedette",
+            "subtitle_block": "Suspendisse feugiat nunc massa",
+            "url_btn": "shopify:\/\/products\/panda-fresh-skin-beauty-challenge",
+            "text_btn": "Shop now|Show"
+          }
+        },
+        "dc6d69d7-5133-4a42-95a6-22de26c144a2": {
+          "type": "double_product",
+          "settings": {
+            "height_block": 475,
+            "product_id_1": "urban-bottle-azur",
+            "product_id_2": "urban-bottle-white"
+          }
+        },
+        "e4f3fbc5-e393-406e-9279-df68fe9aebf8": {
+          "type": "double_product",
+          "settings": {
+            "height_block": 325,
+            "product_id_1": "urban-bottle-majorelle-blue",
+            "product_id_2": "urban-bottle-red-coral"
+          }
+        },
+        "c9167fdf-b68e-4a6f-9f7f-0f432ee33e5a": {
+          "type": "double_product",
+          "settings": {
+            "height_block": 325,
+            "product_id_1": "urban-bottle-citrus",
+            "product_id_2": "urban-bottle-black"
+          }
+        }
+      },
+      "block_order": [
+        "23151518-669e-45f0-a9f4-8a15e8912967",
+        "dc6d69d7-5133-4a42-95a6-22de26c144a2",
+        "e4f3fbc5-e393-406e-9279-df68fe9aebf8",
+        "c9167fdf-b68e-4a6f-9f7f-0f432ee33e5a"
+      ],
+      "settings": {
+        "grid_value": 2,
+        "margin_bottom": 50,
+        "title_section": "Accessoires",
+        "size_title_section": 30,
+        "size_title_section_movil": 25,
+        "color_title_section": "#000000",
+        "subtitle_section": "Faucibus ut a in phasellus.",
+        "size_subtitle_section": 16,
+        "size_subtitle_section_movil": 16,
+        "color_subtitle_section": "#000000",
+        "url_head": "shopify:\/\/collections\/accessoires",
+        "url_section": "Voir tous",
+        "size_link_section": 16,
+        "size_link_section_movil": 16,
+        "color_link_section": "#45c391",
+        "center_call_to": false,
+        "size_tag": 14,
+        "size_tag_movil": 14,
+        "color_text_tag": "#7e7cb3",
+        "color_bg_tag": "#ffffff",
+        "size_title": 20,
+        "size_title_movil": 16,
+        "color_title": "#000000",
+        "size_subtitle": 16,
+        "size_subtitle_movil": 14,
+        "color_subtitle": "#000000",
+        "size_btn": 16,
+        "size_btn_movil": 16,
+        "color_btn_font": "#ffffff",
+        "color_btn_bg": "#45c391"
+      }
+    },
+    "1628114897827e04eb": {
+      "type": "custom-blocks",
+      "blocks": {
+        "8db30500-bf5b-4381-955a-cc008895ab95": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 325,
+            "height_block_movil": 265,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card10.jpg",
+            "text_tag": "",
+            "title_block": "Thés & infusiones",
+            "subtitle_block": "L’infusion des sportifs",
+            "url_btn": "shopify:\/\/collections\/accessoires",
+            "text_btn": "Shop now|Show"
+          }
+        },
+        "275efc75-1c82-482f-89a6-399aeff55d6d": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 325,
+            "height_block_movil": 265,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card8.jpg",
+            "text_tag": "",
+            "title_block": "Thés & infusiones",
+            "subtitle_block": "L’infusion des sportifs",
+            "url_btn": "shopify:\/\/collections\/accessoires",
+            "text_btn": "Shop now|Show"
+          }
+        },
+        "f832092b-e008-407d-b225-c9b81831d241": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 325,
+            "height_block_movil": 265,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card9.jpg",
+            "text_tag": "",
+            "title_block": "Thés & infusiones",
+            "subtitle_block": "L’infusion des sportifs",
+            "url_btn": "shopify:\/\/collections\/accessoires",
+            "text_btn": "Shop now|Show"
+          }
+        }
+      },
+      "block_order": [
+        "8db30500-bf5b-4381-955a-cc008895ab95",
+        "275efc75-1c82-482f-89a6-399aeff55d6d",
+        "f832092b-e008-407d-b225-c9b81831d241"
+      ],
+      "settings": {
+        "grid_value": 3,
+        "margin_bottom": 50,
+        "title_section": "",
+        "size_title_section": 30,
+        "size_title_section_movil": 25,
+        "color_title_section": "#000000",
+        "subtitle_section": "",
+        "size_subtitle_section": 16,
+        "size_subtitle_section_movil": 16,
+        "color_subtitle_section": "#000000",
+        "url_head": "",
+        "url_section": "",
+        "size_link_section": 16,
+        "size_link_section_movil": 16,
+        "color_link_section": "#45c391",
+        "center_call_to": true,
+        "size_tag": 14,
+        "size_tag_movil": 14,
+        "color_text_tag": "#7e7cb3",
+        "color_bg_tag": "#ffffff",
+        "size_title": 20,
+        "size_title_movil": 16,
+        "color_title": "#000000",
+        "size_subtitle": 16,
+        "size_subtitle_movil": 14,
+        "color_subtitle": "#000000",
+        "size_btn": 16,
+        "size_btn_movil": 16,
+        "color_btn_font": "#ffffff",
+        "color_btn_bg": "#45c391"
+      }
+    },
+    "reviews": {
+      "type": "reviews-home",
+      "blocks": {
+        "a77387f6-3703-4873-9140-ab713b4e88fa": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Test 2<\/p>",
+            "author": "Nom 1",
+            "stars": 3
+          }
+        },
+        "f055d2a4-685d-4cdd-a292-64b149c01095": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Ajoutez des avis et témoignages pour mettre en avant vos clients satisfaits.<\/p>",
+            "author": "Nom de l'auteur",
+            "stars": 3
+          }
+        },
+        "f765949b-6d30-449f-a056-dc5ab16372ef": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>test<\/p>",
+            "author": "Nom de l'auteur",
+            "stars": 3
+          }
+        },
+        "8c9fc914-d445-4e18-9f59-8b262ec58d5f": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Ajoutez des avis et témoignages pour mettre en avant vos clients satisfaits.<\/p>",
+            "author": "Nom de l'auteur",
+            "stars": 3
+          }
+        },
+        "f94e94d4-c016-4c12-a523-16743c2a75fd": {
+          "type": "quote",
+          "settings": {
+            "quote": "<p>Ajoutez des avis et témoignages pour mettre en avant vos clients satisfaits.<\/p>",
+            "author": "Nom de l'auteur",
+            "stars": 3
+          }
+        }
+      },
+      "block_order": [
+        "a77387f6-3703-4873-9140-ab713b4e88fa",
+        "f055d2a4-685d-4cdd-a292-64b149c01095",
+        "f765949b-6d30-449f-a056-dc5ab16372ef",
+        "8c9fc914-d445-4e18-9f59-8b262ec58d5f",
+        "f94e94d4-c016-4c12-a523-16743c2a75fd"
+      ],
+      "settings": {
+        "title": "Un petit mot des PandaTea",
+        "size_title_reviews_home": 26,
+        "size_title_reviews_home_movil": 25,
+        "color_title_reviews_home": "#000000",
+        "score": "4.7",
+        "size_score_reviews_home": 18,
+        "size_score_reviews_home_movil": 16,
+        "color_score_reviews": "#000000",
+        "stars_title": 5,
+        "size_content_reviews_home": 14,
+        "size_content_reviews_home_movil": 14,
+        "color_content_reviews": "#000000",
+        "size_author_reviews_home": 14,
+        "size_author_reviews_home_movil": 16,
+        "color_author_reviews": "#000000"
+      }
+    },
+    "162811547622bd59ec": {
+      "type": "custom-blocks",
+      "blocks": {
+        "eb0af77e-3d08-4eee-aac7-321582717e16": {
+          "type": "single_gif",
+          "settings": {
+            "height_block": 390,
+            "height_block_movil": 290,
+            "image_gif": "panda-rose",
+            "text_tag": "",
+            "title_block": "Thés & infusiones",
+            "subtitle_block": "L’infusion des sportifs",
+            "url_btn": "shopify:\/\/collections\/accessoires",
+            "text_btn": "Shop now|Show"
+          }
+        },
+        "f86e08e8-fcf1-4798-9f33-6e7769b1e040": {
+          "type": "link",
+          "settings": {
+            "blog_id": "shopify:\/\/blogs\/new",
+            "text_blog": "Blog",
+            "text_link_blog": "Voir tous",
+            "article_id_one": "shopify:\/\/blogs\/new\/5-podcasts-a-ecouter-pour-sevader-depuis-chez-soi",
+            "text_article_1": "Vitamines pour articulations & os : comment rester souple ?",
+            "img_article_1": "shopify:\/\/shop_images\/article-image-short1.jpg",
+            "article_id_two": "shopify:\/\/blogs\/new\/comment-faciliter-la-digestion-naturellement",
+            "text_article_2": "Vitamines pour articulations & os : comment rester souple ?",
+            "img_article_2": "shopify:\/\/shop_images\/article-image-short2.jpg",
+            "article_id_three": "shopify:\/\/blogs\/new\/panda-tea-mecene-officiel-de-plastic-odyssey",
+            "text_article_3": "Vitamines pour articulations & os : comment rester souple ?",
+            "img_article_3": "shopify:\/\/shop_images\/article-image-short3.jpg"
+          }
+        },
+        "c13b71eb-acab-4a98-a468-117beb6b16e2": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 325,
+            "height_block_movil": 290,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card10.jpg",
+            "text_tag": "",
+            "title_block": "Thés & infusiones",
+            "subtitle_block": "L’infusion des sportifs",
+            "url_btn": "shopify:\/\/collections\/accessoires",
+            "text_btn": "Shop now|Show"
+          }
+        },
+        "6e0216c4-99fb-4a50-8629-1ecb4a336959": {
+          "type": "single_image",
+          "settings": {
+            "height_block": 325,
+            "height_block_movil": 290,
+            "image_bg": "shopify:\/\/shop_images\/panda-images-card11.jpg",
+            "text_tag": "",
+            "title_block": "Thés & infusiones",
+            "subtitle_block": "L’infusion des sportifs",
+            "url_btn": "shopify:\/\/collections\/accessoires",
+            "text_btn": "Shop now|Show"
+          }
+        }
+      },
+      "block_order": [
+        "eb0af77e-3d08-4eee-aac7-321582717e16",
+        "f86e08e8-fcf1-4798-9f33-6e7769b1e040",
+        "c13b71eb-acab-4a98-a468-117beb6b16e2",
+        "6e0216c4-99fb-4a50-8629-1ecb4a336959"
+      ],
+      "settings": {
+        "grid_value": 2,
+        "margin_bottom": 50,
+        "title_section": "",
+        "size_title_section": 30,
+        "size_title_section_movil": 25,
+        "color_title_section": "#000000",
+        "subtitle_section": "",
+        "size_subtitle_section": 16,
+        "size_subtitle_section_movil": 16,
+        "color_subtitle_section": "#000000",
+        "url_head": "",
+        "url_section": "",
+        "size_link_section": 16,
+        "size_link_section_movil": 16,
+        "color_link_section": "#45c391",
+        "center_call_to": false,
+        "size_tag": 14,
+        "size_tag_movil": 14,
+        "color_text_tag": "#7e7cb3",
+        "color_bg_tag": "#ffffff",
+        "size_title": 20,
+        "size_title_movil": 16,
+        "color_title": "#000000",
+        "size_subtitle": 16,
+        "size_subtitle_movil": 14,
+        "color_subtitle": "#000000",
+        "size_btn": 16,
+        "size_btn_movil": 16,
+        "color_btn_font": "#ffffff",
+        "color_btn_bg": "#45c391"
+      }
+    },
+    "prefooter": {
+      "type": "icons-prefooter",
+      "blocks": {
+        "4c80169d-c0a7-451d-b395-39953f42b3c8": {
+          "type": "brand",
+          "settings": {
+            "title_brands": "Certifié biologique par Ecocert",
+            "image_brands_1": "usda-icon",
+            "image_brands_2": "ab-icon",
+            "image_brands_3": "planet1-icon",
+            "width_block_brand": "50"
+          }
+        },
+        "d90ec632-f4c8-4a41-8b05-22feea1dcf08": {
+          "type": "brand",
+          "settings": {
+            "title_brands": "Certifié biologique par Ecocert",
+            "image_brands_1": "google-icon",
+            "image_brands_2": "amazon-icon",
+            "image_brands_3": "",
+            "width_block_brand": "50"
+          }
+        }
+      },
+      "block_order": [
+        "4c80169d-c0a7-451d-b395-39953f42b3c8",
+        "d90ec632-f4c8-4a41-8b05-22feea1dcf08"
+      ],
+      "settings": {
+        "color_bg_sections": "#f6f6f6",
+        "brand_legend": "<p>Nous nous engageons à utiliser des plantes cultivées de manière responsable: 100% bio et non génétiquement modifiées. Chaque année, Panda Tea verse une part de son chiffre d'affaire à des associations à impact positif sur la planète via notre participation à l'organisme 1% For The Planet.<\/p>",
+        "size_title_brands_home": 14,
+        "size_title_brands_home_movil": 14,
+        "color_title_brands_home": "#000000",
+        "size_subtitle_brands_home": 22,
+        "size_subtitle_brands_home_movil": 17,
+        "color_subtitle_brands_home": "#000000"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "icons",
+    "carrousels-1",
+    "customs",
+    "16281143913e398fd4",
+    "category-list",
+    "162811182385b2aca4",
+    "1628114611d9b6b299",
+    "1628114897827e04eb",
+    "reviews",
+    "162811547622bd59ec",
+    "prefooter"
+  ]
+}

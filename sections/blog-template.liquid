@@ -1,0 +1,128 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% paginate blog.articles by 9 %}
+
+<div class="width-panda">
+  <div class="container-blog">
+    <div class="section-header">
+      <h1 class="title-principal">{{ langify_title }}</h1>
+
+      {% if blog.tags.size > 0 %}
+        <div class="blog-filter-panda">
+          <ul class="filter-ul-blog" id="BlogTagFilter" aria-describedby="a11y-refresh-page-message a11y-selection-message" data-blog-tag-filter>
+            <li>
+              <a class="item-filter-blog uppercase {% if request.path == blog.url %}selected-blog{% endif %}" href="{{ blog.url }}" title="{% comment %}ly_i18n_replace_for_[ 'blogs.article.all_topics' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.all_topics' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844388' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                {% comment %}ly_i18n_replace_for_[ 'blogs.article.all_topics' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.all_topics' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844388' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+              </a>
+            </li>
+            {% for tag in blog.all_tags %}
+              <li>
+                <a class="item-filter-blog uppercase {% if current_tags contains tag %}selected-blog{% endif %}" href="{{ blog.url }}/tagged/{{ tag | handleize }}" title="{{ tag }}">
+                  {{ tag }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  
+    <ul class="grid-layout-blog">
+      {% for article in blog.articles %}
+        <li class="list-item-article">
+          <div class="container-animation">
+            <div class="container-article">
+              <a href="{{ article.url }}" class="article-href-post" title="{% comment %}ly_code_replace_for_[ article.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with article render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}">
+                {% if article.image %}
+                  {% capture img_id %}ArticleImage-{{ article.image.id }}{% endcapture %}
+                  {%- assign img_url = article.image | img_url: '310x' -%}
+
+                  {% render 'img-upload' img_id: img_id, img_url: img_url, alt: article.title, class: "image-blog" %}
+
+                {% endif %}
+              </a>
+
+              <div class="container-tag">
+                {% if article.tags.size > 0 %}
+                  {% assign tagg = article.tags[0] %}
+                  <div class="container__tag">
+                    <a class="tag-hashtag_description" href="{{ blog.url }}/tagged/{{ tagg | handleize }}" title="{{ tagg }}">
+                      {{ tagg | handle | prepend: '#' }}
+                    </a>
+                  </div>
+                {% endif %}
+                
+                <div class="container-info-blog">
+                  
+                  <div class="flex-title-article">
+                    <h2 class="title-article-list">
+                      {% comment %}ly_code_replace_for_[ article.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with article render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                    </h2>
+
+                    {% if section.settings.blog_show_date %}
+                      <span class="article_date-list">
+                        {{ article.published_at | date: "%d.%m.%y" }}
+                      </span>
+                    {% endif %}
+                  </div>
+                  
+                  {% if section.settings.blog_show_author %}
+                    <span class="article__author">{% comment %}ly_i18n_replace_for_[ 'blogs.article.by_author' | t: author: article.author ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.by_author' | t: author: article.author }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844390' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = article.author  %}{% assign ly_template = ly_template | replace: '[[author]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                  {% endif %}
+
+                  <div class="content-arlticle-list">
+                    {% comment %}ly_code_replace_for_[ article.content | strip_html | truncate: 110 ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-content' with article render:true %}{% endcapture %}{{ ly_translation | strip_html | truncate: 110 }}{% comment %}ly_code_replace_end{% endcomment %}
+                  </div>
+
+                  <div class="buttons-articles-list">
+                    <button class="btn-nostyle btn-animation-blog">
+                      <a href="{{ article.url }}" class="link-article-btn" aria-label="{% comment %}ly_i18n_replace_for_[ 'blogs.article.read_more_title' | t: title: article.title ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.read_more_title' | t: title: article.title }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844392' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% capture ly_translation %}{% render 'ly-title' with article render:true %}{% endcapture %}{% assign replacement = ly_translation %}{% assign ly_template = ly_template | replace: '[[title]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                        {% comment %}ly_i18n_replace_for_[ 'blogs.article.read_more' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.read_more' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844393' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                      </a>
+                    </button>
+
+                    {% if article.tags.size > 0 %}
+                      {% assign tagg = article.tags[0] %}
+                      <div class="article__tag">
+                        <a class="tag-hashtag" href="{{ blog.url }}/tagged/{{ tagg | handleize }}" title="{{ tagg }}">
+                          {{ tagg | handle | prepend: '#' }}
+                        </a>
+                      </div>
+                    {% endif %}            
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="pagination-container">
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination-panda', paginate: paginate %}
+      {%- endif -%}
+    </div>
+
+  </div>
+</div>
+
+
+{% endpaginate %}

@@ -1,0 +1,35 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<li class="item-accordion">
+  <button class="accordion accordion-button {{ data_open }}">
+    <div class="content-button-accordion">
+      {{ item_title | remove: 'open]' | remove: ']' }}
+    </div>
+    <div class="plus-container style-button-plus">
+      <div class="line-plus top-plus {% if open %}animation-plus{% endif %}"></div>
+      <div class="line-plus down-plus"></div>
+      <div class="blur-accordion"></div>
+    </div>
+  </button>
+  <div 
+    data-accordion="plus-accordion" 
+    class="Panel padding-panel-seo content-accordions-page"
+    {% if open %}style="display: block;"{% endif %}>
+      {{ item_content | remove: '[content]' | remove: '[/content]' | remove: '[content open]' }}
+  </div>
+</li>

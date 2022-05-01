@@ -1,0 +1,300 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+
+<div class="section-ingredients">
+  <div class="width-panda">
+    {% if section.settings.section_title != blank %}
+      <h2 class="styleTitleSection margin-title uppercase font-bold">
+        {{ section.settings.section_title }}
+      </h2>
+    {% endif %}
+    {% if section.settings.section_description != blank %}
+      <div class="styleDescriptionSection margin-descriptions font-bold">
+        {{ section.settings.section_description }}
+      </div>
+    {% endif %}
+  </div>
+  <div class="width-ingredients">
+    {% assign taggi = product.tags | where: "ing-" %}
+    <ul class="scroll-touch ingredients-list{% if taggi.size < 4 %} center-ingredients{% endif %}">
+      {% for block in section.blocks %}        
+        {% for tag in product.tags %}
+          {% assign _tag = tag | split: '-' %}
+          {% if _tag.size > 1 and _tag.first == 'ing' %}
+            {% if block.settings.ingredient_tag == tag %}
+              {% render 'ingredient-card' block: block %}
+              <style>
+                .section-ingredients {
+                  display: block;
+                  padding: 0 0 40px;
+                  text-align: center;
+                }
+              </style>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}      
+    </ul>
+  </div>
+</div>
+
+<style>
+  
+  .styleTitleSection {
+    color: {{ section.settings.section_title_color }};
+    font-size: {{ section.settings.section_title_size }}px;
+  }
+
+  .styleDescriptionSection {
+    color: {{ section.settings.section_description_color }};
+    font-size: {{ section.settings.section_description_size }}px;
+  }
+
+  .styleTitleBlock {
+    color: {{ section.settings.block_title_color }};
+    font-size: {{ section.settings.block_title_size }}px;
+  }
+
+  .styleDescriptionBlock {
+    color: {{ section.settings.block_description_color }};
+    font-size: {{ section.settings.block_description_size }}px;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .styleTitleSection {
+      font-size: {{ section.settings.section_title_size_movil }}px;
+    }
+
+    .styleDescriptionSection {
+      font-size: {{ section.settings.section_description_size_movil }}px;
+    }
+
+    .styleTitleBlock {
+      font-size: {{ section.settings.block_title_size_movil }}px;
+    }
+
+    .styleDescriptionBlock {
+      font-size: {{ section.settings.block_description_size_movil }}px;
+    }
+
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "Product / Ingredients",
+    "class": "single-product-section2",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Ingredients title"
+      },
+      {
+        "type": "text",
+        "id": "section_title",
+        "label": "Title section",
+        "default": "Ingredients Map"
+      },
+      {
+        "type": "range",
+        "id": "section_title_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "section_title_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title - movil",
+        "default": 15
+      },
+      {
+        "type": "color",
+        "id": "section_title_color",
+        "label": "Text color title",
+        "default": "#292929"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients description"
+      },
+      {
+        "type": "textarea",
+        "id": "section_description",
+        "label": "Description",
+        "default": "Nos ingrédients sont certifiés bios et choisis avec soin par une équipe d’experts en santé et nutrition"
+      },
+      {
+        "type": "range",
+        "id": "section_description_size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subtitle",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "section_description_size_movil",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subtitle - movil",
+        "default": 15
+      },
+      {
+        "type": "color",
+        "id": "section_description_color",
+        "label": "Font color subtitle",
+        "default": "#292929"
+      },
+      {
+        "type": "header",
+        "content": "Ingredients card"
+      },
+      {
+        "type": "range",
+        "id": "block_title_size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size name ingredient",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "block_title_size_movil",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size name ingredient - movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "block_title_color",
+        "label": "Font color name ingredient",
+        "default": "#292929"
+      },
+      {
+        "type": "range",
+        "id": "block_description_size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size undertitle ingredient",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "block_description_size_movil",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size undertitle ingredient - movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "block_description_color",
+        "label": "Font color undertitle ingredient",
+        "default": "#7e7e7e"
+      },
+      {
+        "type": "header",
+        "content": "Edit content icons"
+      },
+      {
+        "type": "paragraph",
+        "content": "You can edit content in this page: [Ingredients in product](\/admin\/pages)."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "ingredient",
+        "name": "Ingredient",
+        "settings": [
+          {
+            "type": "text",
+            "id": "ingredient_tag",
+            "label": "Tag Name"
+          },
+          {
+            "type": "text",
+            "id": "ingredient_title",
+            "label": "Title"
+          },
+          {
+            "type": "textarea",
+            "id": "ingredient_text",
+            "label": "Text"
+          },
+          {
+            "type": "header",
+            "content": {
+              "en": "Icon in block", 
+              "fr": "Icône dans le bloc"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "en": "You can choose the a format you want for the icon of this block",
+              "fr": "Vous pouvez choisir le format que vous souhaitez pour l'icône de ce bloc" 
+            }
+          },
+          {
+            "type": "text",
+            "id": "ingredient_svg",
+            "label": {
+              "en": "Icon SVG (Recommended*)", 
+              "fr": "Icône SVG (recommandé*)"
+            },
+            "info": {
+              "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+              "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+            }
+          },
+          {
+            "type": "image_picker",
+            "id": "ingredient_image",
+            "label": {
+              "en": "Icon IMAGE", 
+              "fr": "Icône IMG"
+            }
+          }                  
+        ]       
+      }  
+    ]
+  }
+{% endschema %}

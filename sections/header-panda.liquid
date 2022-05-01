@@ -1,0 +1,262 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  assign img_logo = section.settings.logo_svg | append: '.svg' | file_url
+  assign img_cart = section.settings.cart_svg | append: '.svg' | file_url
+  assign img_login = section.settings.login_svg | append: '.svg' | file_url
+  assign img_faq = section.settings.faq_svg | append: '.svg' | file_url
+%}
+
+<div class="display-test-nav">
+  
+  <div class="logo-container-menu">
+    
+    <a
+      id="logo-panda"
+      class="logo_href text-in-menu"
+      title="{{ langify_shop_name }}"
+      href="{{ routes.root_url }}">
+    </a>
+
+  </div>
+
+  <div class="link-list-container">
+    <div id="container-icon-burguer" class="container-movil-menu">
+
+      <div class="icon-burguer">
+        <div class="hamburger top-x"></div>
+        <div class="hamburger middle-x"></div>
+        <div class="hamburger bottom-x"></div>
+      </div>
+      
+    </div>
+
+    {% render 'site-nav-panda'
+      linklist: section.settings.main_linklist,
+      login_url: section.settings.login_url,
+      login_text: section.settings.login_text,
+      faq_url: section.settings.faq_url,
+      faq_text: section.settings.faq_text,
+      hover_checked: section.settings.hover_checked
+      img_login: img_login,
+      img_faq: img_faq,
+    %}
+
+  </div>
+  
+  <div class="cart-login-menu">
+    <a href="{{ section.settings.login_url }}" id="login-icon" title="{{ section.settings.login_text }}" class="link-icon-nav">
+    </a>
+    <a href="{{ section.settings.faq_url }}" id="faq-icon" title="{{ section.settings.faq_text }}" class="link-icon-nav">
+    </a>
+    <button id="cart_btn" class="cart_btn">
+      <span class="count-header count-menu">{{ cart.item_count }}</span>
+    </button>
+  </div>
+
+</div>
+
+<style>
+  .display-test-nav {background: {{ section.settings.bg_menu }};}
+  .line-hover-anim {background: {{ section.settings.color_hover_menu }};}
+  {% if section.settings.logo_svg != blank %}
+    #logo-panda::after {content: url('{{ img_logo }}');}
+  {% else %}
+    #logo-panda::after {content: '{{ langify_shop_name }}';}
+  {% endif %}
+
+  #login-icon::after {content: url('{{ img_login }}');}
+  #faq-icon::after {content: url('{{ img_faq }}');}
+  #cart_btn::after {content: url('{{ img_cart }}');}
+
+  .text-in-menu {
+    font-size: {{ section.settings.size_text_menu }}px;
+    color: {{ section.settings.color_text_menu }};
+  }
+
+  .hamburger {background: {{ section.settings.color_text_menu }};}
+
+  .dropdown-menu {background: {{ section.settings.bg_menu }};}
+
+  .overlay-circle-animation {
+    background: {{ section.settings.bg_menu }};
+  }
+
+  @media screen and (max-width: 1280px) {
+    .list-link-list {
+      background: {{ section.settings.bg_menu }};
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .text-in-menu {
+      font-size: {{ section.settings.size_text_menu_movil }}px;
+    }
+  }
+
+</style>
+
+<style>
+  .rc_layout__container {margin-top: 60px;margin-bottom: 60px;}
+  #ReCharge #please_wait {
+    text-align: center;
+    position: fixed;
+    background: rgba(0,0,0, .45);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .rc_header-settings__title::after {
+    border: 3px solid rgb(0, 0, 0, .1);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border-left-color: #97DBC0;
+    animation: loader 1s ease infinite;}
+  .rc_layout .columns {max-width: 100%;flex: 100%;}
+  #customer_tab_content a {display: inline-block;margin-top: 20px;font-weight: 600; padding: 5px 10px;background: #45C391;color: #FFF;border-radius: 2px;}
+</style>
+
+{% schema %}
+{
+  "name": {
+    "en": "Header",
+    "fr": "En-tête"
+  },
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "main_linklist",
+      "label": {
+        "en": "Menu",
+        "fr": "Menu"
+      },
+      "default": "main-menu"
+    },
+    {
+      "type": "header",
+      "content": "Icons and logo SVG´s in your menu",
+      "info": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)"
+    },
+    {
+      "type": "text",
+      "id": "logo_svg",
+      "label": "LOGO (SVG)"
+    },
+    {
+      "type": "text",
+      "id": "cart_svg",
+      "label": "CART (SVG)"
+    },
+    {
+      "type": "text",
+      "id": "login_svg",
+      "label": "LOG IN (SVG)"
+    },
+    {
+      "type": "text",
+      "id": "faq_svg",
+      "label": "FAQ´S (SVG)"
+    },
+    {
+      "type": "header",
+      "content": "Link-text icons"
+    },
+    {
+      "type": "text",
+      "id": "faq_text",
+      "label": "FAQ´S (TEXT)"
+    },
+    {
+      "type": "url",
+      "id": "faq_url",
+      "label": "FAQ´s (URL)"
+    },
+    {
+      "type": "text",
+      "id": "login_text",
+      "label": "login (TEXT)"
+    },
+    {
+      "type": "url",
+      "id": "login_url",
+      "label": "login (URL)"
+    },
+    {
+      "type": "header",
+      "content": "Menu Styles",
+      "info": "Customize your menu (font size, color, and background)"
+    },
+    {
+      "type": "color",
+      "id": "bg_menu",
+      "label": "Background color in menu",
+      "default": "#fff"
+    },
+    {
+      "type": "range",
+      "id": "size_text_menu",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in menu",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_text_menu_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in menu - movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_text_menu",
+      "label": "Color text in menu",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Hover buttons"
+    },
+    {
+      "type": "checkbox",
+      "id": "hover_checked",
+      "label": "Hover effect",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "color_hover_menu",
+      "label": "Color in hover buttons",
+      "default": "#45C391"
+    }
+  ]
+}
+{% endschema %}

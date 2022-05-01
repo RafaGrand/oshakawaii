@@ -1,0 +1,1020 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid 
+  case section.settings.grid_value
+    when 1
+      assign block_width = 'one_grid'
+    when 2
+      assign block_width = 'two_grid'
+    when 3
+      assign block_width = 'three_grid'
+  endcase
+  assign alpha = section.settings.opacity_call_to | divided_by: 100.0
+  assign bg_opacity = section.settings.background_call_to | color_modify: 'alpha', alpha
+%}
+  
+<div class="width-panda" style="margin-bottom: {{ section.settings.margin_bottom }}px">
+  {% if section.settings.title_section != blank %}
+    {% render 'frag-headers-titles'
+      section: section
+      title : section.settings.title_section,
+      subtitle : section.settings.subtitle_section,
+      link : section.settings.url_head,
+      text_link : section.settings.url_section  
+    %}
+  {% endif %}
+
+  <div class="grid_custom-blocks {{ block_width }}">
+    {% for block in section.blocks %}
+      {% case block.type %}
+
+        {% when 'single_image' %}
+          {% assign img_single = block.settings.image_bg %}
+          {% render 'card-single-custom'
+            block: block,
+            img_bg: img_single, 
+            tag: block.settings.text_tag,  
+            title: block.settings.title_block,
+            subtitle: block.settings.subtitle_block,
+            url: block.settings.url_btn, 
+            call_to: block.settings.text_btn
+          %}
+
+        {% when 'single_gif' %}
+          {% assign gif_ref = block.settings.image_gif | append: '.mp4' | file_url %}
+          {% render 'card-video-custom'
+            block: block,
+            img_bg: gif_ref, 
+            tag: block.settings.text_tag,  
+            title: block.settings.title_block,
+            subtitle: block.settings.subtitle_block,
+            url: block.settings.url_btn, 
+            call_to: block.settings.text_btn
+          %}
+
+        {% when 'two-rows' %}
+          {% liquid
+            assign img_double_1 = block.settings.image_bg
+            assign img_double_2 = block.settings.image_bg_2
+          %}
+          {% render 'card-double-custom'
+            block: block,
+            img_bg: img_double_1, 
+            tag: block.settings.text_tag,  
+            title: block.settings.title_block,
+            subtitle: block.settings.subtitle_block,
+            url: block.settings.url_btn, 
+            call_to: block.settings.text_btn,
+            img_bg_2: img_double_2, 
+            tag_2: block.settings.text_tag_2,  
+            title_2: block.settings.title_block_2,
+            subtitle_2: block.settings.subtitle_block_2,
+            url_2: block.settings.url_btn_2, 
+            call_to_2: block.settings.text_btn_2
+          %}
+
+        {% when 'link' %}
+          {% render 'blog-block-custom' block: block %}
+        
+        {% when 'double_product' %}
+          {% liquid 
+            assign product_1 = all_products[block.settings.product_id_1]
+            assign product_2 = all_products[block.settings.product_id_2]
+          %}
+          
+          <div class="grid-product-custom">
+          
+            {% render 'template-card'
+              product: product_1, 
+              bg_class : "bg_card",
+              image_class : "height-card-image",
+              tag_class : "tag-objective",
+              name_class : "name_product",
+              description_class : "description_product",
+              price_class : "price_product",
+              button_class : "btn-card-main",
+              choices_class : "btn-choices-card",
+              padding_class : "padding-card",
+              form_class : "form-add-product"
+            %}
+            
+            {% render 'template-card'
+              product: product_2, 
+              bg_class : "bg_card",
+              image_class : "height-card-image",
+              tag_class : "tag-objective",
+              name_class : "name_product",
+              description_class : "description_product",
+              price_class : "price_product",
+              button_class : "btn-card-main",
+              choices_class : "btn-choices-card",
+              padding_class : "padding-card",
+              form_class : "form-add-product"
+            %}
+
+          </div>
+        
+        {% when '@app' %}
+          {% render block %}
+
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  {% comment %} --- SECTIONS STYLES --- {% endcomment %}
+  
+  .style_title_section_{{ section.id }} {
+    font-size: {{ section.settings.size_title_section }}px;
+    color: {{ section.settings.color_title_section }};
+  }
+
+  .style_subtitle_section_{{ section.id }} {
+    font-size: {{ section.settings.size_subtitle_section }}px;
+    color: {{ section.settings.color_subtitle_section }};
+  }
+
+  .style_btn_section_{{ section.id }} {
+    color: {{ section.settings.color_link_section }};
+    font-size: {{ section.settings.size_link_section }}px;
+  }
+
+  {% comment %} --- BLOCK STYLES --- {% endcomment %}
+  .card_bg-custom_{{ section.id }} {
+    background-color: {{ bg_opacity }};
+  }
+
+  .style_tag_{{ section.id }} {
+    background-color: {{section.settings.color_bg_tag}};
+    color: {{section.settings.color_text_tag}};
+    font-size: {{ section.settings.size_tag }}px;
+  }
+
+  .style_title_{{ section.id }} {
+    font-size: {{ section.settings.size_title }}px;
+    color: {{ section.settings.color_title }};
+  }
+
+  .style_subtitle_{{ section.id }} {
+    font-size: {{ section.settings.size_subtitle }}px;
+    color: {{ section.settings.color_subtitle }};
+  }
+
+  .style_btn_{{ section.id }} {
+    background-color: {{ section.settings.color_btn_bg }};
+    color: {{ section.settings.color_btn_font }};
+    font-size: {{ section.settings.size_btn }}px;
+  }
+
+  @media screen and (max-width: 600px) {
+    {% comment %} --- SECTIONS STYLES --- {% endcomment %}
+
+    .style_title_section_{{ section.id }} {
+      font-size: {{ section.settings.size_title_section_movil }}px;
+    }
+
+    .style_subtitle_section_{{ section.id }} {
+      font-size: {{ section.settings.size_subtitle_section_movil }}px;
+    }
+
+    .style_btn_section_{{ section.id }} {
+      font-size: {{ section.settings.size_link_section_movil }}px;
+    }
+
+    {% comment %} --- BLOCK STYLES --- {% endcomment %}
+    .style_tag_{{ section.id }} {
+      font-size: {{ section.settings.size_tag_movil }}px;
+    }
+
+    .style_title_{{ section.id }} {
+      font-size: {{ section.settings.size_title_movil }}px;
+    }
+
+    .style_subtitle_{{ section.id }} {
+      font-size: {{ section.settings.size_subtitle_movil }}px;
+    }
+
+    .style_btn_{{ section.id }} {
+      font-size: {{ section.settings.size_btn_movil }}px;
+    }
+  }
+</style>
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Custom blocks",
+    "fr": "Blocs personnalisés"
+  },
+  "class": "customize-block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Generals custom",
+      "info": "Customize settings generals section"
+    },
+    {
+      "type": "range",
+      "id": "grid_value",
+      "min": 1,
+      "max": 3,
+      "step": 1,
+      "unit": "U",
+      "label": {
+        "en":"Number columns",
+        "fr": "Nombre de colonnes"
+      },
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 20,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": {
+        "en": "Margin bottom",
+        "fr": "Marge inférieure"
+      },
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Header titles - link"
+    },
+    {
+      "type": "text",
+      "id": "title_section",
+      "label": "Title section",
+      "default": "Accessoires"
+    },
+    {
+      "type": "range",
+      "id": "size_title_section",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Size title",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "size_title_section_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size title - movil",
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "color_title_section",
+      "label": "Color title",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_section",
+      "label": "subtitle section",
+      "default": "Accessoires"
+    },
+    {
+      "type": "range",
+      "id": "size_subtitle_section",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size subtitle",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_subtitle_section_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size subtitle - movil",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_subtitle_section",
+      "label": "Color subtitle",
+      "default": "#000"
+    },
+    {
+      "type": "url",
+      "id": "url_head",
+      "label": "Url head"
+    },
+    {
+      "type": "text",
+      "id": "url_section",
+      "label": "URL text section",
+      "default": "Voir tous"
+    },
+    {
+      "type": "range",
+      "id": "size_link_section",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size link",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_link_section_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Call to action - movil",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_link_section",
+      "label": "Color link",
+      "default": "#45C391"
+    },
+    {
+      "type": "header",
+      "content": "Styles blocks",
+      "info": "Customize styles from cards blocks"
+    },
+    {
+      "type": "checkbox",
+      "id": "center_call_to",
+      "label": "Center CTA",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background_call_to",
+      "label": "Background color CTA",
+      "default": "#ffffff",
+      "info": "You can see: [RGBA generator](https:\/\/rgbacolorpicker.com)"
+    },
+    {
+      "type": "range",
+      "id": "opacity_call_to",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Opacity color CTA",
+      "default": 70
+    },
+    {
+      "type": "header",
+      "content": "TAG"
+    },
+    {
+      "type": "range",
+      "id": "size_tag",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size tag",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "size_tag_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size tag - movil",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "color_text_tag",
+      "label": "Color text Tag",
+      "default": "#7E7CB3"
+    },
+    {
+      "type": "color",
+      "id": "color_bg_tag",
+      "label": "Color background Tag",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "TITLE"
+    },
+    {
+      "type": "range",
+      "id": "size_title",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size title",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "size_title_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size title - movil",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_title",
+      "label": "Color title",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "SUBTITLE"
+    },
+    {
+      "type": "range",
+      "id": "size_subtitle",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size subtitle",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_subtitle_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size subtitle - movil",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "color_subtitle",
+      "label": "Color subtitle",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "BUTTON"
+    },
+    {
+      "type": "range",
+      "id": "size_btn",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size font button",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_btn_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size font button - movil",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_btn_font",
+      "label": "Color font button",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color_btn_bg",
+      "label": "Color background button",
+      "default": "#45C391"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "single_image",
+      "name": {
+        "en": "Block single background",
+        "fr": "Bloquer l'arrière-plan unique"
+      },
+      "settings": [
+        {
+          "type": "header",
+          "content": {
+            "en": "Card", 
+            "fr": "Carte"
+          },
+          "info": {
+            "en": "This setting to customize row",
+            "fr": "Ce paramètre pour personnaliser la ligne"
+          }
+        },
+        {
+          "type": "range",
+          "id": "height_block",
+          "min": 200,
+          "max": 625,
+          "step": 5,
+          "unit": "px",
+          "label": {
+            "en": "Block height",
+            "fr": "Hauteur de bloc"
+          },
+          "default": 325
+        },
+        {
+          "type": "range",
+          "id": "height_block_movil",
+          "min": 190,
+          "max": 625,
+          "step": 5,
+          "unit": "px",
+          "label": {
+            "en": "Block height movil",
+            "fr": "Hauteur de bloc"
+          },
+          "default": 325
+        },
+        {
+          "type": "image_picker",
+          "id": "image_bg",
+          "label": {
+            "en": "Image background",
+            "fr": "Arrière-plan de l'image"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_tag",
+          "label": "Tag informative",
+          "default": "Économisez 20%"
+        },
+        {
+          "type": "text",
+          "id": "title_block",
+          "label": {
+            "en": "Title",
+            "fr": "Titre"
+          },
+          "default": "Thés & infusiones"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_block",
+          "label": {
+            "en": "Subtitle",
+            "fr": "Subtitre"
+          },
+          "default": "L’infusion des sportifs"
+        },
+        {
+          "type": "url",
+          "id": "url_btn",
+          "label": {
+            "en":"Url", 
+            "fr": "Url"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_btn",
+          "label": {
+            "en": "Text 'call to action'",
+            "fr": "Texte 'Appel à l'action par'"
+          }, 
+          "default": "Shop now|Show",
+          "info": {
+            "en": "For example: Shop now(desktop)|shop(movil)", 
+            "fr": "Par exemple: Achetez maintenant"
+          }
+        }
+      ]
+    },
+    {
+      "type": "single_gif",
+      "name": {
+        "en": "Block gif background",
+        "fr": "Bloquer gif"
+      },
+      "settings": [
+        {
+          "type": "header",
+          "content": {
+            "en": "Card", 
+            "fr": "Carte"
+          },
+          "info": {
+            "en": "This setting to customize row",
+            "fr": "Ce paramètre pour personnaliser la ligne"
+          }
+        },
+        {
+          "type": "range",
+          "id": "height_block",
+          "min": 200,
+          "max": 625,
+          "step": 5,
+          "unit": "px",
+          "label": {
+            "en": "Block height",
+            "fr": "Hauteur de bloc"
+          },
+          "default": 325
+        },
+        {
+          "type": "range",
+          "id": "height_block_movil",
+          "min": 190,
+          "max": 625,
+          "step": 5,
+          "unit": "px",
+          "label": {
+            "en": "Block height movil",
+            "fr": "Hauteur de bloc"
+          },
+          "default": 325
+        },
+        {
+          "type": "text",
+          "id": "image_gif",
+          "label": {
+            "en": "Image background",
+            "fr": "Arrière-plan de l'image"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_tag",
+          "label": "Tag informative",
+          "default": "Économisez 20%"
+        },
+        {
+          "type": "text",
+          "id": "title_block",
+          "label": {
+            "en": "Title",
+            "fr": "Titre"
+          },
+          "default": "Thés & infusiones"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_block",
+          "label": {
+            "en": "Subtitle",
+            "fr": "Subtitre"
+          },
+          "default": "L’infusion des sportifs"
+        },
+        {
+          "type": "url",
+          "id": "url_btn",
+          "label": {
+            "en":"Url", 
+            "fr": "Url"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_btn",
+          "label": {
+            "en": "Text 'call to action'",
+            "fr": "Texte 'Appel à l'action par'"
+          }, 
+          "default": "Shop now|Show",
+          "info": {
+            "en": "For example: Shop now(desktop)|shop(movil)", 
+            "fr": "Par exemple: Achetez maintenant"
+          }
+        }
+      ]
+    },
+    {
+      "type": "two-rows",
+      "name": {
+        "en": "Block - two rows",
+        "fr": "Bloc - deux rangées"
+      },
+      "settings": [
+        {
+          "type": "header",
+          "content": {
+            "en": "First card", 
+            "fr": "Première carte"
+          },
+          "info": {
+            "en": "This setting to customize row top",
+            "fr": "Ce paramètre pour personnaliser le haut de la ligne"
+          }
+        },
+        {
+          "type": "range",
+          "id": "height_block",
+          "min": 200,
+          "max": 625,
+          "step": 5,
+          "unit": "px",
+          "label": {
+            "en": "Block height",
+            "fr": "Hauteur de bloc"
+          },
+          "default": 325
+        },
+        {
+          "type": "range",
+          "id": "height_block_movil",
+          "min": 190,
+          "max": 625,
+          "step": 5,
+          "unit": "px",
+          "label": {
+            "en": "Block height movil",
+            "fr": "Hauteur de bloc"
+          },
+          "default": 395
+        },
+        {
+          "type": "image_picker",
+          "id": "image_bg",
+          "label": {
+            "en": "Image background",
+            "fr": "Arrière-plan de l'image"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_tag",
+          "label": "Tag informative",
+          "default": "Économisez 20%"
+        },
+        {
+          "type": "text",
+          "id": "title_block",
+          "label": {
+            "en": "Title",
+            "fr": "Titre"
+          },
+          "default": "Thés & infusiones"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_block",
+          "label": {
+            "en": "Subtitle",
+            "fr": "Subtitre"
+          },
+          "default": "L’infusion des sportifs"
+        },
+        {
+          "type": "url",
+          "id": "url_btn",
+          "label": {
+            "en":"Url", 
+            "fr": "Url"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_btn",
+          "label": {
+            "en": "Text 'call to action'",
+            "fr": "Texte 'Appel à l'action par'"
+          }, 
+          "default": "Shop now|Show",
+          "info": {
+            "en": "For example: Shop now(desktop)|shop(movil)", 
+            "fr": "Par exemple: Achetez maintenant"
+          }
+        },
+        {
+          "type": "header",
+          "content": {
+            "en": "Second card", 
+            "fr": "Deuxième carte"
+          },
+          "info": {
+            "en": "This setting to customize row top",
+            "fr": "Ce paramètre pour personnaliser le haut de la ligne"
+          }
+        },
+        {
+          "type": "image_picker",
+          "id": "image_bg_2",
+          "label": {
+            "en": "Image background",
+            "fr": "Arrière-plan de l'image"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_tag_2",
+          "label": "Tag informative",
+          "default": "Économisez 20%"
+        },
+        {
+          "type": "text",
+          "id": "title_block_2",
+          "label": {
+            "en": "Title",
+            "fr": "Titre"
+          },
+          "default": "Thés & infusiones"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_block_2",
+          "label": {
+            "en": "Subtitle",
+            "fr": "Subtitre"
+          },
+          "default": "L’infusion des sportifs"
+        },
+        {
+          "type": "url",
+          "id": "url_btn_2",
+          "label": {
+            "en":"Url", 
+            "fr": "Url"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_btn_2",
+          "label": {
+            "en": "Text 'call to action'",
+            "fr": "Texte 'Appel à l'action par'"
+          }, 
+          "default": "Shop now|Show",
+          "info": {
+            "en": "For example: Shop now(desktop)|shop(movil)", 
+            "fr": "Par exemple: Achetez maintenant"
+          }
+        }
+      ]
+    },
+    {
+      "type": "link",
+      "name": {
+        "en": "Blog",
+        "fr": "Blog"
+      },
+      "settings": [
+        {
+          "type": "url",
+          "id": "blog_id",
+          "label": {
+            "en":"Blog URL",
+            "fr": "Blog URL"
+          },
+          "info": {
+            "en": "Link to blog", 
+            "fr": "Liez votre blog"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_blog",
+          "label": "Text in title",
+          "default": "Blog"
+        },
+        {
+          "type": "text",
+          "id": "text_link_blog",
+          "label": "Text in link url",
+          "default": "Voir tous"
+        },
+        {
+          "type": "url",
+          "id": "article_id_one",
+          "label": {
+            "en":"Article 1 URL",
+            "fr": "Article 1 URL"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_article_1",
+          "label": "Text article 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_article_1",
+          "label": "Image article 1"
+        },
+        {
+          "type": "url",
+          "id": "article_id_two",
+          "label": {
+            "en":"Article 2 URL",
+            "fr": "Article 2 URL"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_article_2",
+          "label": "Text article 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_article_2",
+          "label": "Image article 2"
+        },
+        {
+          "type": "url",
+          "id": "article_id_three",
+          "label": {
+            "en":"Article 3 URL",
+            "fr": "Article 3 URL"
+          }
+        },
+        {
+          "type": "text",
+          "id": "text_article_3",
+          "label": "Text article 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "img_article_3",
+          "label": "Image article 3"
+        }
+      ]
+    },
+    {
+      "type": "double_product",
+      "name": "Products",
+      "settings": [
+        {
+          "type": "range",
+          "id": "height_block",
+          "min": 325,
+          "max": 625,
+          "step": 5,
+          "unit": "px",
+          "label": {
+            "en": "Block height",
+            "fr": "Hauteur de bloc"
+          },
+          "default": 325
+        },
+        {
+          "type": "product",
+          "id": "product_id_1",
+          "label": "First product"
+        },
+        {
+          "type": "product",
+          "id": "product_id_2",
+          "label": "Second product"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Custom blocks",
+        "fr": "Blocs personnalisés"
+      },
+      "category": {
+        "en": "Content",
+        "fr": "Contenu"
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,185 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+
+<div class="width-panda">
+  <div class="section-icons-descriptions">
+    <hr class="hr-icons styleLineSection"/>
+    <ul class="scroll-touch icons-product-list">
+      {% for block in section.blocks %}        
+        {% for tag in product.tags %}
+          {% assign _tag = tag | split: '-' %}
+          {% if _tag.size > 1 and _tag.first == 'pi' %}
+            {% if block.settings.feature_tag == tag %}
+              {% render 'icon-product-card' block: block %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}      
+    </ul>
+  </div>
+</div>
+
+<style>
+
+  .styleLineSection {
+    border-top: {{ section.settings.line_section_size }}px solid {{ section.settings.line_section_color }};
+  }
+
+  .styleIconDescription {
+    color: {{ section.settings.icon_description_color }};
+    font-size: {{ section.settings.icon_description_size }}px;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .styleLineSection {
+      border-top: {{ section.settings.line_section_size_movil }}px solid {{ section.settings.line_section_color }};
+    }
+
+    .styleIconDescription {
+      font-size: {{ section.settings.icon_description_size_movil }}px;
+    }
+
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "Product / Icons",
+    "class": "icons-product-section",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Styles section"
+      },
+      {
+        "type": "range",
+        "id": "icon_description_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size description",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "icon_description_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size description - movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "icon_description_color",
+        "label": "Font color description",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "line_section_size",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Line weight",
+        "default": 1
+      },
+      {
+        "type": "range",
+        "id": "line_section_size_movil",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "unit": "px",
+        "label": "Line weight - movil",
+        "default": 1
+      },
+      {
+        "type": "color",
+        "id": "line_section_color",
+        "label": "Line color",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Edit content icons"
+      },
+      {
+        "type": "paragraph",
+        "content": "You can edit content in this page: [Icons in product](\/admin\/pages)."
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icon",
+        "name": "Icon / description",
+        "settings": [
+          {
+            "type": "text",
+            "id": "feature_tag",
+            "label": "Tag Reference"
+          },
+          {
+            "type": "textarea",
+            "id": "feature_text",
+            "label": "Text description"
+          },
+          {
+            "type": "header",
+            "content": {
+              "en": "Icon in block", 
+              "fr": "Icône dans le bloc"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "en": "You can choose the a format you want for the icon of this block",
+              "fr": "Vous pouvez choisir le format que vous souhaitez pour l'icône de ce bloc" 
+            }
+          },
+          {
+            "type": "text",
+            "id": "icon_svg",
+            "label": {
+              "en": "Icon SVG (Recommended*)", 
+              "fr": "Icône SVG (recommandé*)"
+            },
+            "info": {
+              "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+              "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+            }
+          },
+          {
+            "type": "image_picker",
+            "id": "feature_image",
+            "label": {
+              "en": "Icon IMAGE", 
+              "fr": "Icône IMG"
+            }
+          }                  
+        ]       
+      }  
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "head": {
+      "type": "main-collection",
+      "settings": {}
+    },
+    "collection-panda": {
+      "type": "collection-panda",
+      "settings": {
+        "grid": 4,
+        "rows": 4
+      }
+    }
+  },
+  "order": [
+    "head",
+    "collection-panda"
+  ]
+}

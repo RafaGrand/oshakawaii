@@ -1,0 +1,353 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-account paddings-account">
+  <div class="grid-order-layout">
+    
+    <div>
+      
+      <a class="retour-account underline green-panda-txt block-href" href="{{ routes.account_url }}">
+        << {% comment %}ly_i18n_replace_for_[ 'customer.account.return' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.account.return' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844506' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      </a>
+      <h1 class="title-principal padding-default-title">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.title' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844507' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
+
+      {% paginate customer.addresses by 5 %}
+
+        <div data-account="addresses" active="active" id="container-addresses" class="container-account container-addresses sty-addrs-component">
+          
+          <div id="container-addresses-list" class="information-customer-container">
+            <ul class='list-addresses font-12px'>
+              {% for address in customer.addresses %}
+              <li> 
+                <div data-form="{{ address.id }}" class="address-container">
+
+                  <div class='container-details-addresse'>
+                    {% if address == customer.default_address %}
+                      <span class="title-forms">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.default' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.default' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844508' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                    {% endif %}
+
+                    {{ address | format_address }}
+                  </div>
+
+                  <div class="flex-button-addresses">
+      
+                      <button
+                        type="button"
+                        class="edit-addresse button-green-suscription padding-x-button"
+                        data-event='edit'
+                        data-form="{{ address.id }}">
+                        {% comment %}ly_i18n_replace_for_[ 'customer.addresses.edit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.edit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844509' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                      </button>
+      
+                      {% comment %} <button
+                        type="button"
+                        class="btn btn--secondary btn--small address-delete"
+                        data-target="{{ address.url }}"
+                        data-confirm-message="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.delete_confirm' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.delete_confirm' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844510' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                        {% comment %}ly_i18n_replace_for_[ 'customer.addresses.delete' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.delete' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844511' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                      </button> {% endcomment %}
+                    
+                  </div>
+                </div>
+              </li>
+              {% endfor %}
+              <li>
+                <div class="address-container">
+                  <div class="flex-button-addresses relative-position">
+                    <button data-account="new-addresse" class="button-item-nav button-green-suscription padding-x-button" id="new-addresse-button">
+                      {% comment %}ly_i18n_replace_for_[ 'customer.addresses.add_button' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.add_button' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844512' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div id="container-addresses-forms" class="information-customer-container hidden">
+            <ul class="non-list-style">
+              {% for address in customer.addresses %}
+                <li>
+                  <div data-form="{{ address.id }}" class="form-edit-addresse hidden">
+                    {% form 'customer_address', address %}
+                      <span class="title-forms">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.edit_address' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.edit_address' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844513' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                      
+                      <div class="max-width-70-desk">
+                        <div class="grid-form-addresse">
+                          <input
+                            required 
+                            type="text"
+                            class="input-grid width-customadd"
+                            name="address[first_name]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.first_name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.first_name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844514' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            value="{{ form.first_name }}" 
+                            autocomplete="given-name">
+                              
+                          <input
+                            required
+                            type="text"
+                            class="input-grid width-customadd"
+                            name="address[last_name]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.last_name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.last_name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844515' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            value="{{ form.last_name }}" 
+                            autocomplete="family-name">
+            
+                          <input
+                            type="text"
+                            class="input-grid width-customadd" 
+                            name="address[company]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.company' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.company' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844516' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            value="{{ form.company }}" 
+                            autocomplete="organization">
+                          
+                          <input
+                            required
+                            type="text"
+                            class="input-grid width-customadd"
+                            name="address[address1]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.address1' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.address1' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844517' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            value="{{ form.address1 }}" 
+                            autocomplete="street-address address-line1">
+                          
+                          <input
+                            required
+                            type="text"
+                            class="input-grid width-customadd"
+                            name="address[address2]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.address2' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.address2' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844518' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            value="{{ form.address2 }}" 
+                            autocomplete="street-address address-line2">
+
+                          <input
+                            required
+                            type="text"
+                            class="input-grid width-customadd"
+                            name="address[city]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.city' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.city' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844519' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            value="{{ form.city }}" 
+                            autocomplete="address-level2">
+                            
+                          <select
+                            required
+                            class="input-grid"
+                            name="address[country]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.country' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.country' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844520' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            data-default="{{ form.country }}" 
+                            autocomplete="country">{{ all_country_option_tags }}</select>
+                        
+                          {% comment %} <select
+                            required
+                            class="input-grid width-customadd"
+                            name="address[province]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.province' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.province' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844521' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            data-default="{{ form.province }}" 
+                            autocomplete="address-level1"></select> {% endcomment %}
+
+                          <input
+                            required
+                            type="text" 
+                            class="input-grid width-customadd"
+                            name="address[zip]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.zip' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.zip' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844522' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            value="{{ form.zip }}" 
+                            autocapitalize="characters" 
+                            autocomplete="postal-code">
+
+                          <input
+                            required
+                            type="tel" 
+                            class="input-grid width-customadd"
+                            name="address[phone]" 
+                            placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.phone' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.phone' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844523' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                            value="{{ form.phone }}" 
+                            autocomplete="phone">
+                          
+                          <div class="check-addresses">
+                            {{ form.set_as_default_checkbox }}
+                            <label for="address_default_address_new">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.set_default' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.set_default' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844524' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                          </div>
+
+                        </div> 
+                      </div>
+
+                      <div class="buttons-registres">
+                        <input type="submit" class="button-green-suscription padding-x-button" value="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.update' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.update' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844525' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                        <button type="button" class="button-text btn-nostyle underline" onClick="initElement();">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.delete' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.delete' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844511' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</button>
+                        <button type="button" class="button-text btn-nostyle underline edit-addresse" data-event='cancel' data-form="{{ form.id }}">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.cancel' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.cancel' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844526' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</button>
+                      </div>
+
+                    {% endform %}
+
+                    <form class="address-delete-form"
+                        method="post"
+                        action="/account/addresses/{{ address.id }}"
+                    >
+                      <input type="hidden" name="_method" value="delete">
+                    </form>
+
+                    <script>
+                      function initElement() {
+                        document.querySelector(".address-delete-form").submit();
+                      }
+                    </script>
+                    
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+        </div>
+
+        <div data-account="new-addresse" id="containers-new-addresse" class="container-account containers-new-addresse sty-addrs-component">
+          <div class="information-customer-container">
+            <h2 class="subtitle-principal paddings_subtitle">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.add_new' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.add_new' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844527' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
+            {% form 'customer_address', customer.new_address %}
+              <div class="max-width-70-desk">
+                <div class="grid-form-addresse">
+                  <input
+                    required
+                    type="text"
+                    class="input-grid width-customadd"
+                    id="AddressFirstNameNew" 
+                    name="address[first_name]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.first_name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.first_name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844514' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    value="{{ form.first_name }}" 
+                    autocomplete="given-name">
+                      
+                  <input
+                    required
+                    type="text"
+                    class="input-grid width-customadd" 
+                    id="AddressLastNameNew" 
+                    name="address[last_name]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.last_name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.last_name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844515' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    value="{{ form.last_name }}" 
+                    autocomplete="family-name">
+    
+                  <input
+                    type="text"
+                    class="input-grid width-customadd"
+                    id="AddressCompanyNew" 
+                    name="address[company]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.company' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.company' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844516' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    value="{{ form.company }}" 
+                    autocomplete="organization">
+                  
+                  <input
+                    required
+                    type="text"
+                    class="input-grid width-customadd"
+                    id="AddressAddress1New" 
+                    name="address[address1]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.address1' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.address1' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844517' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    value="{{ form.address1 }}" 
+                    autocomplete="street-address address-line1">
+                  
+                  <input
+                    required
+                    type="text"
+                    class="input-grid width-customadd"
+                    id="AddressAddress2New" 
+                    name="address[address2]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.address2' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.address2' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844518' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    value="{{ form.address2 }}" 
+                    autocomplete="street-address address-line2">
+
+                  <input
+                    required 
+                    type="text"
+                    class="input-grid width-customadd"
+                    id="AddressCityNew" 
+                    name="address[city]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.city' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.city' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844519' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    value="{{ form.city }}" 
+                    autocomplete="address-level2">
+                    
+                  <select
+                    required
+                    id="AddressCountryNew" 
+                    class="input-grid"
+                    name="address[country]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.country' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.country' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844520' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    data-default="{{ form.country }}" 
+                    autocomplete="country">{{ all_country_option_tags }}</select>
+                
+                  {% comment %} <select 
+                    id="AddressProvinceNew" 
+                    class="input-grid width-customadd"
+                    name="address[province]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.province' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.province' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844521' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    data-default="{{ form.province }}" 
+                    autocomplete="address-level1"></select> {% endcomment %}
+
+                  <input
+                    required
+                    type="text" 
+                    class="input-grid width-customadd"
+                    id="AddressZipNew" 
+                    name="address[zip]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.zip' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.zip' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844522' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    value="{{ form.zip }}" 
+                    autocapitalize="characters" 
+                    autocomplete="postal-code">
+
+                  <input
+                    required
+                    type="tel" 
+                    class="input-grid width-customadd"
+                    id="AddressPhoneNew" 
+                    name="address[phone]" 
+                    placeholder="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.phone' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.phone' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844523' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+                    value="{{ form.phone }}" 
+                    autocomplete="phone">
+                  
+                  <div class="check-addresses">
+                    {{ form.set_as_default_checkbox }}
+                    <label for="address_default_address_new">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.set_default' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.set_default' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844524' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                  </div>
+
+                </div> 
+              </div>
+
+              <div class="buttons-registres">
+                <input type="submit" class="button-green-suscription padding-x-button" value="{% comment %}ly_i18n_replace_for_[ 'customer.addresses.add' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.add' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844528' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                <button data-account="addresses" type="button" active="active" class="button-item-nav button-text btn-nostyle underline" id="addresses-button">
+                  {% comment %}ly_i18n_replace_for_[ 'customer.addresses.cancel' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.cancel' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844526' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                </button>
+              </div>
+
+            {% endform %}
+          </div>
+          <hr>
+        </div>
+
+        <div class="margin-pagination-account">
+          {%- if paginate.pages > 1 -%}
+            {% include 'pagination-panda', paginate: paginate %}
+          {%- endif -%}
+        </div>
+      {% endpaginate %}
+    </div>
+
+    <div>
+    </div>
+    
+  </div>
+</div>
+
+
+  

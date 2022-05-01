@@ -1,0 +1,294 @@
+/* Account without recharge */
+
+.width-account {margin: 0 auto; max-width: 1164px;}
+.paddings-account {padding-top: 76px; padding-bottom: 200px;}
+.hidden_account {display: none;}
+.sty-acc-component {display: none;}
+.sty-acc-component[active="active"] {display: initial;}
+
+.grid-account {display: grid; grid-template-columns: 84fr 149fr;}
+.margin-pagination-account {margin-top: 20px;}
+
+.padding-title-account {margin-bottom: 40px;}
+.container-nav-items {width: 80%;}
+.button-style-nav {display: block; font-size: 15px; margin-bottom: 18px; padding: 0; color: var(--black-panda)}
+.button-style-nav[active="active"] {font-weight: 600;}
+.email-inside {text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+
+.items-navigation-account {list-style: none;}
+
+.customer-email {font-size: 22px; margin-bottom: 38px; display: block;}
+
+.paddings_subtitle {margin-bottom: 18px;}
+.orders-title {margin-bottom: 18px;}
+
+.paddings_customer {margin-bottom: 34px;}
+
+.information-customer-container {background: #F2F1F5; border-radius: 7px; padding: 15px 25px}
+
+.padding-btn-10 {padding: 10px;}
+.btn-addresses {width: 211px; text-align: center; margin-left: 65px; margin-top: 72px;}
+
+/* Adresses account */
+.list-addresses {list-style: none; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; column-gap: 20px; row-gap: 20px; grid-column-gap: 20px; grid-row-gap: 20px;}
+.container-details-addresse {width:100%;margin-bottom: 30px;}
+
+.sty-addrs-component {display: none;}
+.sty-addrs-component[active="active"] {display: initial;}
+
+.relative-addresses {position: relative;}
+.address-container {display: flex; flex-wrap: wrap; height: 100%; margin-bottom: 0;}
+.flex-button-addresses {margin-top: auto;}
+.form-absolute-container {position: absolute; top: 0; left: 0; width: 100%; height: 100%; list-style: none;}
+.check-addresses {margin: auto 0;}
+
+.grid-form-addresse {display: grid; grid-template-columns: 1fr 1fr; column-gap: 15px; row-gap: 10px; grid-column-gap: 15px; grid-row-gap: 10px;}
+.input-grid {width: 100%; padding: 7px 15px; border-radius: 4px; border-style: none; border: 1px solid #D1D1D2; background-color: var(--white-panda);}
+.input-complete-row {grid-column: 1 / span 2;}
+.input-nostyle {border-style: none;background: transparent;}
+.width-country-input {width: 48%;border-style: none;padding: 0 25px 0 0; background-color: transparent;}
+.max-width-70-desk {width: 70%;}
+.width-customadd {width: calc(100% - 30px);}
+.title-forms {margin-bottom: 20px; display: block; font-weight: 600;}
+
+.submit-forms {font-weight: 400;
+  font-size: 0.9375rem;
+  background: var(--green-panda);
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #fff;
+  border: 1px solid transparent;}
+
+.buttons-registres {margin-top: 25px;}
+.button-text {padding: 0; margin: 0; font-size: 12px; margin-left: 20px;}
+
+
+/* orders grid - general */
+
+.retour-account {margin-bottom: 15px; font-size: 15px;}
+.grid-table-orders {display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 10px; grid-column-gap: 10px; padding: 20px 0; border-bottom: 1px solid var(--black-panda); align-items: center;}
+.grid-table-orders:first-of-type {padding-top: 0;}
+
+.grid-table-orders div:nth-of-type(4) {margin: 0 auto;}
+.grid-table-orders div:last-of-type {margin-left: auto;}
+.order-title {font-size: 17px;}
+
+.order-container-detail {margin-bottom: 10px;}
+/* orders grid - page */
+.grid-order-layout {display: grid; grid-template-columns: 149fr 84fr;}
+.grid-order-detail {display: grid; grid-template-columns: 2fr 2fr repeat(3, 1fr); column-gap: 50px; grid-column-gap: 50px; padding: 20px 0; border-bottom: 1px solid var(--black-panda);}
+
+.grid-order-detail div:last-of-type {margin-left: auto;}
+.grid-order-detail div:nth-of-type(4) {margin: 0 auto;}
+
+.btn-pdf {padding: 10px;}
+
+.grid-head-order {display: grid; grid-template-columns: 2fr repeat(2, 1fr) 2fr; column-gap: 10px; grid-column-gap: 10px; align-items: center;}
+
+.container-total-order {display: flex;  justify-content: space-between;}
+.container-total-order div:first-of-type {margin-right: 50px;}
+
+.grid-subtotal-order {display: grid; column-gap: 16px; grid-column-gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--black-panda);}
+.padding-table {padding-top: 20px;}
+.grid-order-detail a {color: var(--green-panda); text-decoration: underline;}
+
+/* ========= Account RECHARGE ========= */
+/* ---- generals account ---- */
+.submenu-recharge {display:none; padding-left: 35px; margin-bottom: 18px;}
+.submenu-recharge li {padding: 5px 10px; transition: .5s ease;}
+.submenu-recharge li:hover {background-color: #F2F1F5;}
+.section-with-line {padding-bottom: 41px; margin-bottom: 25px; border-bottom: 1px solid #000000;}
+.margin-subtitle-r-account {margin: 15px 0;}
+.item-haschild[active="true"] {font-weight: 600;}
+.item-haschild[active="true"]~.submenu-recharge {display: block;}
+.grid-submenu-movil {display: none;}
+/* ---- suscriptions active ---- */
+.next-charge-title {margin: 15px 0;}
+.next-charge-title span {font-size: 16px;}
+.flex-card-suscription {display: flex; padding-top: 10px;}
+.grid-details-suscription {display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto auto; column-gap: 73px; row-gap: 18px; grid-column-gap: 73px; grid-row-gap: 18px; font-size: 12px;}
+.image-suscription {max-width: 96px; margin-right: 15px;}
+
+.btn-update-suscription {display: none; background: none; border-style: none; padding: 0; text-decoration: underline;}
+.input-suscriptions {margin: 0 5px;border-radius: 4px; font-weight: 600; padding: 3px 20px 3px 3px; border-style: none;}
+.padding-right-30 {padding-right: 30px;}
+.background-color-w {background-color: #fff;}
+
+
+.flex-form input[type="date"],
+.rc_form input[type="date"] {position: relative;max-width: 111px;}
+.flex-form input[type="date"]::-webkit-calendar-picker-indicator,
+.rc_form input[type="date"]::-webkit-calendar-picker-indicator {background: none;width: 20%;}
+.select_arrow-s[name="quantity"] {background-position: 85% 55%;}
+.flex-form input[type="date"]::-webkit-datetime-edit-fields-wrapper {top: 50%; transform: translateY(-50%); position: absolute;}
+
+/* BUTTON GENERAL */
+.button-green-suscription {min-width: 70px; font-size:12px; transition: .1s ease; border-radius: 2px; font-weight: 600;background-color: var(--green-panda); color: #FFF; text-align: center; cursor: pointer; border-style: none;}
+.button-green-suscription:active {transform: translateY(2px);}
+
+
+
+.padding-x-button {padding: 3px 10px;}
+.padding-l-button {padding: 6px 12px;}
+.flex-form {display: flex;flex-wrap: wrap;align-items: center;}
+/* ---- suscriptions inactive ---- */
+.gap-35 {column-gap: 35px; grid-column-gap: 35px}
+.column-2 {grid-template-columns: auto auto;}
+.container-suscription-cancelled {margin-top: 30px;display: none;row-gap: 20px; grid-row-gap: 20px;}
+.flex-suscription-cancelled {display: grid; grid-template-columns: 2fr 1fr; column-gap: 80px; grid-column-gap: 80px;}
+.flex-suscription-cancelled:nth-child(2) {align-self: center;}
+.button-suscription-inactive[active="true"]~div.container-suscription-cancelled {display: grid;}
+/* ---- code discount ---- */
+.button-discount-suscription{width: 100%; text-align: left;}
+.container-form-discount{display: none;}
+.button-discount-suscription[active="true"]~.container-form-discount {display: block;}
+.grid-discount-suscription {display: grid;grid-template-columns: auto auto; column-gap: 35px; grid-column-gap: 35px;}
+
+.message-code-portal {display:none;font-size: 12px;margin-top: 15px;}
+
+.grid--form-suscription {display: grid; grid-template-columns: 3fr 1fr;column-gap: 10px; grid-column-gap: 10px;}
+.btn--form-suscription {display: flex;align-items: center;justify-content: center;border-radius: 4px;border-style: none;background-color: var(--green-panda);color: #FFF;font-size: 12px;}
+.btn--form-suscription:disabled {background-color: #D1D1D2;}
+/* ---- product suscription add ---- */
+.grid-search-suscription {display: grid;column-gap: 20px;grid-column-gap: 20px;grid-template-columns: 1fr 1fr;padding-bottom: 12px;margin-bottom: 25px;border-bottom: 1px solid #000;}
+.search-product-suscription {display: grid;grid-template-columns: 2fr 1fr;}
+/* ---- card product ---- */
+.details-product-suscription {width: 100%;text-align: center;padding-top: 5px;padding-bottom: 5px;font-size: 12px;}
+.container-card-product-button {width: 100%;margin-top: 10px;}
+.btn-card-suscription {display: block;padding: 5px;border-radius: 4px;text-align: center;border: 1px solid #000;font-size: 12px;color: #000;}
+.price-final-suscription {font-weight: 600;color: var(--green-panda);}
+
+/* ---- swap product ---- */
+.title-product-act {padding: 15px 0 20px 0;}
+.grid-search-swap {display: grid;column-gap: 20px; grid-column-gap: 20px; grid-template-columns: 1fr 1fr;margin-bottom: 25px;}
+/* ---- subscription new ---- */
+.grid-suscription-new {display: grid;font-size: 12px;grid-template-columns: 1fr;row-gap: 18px; grid-row-gap: 18px;}
+.padding-address-input {padding: 3px 30px 3px 10px; background-position-x: 98%;}
+/* ---- MODAL Retention ---- */
+.btn-close-x {position: absolute;right: -33px;top: -30px;width: 13px;height: 13px;}
+.modal-delete-suscription {display: none;padding: 43px 48px 50px 48px;max-width: 447px; background-color: #FFF;width: 43vw; box-shadow: 0 5px 10px rgb(0 0 0 / 15%);}
+.modal-delete-suscription[open="true"] {display: block;}
+.padding-select-retention {width: 100%;padding: 7px 18px; border-radius: 4px; border: 1px solid #D1D1D2;}
+.title-retentions-modal {font-size: 20px; margin-bottom: 15px;}
+.retetions-container-modal {margin-top: 12px; padding: 17px 28px;border-radius: 4px; background-color: #F2F1F5;}
+
+.retetions-container-modal hr {background-color: transparent;border-style: none;width: 33px;margin: 15px auto;border-bottom: 1px solid #D1D1D2;}
+
+.form-cancellation-simple {text-align: center;}
+
+.form-retention {display: grid; row-gap: 15px; grid-row-gap: 15px;}
+.form-retention input,
+.form-retention textarea,
+.form-retention button {width: 100%;}
+
+.form-retention button[type="submit"] {border-style: none; padding: 5px; border-radius: 2px; background-color: var(--green-panda); color: #FFF; font-weight: 600;} 
+.form-cancellation-simple button[type="submit"], button[type="submit"].btn-delete-now {text-decoration: underline;background-color: transparent;border-style: none; color: #000;}
+
+.button-modal-close {width: 100%; margin-top: 36px;}
+
+/* ---- SCHUDELE ---- */
+.grid-schedule-subs {display: grid;grid-template-columns: 1fr 2fr 1fr;margin-bottom: 16px;}
+.start-3-grid {grid-column-start: 3;}
+.margin-top-comp {margin-top: 15px;}
+.margin-top-address {margin-top: 7px;}
+
+/* ---- PAYMENTS ---- */
+.margin-12-20 {margin-top: 12px;}
+.grid-paiment-in {display: grid; row-gap: 16px; grid-row-gap: 16px;}
+.payment-grid-layout {display: grid; row-gap: 20px; grid-row-gap: 20px;}
+#customer-card-form {width: 100%;height: 100%;}
+.container-form-payments {height: 250px;min-width: 383px;width: fit-content;margin-top: 20px;}
+.button-null-payment {font-size: 12px;}
+
+
+/* ---- ADDRESSES ---- */
+
+@media screen and (max-width: 1440px) {
+  .width-account {padding-left: 16px; padding-right: 16px; }
+}
+
+@media screen and (max-width: 800px) {
+  .width-account {max-width: 100%;}
+  .hidden_account {display: initial;}
+  .sty-acc-component {display: none;}
+  .sty-acc-component[active="active"] {display: initial;}
+  .paddings-account {padding-top: 23px; padding-bottom: 100px;}
+  .grid-account {display: grid; grid-template-columns: 100%;}
+  .grid-form-addresse {grid-template-columns: 100%;}
+
+  .input-complete-row {grid-column: 1;}
+  .width-country-input {width: 50%;}
+  .max-width-70-desk {width: 100%;}
+
+  .list-addresses {grid-template-columns: 1fr; row-gap: 30px; grid-row-gap: 30px;}
+  .address-container {display: block;}
+
+  .container-nav-items {width: 100%; margin-bottom: 50px;}
+  .button-style-nav {margin-bottom: 0;}
+  .customer-email {display: none;}
+  .items-navigation-account {display: flex;flex-direction: column;align-items:flex-start;flex-wrap: wrap;}
+
+
+  .logout-fixed {position: fixed; width: 100%; left: 0; bottom: 0; display: flex; justify-content: center;align-items: center;padding: 10px 0;background: #FFF;}
+  
+  .grid-table-orders {column-gap: 10px; grid-column-gap: 10px; font-size: 12px;}
+
+  .btn-addresses {width: auto; margin-left: auto; margin-right: auto; margin-top: 40px;}
+
+  .grid-order-layout {grid-template-columns: 100%;}
+  .grid-head-order {grid-template-columns: 1fr 1fr; row-gap: 23px; grid-row-gap: 23px; align-items: flex-start;}
+  .grid-order-detail {column-gap: 10px; grid-column-gap: 10px; font-size: 12px;}
+
+  .grid-head-order div:nth-of-type(4) {grid-column-start: 2; grid-row-start: 1;}
+  .btn-pdf {padding: 2px 8px;}
+
+  /* ========= Account RECHARGE ========= */
+  /* menu */
+  .grid-submenu-movil {position: relative;height: 55px;overflow: hidden;padding: 18px 24px;border-radius: 4px;margin-bottom: 18px;display: grid;list-style: none;row-gap: 19px; grid-row-gap: 19px; background-color: #F2F1F5;}
+  .grid-submenu-movil a {color: #000;}
+  .grid-submenu-movil::before {position: absolute; top: 20px; right: 20px;}
+
+  .grid-submenu-movil[active="true"] {height: auto;}
+  .grid-submenu-movil[active="true"]::before {transform: rotateX(180deg);}
+
+  .child_1_first > li:nth-child(1),
+  .child_2_first > li:nth-child(2),
+  .child_3_first > li:nth-child(3),
+  .child_4_first > li:nth-child(4) {grid-row-start: 1; font-weight: 600; pointer-events: none;}
+
+  .item-haschild[active="true"]~.submenu-recharge {display: none;}
+  .paddings_subtitle, 
+  .orders-title {margin-bottom: 50px; margin-top: 50px;}
+  
+  .grid-details-suscription {grid-template-columns: 1fr}
+  .information-customer-container {padding: 20px 23px;}
+  .reset-bg-movil {background-color: transparent;padding: 0;}
+  .image-suscription {max-width: 60px; margin-right: 10px;}
+  .flex-card-suscription {padding-top: 0px;}
+  .item-suscription-active {padding-bottom: 20px; border-bottom: 1px solid #000000;}
+  .buttons-suscriptions-div {grid-row-start: 3;}
+  .container-quantity-suscription {grid-row-start: 2;}
+  .section-with-line {padding-bottom: 0; border: none;}
+  .container-add-suscription {display: flex; justify-content: center;}
+  .padding-l-button {padding: 3px 10px;}
+  .button-suscription-inactive {width: 100%;}
+  .container-suscription-cancelled {margin-top: 20px;font-size: 12px;}
+  .flex-suscription-cancelled {grid-template-columns: 1fr;row-gap: 11px; grid-row-gap: 11px;}
+  .grid-discount-suscription {grid-template-columns: 1fr; row-gap: 25px; grid-row-gap: 25px;}
+  .button-discount-suscription{text-align: center;}
+  .container-movil-20 {margin-top: 20px;margin-bottom: 20px;}
+  /* ---- product suscription add ---- */
+  .grid-search-suscription {grid-template-columns: 1fr;padding-bottom: 0;margin-bottom: 20px;row-gap: 10px; grid-row-gap: 10px; border-bottom: none;}
+  .grid-search-swap {grid-template-columns: 1fr;row-gap: 10px; grid-row-gap: 10px; margin-bottom: 20px;}
+  /* ---- MODAL Retention ---- */
+  .modal-delete-suscription {width: 90vw;}
+  /* ---- SCHUDELE ---- */
+  .grid-schedule-subs {grid-template-columns: 1fr 1fr; row-gap: 16px; grid-row-gap: 16px;}
+  .start-2-grid-movil {grid-column-start: 2;}
+  .start-1-grid-movil {grid-column-start: 1;}
+  .center-movil {text-align: center;}
+  .quantity-schudule {grid-row-start: 1; grid-column-start: 2;}
+  .padding-right-30 {padding-right: 30px;}
+  /* ---- PAYMENTS ---- */
+  .container-form-payments {min-width: auto;width: 100%;}
+}

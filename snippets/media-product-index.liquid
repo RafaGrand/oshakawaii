@@ -1,0 +1,50 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="container-media-show">
+
+  <div scroll-id="slider-media" class="container-scroll flex-container-media">
+    
+    <div class="slider-media">
+      {%- for media in product.media -%}
+        {%- assign img_link = media -%}
+
+        {% render 'media-img-video' 
+          media: media,
+          img_link: img_link
+        %}
+        
+      {%- endfor -%}
+    </div>
+
+    <div class="links-images-cont">
+      {%- for media in product.media -%}
+        
+        <button scroll-id="slider-media"
+              data-index="{{ forloop.index0 }}"
+              class="button-media contianer-link-imgs background-clases lazyload js {% if media.media_type == 'external_video' or media.media_type == 'video' %}video-icon{% endif %}"
+              data-bg="{{ media.preview_image | img_url: '40x' }}"
+              data-bgset="{% render 'bgset', image: media.preview_image %}"
+              data-sizes="auto"
+              data-parent-fit="cover"
+              data-image-loading-animation></button>
+       
+      {%- endfor -%}
+    </div>
+  </div>
+
+</div>

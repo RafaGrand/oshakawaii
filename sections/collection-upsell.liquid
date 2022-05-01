@@ -1,0 +1,110 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  assign limit = section.settings.grid | times: section.settings.rows
+  case section.settings.grid
+    when 2
+      assign grid_item_width = 'grid-collection-50'
+    when 3
+      assign grid_item_width = 'grid-collection-33'
+    when 4
+      assign grid_item_width = 'grid-collection-25'
+  endcase
+%}
+
+{% paginate collection.products by limit %}
+
+<div class="width-panda">
+  <header class="collection-title-filter-upsell">
+    <h1 class="collection-title">{% comment %}ly_code_replace_for_[ collection.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with collection render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+    <div class="collection-description-sub">{% comment %}ly_code_replace_for_[ collection.description ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-description' with collection render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
+  </header>
+
+  <div class="list-collection-upsell" id="Collection">
+
+    <ul class="grid-collection {{ grid_item_width }}">
+      {% for product in collection.products %}
+        <li class="item-collection-product">
+          {% render 'template-card'
+            product: product,  
+            bg_class : "bg_card-upsell",
+            image_class : "height-card-image",
+            tag_class : "tag-objective-upsell",
+            name_class : "name_product-upsell",
+            description_class : "description_product-upsell",
+            price_class : "price_product-upsell",
+            discount_class: "price_compare-upsell",
+            button_class : "btn-add-card-upsell",
+            choices_class : "btn-choices-pack",
+            padding_class : "padding-card",
+            form_class : "form-add-product",
+            disabled_link: true
+          %}
+        </li>
+      {% endfor %}
+    </ul>
+    
+
+    {% if is_empty_collection %}
+      <div class="grid__item small--text-center">
+        <p class="text-center">{% comment %}ly_i18n_replace_for_[ 'collections.general.no_matches' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.no_matches' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844409' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+      </div>
+    {% endif %}
+
+    {%- if paginate.pages > 1 -%}
+      {% render 'pagination-panda', paginate: paginate %}
+    {%- endif -%}
+  </div>
+</div>
+
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": {
+    "en": "Collection Upsell",
+    "fr": "Collection Upsell"
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "grid",
+      "label": {
+        "en": "Products per row (grid only)",
+        "fr": "Produits par rangée (grille uniquement)"
+      },
+      "default": 4,
+      "min": 2,
+      "max": 4,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": {
+        "en": "Rows per page (grid only)",
+        "fr": "Rangées par page (grille uniquement)"
+      },
+      "default": 2,
+      "min": 2,
+      "max": 8,
+      "step": 1
+    }
+  ]
+}
+{% endschema %}

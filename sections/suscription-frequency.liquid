@@ -1,0 +1,188 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  case section.blocks.size
+    when 1
+      assign block_grid = 'grid-1fr'
+    when 2
+      assign block_grid = 'grid-2fr'
+    when 3
+      assign block_grid = 'grid-3fr'
+    when 4
+      assign block_grid = 'grid-4fr'
+  endcase
+%}
+
+<div class="width-panda margin-frequency-section">
+  
+  <div class="header-panda-frequency text-centerr">
+
+    {% render 'title-step-suscription'
+      section: section,
+      title_frequency: section.settings.title_frequency,
+      subtitle_frequency: section.settings.subtitle_frequency
+    %}
+    
+  </div>
+
+  <div class="grid-frequency {{ block_grid }}">
+    {% for block in section.blocks %}
+      
+      {% render 'frequency-selector'
+        forloop: forloop,
+        block: block,
+        frequency_number: block.settings.frequency_number,
+        text_icon_frequency: block.settings.icon_text_frequency,
+        text_frequency: block.settings.frequency_text,
+        frequency_unit: section.settings.frequency_unit
+      %}
+
+    {% endfor %}
+  </div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Frequency suscriptions",
+    "class": "section-frequency-suscription",
+    "max_blocks": 4,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_frequency",
+        "label": "Heading",
+        "default": "À quelle fréquence souhaitez-vous être livré(e) ?"
+      },
+      {
+        "type": "text",
+        "id": "subtitle_frequency",
+        "label": "Subtitle",
+        "default": "Changez à tous moment"
+      },
+      {
+        "type": "select",
+        "id": "frequency_unit",
+        "label": "Unit frequency",
+        "options": [
+          {"value": "day", "label": "Days"},
+          {"value": "week", "label": "Weeks"},
+          {"value": "month", "label": "Months"}
+        ],
+        "default": "month",
+        "info": "This frecuency used in the backend requests to Recharge"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Icon in section", 
+          "fr": "Icône dans le section"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": {
+          "en": "You can choose the a format you want for the icon of this section",
+          "fr": "Vous pouvez choisir le format que vous souhaitez pour l'icône de ce bloc" 
+        }
+      },
+      {
+        "type": "text",
+        "id": "text_icon",
+        "label": {
+          "en": "Icon SVG (Recommended*)", 
+          "fr": "Icône SVG (recommandé*)"
+        },
+        "info": {
+          "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+          "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_image",
+        "label": {
+          "en": "Icon IMAGE", 
+          "fr": "Icône IMG"
+        }
+      }
+    ],
+    "blocks":[
+      {
+        "type": "frequency",
+        "name": "Frequency selector",
+        "settings":[
+          {
+            "type": "range",
+            "id": "frequency_number",
+            "min": 1,
+            "max": 12,
+            "step": 1,
+            "unit": "U",
+            "label": "Number frequency",
+            "default": 1
+          },
+          {
+            "type": "richtext",
+            "id": "frequency_text",
+            "label": "Frequency text",
+            "default": "<p>Livraison tous les <strong>2 Mois</strong></p>",
+            "info": "Use tag strong to line break"
+          },
+          {
+            "type": "header",
+            "content": "Icon in block"
+          },
+          {
+            "type": "paragraph",
+            "content": "You can choose the a format you want for the icon of this block"
+          },
+          {
+            "type": "text",
+            "id": "text_icon",
+            "label": {
+              "en": "Icon SVG (Recommended*)", 
+              "fr": "Icône SVG (recommandé*)"
+            },
+            "info": {
+              "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+              "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+            }
+          },
+          {
+            "type": "image_picker",
+            "id": "icon_image",
+            "label": {
+              "en": "Icon IMAGE", 
+              "fr": "Icône IMG"
+            }
+          },
+          {
+            "type": "header",
+            "content": "Text icon"
+          },
+          {
+            "type": "text",
+            "id": "icon_text_frequency",
+            "label": "Text in icon"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

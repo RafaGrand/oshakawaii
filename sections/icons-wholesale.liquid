@@ -1,0 +1,72 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda">
+  <div class="padding-icon-whole">
+    <h2 class="title-principal text-centerr">{{ section.settings.title_icons }}</h2>
+    <div class="grid-icons-wholesale">
+      {% for block in section.blocks %}
+        <div class="text-centerr">
+          <div class="container-icon-margin">
+            {% capture img_id %}icon-img-{{ block.id }}{% endcapture %}
+            {% capture alt %}image icon Panda Tea {{ block.settings.image_icons_whole }}{% endcapture %}
+            {% assign img_url = block.settings.image_icons_whole | append: '.svg' | file_url %}
+              {% render 'img-upload' img_id: img_id, class: "image-icons-section", img_url: img_url, alt: alt %}
+          </div>
+          <div class="content-icon-block">
+            {{ block.settings.content_icons }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "icons_wholesale",
+    "class": "icons-wholesale",
+    "settings": [
+      {
+      "type": "text",
+      "id": "title_icons",
+      "label": "Title icons (H2)",
+      "default": "Panda Tea c’est :"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "icons",
+        "name": "icons_wholesale",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "content_icons",
+            "label": "Content icons wholesale",
+            "default": "<p>Vous souhaitez proposer des thés & infusions parfumé bio et bien-être à vos clients sur votre point de vente ?<br> Contactez-nous ! Nous proposons des offres adaptées à toute les demandes : café, bar, restaurant, salon de coiffure, spa, complexe sportif, pharmacie.</p>"
+          },
+          {
+            "type": "text",
+            "id": "image_icons_whole",
+            "label": "Image in icons",
+            "default": "star-icon"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

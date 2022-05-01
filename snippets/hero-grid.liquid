@@ -1,0 +1,41 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="{{ paddings_grid }} grid-hero-whole">
+    
+  <div class="text-hero-whole">
+    <h1 class="{{ title_size }}">{{ title }}</h1>
+    <div class="content-hero {{ margin_inside }}">
+      {{ content }}
+    </div>
+    <div class="callTo-hero-whole desktop-call-hero margin-top-50">
+      {% render 'btn-link-panda' url: url, call_to: call, class: "style-btn-hero btn-panda" %}  
+    </div>
+  </div>
+  
+  <div>
+    <div class="hero-image-container">
+      {% capture img_id %}hero-img-{{ section.id }}{% endcapture %}
+      {% assign img_url = img_url | img_url: '444x' %}
+      {% render 'img-upload' img_id: img_id, class: "image-hero-section", img_url: img_url, alt: "image hero Panda Tea" %}
+    </div>
+    <div class="callTo-hero-whole movil-call-hero {{ display_call }}">
+      {% render 'btn-link-panda' url: url, call_to: call, class: "style-btn-hero btn-panda" %}    
+    </div>
+  </div>
+
+</div>

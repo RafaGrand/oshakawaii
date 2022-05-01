@@ -1,0 +1,48 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="blog-container-custom">
+  <div class="head-flex-blog">
+    <h2 class="style-title-blog">{{ block.settings.text_blog }}</h2>
+    <a class="style-url-blog" href="{{ block.settings.blog_id }}" title="{{ block.settings.text_link_blog }}">{{ block.settings.text_link_blog }}</a>
+  </div>
+  <div class="array-container-blog">
+    {% if block.settings.article_id_one != blank %}
+      {% render 'article-custom-frag' 
+        url: block.settings.article_id_one, 
+        article_img: block.settings.img_article_1, 
+        article_title: block.settings.text_article_1
+      %}
+    {% endif %}
+    
+    {% if block.settings.article_id_two != blank %}
+      {% render 'article-custom-frag' 
+        url: block.settings.article_id_two, 
+        article_img: block.settings.img_article_2, 
+        article_title: block.settings.text_article_2
+      %}
+    {% endif %}
+
+    {% if block.settings.article_id_three != blank %}
+      {% render 'article-custom-frag' 
+        url: block.settings.article_id_three, 
+        article_img: block.settings.img_article_3, 
+        article_title: block.settings.text_article_3
+      %}
+    {% endif %}
+  </div>
+</div>

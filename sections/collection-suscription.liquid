@@ -1,0 +1,182 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda">
+  
+  <div class="header-suscription-collection text-centerr">
+    
+    {% render 'title-step-suscription'
+      section: section,
+      title_frequency: section.settings.title_collection,
+      subtitle_frequency: section.settings.subtitle_collection
+    %}
+
+  </div>
+
+  <ul id="array-collection" class="grid-collection grid-collection-25">
+    {% for product in collection.products %}
+      {% render 'pack-card' 
+        product: product, 
+        discount_subs: settings.discount_number,
+        isSuscription: true 
+      %}
+    {% endfor %}
+  </ul>
+
+  <div class="resume-styles-suscription" id="resume-container">
+
+    <div class="container-resume-suscription text-centerr">
+      {% if section.settings.resume_title != blank %}
+        <span class="font-bold title-resume-funnel">{{ section.settings.resume_title }}</span>
+      {% endif %}
+      <div class="message-resume-container" id="message-resume-suscription">
+        <div class="text-dynamic-suscription text-decoration-message-suscription">
+          <div class="spinner-loader"></div>
+        </div>
+        {% if settings.discount_number != 0 %}
+          <div class="text-decoration-message-suscription test">
+            {{ section.settings.discount_text }}
+          </div>
+        {% endif %}
+      </div>
+      <button class="button-resume btn-complete btn-animation btn-panda bold-font uppercase">
+        <span class="text-resume-button"> 
+          {{ section.settings.resume_button }}
+        </span>
+      </button>
+    </div>
+
+  </div>
+
+</div>
+
+<div id="fixed-button-suscription" class="fixed-suscription">
+  <button class="button-resume button-resume-sticky btn-complete bold-font">
+    <div class="flex_box justify_center">
+      <div class="text-dynamic-suscription">
+        <div class="spinner-loader"></div>
+      </div>
+    </div>
+    <div class="text-resume-button uppercase">
+      {{ section.settings.resume_button }}
+    </div>
+  </button>
+</div>
+
+<script>
+  var infoSuscription = {
+    product: "{{ settings.unit_product }}",
+    frequency_unit: "{{ settings.frequency_unit }}",
+    assambly1: "{{ settings.assembly_1 }}",
+    assambly2: "{{ settings.assembly_2 }}"
+  }
+</script>
+
+{% schema %}
+  {
+    "name": "Collections suscriptions",
+    "class": "section-collection-suscription",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "title_collection",
+        "label": "Heading",
+        "default": "<p>Choisissez vos thés préférés :<br>1 panda = 28 sachets</p>"
+      },
+      {
+        "type": "text",
+        "id": "subtitle_collection",
+        "label": "Subtitle",
+        "default": "Si vous le souhaitez vous pouvez changer de mélange avant chaque envois en vous connectant sur mon compte"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Icon in section", 
+          "fr": "Icône dans le section"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": {
+          "en": "You can choose the a format you want for the icon of this section",
+          "fr": "Vous pouvez choisir le format que vous souhaitez pour l'icône de ce bloc" 
+        }
+      },
+      {
+        "type": "text",
+        "id": "text_icon",
+        "label": {
+          "en": "Icon SVG (Recommended*)", 
+          "fr": "Icône SVG (recommandé*)"
+        },
+        "info": {
+          "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+          "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "icon_image",
+        "label": {
+          "en": "Icon IMAGE", 
+          "fr": "Icône IMG"
+        }
+      },
+      {
+        "type": "header",
+        "content": "Resume suscription"
+      },
+      {
+        "type": "text",
+        "id": "resume_title",
+        "label": "Resume title",
+        "default": "Résumé de mon choix :"
+      },
+      {
+        "type": "text",
+        "id": "resume_message",
+        "label": "Resume messages",
+        "default": "Panda Tea tous les|mois",
+        "info": "Use: Panda Tea tous les|mois. To render: 1 Panda Tea tous les 3 mois"
+      },
+      {
+        "type": "text",
+        "id": "resume_button",
+        "label": "Resume button",
+        "default": "VOIR MON PANIER"
+      },
+      {
+        "type": "text",
+        "id": "resume_button_empty",
+        "label": "Resume button - empty cart",
+        "default": "Ajouter au pack"
+      },
+      {
+        "type": "header",
+        "content": "Discounts"
+      },
+      {
+        "type": "richtext",
+        "id": "discount_text",
+        "label": "Discount text",
+        "default": "<p>Vous bénéficiez de <strong>-15%</strong> sur les prix habituels.</p>",
+        "info": "Use style strong to accent with color"
+      }
+    ]
+  }
+{% endschema %}

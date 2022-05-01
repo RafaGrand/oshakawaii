@@ -1,0 +1,78 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<form class="request-form" data-form="classic-form" action="/cart/add">
+
+  {% liquid
+
+    if product.variants.size > 1
+      assign select_visible = "radio-on"
+      assign variants_non = "variants-non"
+    else
+      assign select_visible = "radio-non"
+      assign variants_non = ""
+    endif
+
+    if product.available
+      assign choose = "products.product.choose_options" | t
+    else
+      assign choose = 'products.product.sold_out' | t
+    endif
+
+  %}
+
+  {% if product.variants.size > 1 %}
+    <button 
+      type="button"
+      {% unless product.available %}disabled="disabled"{% endunless %}
+      class="panda-btn {{ btn_choices }} btn-choices btn-animation">
+      {{ choose }}
+    </button>
+  {% endif %}
+  
+  <div class="{{ variants_non }}">
+    <div class="border-select-variant ss {{ select_visible }}">
+      {% for variant in product.variants %}
+        {% render 'select-variant'
+          product: product,
+          variant: variant,
+          current_variant: current_variant,
+          size: "10px",
+          color: "#C4C4C4"
+        %}
+      {% endfor %}
+    </div>
+
+    <div class="container-button-products">
+      <button
+        {% unless current_variant.available %}disabled="disabled"{% endunless %}
+        type="submit" 
+        product_id="{{ product.id }}" 
+        class="panda-btn {{ btn_class }} btn-add-card btn-animation">
+        
+        <span product_id="{{ product.id }}" class="class-sold{% if current_variant.available %} hidden{% endif %}">
+          {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844458' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        </span>
+        <span product_id="{{ product.id }}" class="class-add{% unless current_variant.available %} hidden{% endunless %}">
+          {% comment %}ly_i18n_replace_for_[ 'products.product.add_to_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.add_to_cart' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844459' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        </span>
+      
+      </button>
+    </div>
+  </div>
+
+</form>

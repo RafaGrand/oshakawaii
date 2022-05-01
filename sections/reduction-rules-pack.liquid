@@ -1,0 +1,105 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<script>
+  {%- assign blocks = section.blocks -%}
+  discount = {
+    0: [0, '{{ "cart.box.empty-pack" | t }}', '{{ "cart.box.empty-pack" | t }}', ""],
+    
+    {%- for block in blocks -%}
+      {{block.settings.products_box}}: [{{block.settings.discount_percentage}}, "{{block.settings.text_bartop}}", "{{block.settings.text_side}}", "{{block.settings.code_checkout}}"],
+    {%- endfor -%}
+    
+  }
+
+  numberProductsPacks = [
+    {%- for block in blocks -%}
+      {%- if forloop.last == true -%}
+          {{ block.settings.products_box }}
+      {% else %}
+          {{ block.settings.products_box }},
+      {%- endif -%}
+    {%- endfor -%}
+  ]
+
+</script>
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Reductions rules",
+    "fr": "Reductions rules"
+  },
+  "max_blocks": 7,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Reduction rules",
+      "info": "Hero customize your reduction rules in pack page"
+    }
+  ],
+  "blocks":[
+    {
+      "type": "rules",
+      "name": "Reduction rule",
+      "settings":[
+        {
+          "type": "text",
+          "id": "code_checkout",
+          "label": "Reduction code",
+          "default": "Panda box 1",
+          "info": "Don't forget add this reduction code in backoffice",
+          "placeholder": "Panda box x"
+        },
+        {
+          "type": "range",
+          "id": "discount_percentage",
+          "min": 0,
+          "max": 99,
+          "step": 1,
+          "unit": "%",
+          "label": "Discount percentage",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "products_box",
+          "min": 1,
+          "max": 20,
+          "step": 1,
+          "unit": "U",
+          "label": "Products in box",
+          "default": 1
+        },
+        {
+          "type": "text",
+          "id": "text_bartop",
+          "label": "Text UI bar top",
+          "default": "5% de réduction"
+        },
+        {
+          "type": "text",
+          "id": "text_side",
+          "label": "Text UI in side pack",
+          "default": "Vous bénéficiez d'une remise de 5%"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

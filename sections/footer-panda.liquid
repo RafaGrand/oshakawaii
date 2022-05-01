@@ -1,0 +1,398 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="background-footer-panda">
+  
+  <div class="width-footer">
+    <div class="prefooter-flex-container {% if section.settings.title_language != blank %} prefooter-flex-container-four {% endif %}">
+      {% if section.settings.title_menu_1 != blank %}
+        <div class="container-link-list-1 footer-container">
+          <span class="titles-list-menu title-span-footer uppercase">{{ section.settings.title_menu_1 }}</span>
+          
+          {%- assign footer_linklist_1 = section.settings.menu_1 -%}
+          <ul class="link_list_footer">
+            {%- for link in linklists[footer_linklist_1].links -%}
+              <li class="item-list_footer">
+                <a class="link-list-menu link-href-footer uppercase" href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with link render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if section.settings.title_menu_2 != blank %}
+        <div class="container-link-list-2 footer-container">
+          <span class="titles-list-menu title-span-footer uppercase">{{ section.settings.title_menu_2 }}</span>
+          
+          {%- assign footer_linklist_2 = section.settings.menu_2 -%}
+          <ul class="link_list_footer">
+            {%- for link in linklists[footer_linklist_2].links -%}
+              <li class="item-list_footer">
+                <a class="link-list-menu link-href-footer uppercase" href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with link render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if section.settings.title_newslatter != blank %}
+        <div class="container-newslatter footer-container">
+        
+          <span class="titles-list-menu title-span-footer uppercase">{{ section.settings.title_newslatter }}</span>
+          
+          {% assign formId = 'CustomersForm' %}
+          {% form 'customer', novalidate: 'novalidate' %}
+            
+            {%- if form.posted_successfully? -%}
+              <p class="form-message form-message--success" tabindex="-1" data-form-status>
+                {% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.confirmation' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.confirmation' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844415' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+              </p>
+            {%- endif -%}
+            
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            
+            <div class="form-flex-newslatter {% if form.errors %} input-group--error{% endif %}">
+              
+              <input type="email"
+                name="contact[email]"
+                id="{{ formId }}-email"
+                class="input-newslatter {% if form.errors %} input--error{% endif %}"
+                value="{{ form.email }}"
+                placeholder="{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.email_placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.email_placeholder' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844416' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"
+                aria-label="{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.email_placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.email_placeholder' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844416' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"
+                aria-required="true"
+                required
+                autocorrect="off"
+                autocapitalize="off"
+                {% if form.errors %}
+                  aria-invalid="true"
+                  aria-describedby="{{ formId }}-email-error"
+                  data-form-status
+                {% endif %}>
+                
+                <button type="submit" class="button_newslatter_panda btn-call-no-custom uppercase btn-animation" name="commit" >
+                  {% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844417' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                </button>
+                
+              </div>
+              
+              {% if form.errors contains 'email' %}
+                <span id="{{ formId }}-email-error" class="input-error-message">
+                  <span class="site-footer__newsletter-error">{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+                </span>
+              {% endif %}
+              
+            {% endform %}
+            
+          </div>
+      {% endif %}
+
+      {% if section.settings.title_currency != blank %}
+        <div class="container-currency-shipping footer-container" id="country-picker">
+          {% comment %}
+            <span class="titles-list-menu title-span-footer uppercase">{{ section.settings.title_currency }}</span>
+          <div class="container-currency">
+            {% for currency in section.blocks %}
+
+              {% assign img_currency = currency.settings.image_currency | img_url: '60x' %}
+              {% render 'control-currency'
+                currency_name: currency.settings.title,
+                currency_code: currency.settings.currency_code,
+                country_code: currency.settings.country_code,
+                img_currency: img_currency
+              %}
+
+            {% endfor %}
+          
+          </div> {% endcomment %}
+        </div>
+      {% endif %}
+
+      {% if section.settings.title_copyrigth != blank %}
+        <div class="contianer-copyrigth-footer footer-container">
+            <span class="titles-list-menu title-span-footer uppercase copy-text-footer">{{ section.settings.title_copyrigth }}</span>
+        </div>
+      {% endif %}
+
+      {% if section.settings.title_social_media != blank %}
+        <div class="container-social-media-footer footer-container">
+
+          <span class="titles-list-menu title-span-footer uppercase">{{ section.settings.title_social_media }}</span>
+          
+          <ul class="list-icons-social">
+            {%- assign socials = "Instagram Facebook Twitter Pinterest Tiktok" | split: ' ' -%}  
+            {%- for social in socials -%}
+              {% assign social_image = social | downcase | prepend: 'social_' | append: '_img' %}
+              {%- assign social_link = social | prepend: 'social_' | append: '_link' | downcase -%}
+              {%- assign icon_link = settings[social_image] | append: ".svg" | file_url -%}
+              
+              {% if settings[social_link] != blank %}
+                <li>
+                  <a class="social-href-footer" target="_blank" rel="noreferrer" title="{{ social }} Panda Tea" href="{{ settings[social_link] | escape }}">
+                    {%- capture socialAlt -%}{{ social }} panda Tea{%- endcapture -%}
+                    {%- capture socialId -%}social-media-{{ social | handleize }}{%- endcapture -%}
+                    {% render 'img-upload' 
+                      img_id: socialId, 
+                      img_url: icon_link, 
+                      alt: socialAlt, 
+                      class: "icon-social-media-img" 
+                    %}
+                  </a>
+                </li>
+              {% endif %}
+              
+            {%- endfor -%}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if section.settings.title_language != blank %}
+        <div class="container-languages-footer footer-container">
+
+          <span class="titles-list-menu title-span-footer uppercase">{{ section.settings.title_language }}</span>
+          
+          <div id="selector-language-create">
+            {% comment %} {% render 'mobile-languages-switcher' %} {% endcomment %}
+            <span class="ly-custom-1000"></span>
+            <span class="ly-custom-0"></span>
+          </div>
+          
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+
+</div>
+
+<style>
+
+.titles-list-menu {
+  font-size: {{ section.settings.size_title_footer }}px;
+  color: {{ section.settings.color_title_footer }};
+}
+
+.link-list-menu {
+  font-size: {{ section.settings.size_link_footer }}px;
+  color: {{ section.settings.color_link_footer }};
+}
+
+.button_newslatter_panda {
+  font-size: {{ section.settings.size_link_footer }}px;
+}
+
+.input-newslatter {
+  font-size: {{ section.settings.size_link_footer }}px;
+}
+
+.copy-text-footer::after {
+  content: url("{{ section.settings.img_copyrigth | append: '.svg' | file_url }}");
+  margin-left: 3px;
+}
+
+@media screen and (max-width: 600px) {
+  .titles-list-menu {
+    font-size: {{ section.settings.size_title_footer_movil }}px;
+  }
+
+  .link-list-menu {
+    font-size: {{ section.settings.size_link_footer_movil }}px;
+  }
+  .button_newslatter_panda {
+    font-size: {{ section.settings.size_link_footer_movil }}px;
+  }
+  .input-newslatter {
+    font-size: {{ section.settings.size_link_footer_movil }}px;
+  }
+}
+
+</style>
+
+{% schema %}
+{
+  "name": {
+    "en": "Footer",
+    "fr": "Pied de page"
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Menu #1"
+    },
+    {
+      "type": "text",
+      "id": "title_menu_1",
+      "label": {
+        "en": "Heading 1",
+        "fr": "Titre 1"
+      },
+      "default": {
+        "en": "Quick links",
+        "fr": "Liens rapides"
+      }
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": {
+        "en": "Menu 1",
+        "fr": "Menu 1"
+      },
+      "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Menu #2"
+    },
+    {
+      "type": "text",
+      "id": "title_menu_2",
+      "label": {
+        "en": "Heading 2",
+        "fr": "Titre 2"
+      },
+      "default": {
+        "en": "Quick links",
+        "fr": "Liens rapides"
+      }
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": {
+        "en": "Menu 2",
+        "fr": "Menu 2"
+      },
+      "default": "footer"
+    },
+    {
+      "type": "header",
+      "content": "Titles footer"
+    },
+    {
+      "type": "text",
+      "id": "title_newslatter",
+      "label": {
+        "en": "Heading newslatter",
+        "fr": "Titre newslatter"
+      },
+      "default": "Infos toutes fraiches"
+    },
+    {
+      "type": "text",
+      "id": "title_currency",
+      "label": {
+        "en": "Heading currency",
+        "fr": "Titre currency"
+      },
+      "default": "Modifier le pays :"
+    },
+    {
+      "type": "text",
+      "id": "title_copyrigth",
+      "label": {
+        "en": "Heading copyrigth ©",
+        "fr": "Titre copyrigth ©"
+      },
+      "default": "© 2020 PANDA SAS"
+    },
+    {
+      "type": "text",
+      "id": "img_copyrigth",
+      "label": {
+        "en": "Image files copyrigth",
+        "fr": "Image files copyrigth"
+      },
+      "default": "copyrigth-footer"
+    },
+    {
+      "type": "text",
+      "id": "title_social_media",
+      "label": {
+        "en": "Heading social media",
+        "fr": "Titre social media"
+      },
+      "default": "Suivez-nous sur les réseaux sociaux"
+    },
+    {
+      "type": "text",
+      "id": "title_language",
+      "label": {
+        "en": "Heading languages",
+        "fr": "Titre languages"
+      },
+      "default": "Modifier la langue :"
+    },
+    {
+      "type": "header",
+      "content": "Styles footer"
+    },
+    {
+      "type": "range",
+      "id": "size_title_footer",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in title",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "size_title_footer_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in title - movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_title_footer",
+      "label": "Color text in title",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_link_footer",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in link",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "size_link_footer_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in link - movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_link_footer",
+      "label": "Colo text in link",
+      "default": "#000"
+    }
+  ]
+}
+{% endschema %}

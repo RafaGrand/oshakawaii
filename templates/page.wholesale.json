@@ -1,0 +1,116 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero-wholesale",
+      "settings": {
+        "title_hero": "<p>Devenez distributeur ou<br\/>revendeur panda tea<\/p>",
+        "content_hero": "<p>Vous souhaitez proposer des thés & infusions parfumé bio et bien-être à vos clients sur votre point de vente ?<br\/> Contactez-nous ! Nous proposons des offres adaptées à toute les demandes : café, bar, restaurant, salon de coiffure, spa, complexe sportif, pharmacie.<\/p>",
+        "url_hero_call": "shopify:\/\/pages\/contact-us",
+        "text_hero_call": "Faire une demande pour devenir distributeur",
+        "image_hero_whole": "shopify:\/\/shop_images\/panda-images-card12_57ec369c-f599-4cdf-a4f2-d0f833944f53.png"
+      }
+    },
+    "icons": {
+      "type": "icons-wholesale",
+      "blocks": {
+        "10d84fb9-2a02-4078-ba6a-f16e12cc50da": {
+          "type": "icons",
+          "settings": {
+            "content_icons": "<p>Des mélanges de plantes <strong>100% bio<\/strong>, pensés pour leurs bienfaits et uniquement des <strong>arômes naturels<\/strong><\/p><p>+<\/p><p>Des sachets en <strong>coton bio<\/strong> cousus à la main et un packaging entièrement <strong>recyclable<\/strong>. <\/p>",
+            "image_icons_whole": "the-icon"
+          }
+        },
+        "5a1f7657-86d3-43b0-88dc-01a641138137": {
+          "type": "icons",
+          "settings": {
+            "content_icons": "<p>Des <strong>prix exclusifs<\/strong> pour nos revendeurs<\/p><p>+<\/p><p>Une facilité de paiement en <strong>3 fois sans frais<\/strong><\/p><p>+<\/p><p>Pas de budgets annuels ou d’obligations d’achats<br\/><\/p>",
+            "image_icons_whole": "etoile-icon"
+          }
+        },
+        "ef070d2b-ee1b-43df-a081-9928409c2c44": {
+          "type": "icons",
+          "settings": {
+            "content_icons": "<p>Une communauté de plus de <strong>60 000 followers<\/strong> sur Instagram en France, Belgique, Luxembourg, Suisse<\/p>",
+            "image_icons_whole": "instagram-icon"
+          }
+        },
+        "d0222684-7303-42a3-b6ec-c4df5e9735e1": {
+          "type": "icons",
+          "settings": {
+            "content_icons": "<p>Une <strong>livraison rapide<\/strong> en France et en Europe (2 à 4 jours).<\/p>",
+            "image_icons_whole": "livraison-icon"
+          }
+        },
+        "188687f7-d5ff-4789-b842-c9839949d460": {
+          "type": "icons",
+          "settings": {
+            "content_icons": "<p>Une équipe à votre <strong>écoute<\/strong> pour vous conseiller au quotidien<\/p><p>+<\/p><p>Un programme de fidélité pour récompenser nos meilleurs clients<\/p>",
+            "image_icons_whole": "generals-faq"
+          }
+        },
+        "81dd30a8-6918-4b3c-b576-4b2587f8e0d6": {
+          "type": "icons",
+          "settings": {
+            "content_icons": "<p>Une marque engagée partenaires de <strong>1% for the Planet<\/strong><\/p>",
+            "image_icons_whole": "reductions-icon"
+          }
+        }
+      },
+      "block_order": [
+        "10d84fb9-2a02-4078-ba6a-f16e12cc50da",
+        "5a1f7657-86d3-43b0-88dc-01a641138137",
+        "ef070d2b-ee1b-43df-a081-9928409c2c44",
+        "d0222684-7303-42a3-b6ec-c4df5e9735e1",
+        "188687f7-d5ff-4789-b842-c9839949d460",
+        "81dd30a8-6918-4b3c-b576-4b2587f8e0d6"
+      ],
+      "settings": {
+        "title_icons": "Panda Tea c’est :"
+      }
+    },
+    "steps": {
+      "type": "steps-wholesale",
+      "blocks": {
+        "050d1440-c3bc-4d20-b2b5-9429b9d8c18b": {
+          "type": "steps",
+          "settings": {
+            "content_steps": "<p>Panda Tea est une marque bien-être ayant pour but de promouvoir un mode de vie sain et équilibré.<\/p>",
+            "image_steps_whole": "one-icon"
+          }
+        },
+        "6fae536a-8a31-4294-82e8-eba034438d22": {
+          "type": "steps",
+          "settings": {
+            "content_steps": "<p>Panda Tea propose des thés & infusions certifiés bio. Les mélanges sont formulés selon le bienfaits des plantes et délicatement parfumés. Ils peuvent être consommés de manière ponctuel ou sous forme de cure bien-être.<\/p>",
+            "image_steps_whole": "two-icon"
+          }
+        },
+        "4cff2161-4330-4863-a5df-17196de7263d": {
+          "type": "steps",
+          "settings": {
+            "content_steps": "<p>Depuis notre création en 2017, nous sommes certifiés Agriculture Biologique et membre actif du programme 1% for the Planet.<\/p>",
+            "image_steps_whole": "three-icon"
+          }
+        }
+      },
+      "block_order": [
+        "050d1440-c3bc-4d20-b2b5-9429b9d8c18b",
+        "6fae536a-8a31-4294-82e8-eba034438d22",
+        "4cff2161-4330-4863-a5df-17196de7263d"
+      ],
+      "settings": {
+        "title_steps": "Nos engagements :",
+        "content_step_info": "<p>Notre objectif :<br\/>proposer des <strong>produits de qualité<\/strong> et <strong>respectueux de l’environnement.<\/strong><\/p>",
+        "content_step": "<p>Des mélanges de plantes certifiés bio et formulés selon le bienfaits et goût  des plantes par un Docteur en Pharmacie.<br\/>Des sachets en coton bio cousus à la main<br\/>Une communauté de plus de 85 000 followers sur Instagram et Facebook<\/p>",
+        "url_step_call": "shopify:\/\/pages\/contact-us",
+        "text_step_call": "Faire une demande pour devenir distributeur",
+        "image_step_whole": "shopify:\/\/shop_images\/image2-wholesale.png"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "icons",
+    "steps"
+  ]
+}

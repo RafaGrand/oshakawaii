@@ -1,0 +1,59 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div id="overlay-preview" class="overlay"></div>
+<div class="modal-preview" open="false" id="modal-preview">
+  <div class="relative-modal-reviews">
+    <div class="close-modal pointer-cursor" id="close-modal-revs">
+      {% render 'icon-close' %}
+    </div>
+    <div class="padding-modal-reviews">
+      <div id="index-product-preview"></div>
+      <div id="icons-product-preview"></div>
+      <div id="accordions-product-preview"></div>
+      <div id="ingredients-product-preview"></div>
+      <div id="judgeme_product_reviews" class="container-reviews-modal width-panda" id_product="" handle="">
+        <h2 class="title_revs font-bold margin-title uppercase align-center">{{ section.settings.title_reviews }}</h2>
+        <div class="subtitle_revs font-bold margin-descriptions align-center">{{ section.settings.subtitle_reviews }}</div>
+        <div class="container-revs-judgeme" id="revs-asycn"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="preload" href="{{ 'bundle.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ 'bundle.css' | asset_url }}"></noscript>
+
+{% schema %}
+  {
+    "name": "Preview product",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_reviews",
+        "label": "Title reviews",
+        "default": "Avis clients"
+      },
+      {
+        "type": "text",
+        "id": "subtitle_reviews",
+        "label": "Subtitle reviews",
+        "default": "Plus de 3000 avis clients positifs sur les mélanges Panda Tea :)"
+      }
+    ]
+  }
+{% endschema %}

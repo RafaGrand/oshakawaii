@@ -1,0 +1,184 @@
+{% comment %}ly_liquid_scripts_begin{% endcomment %}{% capture ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<!doctype html>
+<html class="no-js" lang="{% comment %}ly_lang_replace_for_[{{ request.locale.iso_code }}]_begin{% endcomment %}{% if request.host %}{% assign language = '' %}{% assign domains = shop.metafields.language_domains %}{% for domain in domains %}{% assign key = domain | first %}{% assign value = domain | last | split: ',' %}{% if value contains request.host %}{% assign language = key %}{% endif %}{% endfor %}{% if shop.metafields.language_codes[language] %}{% assign code = shop.metafields.language_codes[language] %}{% else %}{% assign code = '{{ request.locale.iso_code }}' %}{% endif %}{% else %}{% assign code = '{{ request.locale.iso_code }}' %}{% endif %}{{ code }}{% comment %}ly_lang_replace_end{% endcomment %}"{% comment %}ly_dir_replace_for_[]_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_he_fa_ur' contains language_code -%} dir="rtl" {%- endif -%}{% comment %}ly_dir_replace_end{% endcomment %}>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_button }}">
+    <meta name="robots" content="noindex">
+
+    <!-- Google Tag Manager -->
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','{{ settings.gtm_google }}');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Global site tag (gtag.js) - Google Ads: 846420815 -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-846420815"></script>
+      <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-846420815');
+      </script>
+    <!-- End Global site tag (gtag.js) - Google Ads: 846420815 -->
+
+    <meta name="robots" content="noindex">
+
+    <script>
+      // Holimetrix javascript tag
+      (function(gwin, gdom, hmxid, gobj, jsasync, jsloc) {
+          if (typeof hmxtagidcust == 'undefined') {hmxtagidcust = '2';}
+          else return;
+          gwin['ObjHmx'] = gobj;
+          gwin[gobj] = gwin[gobj] || function(){(gwin[gobj].cmd = gwin[gobj].cmd || []).push(arguments)};
+          jsasync = gdom.createElement('script');
+          jsloc = gdom.getElementsByTagName('script')[0];
+          jsasync.async = 1;
+          jsasync.src = '//u360.d-bi.fr/hmx' + hmxid + '.js';
+          jsloc.parentNode.insertBefore(jsasync, jsloc);
+      })(window, document, '000000000448', 'hmx');
+  
+      // Insert below your potential objectives: hmx('set', 'step', 'your_objective_name_here');
+  
+      // Send the pixel
+      hmx('send');
+  </script>
+    <style>@keyframes fadeBody{0%{opacity: 0;}100%{opacity: 1;}}body{animation: fadeBody .3s ease-in;}.lazyload {opacity: 0; filter: blur(6px);} .lazyloaded {opacity: 1; filter: blur(0);} </style>
+
+    <link rel="preload" href="{{ 'main.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'main.css' | asset_url }}"></noscript>
+
+    <link rel="preload" href="{{ 'app.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ 'app.css' | asset_url }}"></noscript>
+    
+    {% comment %} <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+    <link rel="stylesheet" href="{{ 'app.css' | asset_url }}"> {% endcomment %}
+    
+    {%- if canonical_langify_url != blank  -%}
+      <link rel="canonical" href="{{ canonical_langify_url }}">
+    {%- endif -%}
+
+    {%- if settings.favicon != blank -%}
+      <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- endif -%}
+
+    {%- capture seo_title -%}
+      {%- if request.page_type == 'search' and search.performed == true -%}
+        {% comment %}ly_i18n_replace_for_[ 'general.search.heading' | t: count: search.results_count ]_begin{% endcomment %}{% if search.results_count  == 0 %}{% capture ly_template %}{{ 'general.search.heading' | t: count: search.results_count }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844374' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif search.results_count  == 1 %}{% capture ly_template %}{{ 'general.search.heading' | t: count: search.results_count }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844373' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif search.results_count  == 2 %}{% capture ly_template %}{{ 'general.search.heading' | t: count: search.results_count }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844374' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% else %}{% capture ly_template %}{{ 'general.search.heading' | t: count: search.results_count }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844374' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}: {% comment %}ly_i18n_replace_for_[ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count ]_begin{% endcomment %}{% if search.results_count  == 0 %}{% capture ly_template %}{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844378' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.terms %}{% assign ly_template = ly_template | replace: '[[terms]]', replacement %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif search.results_count  == 1 %}{% capture ly_template %}{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844377' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.terms %}{% assign ly_template = ly_template | replace: '[[terms]]', replacement %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif search.results_count  == 2 %}{% capture ly_template %}{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844378' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.terms %}{% assign ly_template = ly_template | replace: '[[terms]]', replacement %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% else %}{% capture ly_template %}{{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844378' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.terms %}{% assign ly_template = ly_template | replace: '[[terms]]', replacement %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      {%- else -%}
+        {{ langify_title }}
+      {%- endif -%}
+      {%- if current_tags -%}
+        {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {% comment %}ly_i18n_replace_for_[ 'general.meta.tags' | t: tags: meta_tags ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.meta.tags' | t: tags: meta_tags }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844383' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = meta_tags  %}{% assign ly_template = ly_template | replace: '[[tags]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      {%- endif -%}
+      {%- if current_page != 1 -%}
+        &ndash; {% comment %}ly_i18n_replace_for_[ 'general.meta.page' | t: page: current_page ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.meta.page' | t: page: current_page }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844385' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = current_page  %}{% assign ly_template = ly_template | replace: '[[page]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      {%- endif -%}
+      {%- assign escaped_page_title = langify_title | escape -%}
+      {%- unless escaped_page_title contains langify_shop_name -%}
+        &ndash; {{ langify_shop_name }}
+      {%- endunless -%}
+    {%- endcapture -%}
+    <title>{{ seo_title | strip }}</title>
+
+    {%- if langify_description -%}
+      <meta name="description" content="{{ langify_description | escape }}">
+    {%- endif -%}
+
+    {% include 'social-meta-tags' %}
+
+    {% render 'utils-script' %}
+
+    {%- if request.page_type contains 'customers/' -%}
+      <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+    {%- endif -%}
+
+    <script type="text/javascript">
+      if (window.MSInputMethodContext && document.documentMode) {
+        var scripts = document.getElementsByTagName('script')[0];
+        var polyfill = document.createElement("script");
+        polyfill.defer = true;
+        polyfill.src = "{% comment %}ly_asset_replace_for_[ 'ie11CustomProperties.min.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'ie11CustomProperties.min.js' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}";
+
+        scripts.parentNode.insertBefore(polyfill, scripts);
+      }
+    </script>
+
+    {{ content_for_header }}
+    
+    {% if template contains 'product' or template contains 'judgeme_all_reviews' %}
+      {% include 'judgeme_core' %}
+    {% endif %}
+
+    {% if template contains 'talkable' %}
+      {% include 'talkable-partital' %}
+    {% endif %}
+    
+  {% comment %}ly_dir_styles_begin{% endcomment %}{%- assign language_code = '_' | append: request.locale.iso_code -%}{%- if '_ar_he_fa_ur' contains language_code -%}{{- 'ly-rtl.css' | asset_url | stylesheet_tag -}}{%- endif -%}{% comment %}ly_dir_styles_end{% endcomment %}</head>
+
+  <body class="template-{{ request.page_type | handle }}">
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ settings.gtm_google }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div id="header-translate">
+      {% section 'header-panda' %}
+    </div>
+
+    <div class="page-container drawer-page-content" id="PageContainer">
+      
+      <main id="MainContent" role="main" tabindex="-1">
+        {{ content_for_layout }}
+      </main>
+
+      {% unless template contains 'login' or template contains 'register' or template contains 'account' or template contains 'register' or template contains 'addresses' or template contains 'order' %}
+        {% section 'instagram-feed' %}
+        {% section 'footer-panda' %}
+      {% endunless %}
+
+      {% section 'country-information' %}
+      {% section 'locals-portal' %}
+
+      {% include 'side-cart' %}
+
+      <script src="{{ 'app.js' | asset_url }}" defer="defer"></script>
+      <script src="{{ 'lazysizes.js' | asset_url }}" async="async"></script>
+
+    </div>
+
+    <ul hidden>
+      <li id="a11y-refresh-page-message">{% comment %}ly_i18n_replace_for_[ 'general.accessibility.refresh_page' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.accessibility.refresh_page' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844386' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</li>
+      <li id="a11y-selection-message">{% comment %}ly_i18n_replace_for_[ 'general.accessibility.selection_help' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.accessibility.selection_help' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844387' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</li>
+    </ul>
+
+    <script type="text/javascript" async="async" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=uCSeXC"></script>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ settings.gtm_google }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+  <!-- langify-v2-scripts-begin -->{% comment %}ly_liquid_scripts_begin{% endcomment %}{% endcapture %}{% render 'ly-liquid-scripts' content: ly_liquid_content %}{% comment %}ly_liquid_scripts_end{% endcomment %}{% comment %}ly_core_scripts_begin{% endcomment %}{% render 'ly-core-scripts' %}{% comment %}ly_core_scripts_end{% endcomment %}{% comment %}ly_switcher_factory_begin{% endcomment %}{% render 'ly-switcher-factory' %}{% comment %}ly_switcher_factory_end{% endcomment %}<!-- langify-v2-scripts-end --></body>
+</html>

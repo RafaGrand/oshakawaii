@@ -1,0 +1,171 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda">
+  <div class="box-icons-text paddings_box-icons">
+
+    {% for block in section.blocks %}
+      
+      <div class="width-box-iconText">
+
+        {% liquid
+          if block.settings.text_icon != blank
+            assign img_url = block.settings.text_icon | append: '.svg' | file_url
+          else
+            assign img_url = block.settings.icon_image | img_url: '50x50'
+          endif
+        %}
+        
+        {% capture img_id %}BlockImage-{{ block.id }}{% endcapture %}
+
+        <div class="flex-container-iconText">
+          {% render 'img-upload' img_id: img_id, img_url: img_url, alt: "icon Panda Tea", class: "image-icon-block" %}
+          <div class="container-text_icon">
+            {{ block.settings.text_block }}
+          </div>
+        </div>
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>
+<style>
+  .container-text_icon {
+    font-size: {{ section.settings.icon_text_size }}px;
+    color: {{ section.settings.icon_text_color }};
+    line-height: calc({{ section.settings.icon_text_size }}px + 6px);
+  }
+
+  @media screen and (max-width: 600px) {
+    .container-text_icon {
+      font-size: {{ section.settings.icon_text_size_movil }}px;
+      line-height: calc({{ section.settings.icon_text_size_movil }}px + 6px);
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Home / Icons block text",
+      "fr": "Home / Texte du bloc d'icônes"
+    },
+    "class": "section-icons-text",
+    "settings": [
+      {
+        "type": "range",
+        "id": "icon_text_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size text",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "icon_text_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size text - movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "icon_text_color",
+        "label": "Text color text",
+        "default": "#000"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "iconText",
+        "name": {
+          "en": "Icons block text", 
+          "fr": "Texte du bloc d'icônes"
+        },
+        "settings":[
+          {
+            "type": "header",
+            "content": {
+              "en": "Icon in block", 
+              "fr": "Icône dans le bloc"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "en": "You can choose the a format you want for the icon of this block",
+              "fr": "Vous pouvez choisir le format que vous souhaitez pour l'icône de ce bloc" 
+            }
+          },
+          {
+            "type": "text",
+            "id": "text_icon",
+            "label": {
+              "en": "Icon SVG (Recommended*)", 
+              "fr": "Icône SVG (recommandé*)"
+            },
+            "info": {
+              "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+              "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+            }
+          },
+          {
+            "type": "image_picker",
+            "id": "icon_image",
+            "label": {
+              "en": "Icon IMAGE", 
+              "fr": "Icône IMG"
+            }
+          },
+          {
+            "type": "header",
+            "content": {
+              "en": "text in block", 
+              "fr": "Texte dans le bloc"
+            }
+          },
+          {
+            "type": "richtext",
+            "id": "text_block",
+            "label": {
+              "en": "text in block", 
+              "fr": "Texte dans le bloc"
+            },
+            "default": "<p>Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit,</strong> sed do eiusmod.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+          "en": "Icons block text",
+          "fr": "Texte du bloc d'icônes"
+        },
+        "category": {
+          "en": "Block home",
+          "fr": "Blocs home"
+        }
+      }
+    ]
+  }
+{% endschema %}

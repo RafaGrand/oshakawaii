@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "head": {
+      "type": "collection-upsell",
+      "settings": {}
+    },
+    "collection-panda": {
+      "type": "total-button-upsell",
+      "settings": {
+      }
+    },
+    "preview-modal": {
+      "type": "preview-product",
+      "settings": {}
+    }
+  },
+  "order": [
+    "head",
+    "collection-panda",
+    "preview-modal"
+  ]
+}

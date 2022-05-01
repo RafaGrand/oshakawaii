@@ -1,0 +1,33 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div>
+  <button class="btn-nostyle btn-head-article">
+    <a href="{{ blog.url }}" class="return_blog">
+      {% comment %}ly_i18n_replace_for_[ 'blogs.article.view_all_blogs' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.view_all_blogs' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844460' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+    </a>
+  </button>
+  <h1 class="title-principal uppercase" id="title-0">{% comment %}ly_code_replace_for_[ article.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with article render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+  
+  <span class="date_article-content">
+    {{ article.published_at | date: "%d.%m.%y" }}
+  </span>
+</div>
+
+<div class="content-article">
+  {% comment %}ly_code_replace_for_[ article.content ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-content' with article render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+</div>

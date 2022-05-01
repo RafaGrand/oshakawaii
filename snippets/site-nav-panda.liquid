@@ -1,0 +1,97 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<ul class="list-link-list" id="SiteNav">
+  {% for link in linklists[linklist].links %}
+    {%- assign child_list_handle = link.title | handleize -%}
+
+    {% if link.links != blank %}
+      <li class="item-menu-first drop-relative-container" data-has-dropdowns>
+        <div class="flex-button-menu">
+          <button class="button-menu-drop btn-nostyle text-in-menu arrow-after" type="button" aria-expanded="false" data-drop="{{ child_list_handle }}">
+            {% comment %}ly_code_replace_for_[ link.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with link render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+          </button>
+          {% if hover_checked %}
+            <div class="line-hover-anim"></div>
+          {% endif %}
+        </div>
+
+        <div class="dropdown-menu" id="drop-{{ child_list_handle }}">
+          
+          <div class="container-list-child">
+            <ul class="list-child-nav">
+              {% if link.links != blank %}
+                {% for childlink in link.links %}
+                  <li class="second-level-title">
+                    <a href="{{ childlink.url }}"
+                       title="{% comment %}ly_code_replace_for_[ childlink.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with childlink render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}"
+                       class="text-in-menu second-level-href"
+                      >
+                      {% comment %}ly_code_replace_for_[ childlink.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with childlink render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                    </a>
+
+                    {% if childlink.links != blank %}
+                      <ul class="ul-list-third-level">
+                      {% for grandchildlink in childlink.links %}
+                        <li class="third-level-title">
+                          <a href="{{ grandchildlink.url }}"
+                             title="{% comment %}ly_code_replace_for_[ grandchildlink.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with grandchildlink render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}"
+                             class="text-in-menu third-level-href"
+                            >
+                            {% comment %}ly_code_replace_for_[ grandchildlink.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with grandchildlink render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                          </a>
+                        </li>
+                      {% endfor %}
+                      </ul>
+                    {% endif %}
+
+                  </li>
+                {% endfor %}
+              {% endif %}
+            </ul>
+          </div>
+
+        </div>
+      </li>
+    {% else %}
+      <li class="item-menu-first">
+        <a href="{{ link.url }}"
+           title="{% comment %}ly_code_replace_for_[ link.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with link render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}"
+           class="item-href-link text-in-menu"
+          >
+          {% comment %}ly_code_replace_for_[ link.title | escape ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with link render:true %}{% endcapture %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+          {% if hover_checked %}
+            <div class="line-hover-anim{% if link.current %} active-line{% endif %}"></div>
+          {% endif %}
+        </a>
+      </li>
+    {% endif %}
+  {% endfor %}
+  <div class="container-icons-movil">
+
+    <a href="{{ login_url }}" title="{{ login_text }}" class="link-icon-nav-movil text-in-menu">
+      {% render 'img-upload' img_id: "icon1-panda-tea", img_url: img_login, alt: "icon1 Panda Tea", class: "panda-tea-icon-img" %}
+      {{ login_text }}
+    </a>
+
+    <a href="{{ faq_url }}" title="{{ faq_text }}" class="link-icon-nav-movil text-in-menu">
+      {% render 'img-upload' img_id: "icon2-panda-tea", img_url: img_faq, alt: "icon2 Panda Tea", class: "panda-tea-icon-img" %}
+      {{ faq_text }}
+    </a>
+
+  </div>
+</ul>

@@ -1,0 +1,408 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  assign blocks = section.blocks
+  assign image_size = 0
+  
+  for block in blocks
+    if block.type == 'image'
+      assign image_size = image_size | plus: 1
+    endif
+  endfor
+
+  case blocks.size
+    when 1
+      assign grid_hero = 'grid_1hero'
+    when 2
+      assign grid_hero = 'grid_2hero'
+    when 3
+      assign grid_hero = 'grid_3hero'
+  endcase
+
+  case image_size
+    when 1
+      assign width_image_dynamic = 'movil_complete_img'
+    when 2
+      assign width_image_dynamic = ''
+    when 3
+      assign width_image_dynamic = 'movil_last_img'
+  endcase
+%}
+
+<div class="padding-sections-hero hero_wrapper-margin">
+
+  <div class="{{ grid_hero }} bg_hero_{{ section.id }}">
+    {% for block in blocks %}
+    
+      {% case block.type %}
+
+        {% when 'image' %}
+          <div class="width-images-hero {{ width_image_dynamic }}">
+            {% capture id_img_block %}img_id-{{ block.id }}{% endcapture %}
+            {% capture alt_img_block %}Images panda hero {{ forloop.index }}{% endcapture %}
+            {% assign img_url = block.settings.image_bg | img_url: 'master' %}
+              {% render 'img-upload'
+                img_id: id_img_bloc,
+                img_url: img_url
+                alt: alt_img_block
+                class: "img-hero-top" %}
+          </div>
+
+        {% when 'heading' %}
+          {% liquid
+            case block.settings.justify_content
+              when 'right'
+                assign text_align = 'hero_text-right hn_text-right'
+                assign margin_button = 'hero_margin-left'
+              when 'center'
+                assign text_align = 'hero_text-center hn_text-center'
+                assign margin_button = 'hero_margin-center'
+              when 'left'
+                assign text_align = 'hero_text-left hn_text-left'
+                assign margin_button = 'hero_margin-right'
+            endcase
+            assign content_paddings = block.settings.content_paddings
+            assign content_paddings_movil = block.settings.content_paddings_movil
+          %}
+          <div class="hero-content-flex width-text-hero">
+            <div class="content-call-to hero_paddings-content {{ text_align }}">
+              
+              {% if block.settings.heading_block != blank %}
+                <h1 class="title_hero_home">
+                  {{ block.settings.heading_block }}
+                </h1>
+              {% endif %}
+
+              {% if block.settings.subtext_block != blank %}
+                <div class="subtitle_hero_home">
+                  {{ block.settings.subtext_block }}
+                </div>
+              {% endif %}
+
+              {% if block.settings.url_link_block != blank %}
+                <div class="container-button-hero {{ margin_button }}">
+                  {% capture class %}btn_hero_home container-btn-hero{% endcapture %}
+                  {% render 'btn-link-panda'
+                    url: block.settings.url_link_block,
+                    call_to: block.settings.text_url_block,
+                    class: class
+                  %}
+                </div>
+              {% endif %}
+
+            </div>
+          </div>
+
+          <style>
+            .hero_paddings-content {
+              padding-top: {{ content_paddings }}px;
+              padding-bottom: {{ content_paddings }}px;
+            }
+            @media screen and (max-width: 1040px) {
+              .hero_paddings-content {
+                padding-top: {{ content_paddings_movil }}px;
+                padding-bottom: {{ content_paddings_movil }}px;
+              }
+            }
+          </style>
+          
+      {% endcase %}
+    {% endfor %}    
+  </div>
+</div>
+
+<style>
+  .bg_hero_{{ section.id }} {
+    background: {{ section.settings.hero_bg }};
+  }
+  .hero_wrapper-margin {
+    margin-bottom: {{ section.settings.section_margin_bottom }}px;
+  }
+  .title_hero_home {
+    font-size: {{ section.settings.hero_title_size }}px;
+    color: {{ section.settings.hero_title_color }};
+  }
+  .subtitle_hero_home {
+    font-size: {{ section.settings.hero_subtitle_size }}px;
+    color: {{ section.settings.hero_subtitle_color }};
+  }
+  .btn_hero_home {
+    font-size: {{ section.settings.hero_btn_size }}px;
+    color: {{ section.settings.hero_btn_color }};
+    background: {{ section.settings.hero_btn_bg }}
+  }
+  @media screen and (max-width: 1040px) {
+    .hero_wrapper-margin {
+      margin-bottom: {{ section.settings.section_margin_bottom_movil }}px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .title_hero_home {
+      font-size: {{ section.settings.hero_title_size_movil }}px;
+    }
+    .subtitle_hero_home {
+      font-size: {{ section.settings.hero_subtitle_size_movil }}px;
+    }
+    .btn_hero_home {
+      font-size: {{ section.settings.hero_btn_size_movil }}px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Home / hero top",
+      "fr": "Home / principale hero"
+    },
+    "class": "index-section",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "color",
+        "id": "hero_bg",
+        "label": "Background color section",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "range",
+        "id": "section_margin_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Margin bottom/section",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "section_margin_bottom_movil",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Margin bottom/section movil",
+        "default": 40
+      },
+      {
+        "type": "header",
+        "content": "title"
+      },
+      {
+        "type": "range",
+        "id": "hero_title_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "hero_title_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title - movil",
+        "default": 30
+      },
+      {
+        "type": "color",
+        "id": "hero_title_color",
+        "label": "Text color title",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "subtitle"
+      },
+      {
+        "type": "range",
+        "id": "hero_subtitle_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subtitle",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "hero_subtitle_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subtitle - movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "hero_subtitle_color",
+        "label": "Text color subtitle",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Call to action"
+      },
+      {
+        "type": "range",
+        "id": "hero_btn_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size button",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "hero_btn_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size btn - movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "hero_btn_bg",
+        "label": "Background color btn",
+        "default": "#45C391"
+      },
+      {
+        "type": "color",
+        "id": "hero_btn_color",
+        "label": "Text color btn",
+        "default": "#fff"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": {
+          "en": "Image background",
+          "fr": "Arrière-plan de l'image"
+        },
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_bg",
+            "label": {
+              "en": "Image background",
+              "fr": "Arrière-plan de l'image"
+            }
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "name": {
+          "en": "Heading & call to action",
+          "fr": "Heading"
+        },
+        "settings": [
+          {
+            "type": "select",
+            "id": "justify_content",
+            "label": "Justify Content",
+            "options": [
+              {
+              "value": "right",
+              "label": "Align right"
+              },
+              {
+              "value": "center",
+              "label": "Align center"
+              },
+              {
+              "value": "left",
+              "label": "Align left"
+              }
+            ],
+            "default": "left"
+          },
+          {
+            "type": "text",
+            "id": "heading_block",
+            "label": "Heading",
+            "default": "Thés & infusiones"
+          },
+          {
+            "type": "text",
+            "id": "subtext_block",
+            "label": "Sub-heading",
+            "default": "L’infusion des sportifs"
+          },
+          {
+            "type": "text",
+            "id": "text_url_block",
+            "label": "Text url",
+            "default": "Shop now"
+          },
+          {
+            "type": "url",
+            "id": "url_link_block",
+            "label": "Url in block"
+          },
+          {
+            "type": "header",
+            "content": "Edit your paddings block",
+            "info": "Customize this settings to desktop/movil"
+          },
+          {
+            "type": "range",
+            "id": "content_paddings",
+            "min": 25,
+            "max": 155,
+            "step": 5,
+            "unit": "px",
+            "label": "Paddings in content",
+            "default": 55
+          },
+          {
+            "type": "range",
+            "id": "content_paddings_movil",
+            "min": 25,
+            "max": 100,
+            "step": 5,
+            "unit": "px",
+            "label": "Paddings in content movil",
+            "default": 25
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+          "en": "Hero top",
+          "fr": "principale hero"
+        },
+        "category": {
+          "en": "Content",
+          "fr": "Contenu"
+        }
+      }
+    ]
+  }
+{% endschema %}

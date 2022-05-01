@@ -1,0 +1,14 @@
+/*========== CONTACT PAGE ==========*/
+.paddings-form-page {padding-top: 100px; padding-bottom: 145px;}
+.paddings-form-faq {padding-top: 88px; padding-bottom: 115px;}
+.container-contact-form {width: 540px;}
+.margin-title-contact {margin-bottom: 20px;}
+.content-contact-page {margin-bottom: 30px;}
+.content-contact-page a {color: var(--black-panda);}
+.form-control_contact {border-radius: 4px; border: 1px solid #D1D1D2; padding: 10px 15px;     width: calc(100% - 30px); font-size: 14px; color: #727272;}
+.block-form-contact {display: grid; row-gap: 15px;}
+
+@media screen and (max-width: 767px) {
+  .paddings-form-faq {padding-top: 50px; padding-bottom: 72px;}
+  .paddings-form-page {padding-top: 30px; padding-bottom: 60px;}
+}

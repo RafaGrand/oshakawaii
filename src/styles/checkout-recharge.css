@@ -1,0 +1,147 @@
+/* @font-face {font-family: "Avenir Next";src: url('https://cdn.shopify.com/s/files/1/0500/5823/1979/t/26/assets/Avenir-regular.woff2') format('woff2'),url('https://cdn.shopify.com/s/files/1/0500/5823/1979/t/26/assets/Avenir-regular.woff') format('woff');font-weight: normal;font-style: normal;font-display: swap;}
+@font-face {font-family: "Avenir Next";src: url('https://cdn.shopify.com/s/files/1/0500/5823/1979/t/26/assets/Avenir-medium.woff2') format('woff2'),url('https://cdn.shopify.com/s/files/1/0500/5823/1979/t/26/assets/Avenir-medium.woff') format('woff');font-weight: 500;font-style: normal;font-display: swap;} */
+
+/* GENERALS */
+.admin-notice {display:none;}
+body{font-family:"Avenir Next",Arial,sans-serif}
+h5, h6 {text-transform: none;font-weight: 600;font-size: 15px;letter-spacing: 0;}
+h5 {margin: 35px 0;}
+p, label small, .product__info__name strong {color: #000}
+a {text-decoration: underline;}
+.header {padding: 20px 0;}
+#contact-information {padding: 0 0 25px;}
+.section__header {margin: 0 0 25px;}
+.section__header h3 {font-size: 15px;font-weight: 600;}
+.fieldset {border-color: transparent;margin: 0;}
+.field__error-message {padding-left: 0; color: #b71c1c; padding-top: 10px; font-weight: 600;}
+.boxshadow .field--error {box-shadow: 0 0 0 1px transparent; background: transparent;}
+.btn.btn--primary {padding: 10px;margin: 0 !important;width: 100%;}
+
+/* CUSTOMER INFORMATION */
+.field {display: grid;padding: 0 0 15px;border: transparent;}
+.checkout_shipping_form .field label {margin-bottom: 10px;}
+.field input[type="text"],
+#shipping-address select,
+#checkout_email_section input[type="email"],
+.phone input[type="tel"] {width: -webkit-fill-available;border: 1px solid #D1D1D2;border-radius: 4px;padding: 10px 16px !important;}
+.field select {background-image: url(https://cdn.shopify.com/s/files/1/0500/5823/1979/t/26/assets/icon-arrow.svg?v=9646610568720706739),none;}
+.field select, .field select:focus {background-position: 97%;}
+.field label {padding:0;font-weight: 600; width:100%; color: #000;}
+.field--focus {box-shadow: none !important;}
+.call-to-action {display: flex; justify-content: space-between;align-items: center;}
+.call-to-action::before, .call-to-action::after {display: none}
+.btn {padding: 10px 50px; text-transform: uppercase;}
+.section__header .section__edit-link {font-size:15px;}
+
+/* PAYMENTS */
+#payment {border-top: 1px solid #000;}
+.field--has-radio-button {padding:0 0 0 47px;}
+.field--has-radio-button label {padding:17.5px 0}
+.payment-subform .fieldset, .fieldset.fieldset--billing-address {border: 1px solid #D1D1D2;border-radius: 4px;}
+div.payment-subform div.field--has-radio-button {border-bottom: 1px solid #D1D1D2;}
+#conditional-cc-form {padding: 17px 0;}
+.field.field--has-radio-button.field--same-billing-address:first-child {border-bottom: 1px solid #D1D1D2;}
+div.field-group--has-subfields > div.field {padding: 0 17px; display: flex;align-items: center;flex-wrap: wrap;}
+div.field-group--has-subfields label {width: 25%;margin-right: 10px;}
+div.field-group--has-subfields input {width: 70%}
+div.field-group--has-subfields input[type="text"] {border: none;border-radius: 0px;width: 70%;padding: 15px 0 7.5px !important;}
+.icon--info {display: none;}
+.field-group--has-subfields {background-color: transparent;}
+.rc_form__input {padding-bottom: 7.5px !important;padding-top: 7.5px !important;}
+#billing-address {padding-bottom: 15px;}
+.buyer_accepts_marketing, .legal-consent, .legal-text {display: none !important;}
+.call-to-action--final {margin-top: 50px;}
+
+.chrome input[type=checkbox], .safari input[type=checkbox] {width: 25px;
+  height: 25px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;}
+
+.chrome input[type=checkbox]::after, .safari input[type=checkbox]::after {height: 20px;
+  width: 20px;
+  background-color: #45C391;
+  background-image: none;
+  margin: auto;
+  border-radius: 4px;
+  top: auto;
+  left: auto;}
+
+#payment .section__header {margin-bottom: 0;}
+.summary-body span {color: #000}
+.payment-due__currency {display:none;}
+.total-line {margin-top: 30px;}
+#payment_due_amount {font-size:15px; color:#000;}
+.field.gift-card-field {padding: 17px 0 17px 17px;}
+#gift-card-form {margin-bottom: 25px;}
+#gift-card-form .field-group.field-group--has-subfields {padding-bottom: 10px; padding-top: 17px; border-top: 1px solid #D1D1D2;}
+
+/* ORDER SUMMARY */
+.order-summary {background: transparent;}
+.order-summary__section--header h3 {font-size: 15px;font-weight:600;}
+.order-summary strong {color: #000;}
+.summary-body, .order-summary__section, .total-line--total {border-top: none;}
+.product__info {font-size: 12px;float: none; margin-bottom: 21px;}
+.product__info__name strong {font-weight:600; text-transform: uppercase;}
+.product__info__name {display: block;}
+.product__info__description {display: inline;}
+.product__price {font-weight: 600; color: #000;float: none !important;font-size: 15px;margin-right: 0 !important;}
+.product__image {width: 101px;height: 87px;object-fit: cover;}
+.order-summary .product-list .product {border-top: 1px solid transparent;}
+
+.total-line--total {text-transform: uppercase;font-weight: 600;}
+#total_cost_amount {font-weight: 600;}
+#mobile_total {font-size: 15px;color: #000;font-weight: 600;}
+
+#show-discount-form-link {display: block;text-align: center; color: #45C391 !important;}
+#discount-field div.field {grid-template-columns: 3fr 3fr 1fr;}
+#discount-field div::before {display: none;}
+#discount-field label {margin: auto 0; font-weight: 400;}
+#checkout_discount_code {width: 100%;}
+#discount-field .field__error-message {grid-row-start: 2;}
+#discount-field .btn.btn--inset {position: relative; width: 100%;margin: 0;top: 0;left: 0;}
+
+.section--additional-mobile-cta {border-top: 1px solid transparent;}
+
+.boxshadow .order-summary-recap {background:none;box-shadow:none; color: #000;border-top: 1px solid #D1D1D2;border-bottom: 1px solid #D1D1D2;}
+.order-summary-recap .product-list .product {border-right: 1px solid transparent;}
+
+.legal-text p {font-size: 10px;}
+.chrome input[type=radio], .safari input[type=radio] {top: 12px;left: 12px;display: flex; align-items: center; justify-content: center; height: 26px; width: 26px;}
+.chrome input[type=radio]:after, .safari input[type=radio]:after {background-image: none;background-color:#45C391; height: 20px; width: 20px; margin: auto;}
+.chrome input[type=radio]:checked, .safari input[type=radio]:checked {box-shadow: inset 0 0 0 10px transparent;background-color: #FFF !important;border-color: #45C391 !important;}
+
+#gift-card-apply-button[disabled="disabled"] {background-color: #676767;}
+.address {text-transform: uppercase;}
+
+@media screen and (max-width: 768px) {
+  .header {padding: 10px 24px;}
+  #contact-information {padding: 25px;}
+  .order-summary{width: 100%;}
+  #payment {border-top: 1px solid #D1D1D2;}
+  
+  #the_real_subscribe_checkbox {width: 34px; top: 5px;}
+  #the_real_subscribe_checkbox::after {height: 15px; width: 15px;}
+  
+}
+@media screen and (max-width: 600px) {
+  .chrome input[type=checkbox], .safari input[type=checkbox] {width: 38px;    height: 20px;
+    background: #D1D1D2;
+    border-color: #D1D1D2;
+    display: flex;
+    align-items: center;
+    justify-content: initial;}
+  .chrome input[type=checkbox]:checked, .safari input[type=checkbox]:checked {background: #45C391; border-color: #45C391;}
+  .chrome input[type=checkbox]:after, .safari input[type=checkbox]:after {height: 15px; width: 15px;background-color: #FFF;border-radius: 50%;}
+  .shop__logo {max-width: 100%;}
+  .field--has-radio-button label {padding:14px 0}
+  #checkout_different_billing_address_false {top: 15px;}
+  h5[data-billing-address] {display: none !important;}
+  .fieldset.fieldset--billing-address {margin: 25px 0;}
+  label[for="gift-card-input"] {margin-bottom: 20px;}
+  input[for="gift-card-input"] {margin-bottom: 20px;}
+  .product-list li.product{padding-right: 0;}
+  .call-to-action--final {margin-top: 25px;}
+  .chrome input[type=radio], .safari input[type=radio] {top: 10px;left: 10px;}
+}

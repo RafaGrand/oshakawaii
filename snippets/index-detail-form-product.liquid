@@ -1,0 +1,142 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="index-product-page">
+
+  <div class="flex-detail-product">
+
+    <h1 class="styleTitleProduct title-product">
+      {% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+    </h1>
+
+    <div class="product-price-fiche">
+      <div>
+        <span
+          id="comparePrice_product"
+          product_id='{{ product.id }}'
+          class="stylePriceProduct price_compare normal-price-line"
+        >
+          {{ compare_at_price | money }}
+        </span>
+        <span
+          id="price_product"
+          product_id='{{ product.id }}'
+          class="stylePriceProduct price_normal normal-price price_product"
+        >
+        {% if product.compare_at_price_max > product.price or current_variant.metafields.subscriptions.discount_variant_price != blank  %}
+
+              {% if current_variant.metafields.subscriptions.discount_variant_price != blank  %}
+                  {{ current_variant.metafields.subscriptions.discount_variant_price }}
+
+                <span
+                    product_id='{{ product.id }}'
+                    class="currency-class price_compare-pack line-thr">
+                      {{ product.price | money }}
+                </span>
+              {% else %}
+                  {{ price | money }}
+                  <span
+                    product_id='{{ product.id }}'
+                    class="currency-class price_compare-pack line-thr">
+                  {% if current_variant.metafields.subscriptions.discount_variant_price != blank %}
+                      {{ product.price | money }}
+                  {% else %}
+                      {{ product.compare_at_price | money }}
+                  {% endif %}
+                </span>
+              {% endif %}
+        {% else %}
+          {{ price | money }}
+        {% endif %}
+        </span>
+      </div>
+    </div>
+
+    <div class="flex-direction-mobile">
+
+      <div class="description-index">
+        <p class="styleSubTitleProduct font-bold">
+          {{ description_under[1] | remove: '[/undertitle]'}}
+        </p>
+        <div class="styleDescriptionProduct">
+          {{ product_description[0] }}
+        </div>
+      </div>
+
+      <div class="container-form-reviews">
+
+        <form
+          data-form="classic-form"
+          data-product="{{ product.id }}"
+          class="form-product-selected request-form"
+          action="/cart/add"
+        >
+
+          <table class="table-variant-select">
+            {% for variant in product.variants %}
+              <tr>
+                <td>
+                  {% render 'select-variant'
+                    product: product,
+                    variant: variant,
+                    current_variant: current_variant,
+                    size: "20px", 
+                    styles_font: "styleOptionsProducts" 
+                  %}
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+
+          <div class="product_cta-min-height">
+            <div id='index_button-add' class="container-fixed-movil">
+              <button
+                type="submit"
+                product_id='{{ product.id }}'
+                {% unless current_variant.available %}disabled="disabled"{% endunless %}
+                class="btn-card-main btn-add-card btn-form-fiche btn-animation product_cta"
+              >
+                <span product_id='{{ product.id }}' class="class-sold{% if current_variant.available %} hide{% endif %}">
+                  {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844470' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                </span>
+                <span product_id='{{ product.id }}' class="class-add{% unless current_variant.available %} hide{% endunless %}">
+                  {% comment %}ly_i18n_replace_for_[ 'products.product.add_to_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.add_to_cart' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844471' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                </span>
+              </button>
+            </div>
+          </div>
+
+        </form>
+        
+        {% comment %}Judge.me widget{% endcomment %}
+        <div id='index_stars-judgme' class="form-judme-reviews">
+          {% render 'judgeme_widgets'
+            widget_type: 'judgeme_preview_badge',
+            concierge_install: false,
+            product: product
+          %}
+          <a class="link-reviews" href="#judgeme_product_reviews">
+            {{ section.settings.text_reviews_link }}
+          </a>
+        </div>
+        {% comment %}Judge.me widget{% endcomment %}
+      </div>
+    </div> 
+
+  </div>
+
+</div>

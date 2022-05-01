@@ -1,0 +1,74 @@
+{
+  "sections": {
+    "banner": {
+      "type": "pack-bartop",
+      "settings": {}
+    },
+    "drawer-side": {
+      "type": "bundle-side-pack",
+      "settings": {}
+    },
+    "reduction-rules": {
+      "type": "reduction-rules-pack",
+      "blocks": {
+        "276ab030-e581-4647-9464-7749b1cb42f9": {
+          "type": "rules",
+          "settings": {
+            "code_checkout": "Panda box 1",
+            "discount_percentage": 5,
+            "products_box": 3,
+            "text_bartop": "5% de réduction",
+            "text_side": "Vous bénéficiez d'une remise de 5%"
+          }
+        },
+        "fe5691c9-0f13-478f-9407-88fd5da0f12f": {
+          "type": "rules",
+          "settings": {
+            "code_checkout": "Panda box 2",
+            "discount_percentage": 10,
+            "products_box": 5,
+            "text_bartop": "10% de réduction",
+            "text_side": "Vous bénéficiez d'une remise de 10%"
+          }
+        },
+        "91f48d7f-00d6-404d-a31b-2a7b3074139c": {
+          "type": "rules",
+          "settings": {
+            "code_checkout": "Panda test",
+            "discount_percentage": 30,
+            "products_box": 7,
+            "text_bartop": "30% de réduction",
+            "text_side": "Vous bénéficiez d'une remise de 30%"
+          }
+        }
+      },
+      "block_order": [
+        "276ab030-e581-4647-9464-7749b1cb42f9",
+        "fe5691c9-0f13-478f-9407-88fd5da0f12f",
+        "91f48d7f-00d6-404d-a31b-2a7b3074139c"
+      ],
+      "settings": {}
+    },
+    "collection-pack": {
+      "type": "collection-pack-coffret",
+      "settings": {
+        "grid": 4,
+        "rows": 8
+      }
+    },
+    "preview-modal": {
+      "type": "preview-product",
+      "settings": {
+        "title_reviews": "Avis clients",
+        "subtitle_reviews": "Plus de 3000 avis clients positifs sur les mélanges Panda Tea :)"
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "drawer-side",
+    "reduction-rules",
+    "collection-pack",
+    "preview-modal"
+  ]
+}

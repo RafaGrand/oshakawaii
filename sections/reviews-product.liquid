@@ -1,0 +1,124 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda recomendations-container">
+  <h2 class="title_revs font-bold margin-title uppercase align-center">{{ section.settings.section_title_reviews }}</h2>
+  <div class="subtitle_revs font-bold margin-descriptions align-center">{{ section.settings.section_description_reviews }}</div>
+  {% render 'judgeme_widgets', widget_type: 'judgeme_review_widget', concierge_install: false, product: product %}
+</div>
+
+<style>
+  .title_revs {
+    font-size: {{ section.settings.section_title_size }}px;
+    color: {{ section.settings.section_title_color }};
+  }
+
+  .subtitle_revs {
+    font-size: {{ section.settings.section_description_size }}px;
+    color: {{ section.settings.section_description_color }};
+  }
+
+  @media screen and (max-width: 600px) {
+    .title_revs {
+      font-size: {{ section.settings.section_title_size_movil }}px;
+    }
+
+    .subtitle_revs {
+      font-size: {{ section.settings.section_description_size_movil }}px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Product / reviews",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Reviews title"
+      },
+      {
+        "type": "text",
+        "id": "section_title_reviews",
+        "label": "Title section",
+        "default": "Avis clients"
+      },
+      {
+        "type": "range",
+        "id": "section_title_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "section_title_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title - movil",
+        "default": 15
+      },
+      {
+        "type": "color",
+        "id": "section_title_color",
+        "label": "Text color title",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Reviews description"
+      },
+      {
+        "type": "text",
+        "id": "section_description_reviews",
+        "label": "Description",
+        "default": "Plus de 3000 avis clients positifs sur les mélanges Panda Tea :)"
+      },
+      {
+        "type": "range",
+        "id": "section_description_size",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subtitle",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "section_description_size_movil",
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subtitle - movil",
+        "default": 15
+      },
+      {
+        "type": "color",
+        "id": "section_description_color",
+        "label": "Font color subtitle",
+        "default": "#000"
+      }
+    ]
+  }
+{% endschema %}

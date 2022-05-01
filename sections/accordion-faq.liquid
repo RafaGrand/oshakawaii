@@ -1,0 +1,93 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda margins-faqs">
+
+  <h1 class="title-principal center-title-movil">{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with page render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+  
+  <div class="container-accordion-grid">
+
+    <div class="menu-section-faq">
+
+      {% assign content_page = page.content | split: '[categorie]' %}
+      {% for category in content_page %}
+        
+        {% liquid
+          assign content_category = category | split: '[accordion]'
+          assign category_head = content_category[0] | remove: '[categorie-init]'
+          assign category_accordion = content_category[1]
+          assign head_split = category_head | split: ']('
+          assign img_svg = head_split[1] | remove: ')' | strip_html | handle | append: '.svg' | file_url
+          assign handle_category = head_split[0] | remove: '[' | strip_html | handle
+          assign faq_items = category_accordion | split: '[title]'       
+        %}
+
+        <button data-category="category-{{ handle_category }}" class="category-event button-category arrow-background" {% if forloop.first == true %}active="true"{% endif %}>
+          {% capture id_icon %}category-{{ handle_category }}{% endcapture %}
+          {% render 'img-upload'
+            img_id: id_icon,
+            class: "icon-category-style",
+            img_url: img_svg,
+            alt: id_icon
+          %}
+          <span class="container-text-category">{{ head_split[0] | remove: '[' | strip_html }}</span>
+        </button>
+        
+        <ul data-category="category-{{ handle_category }}" class="accordion-faq-movil non-list-style" {% if forloop.first == true %}active="true"{% endif %}>
+
+          {% render 'accordion-sec'
+            category_accordion: category_accordion
+          %}
+
+        </ul>
+
+      {% endfor %}
+
+    </div>
+
+    <div class="container-desk-faqs" id="accordion-faq-container">
+      {% for category in content_page %}
+        {% liquid
+          assign content_category = category | split: '[accordion]'
+          assign category_head = content_category[0] | remove: '[categorie-init]'
+          assign category_accordion = content_category[1]
+          assign head_split = category_head | split: ']('
+          assign handle_category = head_split[0] | remove: '[' | strip_html | handle
+        %}
+        <ul data-category="category-{{ handle_category }}" class="accordion-faq-desktop non-list-style" {% if forloop.first == true %}active="true"{% endif %}>
+          
+          {% render 'accordion-sec'
+            category_accordion: category_accordion 
+          %}
+
+        </ul>
+      {% endfor %}
+    </div>  
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Custom content",
+    "fr": "Section dynamique"
+  },
+  "settings": []
+}
+{% endschema %}
+

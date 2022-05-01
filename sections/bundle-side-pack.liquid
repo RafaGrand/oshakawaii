@@ -1,0 +1,70 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div id="side-bundle-pack" open="false" class="cart-side side-bundle-pack">
+  <div class="cart-container-relative">
+
+    <div class="header-cart-slide padding-cart">
+      <button class="close-cart" id="close-side-bundle">
+        {% render 'icon-close' %}
+      </button>
+      <span class="cart-title-slide">{% comment %}ly_i18n_replace_for_[ "cart.box.title-box" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.title-box" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844394' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      <button class="container-count-side">
+        {% render 'icon-cart-panda' %}
+        <span class="count-header">{{ cart.item_count }}</span>
+      </button>
+    </div>
+
+    <div class="block-scroll-cart">
+      <div class="titles-box padding-cart">
+        <span class="subtitle-styles-box">{% comment %}ly_i18n_replace_for_[ "cart.box.subtitle-box" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.subtitle-box" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844395' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+        <span id="side-message-pack" class="description-styles-box">{% comment %}ly_i18n_replace_for_[ "cart.box.empty-pack" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.empty-pack" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844396' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+      </div>
+      
+      <div id="empty-box-message" class="padding-cart">
+        <span class="empty-box-message">
+          {% comment %}ly_i18n_replace_for_[ "cart.box.empty-box" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.empty-box" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844397' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        </span>
+      </div>
+
+      <div id="items-bundle-cart" class="padding-cart"></div>
+
+      <div class="total-pack-discount padding-cart">
+        <span class="total-text">{% comment %}ly_i18n_replace_for_[ "cart.box.total-box" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.total-box" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844398' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}: </span>
+        <span id="total-pack-box">0<span>
+      </div>
+
+      <div class="container-other-products padding-cart">
+        <span class="title-other-products-box">{% comment %}ly_i18n_replace_for_[ "cart.box.other-box" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.other-box" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844399' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+        <div class="items-other-products" id="items-other-products"></div>
+      </div>
+    </div>
+
+    <div class="cart-sideButtons padding-cart">
+      
+      <div class="total-checkout-pack">
+        <div class="total-products-cart">
+          <span class="total-item-title total-text">{% comment %}ly_i18n_replace_for_[ "cart.label.total" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.label.total" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844400' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+          <span id="total-cart-pack"><span class="total-item-price total-text">{{ cart.total_price | money }}</span></span>
+        </div>
+        <a class="btn-continuer btn-animation" href="{{ settings.url_button_sidePack }}" title='{% comment %}ly_i18n_replace_for_[ "cart.box.continue-box" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.continue-box" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844401' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}'>{% comment %}ly_i18n_replace_for_[ "cart.box.continue-box" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.continue-box" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844401' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,165 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  assign livrason_img = "livraison_cart.svg" | file_url
+  assign call_to_empty = 'cart.general.call_empty' | t | split: '['
+  assign first_call = call_to_empty[0]
+  assign split_call = call_to_empty[1] | split: ']'
+  assign text_call = split_call[0]
+  assign link_call = split_call[1] | remove: '(' | remove: ')'
+%}
+<div class="{% if cart.item_count == 0 %}hidden{% endif %}">
+  <div class="container-cart-items">
+    {%- for item in cart.items -%}
+      {% liquid
+        assign frequency = item.properties.shipping_interval_frequency
+        assign unit = item.properties.shipping_interval_unit_type
+      %}
+      <div variant_id="{{ item.variant.id }}" class="item-cart-page">
+        <div class="img_item-cart">
+          {% capture img_id %}image_cart-{{ forloop.index }}{% endcapture %}
+          {% liquid 
+            assign img_url = item.image | img_url: 'x190'
+            assign alt = item.image.alt | escape
+          %}
+          {% render 'img-upload'
+            img_id: img_id,
+            class: "img-product",
+            img_url: img_url,
+            alt: alt
+          %}
+        </div>
+        <div class="container-name-quantity">
+          <div class="name-product-cart">
+            <a 
+              href="{{ item.url }}"
+              test="{{ item.product.title }}"
+              title="{% comment %}ly_code_replace_for_[ item.product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with item.product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}">
+              {% render 'subscription-cart-info'
+                item: item,
+                frequency: frequency,
+                unit: unit
+              %}
+            </a>
+          </div>
+          <label class="quantity-item-page quantity-item-cart">
+            <input
+              data-set="{{ forloop.index }}"
+              class="input-cart-page"
+              variant_id="{{ item.first_available_variant.id }}" 
+              value="{{ item.quantity }}" 
+              type="number" 
+              min="1" 
+              max="999" 
+              pattern="[0-9]*" 
+              name="quantity" />
+            <div class="quantity-nav">
+              <button
+                type="button"
+                class="quantity-button quantity-down">
+              </button>
+              <button
+                type="button"
+                class="quantity-button quantity-up">
+              </button>
+            </div>
+          </label>
+        </div>
+        <div class="remove-container-class">
+          <button
+            variant_id="{{ item.variant.id }}"
+            class="remove-button_page remove-button-styles">
+          </button>
+          <span class="price-item-cart">
+            {{ item.original_price | money }}
+          </span>
+        </div>
+      </div>
+      {% if frequency %}
+        {% assign recharge_subs = true %} 
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="total-checkout">
+    <div class="livrason-total">
+      <span class="livrason-span total-text">
+        {{ settings.text_total_livrason }}
+      </span>
+      <span class="livrason-price total-text">
+        {{ settings.price_total_livrason | times: 100 | money }}
+      </span>  
+    </div>
+    <div class="total-products-cart">
+      <span class="total-item-title total-text">
+        {% comment %}ly_i18n_replace_for_[ "cart.label.total" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.label.total" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844464' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      </span>
+      <span class="total-item-price total-text">
+        {{ cart.original_total_price | money_with_currency }}
+      </span>
+    </div>
+    {% if recharge_subs %}
+      <div id="rc-redirec-checkout">
+        <a href='#'>
+          <button class="btn-checkout btn-checkout-upsell btn-animation">
+            {{ 'cart.general.checkout' | t }}
+          </button>
+        </a>
+      </div>
+    {% else %}
+      <form class="" action="/checkout" method="post">
+        <div class="flex-checkout-form">
+          <input
+            type="hidden"
+            name="discount"
+            value=""
+            class="discount-checkout-form"
+          />
+          <div class="contianer-btn-cart">
+            <button 
+              class="btn-checkout btn-checkout-upsell btn-animation"
+              name="checkout"
+              type="submit">
+              {% comment %}ly_i18n_replace_for_[ 'cart.general.checkout' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.checkout' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844462' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            </button>
+          </div>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</div>
+<div class="{% unless cart.item_count == 0 %}hidden {% endunless %}msg-empty-cart">
+  {% render 'img-upload'
+    img_url: livrason_img,
+    alt: "cart icon livrason",
+    class: "img-empty-cart"
+  %}
+  <div>
+    <p class="cart-page_empty title-principal">
+      {% comment %}ly_i18n_replace_for_[ 'cart.general.empty' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.empty' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844463' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+    </p>
+    <p class="cart-page_empty-call">
+      {{ first_call }}
+      <a 
+        class="black-panda-txt underline"
+        title="{{ text_call }}"
+        href="{{ link_call }}">
+         {{ text_call }}
+      </a>
+    </p>
+  </div>
+</div>

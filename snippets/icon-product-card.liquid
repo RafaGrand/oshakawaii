@@ -1,0 +1,48 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<li class="container-icon-description">
+
+  {% liquid
+    if block.settings.icon_svg != blank
+      assign img_link = block.settings.icon_svg | append: '.svg' | file_url
+    else
+      if block.settings.feature_image != blank
+        assign img_link = block.settings.feature_image | img_url: '100x'
+      else
+        assign img_link = "404.svg" | file_url 
+      endif
+    endif
+  %}
+  
+  {% capture img_id %}BlockIcon-{{ block.id }}{% endcapture %}
+
+  {% if block.settings.feature_text != blank %}
+    {% capture product_title %}{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} Panda Tea{% endcapture %}
+    {% render 'img-upload' 
+      img_id: img_id,
+      img_url: img_link,
+      alt: product_title,
+      class: "image-icon-product"
+    %}
+    <div class="styleIconDescription container-product_icon_des">
+      {{ block.settings.feature_text }}
+    </div>
+
+  {% endif %}
+
+</li>

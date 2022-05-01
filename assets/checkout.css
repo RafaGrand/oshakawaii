@@ -1,0 +1,49 @@
+/*=============== GENERALS ================*/
+.btn {padding: 10px; border-radius: 4px; width: 100%; text-transform: uppercase;}
+
+.page--no-banner .main, .page--no-banner .sidebar {
+  padding-top: 50px
+}
+
+/*================ LOGO ================*/
+.sticky-logo-checkout {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 16px 45px;
+  z-index: 2;
+}
+/* .logo {position: fixed; top: 16px; left: 45px;} */
+
+/*================ ITEMS CART ================*/
+.sidebar::after {box-shadow: none;}
+.order-summary__sections {background: #F2F1F5; padding: 25px; height: auto; border-radius: 0px;}
+
+/*================ PAYPAL BTN ================*/
+/* .shown-if-js {display: none;} */
+
+/*================ BREADCRUMB ================*/
+.breadcrumb__item--current {color:#45C391;}
+.breadcrumb__link {color: #D1D1D2;}
+.breadcrumb__item--blank {color: #D1D1D2;}
+.main .icon-svg--color-adaptive-light {color: #D1D1D2;}
+
+/*================ CONTENT FORM ================*/
+.section__title {color: #000; font-weight: 600;}
+
+/*================ BUTTONS ADVANCE ================*/
+.anyflexbox .step__footer {display: block; margin-top: 120px;}
+.anyflexbox .step__footer__info, .anyflexbox .step__footer__previous-link {width: 100%; margin-top: 20px; color: #000; text-decoration: underline; text-transform: uppercase; text-align: center;}
+.content-box__small-text {text-align: center;}
+@media screen and (max-width: 1000px) {
+  .sticky-logo-checkout {padding: 15px 24px;}
+  .wrap {padding: 0;}
+  .logo {position: relative; top: 0; left: 0;}
+  .anyflexbox .step__footer__info, .anyflexbox .step__footer__previous-link {margin-top: 0px;}
+  .page--no-banner .main {padding-top: 20px; padding-left: 20px; padding-right: 20px;}
+  .page--no-banner .sidebar {padding-top: 0px}
+  .order-summary-toggle {background: #F2F1F5; padding-left: 20px; padding-right: 20px;}
+  .order-summary-toggle__text {color: #000}
+  .order-summary-toggle__text:focus, .order-summary-toggle__text:hover {color: #000}
+  .display-table .order-summary-toggle__icon-wrapper {display: none;}
+}

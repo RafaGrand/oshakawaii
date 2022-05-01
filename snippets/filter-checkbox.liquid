@@ -1,0 +1,31 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<label class="rad-label checkbox-container-filter font-filters">
+  
+  <input
+    class="filter-radio rad-options-input"
+    id-checkbox="{{ filter_tagged }}"
+    name="{{ f_tag | handle }}"
+    type="checkbox"
+    value="{{ filter_tagged }}" />
+    
+  <div class="rad-design rad-checkbox-design"></div>
+    
+  {{ f_tag  }}
+
+</label>

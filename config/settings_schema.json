@@ -1,0 +1,1735 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Panda",
+    "theme_author": "Gradiweb",
+    "theme_version": "2.0",
+    "theme_documentation_url": "https:\/\/gradiweb.gitlab.io\/panda-tea-doc",
+    "theme_support_url": "https:\/\/support.shopify.com\/"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "color",
+        "id": "color_border_btn",
+        "label": "Button contour color",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "color_border_hover",
+        "label": "Hover button contour color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_background_hover",
+        "label": "Hover background color",
+        "default": "#FFF"
+      },
+      {
+        "type": "color",
+        "id": "color_text_hover",
+        "label": "Hover text color",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Links"
+      },
+      {
+        "type": "color",
+        "id": "color_links",
+        "label": "Hover text color",
+        "default": "#000"
+      }
+    ]
+  },
+  {
+    "name": {
+      "cs": "Typografie",
+      "da": "Typografi",
+      "de": "Typographie",
+      "en": "Typography",
+      "es": "Tipografía",
+      "fi": "Typografia",
+      "fr": "Typographie",
+      "it": "Caratteri tipografici",
+      "ja": "文字体裁",
+      "ko": "입력 체계",
+      "nb": "Typografi",
+      "nl": "Typografie",
+      "pl": "Typografia",
+      "pt-BR": "Tipografia",
+      "pt-PT": "Tipografia",
+      "sv": "Typografi",
+      "th": "ตัวพิมพ์",
+      "tr": "Tipografi",
+      "vi": "Kiểu chữ",
+      "zh-CN": "版式",
+      "zh-TW": "印刷樣式"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "en": "Headings",
+          "fr": "En-têtes"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "label": {
+          "cs": "Písmo",
+          "da": "Skrifttype",
+          "de": "Schriftart",
+          "en": "Font",
+          "es": "Fuente",
+          "fi": "Fontti",
+          "fr": "Police",
+          "it": "Font",
+          "ja": "フォント",
+          "ko": "글꼴",
+          "nb": "Skrifttype",
+          "nl": "Lettertype",
+          "pl": "Czcionka",
+          "pt-BR": "Fonte",
+          "pt-PT": "Tipo de letra",
+          "sv": "Typsnitt",
+          "th": "แบบอักษร",
+          "tr": "Yazı tipi",
+          "vi": "Phông chữ",
+          "zh-CN": "字体",
+          "zh-TW": "字型"
+        },
+        "default": "helvetica_n7"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Body text",
+          "fr": "Corps du texte"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "type_base_font",
+        "label": {
+          "en": "Font",
+          "fr": "Police"
+        },
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Button text",
+          "fr": "Bouton du texte"
+        }
+      },
+      {
+        "type": "font_picker",
+        "id": "type_button_font",
+        "label": {
+          "en": "Font",
+          "fr": "Police"
+        },
+        "default": "helvetica_n4"
+      },
+      {
+        "type": "header",
+        "content": "Product card"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_card_font",
+        "label": {
+          "en": "Font",
+          "fr": "Police"
+        },
+        "default": "helvetica_n4"
+      }
+    ]
+  },
+  {
+    "name": {
+      "en": "Social media",
+      "fr": "Médias sociaux"
+    },
+    "settings": [
+      {
+        "type": "header",
+        "content": {
+          "en": "GTM - Google tag mananger",
+          "fr": "GTM - Google tag mananger"
+        }
+      },
+      {
+        "type": "text",
+        "id": "gtm_google",
+        "label": {
+          "en": "GTM id",
+          "fr": "GTM id"
+        },
+        "default": "GTM-PNM2V7L"
+      },
+      {
+        "type": "header",
+        "content": {
+          "en": "Social accounts",
+          "fr": "Médias sociaux"
+        }
+      },
+      {
+        "type": "url",
+        "id": "social_twitter_link",
+        "label": {
+          "en": "Twitter url",
+          "fr": "Twitter url"
+        }
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_img",
+        "label": {
+          "en": "Twitter",
+          "fr": "Twitter"
+        }
+      },
+      {
+        "type": "url",
+        "id": "social_facebook_link",
+        "label": {
+          "en": "Facebook url",
+          "fr": "Facebook url"
+        }
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_img",
+        "label": {
+          "en": "Facebook",
+          "fr": "Facebook"
+        }
+      },
+      {
+        "type": "url",
+        "id": "social_pinterest_link",
+        "label": {
+          "en": "Pinterest url",
+          "fr": "Pinterest url"
+        }
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest_img",
+        "label": {
+          "en": "Pinterest",
+          "fr": "Pinterest"
+        }
+      },
+      {
+        "type": "url",
+        "id": "social_instagram_link",
+        "label": {
+          "en": "Instagram url",
+          "fr": "Instagram url"
+        }
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_img",
+        "label": {
+          "en": "Instagram",
+          "fr": "Instagram"
+        }
+      },
+      {
+        "type": "url",
+        "id": "social_tiktok_link",
+        "label": {
+          "en": "Tiktok url",
+          "fr": "Tiktok url"
+        }
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok_img",
+        "label": {
+          "en": "Tiktok",
+          "fr": "Tiktok"
+        }
+      }
+    ]
+  },
+  {
+    "name": {
+      "cs": "Favikona",
+      "da": "Favoritikon",
+      "de": "Favicon",
+      "en": "Favicon",
+      "es": "Favicon",
+      "fi": "Favicon",
+      "fr": "Favicon",
+      "it": "Favicon",
+      "ja": "ファビコン",
+      "ko": "Favicon",
+      "nb": "Favicon",
+      "nl": "Favicon",
+      "pl": "Ikona Favicon",
+      "pt-BR": "Favicon",
+      "pt-PT": "Favicon",
+      "sv": "Favicon",
+      "th": "Favicon",
+      "tr": "Favicon",
+      "vi": "Biểu tượng trang web",
+      "zh-CN": "网站图标",
+      "zh-TW": "Favicon"
+    },
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": {
+          "cs": "Obrázek favikony",
+          "da": "Billede for favoritikon",
+          "de": "Favicon-Foto",
+          "en": "Favicon image",
+          "es": "Imagen de favicon",
+          "fi": "Favicon-kuva",
+          "fr": "Image favicon",
+          "it": "Immagine favicon",
+          "ja": "ファビコン画像",
+          "ko": "파비콘 이미지",
+          "nb": "Favicon-bilde",
+          "nl": "Favicon-afbeelding",
+          "pl": "Obraz ikony Favicon",
+          "pt-BR": "Imagem favicon",
+          "pt-PT": "Imagem Favicon",
+          "sv": "Favicon-bild",
+          "th": "รูปภาพ Favicon",
+          "tr": "Favicon görseli",
+          "vi": "Hình ảnh biểu tượng trang web",
+          "zh-CN": "网站图标图片",
+          "zh-TW": "Favicon 圖片"
+        },
+        "info": {
+          "cs": "Dojde ke zmenšení na 32 × 32 px",
+          "da": "Skaleres ned til 32 x 32 px",
+          "de": "Wird in der Größe 32 x 32 px angezeigt",
+          "en": "Will be scaled down to 32 x 32px",
+          "es": "Se reducirá a 32 x 32px",
+          "fi": "Skaalataan 32 x 32 pikseliin",
+          "fr": "L'image sera réduite à 32 x 32 px",
+          "it": "Verrà ridimensionata a 32 x 32 pixel.",
+          "ja": "32×32ピクセルに縮小されます。",
+          "ko": "32x32 픽셀로 축소됩니다.",
+          "nb": "Vil skaleres ned til 32 x 32 px",
+          "nl": "Wordt verkleind tot 32x32 pixels",
+          "pl": "Zostanie zmniejszony do rozmiaru 32 x 32 px",
+          "pt-BR": "será reduzida para 32 x 32 pixels",
+          "pt-PT": "Será reduzida para 32 x 32 px",
+          "sv": "Kommer skalas ned till 32 x 32 px",
+          "th": "จะถูกลดขนาดลงเป็น 32 x 32 พิกเซล",
+          "tr": "Ölçeği 32 x 32 piksele düşürülür",
+          "vi": "Sẽ được thu nhỏ xuống 32 x 32px",
+          "zh-CN": "将缩小到 32 x 32px",
+          "zh-TW": "將會縮小為 32 x 32 像素"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Product",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product generals",
+        "info": "Here you customize your products styles"
+      },
+      {
+        "type": "header",
+        "content": "Product variants"
+      },
+      {
+        "type": "range",
+        "id": "size_variant_product",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size variant",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "size_variant_product_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size variant movil",
+        "default": 11
+      },
+      {
+        "type": "color",
+        "id": "color_variant_product",
+        "label": "Color variant",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Product card styles",
+        "info": "Here you customize styles in your product card"
+      },
+      {
+        "type": "color",
+        "id": "bg_card",
+        "label": "Background card",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "range",
+        "id": "size_name_product",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size name",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "size_name_product_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size name movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "color_name_product",
+        "label": "Color name",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_description_product",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_description_product_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description movil",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_description_product",
+        "label": "Color description",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Prices"
+      },
+      {
+        "type": "range",
+        "id": "size_price_product",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size price",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "size_price_product_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size price movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "color_price_product",
+        "label": "Color price",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_discount_product",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size discount",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_discount_product_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size discount movil",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_discount_product",
+        "label": "Color discount",
+        "default": "#7D7D7D"
+      },
+      {
+        "type": "header",
+        "content": "Buttons card styles"
+      },
+      {
+        "type": "range",
+        "id": "size_btn_product",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size button",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_btn_product_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size button movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "color_btn_product_add",
+        "label": "Font color button \/ add to cart",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "bg_btn_product_add",
+        "label": "Background button \/ add to cart",
+        "default": "#45C391"
+      },
+      {
+        "type": "color",
+        "id": "color_btn_product_out",
+        "label": "Font color button \/ out stock",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "bg_btn_product_out",
+        "label": "Background button \/ out stock",
+        "default": "#B7B7B7"
+      },
+      {
+        "type": "range",
+        "id": "size_tag_card",
+        "min": 9,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size tag",
+        "default": 9
+      },
+      {
+        "type": "range",
+        "id": "size_tag_card_movil",
+        "min": 7,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size tag movil",
+        "default": 7
+      },
+      {
+        "type": "textarea",
+        "id": "colors_tag",
+        "label": "Colors tag",
+        "info": "Write the colors reference by tag. For example: energy\/#ff69b4;"
+      }
+    ]
+  },
+  {
+    "name": "Collection",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Collection styles",
+        "info": "Here you customize styles in your collection"
+      },
+      {
+        "type": "color",
+        "id": "bg_filters-collection",
+        "label": "Background filter",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "color",
+        "id": "color_filters-collection",
+        "label": "Font color filter",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_title_collection",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size title collection",
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "size_title_collection_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size title collection movil",
+        "default": 22
+      },
+      {
+        "type": "color",
+        "id": "color_title_collection",
+        "label": "Font color title",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_description_collection",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description collection",
+        "default": 17
+      },
+      {
+        "type": "range",
+        "id": "size_description_collection_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description collection movil",
+        "default": 17
+      },
+      {
+        "type": "color",
+        "id": "color_description_collection",
+        "label": "Font color description collection",
+        "default": "#000"
+      }
+    ]
+  },
+  {
+    "name": "cart",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Title side cart"
+      },
+      {
+        "type": "range",
+        "id": "size_title_cart",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size title in side cart",
+        "default": 20
+      },
+      {
+        "type": "color",
+        "id": "color_title_head_cart",
+        "label": "Font color title head cart",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Title side card - movil "
+      },
+      {
+        "type": "range",
+        "id": "size_title_cart_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size title in side cart movil",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Title product card"
+      },
+      {
+        "type": "range",
+        "id": "size_product_cart",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size product in side cart",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Product suscription text/size"
+      },
+      {
+        "type": "text",
+        "id": "subscription_text",
+        "label": "Subscription text",
+        "default": "Abonnement",
+        "info": "Ex: Abonnement"
+      },
+      {
+        "type": "range",
+        "id": "size_subscription_text",
+        "min": 7,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subscription text",
+        "default": 10
+      },
+      {
+        "type": "header",
+        "content": "Title product card - movil"
+      },
+      {
+        "type": "range",
+        "id": "size_product_cart_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size product in side cart movil",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Variant Text"
+      },
+      {
+        "type": "range",
+        "id": "size_variant_item_cart",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size variant in side cart",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Variant text - movil"
+      },
+      {
+        "type": "range",
+        "id": "size_variant_item_cart_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size variant in side cart movil",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Cart checkout upsell"
+      },
+      {
+        "type": "collection",
+        "id": "collections_recomendations_checkout_upsell",
+        "label": "Collection checkout upsell",
+        "info": "Select collection in additional checkout upsell"
+      },
+      {
+        "type": "collection",
+        "id": "collections_recomendations_checkout_upsell_down",
+        "label": "Collection checkout upsell Down",
+        "info": "Select collection in additional checkout upsell down"
+      },
+      {
+        "type": "textarea",
+        "id": "checkout_upsell_text",
+        "label": "Checkout Upsell Text",
+        "default": "Souhaitez vous un accessoire ou un coffret en plus avec votre commande ?"
+      },
+      {
+        "type": "number",
+        "id": "quantity_checkout_upsell",
+        "label": "Quantity of recommended products in checkout upsell",
+        "info": "Quantity of recommended products in additional checkout upsell",
+        "default": 4
+      },
+      {
+        "type": "header",
+        "content": "Cart recomendations"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_recommendation_api",
+        "label": "Show recommendations",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Quantity API recomendations"
+      },
+      {
+        "type": "number",
+        "id": "api_recommendations_quantity",
+        "label": "Quantify of products for API Recommendations",
+        "default": 4
+      },
+      {
+        "type": "collection",
+        "id": "collections_recomendations_1",
+        "label": "Collections recomendation",
+        "info": "Select collection recommended in your cart side - UP"
+      },
+      {
+        "type": "number",
+        "id": "collections_recomendations_quantity_1",
+        "label": "Quantify of products for collection 1",
+        "info": "Quantity of products recommended in your cart side - UP",
+        "default": 4
+      },
+      {
+        "type": "collection",
+        "id": "collections_recomendations_2",
+        "label": "Collections recomendation",
+        "info": "Select collection recommended in your cart side - DOWN"
+      },
+      {
+        "type": "number",
+        "id": "collections_recomendations_quantity_2",
+        "label": "Quantify of products for collection 2",
+        "info": "Quantity of products recommended in your cart side - DOWN",
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "size_title_recomendations_cart",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size title recomendations side cart",
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "size_title_recomendations_cart_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size title recomendations side cart movil",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_title_recomendation_cart",
+        "label": "Font color title recomendations cart",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Card product recomendations"
+      },
+      {
+        "type": "range",
+        "id": "size_name_recomendations_cart",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size name recomendations side cart",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "size_name_recomendations_cart_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size name recomendations side cart movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "color_name_recomendation_cart",
+        "label": "Font color name recomendations cart",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_description_recomendations_cart",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description recomendations side cart",
+        "default": 11
+      },
+      {
+        "type": "range",
+        "id": "size_description_recomendations_cart_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description recomendations side cart movil",
+        "default": 11
+      },
+      {
+        "type": "color",
+        "id": "color_description_recomendation_cart",
+        "label": "Font color description recomendations cart",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_btn_recomendation_cart",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size button recomendations side cart",
+        "default": 10
+      },
+      {
+        "type": "range",
+        "id": "size_btn_recomendation_cart_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size button recomendations side cart movil",
+        "default": 10
+      },
+      {
+        "type": "color",
+        "id": "bg_btn_recomendation_cart",
+        "label": "background color button recomendations cart",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "border_btn_recomendation_cart",
+        "label": "border color button recomendations cart",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_btn_recomendation_cart",
+        "label": "Font color button recomendations cart",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Livrason gratuit bar progress",
+        "info": "Here can customize your experience - Livrason gratuit bar"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_shipping_bar",
+        "label": "Show shipping bar",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_livrason_total",
+        "label": "Show livrason total",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "text_livrason_head",
+        "label": "Text livrason message - empty",
+        "info": "For example: 'Livraison offerte dès 40€ d’achat'.",
+        "default": "Livraison offerte dès 40€ d’achat"
+      },
+      {
+        "type": "text",
+        "id": "url_gift",
+        "label": "Text livrason gratuit - bar",
+        "info": "For example: 'urban-bottle-black",
+        "default":"urban-bottle-black"
+      },
+      {
+        "type": "text",
+        "id": "text_livrason_gratuit",
+        "label": "Text livrason gratuit - bar",
+        "info": "For example: 'Plus que [value] pour la livraison gratuite'. Don't forget write: [value]",
+        "default": "Plus que [value] pour la livraison gratuite"
+      },
+      {
+        "type": "text",
+        "id": "text_gift_gratuit",
+        "label": "Text livrason gratuit - bar",
+        "info": "For example: 'Plus que [value] pour la livraison gratuite'. Don't forget write: [value]",
+        "default": "Plus que [value] pour avoir reçu un cadeau"
+      },
+      {
+        "type": "text",
+        "id": "text_livrason_offert",
+        "label": "Text short livrason gratuit - on the goal",
+        "info": "For example: Offerte",
+        "default": "Offerte"
+      },
+      {
+        "type": "text",
+        "id": "gift_product_text",
+        "label": "Text displayed for gift product",
+        "info": "For example: Produit cadeau",
+        "default": "Produit cadeau"
+      },
+      {
+        "type": "text",
+        "id": "euro_symbol",
+        "label": "Euro symbol",
+        "info": "€",
+        "default": "€"
+      },
+      {
+        "type": "range",
+        "id": "quantity_cadeau_gratuit",
+        "min": 5,
+        "max": 100,
+        "step": 1,
+        "unit": "$",
+        "label": "Quantity cadeau gratuit - bar",
+        "default": 90,
+        "info": "Important: If you want to disable the gift for the purchase in this range input, assign it a minimum value of 5, this will disable it automatically"
+      },
+      {
+        "type": "range",
+        "id": "quantity_livrason_gratuit",
+        "min": 5,
+        "max": 100,
+        "step": 1,
+        "unit": "$",
+        "label": "Quantity livrason gratuit - bar",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "size_text_livrason_gratuit",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size text livrason gratuit - bar",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "size_text_livrason_gratuit_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size text livrason gratuit - bar movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "color_text_livrason_gratuit",
+        "label": "Background color livrason gratuit - bar",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Total checkout",
+        "info": "Here can customize styles checkout total and button"
+      },
+      {
+        "type": "text",
+        "id": "text_total_livrason",
+        "label": "Text frais de livraison estimés",
+        "default": "Frais de livraison estimés"
+      },
+      {
+        "type": "text",
+        "id": "text_total_gift",
+        "label": "Text cadeau pour votre achat",
+        "default": "Cadeau pour votre achat"
+      },
+      {
+        "type": "text",
+        "id": "text_est_livrason",
+        "label": "Text frais de livraison estimés sans prix",
+        "default": "Frais de livraison estimés"
+      },
+      {
+        "type": "text",
+        "id": "text_retour",
+        "label": "Text frais de retour upsell",
+        "default": "RETOUR"
+      },
+      {
+        "type": "text",
+        "id": "text_header_upsell",
+        "label": "Text header upsell",
+        "default": "Vos produits ont été ajoutés"
+      },
+      {
+        "type": "number",
+        "id": "price_total_livrason",
+        "label": "Price shipping",
+        "default": 4
+      },
+      {
+        "type": "range",
+        "id": "size_text_total",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size text total cart",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "size_text_total_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size text total cart movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "color_text_total_gratuit",
+        "label": "Font color text total cart",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_btn_checkout",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size button checkout",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_btn_checkout_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size button checkout movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "bg_btn_checkout",
+        "label": "Background color button checkout",
+        "default": "#45C391"
+      },
+      {
+        "type": "color",
+        "id": "color_btn_checkout",
+        "label": "Font color button checkout",
+        "default": "#fff"
+      }
+    ]
+  },
+  {
+    "name": "Product - coffret",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product card styles",
+        "info": "Here you customize styles in your product card"
+      },
+      {
+        "type": "color",
+        "id": "bg_card_pack",
+        "label": "Background card",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "range",
+        "id": "size_name_product_pack",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size name",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "size_name_product_pack_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size name movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "color_name_product_pack",
+        "label": "Color name",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_description_product_pack",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_description_product_pack_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description movil",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_description_product_pack",
+        "label": "Color description",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Prices"
+      },
+      {
+        "type": "range",
+        "id": "size_price_product_pack",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size price",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "size_price_product_pack_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size price movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "color_price_product_pack",
+        "label": "Color price",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_discount_product_pack",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size discount",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_discount_product_pack_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size discount movil",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_discount_product_pack",
+        "label": "Color discount",
+        "default": "#7D7D7D"
+      },
+      {
+        "type": "range",
+        "id": "size_tag_card_pack",
+        "min": 9,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size tag",
+        "default": 9
+      },
+      {
+        "type": "range",
+        "id": "size_tag_card_pack_movil",
+        "min": 7,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size tag movil",
+        "default": 7
+      },
+      {
+        "type": "header",
+        "content": "Buttons card number quantity"
+      },
+      {
+        "type": "color",
+        "id": "color_border_product_plus",
+        "label": "Border color button \/ add to cart",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "bg_btn_product_plus",
+        "label": "Background button +",
+        "default": "#97DBC0"
+      },
+      {
+        "type": "color",
+        "id": "bg_input_product_plus",
+        "label": "Background input pack",
+        "default": "#fff"
+      },
+      {
+        "type": "header",
+        "content": "Side bundle packs"
+      },
+      {
+        "type": "range",
+        "id": "size_subtitle_title_sidePack",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size subtitle",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "size_subtitle_title_sidePack_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size subtitle movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "color_subtitle_title_sidePack",
+        "label": "Color subtitle",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_description_title_sidePack",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "size_description_title_sidePack_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description movil",
+        "default": 11
+      },
+      {
+        "type": "color",
+        "id": "color_description_title_sidePack",
+        "label": "Color description",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_other_product_sidePack",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size other products",
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "size_other_product_sidePack_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size other products movil",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_other_product_sidePack",
+        "label": "Color other products",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Button continue in side pack"
+      },
+      {
+        "type": "url",
+        "id": "url_button_sidePack",
+        "label": "URL - next step in create pack"
+      },
+      {
+        "type": "range",
+        "id": "size_button_sidePack",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size button continue",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_button_sidePack_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size button continue movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "color_button_sidePack",
+        "label": "Color button continue",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "bg_button_sidePack",
+        "label": "Background button continue",
+        "default": "#97DBC0"
+      },
+      {
+        "type": "header",
+        "content": "Bar top in head"
+      },
+      {
+        "type": "color",
+        "id": "color_text_bartop",
+        "label": "Color other products",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_bartop",
+        "label": "Color other products",
+        "default": "#97dbc0"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_panda_reference",
+        "label": "Image showing the number of elements in the box"
+      }
+    ]
+  },
+  {
+    "name": "Product - upsell",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Product card styles",
+        "info": "Here you customize styles in your product card"
+      },
+      {
+        "type": "color",
+        "id": "bg_card_upsell",
+        "label": "Background card",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "range",
+        "id": "size_name_product_upsell",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size name",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "size_name_product_upsell_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size name movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "color_name_product_upsell",
+        "label": "Color name",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_description_product_upsell",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_description_product_upsell_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size description movil",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_description_product_upsell",
+        "label": "Color description",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Prices"
+      },
+      {
+        "type": "range",
+        "id": "size_price_product_upsell",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size price",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "size_price_product_upsell_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size price movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "color_price_product_upsell",
+        "label": "Color price",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_discount_product_upsell",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size discount",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_discount_product_upsell_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Size discount movil",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_discount_product_upsell",
+        "label": "Color discount",
+        "default": "#7D7D7D"
+      },
+      {
+        "type": "header",
+        "content": "Buttons card styles"
+      },
+      {
+        "type": "range",
+        "id": "size_btn_product_upsell",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size button",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "size_btn_product_upsell_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size button movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "color_btn_product_add_upsell",
+        "label": "Font color button \/ add to cart",
+        "default": "#fff"
+      },
+      {
+        "type": "color",
+        "id": "bg_btn_product_add_upsell",
+        "label": "Background button \/ add to cart",
+        "default": "#45C391"
+      },
+      {
+        "type": "color",
+        "id": "border_product_add_upsell",
+        "label": "border color button \/ add to cart",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_tag_card_upsell",
+        "min": 9,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size tag",
+        "default": 9
+      },
+      {
+        "type": "range",
+        "id": "size_tag_card_upsell_movil",
+        "min": 7,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size tag movil",
+        "default": 7
+      }
+    ]
+  },
+  {
+    "name": "Subscription",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Texts in UI - subscriptions"
+      },
+      {
+        "type": "select",
+        "id": "frequency_unit",
+        "label": "Unit frequency",
+        "options": [
+          {
+            "value": "jours",
+            "label": "Jours"
+          },
+          {
+            "value": "semaines",
+            "label": "Semaines"
+          },
+          {
+            "value": "mois",
+            "label": "Mois"
+          }
+        ],
+        "default": "mois",
+        "info": "Select word to unit frequency"
+      },
+      {
+        "type": "text",
+        "id": "unit_product",
+        "label": "Text to products in suscriptions",
+        "default": "Panda Tea",
+        "info": "Ex: Panda Tea"
+      },
+      {
+        "type": "text",
+        "id": "assembly_1",
+        "label": "Assambly 1",
+        "default": "Livraison de",
+        "info": "Ex: Livraison de"
+      },
+      {
+        "type": "text",
+        "id": "assembly_2",
+        "label": "Assambly 2",
+        "default": "tous les",
+        "info": "Ex: tous les"
+      },
+      {
+        "type": "header",
+        "content": "Account"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_btn_subscriptions",
+        "label": "Show button customer portal by Recharge",
+        "default": false
+      }
+    ]
+  }
+]

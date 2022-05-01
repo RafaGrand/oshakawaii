@@ -1,0 +1,585 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<style>
+{% comment %} ------ CARDS PRODUCTS ------- {% endcomment %}
+
+.bg_card-seo {
+  background-color: {{ section.settings.bg_card_seo }};
+}
+
+.name_product-seo {
+  color: {{ section.settings.color_name_product_seo }};
+  font-size: {{ section.settings.size_name_product_seo }}px;
+}
+
+.description_product-seo {
+  color: {{ section.settings.color_description_product_seo }};
+  font-size: {{ section.settings.size_description_product_seo }}px;
+}
+
+.price_product-seo {
+  color: {{ section.settings.color_price_product_seo }};
+  font-size: {{ section.settings.size_price_product_seo }}px;
+}
+
+.price_compare-seo {
+  color: {{ section.settings.color_discount_product_seo }};
+  font-size: {{ section.settings.size_discount_product_seo }}px;
+}
+
+.tag-objective-seo {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: {{ section.settings.size_tag_card_seo }}px;
+}
+
+.btn-add-card-seo {
+  background-color: {{ section.settings.bg_btn_product_add_seo }};
+  color: {{ section.settings.color_btn_product_add_seo }};
+  border: 1px solid {{ section.settings.color_btn_product_add_seo }};
+  font-size: {{ section.settings.size_btn_product_seo }}px;
+  cursor: pointer;
+}
+
+.btn-add-card-seo[disabled="disabled"] {
+  background-color: {{ section.settings.bg_btn_product_out_seo }};
+  color: {{ section.settings.color_btn_product_out_seo }};
+  cursor: not-allowed;
+}
+
+.btn-choices-seo {
+  background-color: {{ section.settings.bg_btn_product_add_seo }};
+  color: {{ section.settings.color_btn_product_add_seo }};
+  border: 1px solid {{ section.settings.color_btn_product_add_seo }};
+  font-size: {{ section.settings.size_btn_product_seo }}px;
+  cursor: pointer;
+}
+
+{% comment %} ------ HEADINGS ------- {% endcomment %}
+.title-h1 {
+  color: {{ section.settings.color_title_1 }};
+  font-size: {{ section.settings.size_title_1 }}px;
+}
+
+.title-h2 {
+  color: {{ section.settings.color_title_2 }};
+  font-size: {{ section.settings.size_title_2 }}px;
+}
+
+.title-nav {
+  color: {{ section.settings.color_title_nav }};
+  font-size: {{ section.settings.size_title_nav }}px;
+}
+
+{% comment %} ------ CONTENT ------- {% endcomment %}
+.content-style {
+  color: {{ section.settings.color_content }};
+  font-size: {{ section.settings.size_content }}px;
+}
+
+.item-accordion {
+  color: {{ section.settings.color_accordion }};
+  font-size: {{ section.settings.size_accordion }}px;
+}
+
+.btn-call-collection {
+  font-size: {{ section.settings.size_btn_cta_seo }}px;
+  color: {{ section.settings.color_btn_cta_seo }};
+  background-color: {{ section.settings.bg_btn_cta_seo }};
+}
+.btn-nav-collection {
+  font-size: {{ section.settings.size_btn_nav_seo }}px;
+  color: {{ section.settings.color_btn_nav_seo }};
+  background-color: {{ section.settings.bg_btn_nav_seo }};
+}
+
+@media screen and (max-width: 600px) {
+
+  {% comment %} ------ CARDS PRODUCTS SEO ------- {% endcomment %}
+
+  .name_product-seo {
+    font-size: {{ section.settings.size_name_product_seo_movil }}px;
+  }
+
+  .description_product-seo {
+    font-size: {{ section.settings.size_description_product_seo_movil }}px;
+  }
+
+  .price_product-seo {
+    font-size: {{ section.settings.size_price_product_seo_movil }}px;
+  }
+
+  .price_discount-seo {
+    font-size: {{ section.settings.size_price_discount_seo_movil }}px;
+  }
+
+  .btn-add-card-seo {
+    font-size: {{ section.settings.size_btn_product_seo_movil }}px;
+  }
+
+  .btn-choices-seo {
+    font-size: {{ section.settings.size_btn_product_seo_movil }}px;
+  }
+
+  .tag-objective-seo {
+    font-size: {{ section.settings.size_tag_card_seo_movil }}px;
+  }
+
+  {% comment %} ------ HEADINGS ------- {% endcomment %}
+  .title-h1 {
+    font-size: {{ section.settings.size_title_1_movil }}px;
+  }
+
+  .title-h2 {
+    font-size: {{ section.settings.size_title_2_movil }}px;
+  }
+
+  .title-nav {
+    font-size: {{ section.settings.size_title_nav_movil }}px;
+  }
+
+  {% comment %} ------ CONTENT ------- {% endcomment %}
+  .content-style {
+    font-size: {{ section.settings.size_content_movil }}px;
+  }
+
+  .item-accordion {
+    font-size: {{ section.settings.size_accordion_movil }}px;
+  }
+
+  .btn-call-collection {
+    font-size: {{ section.settings.size_btn_cta_seo_movil }}px;
+  }
+  .btn-nav-collection {
+    font-size: {{ section.settings.size_btn_nav_seo_movil }}px;
+  }
+
+}
+
+</style>
+
+{% schema %}
+{
+  "name": {
+    "en": "Settings styles",
+    "fr": "Settings styles"
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Product card"
+    },
+    {
+      "type": "color",
+      "id": "bg_card_seo",
+      "label": "Background card",
+      "default": "#FFF"
+    },
+    {
+      "type": "range",
+      "id": "size_name_product_seo",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size name",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "size_name_product_seo_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size name movil",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "color_name_product_seo",
+      "label": "Color name",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_description_product_seo",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size description",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "size_description_product_seo_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size description movil",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "color_description_product_seo",
+      "label": "Color description",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Prices"
+    },
+    {
+      "type": "range",
+      "id": "size_price_product_seo",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size price",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "size_price_product_seo_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size price movil",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "color_price_product_seo",
+      "label": "Color price",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_discount_product_seo",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size discount",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_discount_product_seo_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size discount movil",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "color_discount_product_seo",
+      "label": "Color discount",
+      "default": "#7D7D7D"
+    },
+    {
+      "type": "header",
+      "content": "Buttons card styles"
+    },
+    {
+      "type": "range",
+      "id": "size_btn_product_seo",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size button",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "size_btn_product_seo_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size button movil",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "color_btn_product_add_seo",
+      "label": "Font color button \/ add to cart",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bg_btn_product_add_seo",
+      "label": "Background button \/ add to cart",
+      "default": "#FFF"
+    },
+    {
+      "type": "color",
+      "id": "color_btn_product_out_seo",
+      "label": "Font color button \/ out stock",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bg_btn_product_out_seo",
+      "label": "Background button \/ out stock",
+      "default": "#FFF"
+    },
+    {
+      "type": "range",
+      "id": "size_tag_card_seo",
+      "min": 9,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size tag",
+      "default": 9
+    },
+    {
+      "type": "range",
+      "id": "size_tag_card_seo_movil",
+      "min": 7,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size tag movil",
+      "default": 7
+    },
+    {
+      "type": "header",
+      "content": "Heading styles"
+    },
+    {
+      "type": "range",
+      "id": "size_title_1",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size H1",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "size_title_1_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size H1",
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "color_title_1",
+      "label": "Color H1",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_title_2",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size H2",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "size_title_2_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size H2",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "color_title_2",
+      "label": "Color H2",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_title_nav",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size title nav",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_title_nav_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size title nav",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "color_title_nav",
+      "label": "Color title nav",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Content styles"
+    },
+    {
+      "type": "range",
+      "id": "size_content",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size content",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_content_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size content",
+      "default": 12
+    },
+    {
+      "type": "color",
+      "id": "color_content",
+      "label": "Color content",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Accordion buttons styles"
+    },
+    {
+      "type": "range",
+      "id": "size_accordion",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size Accordion",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_accordion_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size Accordion",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_accordion",
+      "label": "Color Accordion",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Buttons CTA"
+    },
+    {
+      "type": "range",
+      "id": "size_btn_cta_seo",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size button CTA",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_btn_cta_seo_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size button CTA movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_btn_cta_seo",
+      "label": "Font color button CTA",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "bg_btn_cta_seo",
+      "label": "Background button CTA",
+      "default": "#45C391"
+    },
+    {
+      "type": "header",
+      "content": "Buttons nav"
+    },
+    {
+      "type": "range",
+      "id": "size_btn_nav_seo",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size button nav",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_btn_nav_seo_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size button nav movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_btn_nav_seo",
+      "label": "Font color button nav",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "bg_btn_nav_seo",
+      "label": "Background button nav",
+      "default": "#F2F1F5"
+    }
+  ]
+}
+{% endschema %}

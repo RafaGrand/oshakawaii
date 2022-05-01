@@ -1,0 +1,139 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  assign formId = 'ContactForm'
+  if template contains "faq"
+    assign paddings_contact = "background-panda paddings-form-faq"
+  else
+    assign paddings_contact = "paddings-form-page"
+  endif
+%}
+
+<div class="{{ paddings_contact }}">
+
+  <div class="width-contact-form">
+
+    <div class="text-centerr">
+
+      <div class="margin-title-contact">
+
+      {% if template contains 'contact' %}
+        <h1 class="title-principal">{{ section.settings.title_contact }}</h1>
+      {% else %}
+        <h2 class="title-principal">{{ section.settings.title_contact }}</h2>
+      {% endif %}
+
+      </div>
+
+      {% if section.settings.content_contact != blank %}
+        <div class="content-contact-page">
+          {{ section.settings.content_contact }}
+        </div>
+      {% endif %}
+
+      {% form 'contact', id: formId %}
+        <div class="block-form-contact">
+
+          {% render 'form-status', form: form, form_id: formId %}
+
+          <input
+            
+            class="form-control_contact"
+            type="text"
+            id="{{ formId }}-name" 
+            placeholder="{% comment %}ly_i18n_replace_for_[ 'contact.form.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844410' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"
+            name="contact[{% comment %}ly_i18n_replace_for_[ 'contact.form.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844410' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}]" 
+            value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+
+          <input
+            
+            class="form-control_contact"
+            type="email"
+            id="{{ formId }}-email"
+            placeholder="{% comment %}ly_i18n_replace_for_[ 'contact.form.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.email' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844411' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"
+            name="contact[email]"
+            autocorrect="off"
+            autocapitalize="off"
+            value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+            aria-required="true"
+            {%- if form.errors contains 'email' -%}
+              class="input--error"
+              aria-invalid="true"
+              aria-describedby="{{ formId }}-email-error"
+            {%- endif -%}
+            >
+
+          {%- if form.errors contains 'email' -%}
+            <span id="{{ formId}}-email-error" class="input-error-message">
+              <span>{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+            </span>
+          {%- endif -%}
+              
+          <input
+            
+            class="form-control_contact"
+            type="tel" 
+            id="{{ formId }}-phone"
+            placeholder="{% comment %}ly_i18n_replace_for_[ 'contact.form.phone' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.phone' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844412' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"
+            name="contact[{% comment %}ly_i18n_replace_for_[ 'contact.form.phone' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.phone' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844412' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}]" 
+            pattern="[0-9\-]*" 
+            value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+
+          <textarea
+            
+            placeholder="{% comment %}ly_i18n_replace_for_[ 'contact.form.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.message' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844413' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" 
+            class="form-control_contact" 
+            rows="10" id="{{ formId }}-message" 
+            name="contact[{% comment %}ly_i18n_replace_for_[ 'contact.form.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.message' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844413' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          
+          <input type="submit" class="btn-panda btn-complete uppercase btn-animation" value="{% comment %}ly_i18n_replace_for_[ 'contact.form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844414' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+
+        </div>
+      {% endform %}
+
+    </div>
+    
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "contact-form",
+  "class": "contact-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_contact",
+      "label": "Title (H2)",
+      "default": "Contactez-nous"
+    },
+    {
+      "type": "richtext",
+      "id": "content_contact",
+      "label": "Content contact",
+      "default": "<p>Notre équipe vous répond du lundi au vendredi de 9h à 18H et même parfois plus tard à l'adresse contact@pandatea.fr.</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "contact-form"
+    }
+  ]
+}
+{% endschema %}

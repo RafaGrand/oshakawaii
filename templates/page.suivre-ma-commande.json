@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "main": {
+      "type": "ma-commande-template",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

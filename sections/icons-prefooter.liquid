@@ -1,0 +1,230 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="margin-brands-sections" style="background: {{ section.settings.color_bg_sections }};">
+  <div class="width-panda">
+    
+    {% if section.settings.brand_legend != blank  %}
+      <div class="text-icon-center">
+        {{ section.settings.brand_legend }}
+      </div>
+    {% endif %}
+
+    <div class="container-brands-blocks">
+      {% assign blocks = section.blocks %}
+
+      {% for block in blocks %}
+
+        <div class="block-by-brands" style="width: {{block.settings.width_block_brand}}%">
+          <span class="blocks-icons-subtitle">{{ block.settings.title_brands }}</span>
+        
+          {% liquid
+            assign img_icon_1 = block.settings.image_brands_1 | append: '.svg' | file_url
+            assign img_icon_2 = block.settings.image_brands_2 | append: '.svg' | file_url
+            assign img_icon_3 = block.settings.image_brands_3 | append: '.svg' | file_url
+          %}
+
+          <div class="grid-brand-images">
+            {% if block.settings.image_brands_1 != blank %}
+              
+              {% render 'img-upload' img_url: img_icon_1, img_id, class: "item-img-brand", alt: block.settings.image_brands_1 %}
+
+            {% endif %}
+            {% if block.settings.image_brands_2 != blank %}
+              
+              {% render 'img-upload' img_url: img_icon_2, img_id, class: "item-img-brand", alt: block.settings.image_brands_2 %}
+            
+            {% endif %}
+            {% if block.settings.image_brands_3 != blank %}
+              
+              {% render 'img-upload' img_url: img_icon_3, img_id, class: "item-img-brand", alt: block.settings.image_brands_3 %}
+                
+            {% endif %}
+          </div>
+        </div>
+
+      {% endfor %}
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  .blocks-icons-subtitle {
+    font-size: {{ section.settings.size_subtitle_brands_home }}px;
+    color: {{ section.settings.color_subtitle_brands_home }};
+  }
+  .text-icon-center {
+    font-size: {{ section.settings.size_title_brands_home }}px;
+    color: {{ section.settings.color_title_brands_home }};
+  }
+  @media screen and (max-width: 600px) {
+    .blocks-icons-subtitle {
+      font-size: {{ section.settings.size_subtitle_brands_home_movil }}px;
+    }
+    .text-icon-center {
+      font-size: {{ section.settings.size_title_brands_home_movil }}px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Home / icons brands",
+    "class": "icons-brands-container",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background Color sections"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_sections",
+        "label": "Color background section",
+        "default": "#F6F6F6"
+      },
+      {
+        "type": "richtext",
+        "id": "brand_legend",
+        "label": "Brand legend",
+        "default": "<p>Nous nous engageons à utiliser des plantes cultivées de manière responsable: 100% bio et non génétiquement modifiées. Chaque année, Panda Tea verse une part de son chiffre d'affaire à des associations à impact positif sur la planète via notre participation à l'organisme 1% For The Planet.</p>"
+      },
+      {
+        "type": "range",
+        "id": "size_title_brands_home",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size in title (H2)",
+        "default": 14
+      },
+      {
+        "type": "range",
+        "id": "size_title_brands_home_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size in title - movil (H2)",
+        "default": 14
+      },
+      {
+        "type": "color",
+        "id": "color_title_brands_home",
+        "label": "Colo text in title (H2)",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Content subtitle brands"
+      },
+      {
+        "type": "range",
+        "id": "size_subtitle_brands_home",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size in subtitle",
+        "default": 22
+      },
+      {
+        "type": "range",
+        "id": "size_subtitle_brands_home_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size in subtitle - movil",
+        "default": 17
+      },
+      {
+        "type": "color",
+        "id": "color_subtitle_brands_home",
+        "label": "Colo text in subtitle",
+        "default": "#000"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "brand",
+        "name": "Text / brands",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title_brands",
+            "label": "Title brands",
+            "default": "Certifié biologique par Ecocert"
+          },
+          {
+            "type": "text",
+            "id": "image_brands_1",
+            "label": "Brand icon 1",
+            "info": {
+              "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+              "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+            }
+          },
+          {
+            "type": "text",
+            "id": "image_brands_2",
+            "label": "Brand icon 2",
+            "info": {
+              "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+              "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+            }
+          },
+          {
+            "type": "text",
+            "id": "image_brands_3",
+            "label": "Brand icon 3",
+            "info": {
+              "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+              "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+            }
+          },
+          {
+            "type": "select",
+            "id": "width_block_brand",
+            "label": "Width block brands",
+            "options": [
+              {
+                "value": "100",
+                "label": "100%"
+              },
+              {
+                "value": "50",
+                "label": "50%"
+              },
+              {
+                "value": "33.33",
+                "label": "33%"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Home / icons brands",
+        "category": "Brand"
+      }
+    ]
+  }
+{% endschema %}

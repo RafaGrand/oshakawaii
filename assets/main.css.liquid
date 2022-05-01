@@ -1,0 +1,536 @@
+
+{{ settings.type_header_font | font_face: font_display: 'swap' }}
+{{ settings.type_base_font | font_face: font_display: 'swap' }}
+{{ settings.type_button_font | font_face: font_display: 'swap' }}
+{{ settings.type_card_font | font_face: font_display: 'swap' }}
+
+
+{% comment %} ------ GENERALS ------ {% endcomment %}
+body {font-family: {{ settings.type_base_font.family }}, Arial, sans-serif;}
+h1,h2,h3,h4,h5,h6 {font-family: {{ settings.type_header_font.family }}, Arial, sans-serif;}
+
+.arrow-after:after {content: url('{{ 'icon-arrow.svg' | asset_url }}')}
+
+.btn-slider-left-revs::before {
+  content: url("{{ 'icon-arrow-white.svg' | asset_url }}");
+  transform: rotateZ(180deg);
+}
+
+.btn-slider-rigth-revs::before, .container_arrow::before {
+  content: url("{{ 'icon-arrow-white.svg' | asset_url }}");
+}
+
+.select_arrow-s {
+  background-image: url("{{ 'icon-arrow.svg' | asset_url }}");
+  background-position: 95% 55%;
+  background-repeat: no-repeat;
+}
+
+.grid-submenu-movil::before {
+  content: url("{{ 'icon-arrow.svg' | asset_url }}");
+}
+
+.close-bg {
+  background-image: url("{{ 'icon-close.svg' | asset_url }}");
+  background-position: 50% 50%;
+} 
+
+.btn-slider-left-categories::before {
+  content: url("{{ 'icon-arrow-large.svg' | asset_url }}");
+  transform: rotateZ(180deg);
+}
+
+.btn-slider-rigth-categories::before {
+  content: url("{{ 'icon-arrow-large.svg' | asset_url }}");
+}
+
+.quantity-up::before, .btn-pack-plus::before  {
+  content: url("{{ 'icon-plus-panda.svg' | asset_url }}");
+}
+.quantity-down::before, .btn-pack-meno::before {
+  content: url("{{ 'icon-minus-panda.svg' | asset_url }}");
+}
+
+.video-icon::before {
+  content: url("{{ 'icon-video.svg' | asset_url }}");
+}
+
+.arrow-background::after {
+  content: url("{{ 'icon-arrow.svg' | asset_url }}");
+}
+
+.rad-text {
+  color: {{ settings.color_variant_product }};
+  font-size: {{ settings.size_variant_product }}px;
+}
+
+{% comment %} ------ CARDS PRODUCTS THEME ------- {% endcomment %}
+.bg_card {
+  background-color: {{ settings.bg_card }};
+  font-family: {{ settings.type_card_font.family }}, Arial, sans-serif;
+}
+
+.name_product {
+  color: {{ settings.color_name_product }};
+  font-size: {{ settings.size_name_product }}px;
+}
+
+.description_product {
+  color: {{ settings.color_description_product }};
+  font-size: {{ settings.size_description_product }}px;
+}
+
+.price_product {
+  color: {{ settings.color_price_product }};
+  font-size: {{ settings.size_price_product }}px;
+}
+
+.price_compare {
+  color: {{ settings.color_discount_product }};
+  font-size: {{ settings.size_discount_product }}px;
+}
+
+.tag-objective {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: {{ settings.size_tag_card }}px;
+}
+
+.btn-add-card {
+  font-size: {{ settings.size_btn_product_movil }}px;
+}
+
+.btn-card-main {
+  font-family: {{ settings.type_button_font.family }}, Arial, sans-serif;
+  background-color: {{ settings.bg_btn_product_add }};
+  color: {{ settings.color_btn_product_add }};
+  font-size: {{ settings.size_btn_product }}px;
+  cursor: pointer;
+}
+
+.btn-card-main[disabled="disabled"] {
+  background-color: {{ settings.bg_btn_product_out }};
+  color: {{ settings.color_btn_product_out }};
+  cursor: not-allowed;
+}
+
+.btn-choices-card {
+  font-family: {{ settings.type_button_font.family }}, Arial, sans-serif;
+  background-color: {{ settings.bg_btn_product_add }};
+  color: {{ settings.color_btn_product_add }};
+  font-size: {{ settings.size_btn_product }}px;
+  cursor: pointer;
+}
+
+.btn-choices-card[disabled="disabled"] {
+  background-color: {{ settings.bg_btn_product_out }};
+  color: {{ settings.color_btn_product_out }};
+  cursor: not-allowed;
+}
+
+{% comment %} ------ TAG OBJECTIVES ------- {% endcomment %}
+
+{% assign color_tag = settings.colors_tag | split: ';' %}
+  {% for color in color_tag %}
+    {% assign color_ = color | split: '/' %}
+
+    .color-tag_{{ color_[0] }} {
+      color: {{ color_[1] }};
+    }
+
+  {% endfor %}
+
+{% comment %} ------ CARDS PRODUCTS PACK THEME ------- {% endcomment %}
+
+.bg_card-pack {
+  background-color: {{ settings.bg_card_pack }};
+  font-family: {{ settings.type_card_font.family }}, Arial, sans-serif;
+}
+
+.name_product-pack {
+  color: {{ settings.color_name_product_pack }};
+  font-size: {{ settings.size_name_product_pack }}px;
+}
+
+.description_product-pack {
+  color: {{ settings.color_description_product_pack }};
+  font-size: {{ settings.size_description_product_pack }}px;
+}
+
+.price_product-pack {
+  color: {{ settings.color_price_product_pack }};
+  font-size: {{ settings.size_price_product_pack }}px;
+}
+
+.price_compare-pack {
+  color: {{ settings.color_discount_product_pack }};
+  font-size: {{ settings.size_discount_product_pack }}px;
+}
+
+.tag-objective-pack {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: {{ settings.size_tag_card_pack }}px;
+}
+
+.quantity-pack {
+  border: 1px solid {{ settings.color_border_product_plus }};
+  background: {{ settings.bg_input_product_plus }};
+}
+
+.btn-pack-plus {
+  background: {{ settings.bg_btn_product_plus }};
+}
+
+{% comment %} ------ CARDS PRODUCTS UPSELL ------- {% endcomment %}
+.bg_card-upsell {
+  background-color: {{ settings.bg_card_upsell }};
+  font-family: {{ settings.type_card_font.family }}, Arial, sans-serif;
+}
+
+.name_product-upsell {
+  color: {{ settings.color_name_product_upsell }};
+  font-size: {{ settings.size_name_product_upsell }}px;
+}
+
+.description_product-upsell {
+  color: {{ settings.color_description_product_upsell }};
+  font-size: {{ settings.size_description_product_upsell }}px;
+}
+
+.price_product-upsell {
+  color: {{ settings.color_price_product_upsell }};
+  font-size: {{ settings.size_price_product_upsell }}px;
+}
+
+.price_compare-upsell {
+  color: {{ settings.color_discount_product_upsell }};
+  font-size: {{ settings.size_discount_product_upsell }}px;
+}
+
+.tag-objective-upsell {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: {{ settings.size_tag_card_upsell }}px;
+}
+
+.btn-add-card-upsell {
+  font-family: {{ settings.type_button_font.family }}, Arial, sans-serif;
+  background-color: {{ settings.bg_btn_product_add_upsell }};
+  color: {{ settings.color_btn_product_add_upsell }};
+  border: 1px solid {{ settings.border_product_add_upsell }} !important;
+  font-size: {{ settings.size_btn_product_upsell }}px;
+  cursor: pointer;
+}
+
+.btn-choices-pack {
+  font-family: {{ settings.type_button_font.family }}, Arial, sans-serif;
+  background-color: {{ settings.bg_btn_product_add_upsell }};
+  color: {{ settings.color_btn_product_add_upsell }};
+  border: 1px solid {{ settings.border_product_add_upsell }} !important;
+  font-size: {{ settings.size_btn_product_upsell }}px;
+  cursor: pointer;
+}
+
+{% comment %} ------ PRODUCT CARD RECOMENDATIONS ------- {% endcomment %}
+.name_recomendation {
+  color: {{ settings.color_name_recomendation_cart }};
+  font-size: {{ settings.size_name_recomendations_cart }}px;
+}
+
+.description_recomendation {
+  color: {{ settings.color_description_recomendation_cart }};
+  font-size: {{ settings.size_description_recomendations_cart }}px;
+}
+
+.btn_recomendation {
+  color: {{ settings.color_btn_recomendation_cart }};
+  background: {{ settings.bg_btn_recomendation_cart }};
+  font-size: {{ settings.size_btn_recomendation_cart }}px;
+  border-color: {{ settings.border_btn_recomendation_cart }};
+}
+
+.btn_recomendation[disabled="disabled"] {
+  cursor: not-allowed;
+}
+
+{% comment %} ------ COLLECTIONS THEME ------- {% endcomment %}
+.collection-title {
+  color: {{ settings.color_title_collection }};
+  font-size: {{ settings.size_title_collection }}px;
+}
+
+.collection-description {
+  color: {{ settings.color_description_collection }};
+  font-size: {{ settings.size_description_collection }}px;
+}
+
+{% comment %} ------ CART SIDE ------- {% endcomment %}
+.cart-title-slide {
+  color: {{ settings.color_title_head_cart }};
+  font-size: {{ settings.size_title_cart }}px;
+}
+
+.size-product_cart{
+  font-size: {{ settings.size_product_cart }}px;
+}
+
+.suscription-product_title{
+  font-size: {{ settings.size_subscription_text }}px;
+}
+
+.variant-item{
+  font-size: {{ settings.size_variant_item_cart }}px;
+}
+
+.title-cart-recomendations {
+  color: {{ settings.color_title_recomendation_cart }};
+  font-size: {{ settings.size_title_recomendations_cart }}px;
+}
+
+.bar-progress-text {
+  color: {{ settings.color_text_livrason_gratuit }};
+  font-size: {{ settings.size_text_livrason_gratuit }}px;
+}
+
+.total-text {
+  color: {{ settings.color_text_total_gratuit }};
+  font-size: {{ settings.size_text_total }}px;
+}
+
+.btn-checkout {
+  color: {{ settings.color_btn_checkout }};
+  background: {{ settings.bg_btn_checkout }};
+  font-size: {{ settings.size_btn_checkout }}px;
+}
+
+
+{% comment %} ------ SIDE BUNDLE PACK ------- {% endcomment %}
+
+.subtitle-styles-box {
+  color: {{ settings.color_subtitle_title_sidePack }};
+  font-size: {{ settings.size_subtitle_title_sidePack }}px;
+}
+
+.description-styles-box {
+  color: {{ settings.color_description_title_sidePack }};
+  font-size: {{ settings.size_description_title_sidePack }}px;
+}
+
+.title-other-products-box {
+  color: {{ settings.color_other_product_sidePack }};
+  font-size: {{ settings.size_other_product_sidePack }}px;
+}
+
+.btn-continuer {
+  color: {{ settings.color_button_sidePack }};
+  background: {{ settings.bg_button_sidePack }};
+  font-size: {{ settings.size_button_sidePack }}px;
+}
+
+{% comment %} ------ BAR TOP PACKS ------- {% endcomment %}
+
+.bar-coffret {
+  background-color: {{ settings.color_bg_bartop }};
+}
+
+.message-coffret-bar {
+  color: {{ settings.color_text_bartop }};
+}
+
+.coffre-equa {
+  color: {{ settings.color_text_bartop }};
+}
+
+.contianer-panda-icon::after {
+  content: url("{{ settings.img_panda_reference | img_url: "20x" }}");
+}
+
+
+{% comment %} ------ REVIEWS THEME ------- {% endcomment %}
+
+.jdgm-star.jdgm--on:before {
+  content: url("{{ "icon-star-reviews-large.svg" | assets_url }}") !important;
+}
+
+.jdgm-rev__rating > .jdgm-star.jdgm--on:before {
+  content: url("{{ "icon-star-reviews.svg" | assets_url }}") !important;
+}
+
+{% comment %} ------ HOVER BUTTONS ------- {% endcomment %}
+
+.btn-animation {
+  border: 1px solid {{ settings.color_border_btn }};
+}
+.btn-animation:hover {
+  color: {{ settings.color_text_hover }};
+  background-color: {{ settings.color_background_hover }};
+  border: 1px solid {{ settings.color_border_hover }};
+}
+
+{% comment %} ------ LINKS BUTTONS ------- {% endcomment %}
+a {
+  color: {{ settings.color_links }};
+}
+
+@media screen and (max-width: 600px) {
+  .rad-text {
+    font-size: {{ settings.size_variant_product_movil }}px;
+  }
+
+  {% comment %} ------ CARDS PRODUCTS THEME ------- {% endcomment %}
+  .name_product {
+    font-size: {{ settings.size_name_product_movil }}px;
+  }
+
+  .description_product {
+    font-size: {{ settings.size_description_product_movil }}px;
+  }
+
+  .price_product {
+    font-size: {{ settings.size_price_product_movil }}px;
+  }
+
+  .price_compare {
+    font-size: {{ settings.size_discount_product_movil }}px;
+  }
+
+  .btn-add-card {
+    font-size: {{ settings.size_btn_product_movil }}px;
+  }
+
+  .btn-choices {
+    font-size: {{ settings.size_btn_product_movil }}px;
+  }
+
+  .tag-objective {
+    font-size: {{ settings.size_tag_card_movil}}px;
+  }
+
+  {% comment %} ------ CARDS PRODUCTS PACK THEME ------- {% endcomment %}
+
+  .name_product-pack {
+    font-size: {{ settings.size_name_product_pack_movil }}px;
+  }
+
+  .description_product-pack {
+    font-size: {{ settings.size_description_product_pack_movil }}px;
+  }
+
+  .price_product-pack {
+    font-size: {{ settings.size_price_product_pack_movil }}px;
+  }
+
+  .price_compare-pack {
+    font-size: {{ settings.size_discount_product_pack_movil }}px;
+  }
+
+  .tag-objective-pack {
+    font-size: {{ settings.size_tag_card_pack_movil }}px;
+  }
+
+  {% comment %} ------ CARDS PRODUCTS UPSELL THEME ------- {% endcomment %}
+
+  .name_product-upsell {
+    font-size: {{ settings.size_name_product_upsell_movil }}px;
+  }
+
+  .description_product-upsell {
+    font-size: {{ settings.size_description_product_upsell_movil }}px;
+  }
+
+  .price_product-upsell {
+    font-size: {{ settings.size_price_product_upsell_movil }}px;
+  }
+
+  .price_compare-upsell {
+    font-size: {{ settings.size_discount_product_upsell_movil }}px;
+  }
+
+  .tag-objective-upsell {
+    font-size: {{ settings.size_tag_card_upsell_movil }}px;
+  }
+
+  .btn-add-card-upsell {
+    font-size: {{ settings.size_btn_product_upsell_movil }}px;
+  }
+
+  .btn-choices-pack {
+    font-size: {{ settings.size_btn_product_upsell_movil }}px;
+  }
+
+  {% comment %} ------ CARDS PRODUCTS RECOMENDATIONS ------- {% endcomment %}
+
+  .name_recomendation {
+    font-size: {{ settings.size_name_recomendations_cart_movil }}px;
+  }
+
+  .description_recomendation {
+    font-size: {{ settings.size_description_recomendations_cart_movil }}px;
+  }
+
+  .btn_recomendation {
+    font-size: {{ settings.size_btn_recomendation_cart_movil }}px;
+  }
+
+  {% comment %} ------ COLLECTIONS THEME ------- {% endcomment %}
+  .collection-title {
+    font-size: {{ settings.size_title_collection_movil }}px;
+  }
+
+  .collection-description-sub {
+    font-size: {{ settings.size_description_collection_movil }}px;
+  }
+
+  {% comment %} ------ CART SIDE ------- {% endcomment %}
+  .cart-title-slide {
+    font-size: {{ settings.size_title_cart_movil }}px;
+  }
+
+  .size-product_cart{
+    font-size: {{ settings.size_product_cart_movil }}px;
+  }
+
+  .variant-item{
+    font-size: {{ settings.size_variant_item_cart_movil }}px;
+  }
+
+  .title-cart-recomendations {
+    font-size: {{ settings.size_title_recomendations_cart_movil }}px;
+  }
+
+  .bar-progress-text {
+    font-size: {{ settings.size_text_livrason_gratuit_movil }}px;
+  }
+
+  .total-text {
+    font-size: {{ settings.size_text_total_movil }}px;
+  }
+
+  .btn-checkout {
+    font-size: {{ settings.size_btn_checkout_movil }}px;
+  }
+
+  {% comment %} ------ SIDE BUNDLE PACK ------- {% endcomment %}
+
+  .subtitle-styles-box {
+    font-size: {{ settings.size_subtitle_title_sidePack_movil }}px;
+  }
+
+  .description-styles-box {
+    font-size: {{ settings.size_description_title_sidePack_movil }}px;
+  }
+
+  .title-other-products-box {
+    font-size: {{ settings.size_other_product_sidePack_movil }}px;
+  }
+
+  .btn-continuer {
+    font-size: {{ settings.size_button_sidePack_movil }}px;
+  }
+
+  .crisp-client .cc-kv6t .cc-1xry .cc-ge4v .cc-bdff .cc-x32x .cc-wdhl{
+    margin-top:60px !important;
+  }
+
+}

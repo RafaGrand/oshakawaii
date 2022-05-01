@@ -1,0 +1,705 @@
+<script>
+  const rc_locals = {
+  {% for local in section.blocks %}
+
+    {% if local.settings.title contains " - " %}
+    "{{ local.settings.title | split: " - " | last }}": {
+      
+      {% for valueLocals in local.settings %}
+      
+      {% if valueLocals == "title" %}
+        {% continue %}
+      {% else %}
+        {{ valueLocals }}: "{{ local.settings[valueLocals] }}",    
+      {% endif %}
+      
+      {% endfor %}
+
+    },
+    {% endif %}
+
+  {% endfor %}
+  }
+
+  const rc_selectorLanguage = [
+    {% for local in section.blocks %}
+      {% if local.settings.title contains " - " %}
+
+      {
+        language: "{{ local.settings.title | split: " - " | first }}",
+        code: "{{ local.settings.title | split: " - " | last }}",
+      },
+
+      {% endif %}
+    {% endfor %}
+  ]
+
+</script>
+
+{% schema %}
+  {
+    "name": "Locals Translation",
+    "blocks": [
+      {
+        "type": "locals",
+        "name": "Language",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Language name - code",
+            "default": "English - en",
+            "info": "Ex: English - en. Discover local [indexes country](https:\/\/langshop.app\/languages)"
+          },
+          {
+            "type": "header",
+            "content": "Navigation"
+          },
+          {
+            "type": "text",
+            "id": "rc_my_account",
+            "label": "My account",
+            "default": "My account"
+          },
+          {
+            "type": "text",
+            "id": "rc_my_information",
+            "label": "My information",
+            "default": "My information"
+          },
+          {
+            "type": "text",
+            "id": "rc_my_subscriptions",
+            "label": "My subscriptions",
+            "default": "My subscriptions"
+          },
+          {
+            "type": "text",
+            "id": "rc_my_shipments",
+            "label": "Sending to come",
+            "default": "Sending to come"
+          },
+          {
+            "type": "text",
+            "id": "rc_subscriptions_active",
+            "label": "Active subscription",
+            "default": "Active subscription"
+          },
+          {
+            "type": "text",
+            "id": "rc_my_payments",
+            "label": "Payment information",
+            "default": "Payment information"
+          },
+          {
+            "type": "text",
+            "id": "rc_my_addresses",
+            "label": "Address of my subscriptions",
+            "default": "Address of my subscriptions"
+          },
+          {
+            "type": "text",
+            "id": "rc_logout",
+            "label": "Disconnect",
+            "default": "Disconnect"
+          },
+          {
+            "type": "header",
+            "content": "Generals"
+          },
+          {
+            "type": "text",
+            "id": "rc_next_shipping",
+            "label": "Next shipment",
+            "default": "Next shipment"
+          },
+          {
+            "type": "text",
+            "id": "rc_quantity",
+            "label": "Quantity",
+            "default": "Quantity"
+          }, 
+          {
+            "type": "text",
+            "id": "rc_frequency",
+            "label": "Frequency",
+            "default": "Frequency"
+          },        
+          {
+            "type": "text",
+            "id": "rc_all_of",
+            "label": "All the",
+            "default": "All the"
+          },        
+          {
+            "type": "text",
+            "id": "rc_month",
+            "label": "month",
+            "default": "month"
+          },        
+          {
+            "type": "text",
+            "id": "rc_week",
+            "label": "weeks",
+            "default": "weeks"
+          },        
+          {
+            "type": "text",
+            "id": "rc_day",
+            "label": "days",
+            "default": "days"
+          },        
+          {
+            "type": "text",
+            "id": "rc_shipping_address",
+            "label": "Delivery address",
+            "default": "Delivery address"
+          },
+          {
+            "type": "text",
+            "id": "rc_change_product",
+            "label": "Change product",
+            "default": "Change product"
+          },
+          {
+            "type": "text",
+            "id": "rc_add_product",
+            "label": "Add a product to my subscription",
+            "default": "Add a product to my subscription"
+          },
+          {
+            "type": "text",
+            "id": "rc_subscription",
+            "label": "Subscription",
+            "default": "Subscription"
+          },
+          {
+            "type": "text",
+            "id": "rc_delete",
+            "label": "To delete",
+            "default": "To delete"
+          },
+          {
+            "type": "text",
+            "id": "rc_active",
+            "label": "Reactivate",
+            "default": "Reactivate"
+          },
+          {
+            "type": "text",
+            "id": "rc_save",
+            "label": "Save",
+            "default": "Save"
+          },
+          {
+            "type": "text",
+            "id": "rc_modify",
+            "label": "To modify",
+            "default": "To modify"
+          },
+          {
+            "type": "text",
+            "id": "rc_cancel",
+            "label": "To cancel",
+            "default": "To cancel"
+          },
+          {
+            "type": "text",
+            "id": "rc_add",
+            "label": "Add",
+            "default": "Add"
+          },
+          {
+            "type": "header",
+            "content": "Code reduction"
+          },
+          {
+            "type": "text",
+            "id": "rc_add_code_reduction",
+            "label": "Add a coupon code to my next shipment",
+            "default": "Add a coupon code to my next shipment"
+          },
+          {
+            "type": "text",
+            "id": "rc_apply",
+            "label": "To apply",
+            "default": "To apply"
+          },
+          {
+            "type": "text",
+            "id": "rc_enter_code",
+            "label": "Enter the promo code",
+            "default": "Enter the promo code"
+          },
+          {
+            "type": "text",
+            "id": "rc_have_discount",
+            "label": "Have discount",
+            "default": "Have discount"
+          },
+          {
+            "type": "text",
+            "id": "rc_problem_code",
+            "label": "There is a problem with your code",
+            "default": "There is a problem with your code, it has limitations or does not exist"
+          },
+          {
+            "type": "header",
+            "content": "Sending to come"
+          },
+          {
+            "type": "text",
+            "id": "rc_date_shipping",
+            "label": "Sending date",
+            "default": "Sending date"
+          },
+          {
+            "type": "text",
+            "id": "rc_address_to_come",
+            "label": "Sending address",
+            "default": "Sending address"
+          },
+          {
+            "type": "text",
+            "id": "rc_products",
+            "label": "Product",
+            "default": "Product"
+          },
+          {
+            "type": "text",
+            "id": "rc_remove_exc",
+            "label": "Remove exceptionally",
+            "default": "Remove exceptionally"
+          },
+          {
+            "type": "text",
+            "id": "rc_undo_action",
+            "label": "Underscore",
+            "default": "Underscore"
+          },
+          {
+            "type": "text",
+            "id": "rc_empty_next_delivery",
+            "label": "No delivery has been scheduled",
+            "default": "No delivery has been scheduled for your account"
+          },
+          {
+            "type": "text",
+            "id": "rc_schedule",
+            "label": "Schedule",
+            "default": "Schedule"
+          },
+          {
+            "type": "header",
+            "content": "Subscription active"
+          },
+          {
+            "type": "text",
+            "id": "rc_no_subscriptions",
+            "label": "You have no active subscription",
+            "default": "You have no active subscription"
+          },
+          {
+            "type": "text",
+            "id": "rc_hide_inactive",
+            "label": "Hide my inactive subscriptions",
+            "default": "Hide my inactive subscriptions"
+          },
+          {
+            "type": "text",
+            "id": "rc_view_inactive",
+            "label": "See my inactive subscriptions",
+            "default": "See my inactive subscriptions"
+          },
+          {
+            "type": "header",
+            "content": "Retentions"
+          },
+          {
+            "type": "text",
+            "id": "rc_why_delete",
+            "label": "Why do you want to cancel?",
+            "default": "Why do you want to cancel?"
+          },
+          {
+            "type": "text",
+            "id": "rc_other_reason",
+            "label": "Other reason",
+            "default": "Other reason"
+          },
+          {
+            "type": "text",
+            "id": "rc_product_reason",
+            "label": "I would like another product",
+            "default": "I would like another product"
+          },
+          {
+            "type": "text",
+            "id": "rc_frequency_reason",
+            "label": "The delivery frequency does not suit me",
+            "default": "The delivery frequency does not suit me"
+          },
+          {
+            "type": "text",
+            "id": "rc_date_reason",
+            "label": "I still have too much stock",
+            "default": "I still have too much stock"
+          },
+          {
+            "type": "text",
+            "id": "rc_not_frequency_reason",
+            "label": "I get the product immediately",
+            "default": "I get the product immediately"
+          },
+          {
+            "type": "text",
+            "id": "rc_change_mind",
+            "label": "I changed my mind, I'm going back on my account",
+            "default": "I changed my mind, I'm going back on my account"
+          },
+          {
+            "type": "text",
+            "id": "rc_delete_anywhere",
+            "label": "I cancel anywhere",
+            "default": "I cancel anywhere"
+          },
+          {
+            "type": "text",
+            "id": "rc_about_delete",
+            "label": "Could you tell us where?",
+            "default": "Could you tell us where?"
+          },
+          {
+            "type": "text",
+            "id": "rc_delete_subscription",
+            "label": "Cancel my subscription",
+            "default": "Cancel my subscription"
+          },
+          {
+            "type": "text",
+            "id": "rc_if_change_frequency",
+            "label": "And if you change the delivery frequency?",
+            "default": "And if you change the delivery frequency?"
+          },
+          {
+            "type": "text",
+            "id": "rc_btn_change_frequency",
+            "label": "I change the frequency of deliveries",
+            "default": "I change the frequency of deliveries"
+          },
+          {
+            "type": "text",
+            "id": "rc_if_change_date",
+            "label": "And if you set the date of shipment?",
+            "default": "And if you set the date of shipment?"
+          },
+          {
+            "type": "text",
+            "id": "rc_btn_change_date",
+            "label": "I shift the date of shipment",
+            "default": "I shift the date of shipment"
+          },
+          {
+            "type": "header",
+            "content": "New product"
+          },
+          {
+            "type": "text",
+            "id": "rc_choose_your_product",
+            "label": "Choose your product",
+            "default": "Choose your product"
+          },
+          {
+            "type": "text",
+            "id": "rc_validate_product",
+            "label": "Validate and add the product",
+            "default": "Validate and add the product"
+          },
+          {
+            "type": "text",
+            "id": "rc_validate_information",
+            "label": "Validate the information",
+            "default": "Validate the information"
+          },
+          {
+            "type": "text",
+            "id": "rc_step",
+            "label": "Stage",
+            "default": "Stage"
+          },
+          {
+            "type": "text",
+            "id": "rc_non_product",
+            "label": "No product found",
+            "default": "No product found"
+          },
+          {
+            "type": "text",
+            "id": "rc_enter_term",
+            "label": "Enter a search term and press Search",
+            "default": "Enter a search term and press Search"
+          },
+          {
+            "type": "text",
+            "id": "rc_search_name",
+            "label": "Enter the product name",
+            "default": "Enter the product name"
+          },
+          {
+            "type": "text",
+            "id": "rc_add_new_product",
+            "label": "Add the product",
+            "default": "Add the product"
+          },
+          {
+            "type": "text",
+            "id": "rc_return_search",
+            "label": "Return to product search",
+            "default": "Return to product search"
+          },
+          {
+            "type": "text",
+            "id": "rc_purchase",
+            "label": "Type of purchase",
+            "default": "Type of purchase"
+          },
+          {
+            "type": "text",
+            "id": "rc_subscribe",
+            "label": "To subscribe to",
+            "default": "To subscribe to"
+          },
+          {
+            "type": "text",
+            "id": "rc_deliver",
+            "label": "Deliver",
+            "default": "Deliver"
+          },
+          {
+            "type": "text",
+            "id": "rc_one_time",
+            "label": "One-time",
+            "default": "One-time"
+          },
+          {
+            "type": "text",
+            "id": "rc_charge_each",
+            "label": "Charge each",
+            "default": "Charge each"
+          },
+          {
+            "type": "header",
+            "content": "Change product"
+          },
+          {
+            "type": "text",
+            "id": "rc_current_product",
+            "label": "Current product",
+            "default": "Current product"
+          },
+          {
+            "type": "text",
+            "id": "rc_choose_new_product",
+            "label": "Choose a new product",
+            "default": "Choose a new product"
+          },
+          {
+            "type": "text",
+            "id": "rc_search",
+            "label": "Research",
+            "default": "Research"
+          },
+          {
+            "type": "text",
+            "id": "rc_choose_this_product",
+            "label": "Choose this product",
+            "default": "Choose this product"
+          },
+          {
+            "type": "text",
+            "id": "rc_exchange_product",
+            "label": "Exchange the product",
+            "default": "Exchange the product"
+          },
+          {
+            "type": "text",
+            "id": "rc_product_to_exchange",
+            "label": "Choose the product to exchange",
+            "default": "Choose the product to exchange"
+          },
+          {
+            "type": "header",
+            "content": "Payments"
+          },
+          {
+            "type": "text",
+            "id": "rc_payment_information",
+            "label": "Payment information",
+            "default": "Payment information"
+          },
+          {
+            "type": "text",
+            "id": "rc_pay_card",
+            "label": "Payment card",
+            "default": "Payment card"
+          },
+          {
+            "type": "text",
+            "id": "rc_ending_with",
+            "label": "ending with",
+            "default": "ending with"
+          },
+          {
+            "type": "text",
+            "id": "rc_expiry",
+            "label": "expiry",
+            "default": "expiry"
+          },
+          {
+            "type": "text",
+            "id": "rc_billing_address",
+            "label": "Billing address",
+            "default": "Billing address"
+          },
+          {
+            "type": "text",
+            "id": "rc_change_billing",
+            "label": "Change the billing address",
+            "default": "Change the billing address"
+          },
+          {
+            "type": "text",
+            "id": "rc_new_billing_address",
+            "label": "Add billing address",
+            "default": "Add billing address"
+          },
+          {
+            "type": "text",
+            "id": "rc_billing_payment_info",
+            "label": "We will send you an e-mail",
+            "default": "We will send you an e-mail to securely update your payment and billing information."
+          },
+          {
+            "type": "text",
+            "id": "rc_sending_email_info",
+            "label": "Change the billing address",
+            "default": "Change the billing address"
+          },
+          {
+            "type": "text",
+            "id": "rc_send_email_btn",
+            "label": "Send an email to update",
+            "default": "Send an email to update"
+          },
+          {
+            "type": "text",
+            "id": "rc_no_payments",
+            "label": "No payment source in the file.",
+            "default": "No payment source in the file."
+          },
+          {
+            "type": "text",
+            "id": "rc_add_payment",
+            "label": "Add to the pay",
+            "default": "Add to the pay"
+          },
+          {
+            "type": "text",
+            "id": "rc_card_remove",
+            "label": "The card has been removed",
+            "default": "The card has been removed or has expired."
+          },
+          {
+            "type": "text",
+            "id": "rc_paypal_account",
+            "label": "Paypal Account",
+            "default": "Paypal Account"
+          },
+          {
+            "type": "text",
+            "id": "rc_paypal_info",
+            "label": "To update paypal account",
+            "default": "If you need to update your payment settings, you must log in to your PayPal account."
+          },
+          {
+            "type": "text",
+            "id": "rc_login_to",
+            "label": "Log in to",
+            "default": "Log in to"
+          },
+          {
+            "type": "text",
+            "id": "rc_apple_account",
+            "label": "Linked Apple Pay",
+            "default": "Linked Apple Pay"
+          },
+          {
+            "type": "text",
+            "id": "rc_apple_info",
+            "label": "To update your apple account",
+            "default": "If you need to update your payment settings, go to Settings> Portfolio and Apple Pay on your mobile device."
+          },
+          {
+            "type": "text",
+            "id": "rc_pay_processor",
+            "label": "Payment processor",
+            "default": "Payment processor"
+          },
+          {
+            "type": "text",
+            "id": "rc_pay_no_identify",
+            "label": "Payment not be identified",
+            "default": "The payment source could not be identified. Please update your card information."
+          },
+          {
+            "type": "text",
+            "id": "rc_card_reset",
+            "label": "The addition of a credit card",
+            "default": "The addition of a credit card will reset your type of payment of"
+          },
+          {
+            "type": "text",
+            "id": "rc_non_billing_address",
+            "label": "No billing address in the folder.",
+            "default": "No billing address in the folder."
+          },
+          {
+            "type": "header",
+            "content": "Addresses"
+          },
+          {
+            "type": "text",
+            "id": "rc_address_subs",
+            "label": "Address of my subscriptions",
+            "default": "Address of my subscriptions"
+          },
+          {
+            "type": "text",
+            "id": "rc_delivery_address",
+            "label": "Delivery address",
+            "default": "Delivery address"
+          },
+          {
+            "type": "text",
+            "id": "rc_change_delivery",
+            "label": "Change the delivery address",
+            "default": "Change the delivery address"
+          },
+          {
+            "type": "text",
+            "id": "rc_address_non_found",
+            "label": "NO Addresses Found",
+            "default": "NO Addresses Found"
+          },
+          {
+            "type": "text",
+            "id": "rc_add_shipping_address",
+            "label": "Add a shipping address",
+            "default": "Add a shipping address"
+          }
+        ]
+      }
+    ]  
+  }
+{% endschema %}
+

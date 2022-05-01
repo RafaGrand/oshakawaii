@@ -1,0 +1,142 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  assign limit = section.settings.grid | times: section.settings.rows
+  assign whereDescription = collection.description | where: '—'
+  assign descriptionCollection = collection.description | split: ' — '
+%}
+
+{% paginate collection.products by limit %}
+
+<div class="width-panda">
+  <div class="collection-margin">
+    <header class="collection-title-filter-pack">
+      <div class="header-pack-titles">
+        <h1 class="collection-title">{% comment %}ly_code_replace_for_[ collection.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with collection render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+        <div class="collection-description-sub">
+          
+          {% if whereDescription %}
+            
+            <span>{{ descriptionCollection[0] }}</span>
+            <span class="separate-descriptions"> — </span>
+            <span class="description-collection-2">{{ descriptionCollection[1] }}</span>
+          
+          {% else %}
+          
+            {% comment %}ly_code_replace_for_[ collection.description ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-description' with collection render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          
+          {% endif %}
+
+        </div>
+      </div>
+
+      <div class="filter-sort-container">
+        {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+        <label class="filter-sort-relative">
+          <select 
+            name="sort_by" 
+            id="sorting-panda"
+            class="sort-select"
+          >
+            <option value="manual">{% comment %}ly_i18n_replace_for_[ 'collections.sorting.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.sorting.title' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844406' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</option>
+            {%- for option in collection.sort_options -%}
+              <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>{{ option.name }}</option>
+            {%- endfor -%}
+          </select>
+        </label>
+      </div>
+    </header>
+    
+    <div class="list-collection-pack" id="Collection">
+      
+      {% liquid 
+        case section.settings.grid
+
+        when 2
+          assign grid_item_width = 'grid-collection-50'
+        when 3
+          assign grid_item_width = 'grid-collection-33'
+        when 4
+          assign grid_item_width = 'grid-collection-25'
+        
+        endcase 
+      %}
+
+      <ul class="grid-collection {{ grid_item_width }}">
+        {% for product in collection.products %}
+          <li class="item-collection-product">
+            {% render 'pack-card' product: product %}
+          </li>
+        {% endfor %}
+      </ul>
+      
+
+      {% if is_empty_collection %}
+        <div class="grid__item small--text-center">
+          <p class="text-center">{% comment %}ly_i18n_replace_for_[ 'collections.general.no_matches' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.no_matches' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844407' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
+        </div>
+      {% endif %}
+
+      {%- if paginate.pages > 1 -%}
+        {% render 'pagination-panda', paginate: paginate %}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% endpaginate %}
+
+<script src="{% comment %}ly_asset_replace_for_[ 'sort.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'sort.js' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" defer="defer"></script>
+<script src="{% comment %}ly_asset_replace_for_[ 'bundle.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'bundle.js' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" defer="defer"></script>
+
+
+
+{% schema %}
+{
+  "name": {
+    "en": "Collection pages",
+    "fr": "Pages de collections"
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "grid",
+      "label": {
+        "en": "Products per row (grid only)",
+        "fr": "Produits par rangée (grille uniquement)"
+      },
+      "default": 4,
+      "min": 2,
+      "max": 4,
+      "step": 1
+    },
+    {
+      "type": "range",
+      "id": "rows",
+      "label": {
+        "en": "Rows per page (grid only)",
+        "fr": "Rangées par page (grille uniquement)"
+      },
+      "default": 2,
+      "min": 2,
+      "max": 8,
+      "step": 1
+    }
+  ]
+}
+{% endschema %}

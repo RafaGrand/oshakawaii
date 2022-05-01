@@ -1,0 +1,129 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{%- if section.settings.show_product_recommendations -%}
+  {%- if recommendations.performed -%}
+    {%- if recommendations.products_count > 0 -%}
+      <div class="recomendations-container">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="styleTitleRecomendations align-center margin-title-recomendations">{{ section.settings.heading | escape }}</h2>
+        {%- endif -%}
+        <ul class="grid-products-recomendations">
+          {%- for product in recommendations.products -%}
+            <li>
+
+              {% render 'template-card'
+                product: product, 
+                bg_class : "bg_card",
+                image_class : "height-card-image",
+                tag_class : "tag-objective",
+                name_class : "name_product",
+                description_class : "description_product",
+                price_class : "price_product",
+                discount_class: "price_compare",
+                button_class : "btn-card-main",
+                choices_class : "btn-choices-card",
+                padding_class : "padding-card",
+                form_class : "form-add-product"
+              %}
+              
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+    {%- endif -%}
+  {%- else  -%}
+    <div class="width-panda" id="recommended-shopify" data-base-url="{{ routes.product_recommendations_url }}" data-product-id="{{ product.id }}" data-section-id="{{ section.id }}" data-section-type="product-recommendations"></div>
+  {%- endif -%}
+{%- endif -%}
+
+<style>
+
+  .styleTitleRecomendations {
+    color: {{ section.settings.color_title_recomendations }};
+    font-size: {{ section.settings.size_title_recomendations }}px;
+  }
+
+  @media screen and (max-width: 600px) {
+   .styleTitleRecomendations {
+      font-size: {{ section.settings.size_title_recomendations_movil }}px;
+    } 
+  }
+
+</style>
+
+{% schema %}
+{
+  "name": {
+    "en": "Product / recommendations",
+    "fr": "Produits / recommandations"
+  },
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_product_recommendations",
+      "label": {
+        "en": "Show dynamic recommendations",
+        "fr": "Afficher les recommandations dynamiques"
+      },
+      "info": {
+        "en": "Dynamic recommendations change and improve with time. [Learn more](https://help.shopify.com/en/themes/development/recommended-products)",
+        "fr": "Les recommandations dynamiques changent et s'améliorent avec le temps. [En savoir plus](https://help.shopify.com/en/themes/development/recommended-products)"
+      },
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": {
+        "en": "Heading",
+        "fr": "En-tête"
+      },
+      "default": {
+        "en": "You may also like",
+        "fr": "Vous pourriez aimer également"
+      }
+    },
+    {
+      "type": "range",
+      "id": "size_title_recomendations",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in title (H2)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "size_title_recomendations_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in title - movil (H2)",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "color_title_recomendations",
+      "label": "Colo text in title (H2)",
+      "default": "#000"
+    }
+  ]
+}
+{% endschema %}

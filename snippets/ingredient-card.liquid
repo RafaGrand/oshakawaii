@@ -1,0 +1,47 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<li class="item-ingredient">
+  <div class="ingredient">
+    
+    <h3 class="styleTitleBlock title-ingredient-item">{{ block.settings.ingredient_title }}</h6>
+    <p class="styleDescriptionBlock description-block-ingredient">{{ block.settings.ingredient_text }}</p>
+
+    {% liquid
+      if block.settings.ingredient_svg != blank
+        assign img_link = block.settings.ingredient_svg | append: '.svg' | file_url 
+      else
+        if block.settings.ingredient_image != blank
+          assign img_link = block.settings.ingredient_image | img_url: 'medium'
+        else
+          assign img_link = "404.svg" | file_url 
+        endif
+      endif %}
+
+    <div class="image-container-ing">
+
+      {% render 'img-upload' 
+        img_id: block.id,
+        img_url: img_link,
+        alt: block.settings.ingredient_title,
+        class: "ingredients-img"
+      %}
+
+    </div>
+      
+  </div>
+</li>

@@ -1,0 +1,30 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign cl = language %}
+<select id="mobile-languages-switcher">{% for language in shop.metafields.languages %}{% assign key = language | first %}{% assign value = language | last %}{% if key != "default" %}<option value="{{ key }}"{% if key == cl %} selected="selected"{% endif %}>{{ value }}</option>{% endif %}{% endfor %}</select>
+<!--<i class="fa fa-angle-down" aria-hidden="true"></i>-->
+<script>
+  (function changeSwitherLanguage() {
+    let switcherLanguage = document.querySelector('#mobile-languages-switcher');
+    switcherLanguage.addEventListener(
+      'change',
+      function() {
+        langify.helper.saveLanguage(this.value);
+      })
+  })();
+</script>

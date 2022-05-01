@@ -1,0 +1,71 @@
+<script>
+/* init UTILS IN THEME scripts */
+
+var variants = [];
+
+// USE IN ADD TO CART PRODUCT
+
+var productStrings = {
+  currencySymbol: "{{ localization.country.currency.symbol }}",
+  addCart: {{ 'products.product.add_to_cart' | t | json }},
+  addCartRecomendation: {{ 'cart.general.recomendation-call-to-add' | t | json }},
+  soldOut: {{ 'products.product.sold_out' | t | json }},
+}
+
+// THEME TO SHIPPING BAR CART
+
+const themeStrings = {
+  shop: "{{ shop.domain }}",
+  freeShippingEmpty: "{{ settings.text_livrason_head }}",
+  freeShippingPart1: "{{ settings.text_livrason_gratuit | split: '[value]' | first }}",
+  freeShippingPart2: "{{ settings.text_livrason_gratuit | split: '[value]' | last }}",
+  freeShippingShort: "{{ settings.text_livrason_offert }}",
+  totalShipping: "{{ settings.price_total_livrason | times: 100 | money }}"
+}
+
+// THEME TO SHIPPING BAR CART GIFT
+
+const themeStringsGift = {
+  shop: "{{ shop.domain }}",
+  freeGiftPart1: "{{ settings.text_gift_gratuit | split: '[value]' | first }}",
+  freeGiftPart2: "{{ settings.text_gift_gratuit | split: '[value]' | last }}",
+}
+
+// DEFAULT LOCAL language
+
+{% for locale in shop.published_locales %}
+  {% if locale.primary %}
+    const default_local = "{{ locale.iso_code }}";
+  {% endif %}
+{% endfor %}
+
+
+const moneyFormat = {{ shop.money_format | json }};
+const moneyFormatWithCurrency = {{ shop.money_with_currency_format | json }};
+
+// USE THIS VARIABLES IN CREATE YOUR PACK
+var discount;
+var numberProductsPacks;
+var productPacks = [];
+var codeRedux = "";
+
+var messagesPacks = {
+  MsgEmptyPack: '{{ "cart.box.empty-pack" | t }}',
+  MsgOneProduct: '{{ "cart.box.one-product-pack" | t }}',
+  MsgReduction: '{{ "cart.box.reduction" | t }}',
+  MsgDescriptionSide: '{{ "cart.box.description-box" | t }}'
+}
+
+// USE THIS VARIABLES IN SUBSCRIPTIONS FLOW
+var productSuscriptions = [];
+var suscriptionSchema = {
+  product: "{{ settings.unit_product }}",
+  frequency_unit: "{{ settings.frequency_unit }}",
+  assambly1: "{{ settings.assembly_1 }}",
+  assambly2: "{{ settings.assembly_2 }}",
+  discount: "{{ settings.discount_number }}",
+  subscription: "{{ settings.subscription_text }}"
+}
+
+/* end UTILS IN THEME scripts */
+</script>

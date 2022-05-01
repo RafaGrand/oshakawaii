@@ -1,0 +1,168 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_description = product.description
+  assign product_description = product_description | replace: '&lt;--', '<--'
+  assign product_description = product_description | replace: '--&gt;', '-->'
+  assign product_description = product_description | replace: '<p><--', '<--'
+  assign product_description = product_description | replace: '--></p>', '-->'
+  assign product_description = product_description | split: '<-- split -->'
+  assign description_under = product_description[1] | split: '[undertitle]'
+%}
+
+{% assign origin_form = '' %}
+
+{% if goToCheckout %}
+  {% assign origin_form = 'origin-form="/checkout"' %}
+{% endif %}
+
+<div class="card-container recomendation-bg">
+  
+  <a
+    class="url-card image-link-card"
+    href="{{ product.url }}"
+    title="
+      {% comment %}
+        ly_code_replace_for_[ product.title ]_begin
+      {% endcomment %}
+      {% capture ly_translation %}
+        {% render 'ly-title' with product render:true %}
+      {% endcapture %}
+      {{ ly_translation }}
+      {% comment %}
+        ly_code_replace_end
+      {% endcomment %}"
+  >
+    <div class="container-img-recomendation">
+      {% capture img_product %}card_{{ product.id }}{% endcapture %}
+      {% capture alt_product %}product_{{ product.handle }}{% endcapture %}
+      {% assign product_image = product.featured_image | img_url: '125x' %}
+      {% render 'img-upload'
+        img_id: img_product,
+        img_url: product_image,
+        alt: alt_product,
+        class: "card-img_product img-contain"
+      %}
+    </div>
+  </a>
+
+  <div class="detail-card details-recomendations-card">
+    <a
+      class="url-card"
+      href="{{ product.url }}"
+      title="
+        {% comment %}
+          ly_code_replace_for_[ product.title ]_begin
+        {% endcomment %}
+        {% capture ly_translation %}
+          {% render 'ly-title' with product render:true %}
+        {% endcapture %}
+        {{ ly_translation }}
+        {% comment %}
+          ly_code_replace_end
+        {% endcomment %}"
+    >
+      <span class="name_recomendation bold-font upper-case">
+        {% comment %}
+          ly_code_replace_for_[ product.title | truncatewords: 3, "..." ]_begin
+        {% endcomment %}
+        {% capture ly_translation %}
+          {% render 'ly-title' with product render:true %}
+        {% endcapture %}
+        {{ ly_translation | truncatewords: 3, "..." }}
+        {% comment %}
+          ly_code_replace_end
+        {% endcomment %}
+      </span>
+      <br/>
+      <span class="description_recomendation">
+        {{ description_under[1] | remove: '[/undertitle]' | truncatewords: 3, "..." }}
+      </span>
+    </a>
+  </div>
+
+  <div class="end-card container-btn-add">
+      <input
+        name="id"
+        value="{{ current_variant.id }}"
+        type="hidden"
+        checked
+      />
+      <button
+        {% unless current_variant.available %}disabled="disabled"{% endunless %}
+        type="submit" 
+        product_id="{{ product.id }}"
+        variant_id="{{ current_variant.id }}" 
+        class="btn_recomendation checkout_upsell__btn"
+      >
+        <span class="class-sold{% if current_variant.available %} hide{% endif %}">
+          {% comment %}
+            ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin
+          {% endcomment %}
+          {% capture ly_template %}
+            {{ 'products.product.sold_out' | t }}
+          {% endcapture %}
+          {% capture ly_translation %}
+            {% render 'ly-static-string' with '19844475' render:true %}
+          {% endcapture %}
+          {% if ly_translation != '' and ly_translation != nil  %}
+            {% assign escape_content = true %}
+            {% assign ly_template = ly_translation %}
+          {% else %}
+            {% assign escape_content = false %}
+          {% endif %}
+          {% if escape_content %}
+            {{ ly_template | escape}}
+          {% else %}
+            {{ ly_template }}
+          {% endif %}
+          {% comment %}
+            ly_i18n_replace_end
+          {% endcomment %}
+        </span>
+        <span class="class-add{% unless current_variant.available %} hide{% endunless %}">
+          {% comment %}
+            ly_i18n_replace_for_[ 'cart.general.recomendation-call-to-add' | t ]_begin
+          {% endcomment %}
+          {% capture ly_template %}
+            {{ 'cart.general.recomendation-call-to-add' | t }}
+          {% endcapture %}
+          {% capture ly_translation %}
+            {% render 'ly-static-string' with '19844476' render:true %}
+          {% endcapture %}
+          {% if ly_translation != '' and ly_translation != nil  %}
+            {% assign escape_content = true %}
+            {% assign ly_template = ly_translation %}
+          {% else %}
+            {% assign escape_content = false %}
+          {% endif %}
+          {% if escape_content %}
+            {{ ly_template | escape}}
+          {% else %}
+            {{ ly_template }}
+          {% endif %}
+          {% comment %}
+            ly_i18n_replace_end
+          {% endcomment %} 
+          {{ product.price | money }}
+        </span>
+      </button>
+  </div>
+
+</div>

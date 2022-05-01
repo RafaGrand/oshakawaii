@@ -1,0 +1,103 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign product_description = product.description
+  assign product_description = product_description | replace: '&lt;--', '<--'
+  assign product_description = product_description | replace: '--&gt;', '-->'
+  assign product_description = product_description | replace: '<p><--', '<--'
+  assign product_description = product_description | replace: '--></p>', '-->'
+  assign product_description = product_description | split: '<-- split -->'
+  assign description_under = product_description[1] | split: '[undertitle]'
+  
+  if disabled_link
+    assign link_space = "div"
+    assign prev_action = "drop-preview"
+  else
+    assign link_space = "a"
+    assign prev_action = ""
+  endif
+
+%}
+
+<div class="card-container {{ bg_class }} card_product-bg">
+  <{{ link_space }}
+    class="image-link-card {{ prev_action }}"
+    id_product="{{ product.id }}"
+    handle="{{ product.handle }}"
+    href="{{ product.url }}"
+    title="{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}"
+  >
+    <div class="images-loop {{ image_class }}">
+      
+      {% render 'images-card-product' product: product %}
+      
+      <div class="{{ tag_class }} tag-position">
+        {% for cd in product.tags %}
+          {% assign tag_ = cd | split: '-' %}
+          {% if tag_[0] == "card" %}
+            <span class="color-tag_{{ tag_[1] }}">
+              {{ tag_[1] | capitalize }}
+            </span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+    </div>
+  </{{ link_space }}>
+
+  <div class="detail-card details-product-card">
+    <{{ link_space }}
+      {{ disabled_link }}
+      class="url-card"
+      href="{{ product.url }}"
+      title="{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}"
+    >
+      <span class="{{ name_class }} bold-font">
+        {% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+      </span>
+      <br/>
+      <span class="{{ description_class }}">
+        {{ description_under[1] | remove: '[/undertitle]' }}
+      </span>
+      <div class="section-price-product">
+        <span
+          product_id='{{ product.id }}'
+          class="currency-class {{ price_class }} bold-font"
+        >
+          {{ current_variant.price | money }}
+        </span>
+        <span
+          product_id='{{ product.id }}'
+          class="currency-class {{ discount_class }} line-thr"
+        >
+          {{ current_variant.compare_at_price | money }}
+        </span>      
+      </div>
+    </{{ link_space }}>
+  </div>
+
+  <div class="end-card {{ padding_class }} {{ form_class }}">
+    {% render 'add-product-card'
+      product: product,
+      btn_class: button_class,
+      btn_choices: choices_class,
+      current_variant: current_variant 
+    %}
+  </div>
+</div>

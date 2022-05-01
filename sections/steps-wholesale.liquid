@@ -1,0 +1,133 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda">
+  <div class="flex-direction-step-movil">
+    
+    <div class="padding-steps-whole">
+      <h2 class="title-principal text-centerr">{{ section.settings.title_steps }}</h2>
+      <div class="grid-steps-wholesale">
+        {% for block in section.blocks %}
+          <div class="text-centerr">
+            <div class="container-step-margin">
+              {% capture img_id %}step-img-{{ block.id }}{% endcapture %}
+              {% capture alt %}image step Panda Tea {{ block.settings.image_steps_whole }}{% endcapture %}
+              {% assign img_url = block.settings.image_steps_whole | append: '.svg' | file_url %}
+                {% render 'img-upload' img_id: img_id, class: "image-steps-section", img_url: img_url, alt: alt %}
+            </div>
+            <div class="content-step-block">
+              {{ block.settings.content_steps }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="content-steps-info text-centerr">
+      {{ section.settings.content_step_info }}
+      <div class="callTo-hero-whole movil-call-hero">
+        {% render 'btn-link-panda' url: section.settings.url_step_call, call_to: section.settings.text_step_call, class: "style-btn-hero btn-panda" %}    
+      </div>
+    </div>
+
+    {% render 'hero-grid' 
+      title: section.settings.title_steps,
+      content: section.settings.content_step,
+      url: section.settings.url_step_call,
+      call: section.settings.text_step_call,
+      img_url: section.settings.image_step_whole,
+      title_size: "title-step",
+      margin_inside: "margin-step-content-whole",
+      paddings_grid: "paddings-hero-steps",
+      display_call: "hidden"
+    %}
+
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "steps_wholesale",
+    "class": "steps-wholesale",
+    "settings": [
+      {
+      "type": "text",
+      "id": "title_steps",
+      "label": "Title steps (H2)",
+      "default": "Nos engagements :"
+      },
+      {
+        "type": "richtext",
+        "id": "content_step_info",
+        "label": "Content steps information",
+        "default": "<p>Notre objectif :<br>proposer des produits de qualité et respectueux de l’environnement.</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "content_step",
+        "label": "Content steps wholesale",
+        "default": "<p>Vous souhaitez proposer des thés & infusions parfumé bio et bien-être à vos clients sur votre point de vente ?<br> Contactez-nous ! Nous proposons des offres adaptées à toute les demandes : café, bar, restaurant, salon de coiffure, spa, complexe sportif, pharmacie.</p>"
+      },
+      {
+        "type": "url",
+        "id": "url_step_call",
+        "label": {
+          "en":"Url", 
+          "fr": "Url"
+        }
+      },
+      {
+        "type": "text",
+        "id": "text_step_call",
+        "label": {
+          "en": "Text 'call to action'",
+          "fr": "Texte 'Appel à l'action par'"
+        }, 
+        "default": "Faire une demande pour devenir distributeur",
+        "info": {
+          "en": "For example: Shop now", 
+          "fr": "Par exemple: Achetez maintenant"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "image_step_whole",
+        "label": "Image in step"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "steps",
+        "name": "steps_wholesale",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "content_steps",
+            "label": "Content steps wholesale",
+            "default": "<p>Vous souhaitez proposer des thés & infusions parfumé bio et bien-être à vos clients sur votre point de vente ?<br> Contactez-nous ! Nous proposons des offres adaptées à toute les demandes : café, bar, restaurant, salon de coiffure, spa, complexe sportif, pharmacie.</p>"
+          },
+          {
+            "type": "text",
+            "id": "image_steps_whole",
+            "label": "Image in steps",
+            "default": "star-icon"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

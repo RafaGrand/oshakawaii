@@ -1,0 +1,87 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% comment %} view reference metafileds object:
+https://shopify.dev/docs/themes/liquid/reference/objects/metafield {% endcomment %}
+
+{%- assign filters = collection.metafields.filters -%}
+
+{% if filters.size > 0 %}
+  
+  <div class="container-filters-collections">
+    <div class="background-filter-accordions padding-filters">
+
+      <button class="flex-button-acc accordion font-title-filters padding-filter-button">
+        {% comment %}ly_i18n_replace_for_[ "collections.filters.filters_custom" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "collections.filters.filters_custom" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844466' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        <div class="icon-chevron-down">
+          {% render 'icon-chevron-down' %}
+        </div>
+      </button>
+
+      <div class="Panel">
+        
+        <div class="grid-filters">
+          {% assign render_filter = false %}
+          {% for filter in filters %}
+
+            {%- assign filter_tag = filter | last | split: '|' -%}
+            {% for f_tag in filter_tag %}
+              {% assign filter_tagged = f_tag | handle | prepend: 'filter-' %}
+              {% if collection.tags contains filter_tagged %}
+                {% assign render_filter = true %}
+                {% break %}
+              {% endif %}
+            {% endfor %}
+
+            {% if render_filter == true %}
+              <div class="filter-column" id="filter-{{ filter | first }}">
+                <span class="title-column-filter uppercase font-filters">
+                  {{ filter | first | replace: "-", " " }}:
+                </span>
+
+                {% for f_tag in filter_tag %}
+
+                  {% assign filter_tagged = f_tag | handle | prepend: 'filter-' %}
+
+                  {% for tag in collection.tags %}
+                    {% if filter_tagged == tag %}
+                    
+                      {% render 'filter-checkbox' filter_tagged: filter_tagged, f_tag: f_tag %}
+                    
+                    {% endif %}
+
+                  {% endfor %}
+
+                {% endfor %}
+
+              </div>
+            {% endif %}
+
+
+          {% endfor %}
+
+        </div>
+
+        <div class="container-clear-filter">
+          <button id="clear-filter" class="font-filters font-clear-filter btn-nostyle underline"><ly-as-19844465>Tout effacer</ly-as-19844465></button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+{% endif %}

@@ -1,0 +1,2037 @@
+{
+  "current": {
+    "type_header_font": "avenir_next_n6",
+    "type_base_font": "avenir_next_n4",
+    "type_button_font": "avenir_next_n4",
+    "type_card_font": "avenir_next_n4",
+    "social_twitter_link": "https:\/\/twitter.com\/pandateatox",
+    "social_twitter_img": "icon-twitter",
+    "social_facebook_link": "https:\/\/www.facebook.com\/pandateatox",
+    "social_facebook_img": "icon-facebook",
+    "social_pinterest_link": "https:\/\/www.pinterest.fr\/pandatea",
+    "social_pinterest_img": "icon-pinterest",
+    "social_instagram_link": "https:\/\/www.instagram.com\/pandateatox\/",
+    "social_instagram_img": "icon-instagram",
+    "favicon": "shopify:\/\/shop_images\/panda-icon.png",
+    "bg_card": "#f6f6f6",
+    "size_description_product": 15,
+    "size_price_product": 16,
+    "size_price_product_movil": 16,
+    "size_discount_product": 16,
+    "size_btn_product": 16,
+    "size_btn_product_movil": 13,
+    "bg_btn_product_add": "#24c485",
+    "bg_btn_product_out": "#909090",
+    "size_tag_card": 12,
+    "size_tag_card_movil": 8,
+    "colors_tag": "energy\/#ff69b4;sleep\/#ff6912;digestea\/#ff6900;new\/#000;",
+    "size_title_collection": 30,
+    "size_title_collection_movil": 25,
+    "size_title_cart": 20,
+    "size_title_cart_movil": 15,
+    "collections_recomendations_checkout_upsell": "accessoires",
+    "collections_recomendations_checkout_upsell_down": "accessoires",
+    "checkout_upsell_text": "Souhaitez vous un accessoire ou un coffret en plus avec votre commande ?",
+    "quantity_checkout_upsell": 5,
+    "api_recommendations_quantity": 2,
+    "collections_recomendations_1": "thes-infusions",
+    "collections_recomendations_quantity_1": 2,
+    "collections_recomendations_2": "les-coffrets-panda-tea",
+    "collections_recomendations_quantity_2": 4,
+    "size_title_recomendations_cart": 15,
+    "size_title_recomendations_cart_movil": 12,
+    "size_btn_recomendation_cart": 12,
+    "size_btn_recomendation_cart_movil": 10,
+    "text_livrason_head": "Livraison offerte dès 49€ d’achat",
+    "url_gift": "free-product-test",
+    "quantity_cadeau_gratuit": 91,
+    "quantity_livrason_gratuit": 70,
+    "size_text_livrason_gratuit": 10,
+    "size_text_livrason_gratuit_movil": 10,
+    "price_total_livrason": 5.9,
+    "bg_card_pack": "#f6f6f6",
+    "color_name_product_pack": "#000000",
+    "color_description_product_pack": "#000000",
+    "color_price_product_pack": "#000000",
+    "color_border_product_plus": "#000000",
+    "bg_btn_product_plus": "#97dbc0",
+    "bg_input_product_plus": "#ffffff",
+    "size_subtitle_title_sidePack": 20,
+    "size_subtitle_title_sidePack_movil": 16,
+    "size_description_title_sidePack": 12,
+    "url_button_sidePack": "shopify:\/\/collections\/souhaitez-vous-un-accessoire-ou-produit-en-plus",
+    "bg_button_sidePack": "#000000",
+    "color_text_bartop": "#000000",
+    "color_bg_bartop": "#97dbc0",
+    "img_panda_reference": "shopify:\/\/shop_images\/panda-icon.png",
+    "color_btn_product_add_upsell": "#000000",
+    "bg_btn_product_add_upsell": "#f6f6f6",
+    "show_btn_subscriptions": true,
+    "checkout_header_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo.jpg",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "small",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#ffffff",
+    "checkout_heading_font": "Roboto",
+    "checkout_body_font": "Source Sans Pro",
+    "checkout_accent_color": "#45c391",
+    "checkout_button_color": "#45c391",
+    "checkout_error_color": "#ff6d6d",
+    "color_text": "#162950",
+    "color_body_text": "#6d6d6d",
+    "color_sale_text": "#da2f0c",
+    "color_button": "#da2f0c",
+    "color_button_text": "#ffffff",
+    "color_small_button_text_border": "#162950",
+    "color_text_field_text": "#162950",
+    "color_text_field_border": "#909090",
+    "color_text_field": "#ffffff",
+    "color_image_overlay_text": "#ffffff",
+    "color_image_overlay": "#3d3d3d",
+    "image_overlay_opacity": 40,
+    "color_borders": "#e4e4e4",
+    "color_body_bg": "#f8f8f8",
+    "text_livrason_goal": "Livraison offerte !",
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "collections_recomendations": "accessoires",
+    "type_price_font": "avenir_next_n4",
+    "type_header_base_size": 26,
+    "type_base_size": 18,
+    "sections": {
+      "instagram-feed": {
+        "type": "instagram-feed",
+        "blocks": {
+          "0001fde2-e16f-455f-995d-c279a012c90d": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/CRay_3GtxM6\/"
+            }
+          },
+          "9b39ad50-e153-4fb0-87a3-65c9ceb0ba1b": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/CN7xlWcFU8X\/"
+            }
+          },
+          "b701123d-7f7f-4ce0-b79e-de7498a51c35": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/CRIz4yOhTy8\/"
+            }
+          },
+          "556145f7-c674-426c-9dc5-047e8cf0abd1": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/CTeIdMdqhx-\/"
+            }
+          },
+          "14421786-6168-4d6d-b0d5-f23c8e0a25f4": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/CT3rfHgsoT3\/"
+            }
+          },
+          "40b38565-fdb3-40c8-9832-593d4fa9e8a7": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/BmxpUS6AKUk\/"
+            }
+          },
+          "36322e34-2a36-47fa-91db-92e9349a7334": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/BkUyiQrgSLe\/"
+            }
+          },
+          "64325db4-c125-4350-ae1e-8190e16b6bdd": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/BVKNtF8lE_F\/"
+            }
+          },
+          "f0a5cc17-23f8-41e7-9f84-fee6bfc37456": {
+            "type": "image",
+            "settings": {
+              "url_image": "https:\/\/www.instagram.com\/p\/CRVnuK_tnqW\/"
+            }
+          }
+        },
+        "block_order": [
+          "0001fde2-e16f-455f-995d-c279a012c90d",
+          "9b39ad50-e153-4fb0-87a3-65c9ceb0ba1b",
+          "b701123d-7f7f-4ce0-b79e-de7498a51c35",
+          "556145f7-c674-426c-9dc5-047e8cf0abd1",
+          "14421786-6168-4d6d-b0d5-f23c8e0a25f4",
+          "40b38565-fdb3-40c8-9832-593d4fa9e8a7",
+          "36322e34-2a36-47fa-91db-92e9349a7334",
+          "64325db4-c125-4350-ae1e-8190e16b6bdd",
+          "f0a5cc17-23f8-41e7-9f84-fee6bfc37456"
+        ],
+        "settings": {
+          "title_section": "@pandateadetox",
+          "url_instagram": "shopify:\/\/pages\/deviens-ambassadeur"
+        }
+      },
+      "header-panda": {
+        "type": "header-panda",
+        "settings": {
+          "main_linklist": "",
+          "logo_svg": "logo-panda-tea",
+          "cart_svg": "cart-panda-tea",
+          "login_svg": "compte-panda-tea",
+          "faq_svg": "faq-panda-tea",
+          "faq_text": "Aide & questions",
+          "faq_url": "shopify:\/\/pages\/questions",
+          "login_text": "Mon compte",
+          "login_url": "\/account",
+          "bg_menu": "#ffffff",
+          "size_text_menu": 14,
+          "size_text_menu_movil": 19,
+          "color_text_menu": "#000000",
+          "hover_checked": false,
+          "color_hover_menu": "#45c391"
+        }
+      },
+      "footer-panda": {
+        "type": "footer-panda",
+        "settings": {
+          "title_menu_1": "AIDE",
+          "menu_1": "aide-gradi",
+          "title_menu_2": "Panda tea",
+          "menu_2": "plus-dinfos-gradi",
+          "title_newslatter": "Infos toutes fraiches",
+          "title_currency": "Modifier le pays :",
+          "title_copyrigth": "© 2020 PANDA SAS",
+          "img_copyrigth": "copyrigth-footer",
+          "title_social_media": "Suivez-nous sur les réseaux sociaux",
+          "title_language": "Modifier la langue :",
+          "size_title_footer": 20,
+          "size_title_footer_movil": 20,
+          "color_title_footer": "#000000",
+          "size_link_footer": 20,
+          "size_link_footer_movil": 21,
+          "color_link_footer": "#000000"
+        }
+      },
+      "country-information": {
+        "type": "country-information",
+        "blocks": {
+          "19c09cb4-6a3e-4e1a-bce8-7ada95f2eee1": {
+            "type": "Country",
+            "settings": {
+              "title": "Rest of world",
+              "country_code": "DEFAULT",
+              "shipping_start": 0,
+              "shipping_cost": 14.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "ccea7e78-76b0-42cc-8ee9-45b0a5891433": {
+            "type": "Country",
+            "settings": {
+              "title": "United States",
+              "country_code": "US",
+              "shipping_start": 50,
+              "shipping_cost": 9.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "119633ea-e18d-41c9-bd1f-efbaa485a02b": {
+            "type": "Country",
+            "settings": {
+              "title": "Australia",
+              "country_code": "AU",
+              "shipping_start": 50,
+              "shipping_cost": 9.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "89793233-c0fc-4ff7-be71-4a6fbd35724f": {
+            "type": "Country",
+            "settings": {
+              "title": "Canada",
+              "country_code": "CA",
+              "shipping_start": 50,
+              "shipping_cost": 5.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "65644264-3621-4faf-8cb8-bbcba35e9653": {
+            "type": "Country",
+            "settings": {
+              "title": "Belgium",
+              "country_code": "BE",
+              "shipping_start": 60,
+              "shipping_cost": 6.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "f8b8e944-2dfa-4e3d-a884-79a265f575b6": {
+            "type": "Country",
+            "settings": {
+              "title": "Luxembourg",
+              "country_code": "LU",
+              "shipping_start": 60,
+              "shipping_cost": 6.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "39108c67-d85c-482c-8b14-a50a3a121e37": {
+            "type": "Country",
+            "settings": {
+              "title": "Germany",
+              "country_code": "DE",
+              "shipping_start": 60,
+              "shipping_cost": 4.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "1193a968-55a8-48aa-89da-4de258e9e0c2": {
+            "type": "Country",
+            "settings": {
+              "title": "Austria",
+              "country_code": "AT",
+              "shipping_start": 60,
+              "shipping_cost": 4.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "7f4825f0-2ed3-47e1-bc3d-de88d100e37c": {
+            "type": "Country",
+            "settings": {
+              "title": "Netherlands",
+              "country_code": "NL",
+              "shipping_start": 60,
+              "shipping_cost": 6.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "1b46f4df-f7a9-4ad8-9384-cce62711bb10": {
+            "type": "Country",
+            "settings": {
+              "title": "Switzerland",
+              "country_code": "CH",
+              "shipping_start": 80,
+              "shipping_cost": 9.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "798369e8-967e-44e0-bd01-92686c909b38": {
+            "type": "Country",
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 49,
+              "shipping_cost": 4.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "b7c9ba19-3779-4966-af8d-d318605c71ef": {
+            "type": "Country",
+            "settings": {
+              "title": "United Kingdom",
+              "country_code": "GB",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "584c3f41-7492-4912-8fe1-9ee0783d939f": {
+            "type": "Country",
+            "settings": {
+              "title": "Czechia",
+              "country_code": "CZ",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "30164aef-a308-4f77-aeed-5e11557d1805": {
+            "type": "Country",
+            "settings": {
+              "title": "Denmark",
+              "country_code": "DK",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "24eeea06-f71c-4034-8193-fff82d3aa2c1": {
+            "type": "Country",
+            "settings": {
+              "title": "Estonia",
+              "country_code": "EE",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "87a90281-87d9-4ff6-a9d0-6c568639bead": {
+            "type": "Country",
+            "settings": {
+              "title": "Ireland",
+              "country_code": "IE",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "a8a57c81-fb57-4b2d-8350-df514381716e": {
+            "type": "Country",
+            "settings": {
+              "title": "Italy",
+              "country_code": "IT",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "63204549-ec25-4257-b59c-6341651c58cf": {
+            "type": "Country",
+            "settings": {
+              "title": "Portugal",
+              "country_code": "PT",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "4d0284da-dd62-4100-bc06-c58bb2088198": {
+            "type": "Country",
+            "settings": {
+              "title": "Spain",
+              "country_code": "ES",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "958ae1d4-a6e0-439b-8ae4-e272913506f0": {
+            "type": "Country",
+            "settings": {
+              "title": "Sweden",
+              "country_code": "SE",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "598ebe21-67ff-4824-9d68-59908b01ef52": {
+            "type": "Country",
+            "settings": {
+              "title": "Slovenia",
+              "country_code": "SI",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "9d470b62-406b-4d3d-86ea-6e887e1fd734": {
+            "type": "Country",
+            "settings": {
+              "title": "Slovakia",
+              "country_code": "SK",
+              "shipping_start": 0,
+              "shipping_cost": 8.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "6f9dbd29-9c49-4205-b23f-ee1e47574024": {
+            "type": "Country",
+            "settings": {
+              "title": "Colombia",
+              "country_code": "CO",
+              "shipping_start": 70,
+              "shipping_cost": 14.9,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "388b4a75-b297-4196-a191-2396cb0ccda6": {
+            "type": "Country",
+            "disabled": true,
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 40,
+              "shipping_cost": 4,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "fa58fb1d-24dd-424f-b9e3-eeac52b1a195": {
+            "type": "Country",
+            "disabled": true,
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 40,
+              "shipping_cost": 4,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "846ae97b-8a83-413c-8859-4103ccf77d33": {
+            "type": "Country",
+            "disabled": true,
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 40,
+              "shipping_cost": 4,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "c4596a78-9b38-4920-b859-7a9653c2f387": {
+            "type": "Country",
+            "disabled": true,
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 40,
+              "shipping_cost": 4,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "292c7828-1d50-441d-b467-c15b57e76927": {
+            "type": "Country",
+            "disabled": true,
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 40,
+              "shipping_cost": 4,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "f28e21c2-613c-4b49-8d7e-f77d9244d1e9": {
+            "type": "Country",
+            "disabled": true,
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 40,
+              "shipping_cost": 4,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "14e94a74-b8e6-4a98-8e94-9bea37087d45": {
+            "type": "Country",
+            "disabled": true,
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 40,
+              "shipping_cost": 4,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          },
+          "3b9a5e4e-97c9-4fcc-aae0-756c18e02d89": {
+            "type": "Country",
+            "disabled": true,
+            "settings": {
+              "title": "France",
+              "country_code": "FR",
+              "shipping_start": 40,
+              "shipping_cost": 4,
+              "message": "Livraison offerte dès 49€ d’achat"
+            }
+          }
+        },
+        "block_order": [
+          "19c09cb4-6a3e-4e1a-bce8-7ada95f2eee1",
+          "ccea7e78-76b0-42cc-8ee9-45b0a5891433",
+          "119633ea-e18d-41c9-bd1f-efbaa485a02b",
+          "89793233-c0fc-4ff7-be71-4a6fbd35724f",
+          "65644264-3621-4faf-8cb8-bbcba35e9653",
+          "f8b8e944-2dfa-4e3d-a884-79a265f575b6",
+          "39108c67-d85c-482c-8b14-a50a3a121e37",
+          "1193a968-55a8-48aa-89da-4de258e9e0c2",
+          "7f4825f0-2ed3-47e1-bc3d-de88d100e37c",
+          "1b46f4df-f7a9-4ad8-9384-cce62711bb10",
+          "798369e8-967e-44e0-bd01-92686c909b38",
+          "b7c9ba19-3779-4966-af8d-d318605c71ef",
+          "584c3f41-7492-4912-8fe1-9ee0783d939f",
+          "30164aef-a308-4f77-aeed-5e11557d1805",
+          "24eeea06-f71c-4034-8193-fff82d3aa2c1",
+          "87a90281-87d9-4ff6-a9d0-6c568639bead",
+          "a8a57c81-fb57-4b2d-8350-df514381716e",
+          "63204549-ec25-4257-b59c-6341651c58cf",
+          "4d0284da-dd62-4100-bc06-c58bb2088198",
+          "958ae1d4-a6e0-439b-8ae4-e272913506f0",
+          "598ebe21-67ff-4824-9d68-59908b01ef52",
+          "9d470b62-406b-4d3d-86ea-6e887e1fd734",
+          "6f9dbd29-9c49-4205-b23f-ee1e47574024",
+          "388b4a75-b297-4196-a191-2396cb0ccda6",
+          "fa58fb1d-24dd-424f-b9e3-eeac52b1a195",
+          "846ae97b-8a83-413c-8859-4103ccf77d33",
+          "c4596a78-9b38-4920-b859-7a9653c2f387",
+          "292c7828-1d50-441d-b467-c15b57e76927",
+          "f28e21c2-613c-4b49-8d7e-f77d9244d1e9",
+          "14e94a74-b8e6-4a98-8e94-9bea37087d45",
+          "3b9a5e4e-97c9-4fcc-aae0-756c18e02d89"
+        ],
+        "settings": {
+        }
+      },
+      "locals-portal": {
+        "type": "locals-portal",
+        "blocks": {
+          "88ef9907-2570-4665-897f-42a63135e8f4": {
+            "type": "locals",
+            "settings": {
+              "title": "English - en",
+              "rc_my_account": "My account",
+              "rc_my_information": "My information",
+              "rc_my_subscriptions": "My subscriptions",
+              "rc_my_shipments": "Sending to come",
+              "rc_subscriptions_active": "Active subscription",
+              "rc_my_payments": "Payment information",
+              "rc_my_addresses": "Address of my subscriptions",
+              "rc_logout": "Disconnect",
+              "rc_next_shipping": "Next shipment",
+              "rc_quantity": "Quantity",
+              "rc_frequency": "Frequency",
+              "rc_all_of": "All the",
+              "rc_month": "month",
+              "rc_week": "weeks",
+              "rc_day": "days",
+              "rc_shipping_address": "Delivery address",
+              "rc_change_product": "Change product",
+              "rc_add_product": "Add a product to my subscription",
+              "rc_subscription": "Subscription",
+              "rc_delete": "To delete",
+              "rc_active": "Reactivate",
+              "rc_save": "Save",
+              "rc_modify": "To modify",
+              "rc_cancel": "To cancel",
+              "rc_add": "Add",
+              "rc_add_code_reduction": "Add a coupon code to my next shipment",
+              "rc_apply": "To apply",
+              "rc_enter_code": "Enter the promo code",
+              "rc_have_discount": "Have discount",
+              "rc_problem_code": "There is a problem with your code, it has limitations or does not exist",
+              "rc_date_shipping": "Sending date",
+              "rc_address_to_come": "Sending address",
+              "rc_products": "Product",
+              "rc_remove_exc": "Remove exceptionally",
+              "rc_undo_action": "Underscore",
+              "rc_empty_next_delivery": "No delivery has been scheduled for your account",
+              "rc_schedule": "Schedule",
+              "rc_no_subscriptions": "You have no active subscription",
+              "rc_hide_inactive": "Hide my inactive subscriptions",
+              "rc_view_inactive": "See my inactive subscriptions",
+              "rc_why_delete": "Why do you want to cancel?",
+              "rc_other_reason": "Other reason",
+              "rc_product_reason": "I would like another product",
+              "rc_frequency_reason": "The delivery frequency does not suit me",
+              "rc_date_reason": "I still have too much stock",
+              "rc_not_frequency_reason": "I get the product immediately",
+              "rc_change_mind": "I changed my mind, I'm going back on my account",
+              "rc_delete_anywhere": "I cancel anywhere",
+              "rc_about_delete": "Could you tell us where?",
+              "rc_delete_subscription": "Cancel my subscription",
+              "rc_if_change_frequency": "And if you change the delivery frequency?",
+              "rc_btn_change_frequency": "I change the frequency of deliveries",
+              "rc_if_change_date": "And if you set the date of shipment?",
+              "rc_btn_change_date": "I shift the date of shipment",
+              "rc_choose_your_product": "Choose your product",
+              "rc_validate_product": "Validate and add the product",
+              "rc_validate_information": "Validate the information",
+              "rc_step": "Stage",
+              "rc_non_product": "No product found",
+              "rc_enter_term": "Enter a search term and press Search",
+              "rc_search_name": "Enter the product name",
+              "rc_add_new_product": "Add the product",
+              "rc_return_search": "Return to product search",
+              "rc_purchase": "Type of purchase",
+              "rc_subscribe": "To subscribe to",
+              "rc_deliver": "Deliver",
+              "rc_one_time": "One-time",
+              "rc_charge_each": "Charge each",
+              "rc_current_product": "Current product",
+              "rc_choose_new_product": "Choose a new product",
+              "rc_search": "Research",
+              "rc_choose_this_product": "Choose this product",
+              "rc_exchange_product": "Exchange the product",
+              "rc_product_to_exchange": "Choose the product to exchange",
+              "rc_payment_information": "Payment information",
+              "rc_pay_card": "Payment card",
+              "rc_ending_with": "ending with",
+              "rc_expiry": "expiry",
+              "rc_billing_address": "Billing address",
+              "rc_change_billing": "Change the billing address",
+              "rc_new_billing_address": "Add billing address",
+              "rc_billing_payment_info": "We will send you an e-mail to securely update your payment and billing information.",
+              "rc_sending_email_info": "Change the billing address",
+              "rc_send_email_btn": "Send an email to update",
+              "rc_no_payments": "No payment source in the file.",
+              "rc_add_payment": "Add to the pay",
+              "rc_card_remove": "The card has been removed or has expired.",
+              "rc_paypal_account": "Paypal Account",
+              "rc_paypal_info": "If you need to update your payment settings, you must log in to your PayPal account.",
+              "rc_login_to": "Log in to",
+              "rc_apple_account": "Linked Apple Pay",
+              "rc_apple_info": "If you need to update your payment settings, go to Settings> Portfolio and Apple Pay on your mobile device.",
+              "rc_pay_processor": "Payment processor",
+              "rc_pay_no_identify": "The payment source could not be identified. Please update your card information.",
+              "rc_card_reset": "The addition of a credit card will reset your type of payment of",
+              "rc_non_billing_address": "No billing address in the folder.",
+              "rc_address_subs": "Address of my subscriptions",
+              "rc_delivery_address": "Delivery address",
+              "rc_change_delivery": "Change the delivery address",
+              "rc_address_non_found": "NO Addresses Found",
+              "rc_add_shipping_address": "Add a shipping address"
+            }
+          }
+        },
+        "block_order": [
+          "88ef9907-2570-4665-897f-42a63135e8f4"
+        ],
+        "settings": {
+        }
+      },
+      "product-index": {
+        "type": "product-index",
+        "settings": {
+          "size_title_product": 30,
+          "size_title_product_movil": 30,
+          "color_title_product": "#000000",
+          "size_price": 15,
+          "size_price_movil": 15,
+          "color_price": "#000000",
+          "size_subtitle": 15,
+          "size_subtitle_movil": 15,
+          "color_subtitle": "#000000",
+          "size_description": 15,
+          "size_description_movil": 15,
+          "color_description": "#000000",
+          "size_options": 15,
+          "size_options_movil": 15,
+          "color_options": "#000000",
+          "text_reviews_link": "Lire tous les avis",
+          "size_link_review": 15,
+          "size_link_review_movil": 15,
+          "color_link_review": "#000000",
+          "cta_size": 16,
+          "cta_size_movil": 16
+        }
+      },
+      "icons-product": {
+        "type": "icons-product",
+        "blocks": {
+          "1537376302823": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-organic",
+              "feature_text": "Certified organic & approved by european authorities",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/abbio2.png"
+            }
+          },
+          "1537375806539": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-pharmacy",
+              "feature_text": "all our blends are developed by a medical expert",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/2047709-200.png"
+            }
+          },
+          "1537802839504": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-customers",
+              "feature_text": "1.5 million cup of tea infused & more than 1,000 positive reviews on our products",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/1966413-200.png"
+            }
+          },
+          "1537375781966": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-madeinfrance",
+              "feature_text": "Our products are designed & packaged in France",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/164593-200.png"
+            }
+          },
+          "1537376272482": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-percent",
+              "feature_text": "Panda Tea is a proud member of 1% for the planet",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/percent.png"
+            }
+          },
+          "1540392534534": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-bamboo",
+              "feature_text": "Genuine Bamboo - Eco Friendly",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/607319-200.png"
+            }
+          },
+          "1540392875566": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-1ftp",
+              "feature_text": "Panda Tea is a member of 1% For The Planet movement",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/1738538-200.png"
+            }
+          },
+          "1540393970398": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-thermos",
+              "feature_text": "Keep your tea warm for up to 6 hours - 360mL",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/1866065-200.png"
+            }
+          },
+          "1542645700120": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-mom",
+              "feature_text": "All our plants are compatible with pregnancy & feeding",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/4294-200.png"
+            }
+          },
+          "1543423524663": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-france",
+              "feature_text": "Our products are designed & packaged in France.",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/france.png"
+            }
+          },
+          "1543425377325": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-love",
+              "feature_text": "Responsibly-grown plants, sourced with love",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/2047709-200.png"
+            }
+          },
+          "1557765636707": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-infuser",
+              "feature_text": "450mL capacity with an integrated tea strainer",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/accesssories.png"
+            }
+          },
+          "1557765728604": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-bamboo-infuser",
+              "feature_text": "Cap in genuine bamboo.",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/bamboo.png"
+            }
+          },
+          "1567763851786": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-plastic",
+              "feature_text": "Reduce your plastic bottle consumption",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/plasticwaste.png"
+            }
+          },
+          "1599723590213": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-organic2",
+              "feature_text": "Certifié bio",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-organic2.png"
+            }
+          },
+          "1599723617250": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-madeinfrance2",
+              "feature_text": "Made in France",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-madeinfrance2.png"
+            }
+          },
+          "1599723636243": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-vegan2",
+              "feature_text": "100% vegan",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-vegan2.png"
+            }
+          },
+          "1599723690184": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-capsule1",
+              "feature_text": "Gélule d'origine végétale",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-capsule1.png"
+            }
+          },
+          "1599723736379": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-pharmacist3",
+              "feature_text": "Formulé par un Pharmacien",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-pharmacist3_dafa8eb3-1b6c-4dd7-8e65-819c6dc4e0a5.png"
+            }
+          },
+          "1601048839341": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-sleep",
+              "feature_text": "Sommeil",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-sleep.png"
+            }
+          },
+          "1601048878449": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-beauty",
+              "feature_text": "Beauté de la peau",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-beauty.png"
+            }
+          },
+          "1601048894609": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-relaxation",
+              "feature_text": "Relaxation & sérénité",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-relaxation.png"
+            }
+          },
+          "1601048918094": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-immunity",
+              "feature_text": "Défenses naturelles",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-immunity_79028331-e21f-444d-a153-166bc2186009.png"
+            }
+          },
+          "1601048931034": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-slimming",
+              "feature_text": "Minceur",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-slimming.png"
+            }
+          },
+          "1601048949641": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-digestion",
+              "feature_text": "Digestion",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-digestion.png"
+            }
+          },
+          "1601048967587": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-caffeine",
+              "feature_text": "Sans caféine \/ théine",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-caffeine.png"
+            }
+          },
+          "1601048989253": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-icedtea",
+              "feature_text": "À boire version glacée",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-icedtea.png"
+            }
+          },
+          "1601049009303": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-maternitea",
+              "feature_text": "Compatible jeunes et futures mamans",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-maternitea.png"
+            }
+          },
+          "1601049029264": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-latte",
+              "feature_text": "À boire version latte",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-latte.png"
+            }
+          },
+          "1601049040292": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-hotcold",
+              "feature_text": "24H Froid & 12H Chaud",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-hotcold.png"
+            }
+          },
+          "1601049068641": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-menstrualperiod",
+              "feature_text": "Cycle féminin",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-menstrualperiod.png"
+            }
+          },
+          "1601049083165": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-planet",
+              "feature_text": "Eco-friendly",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-planet.png"
+            }
+          },
+          "1601049099283": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-leather",
+              "feature_text": "",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-leather.png"
+            }
+          },
+          "1601049115809": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-customers2",
+              "feature_text": "Plus de 5 000 avis positifs",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-reviews2.png"
+            }
+          },
+          "1601049126627": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-teabags",
+              "feature_text": "Sachets en coton biodégradables",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-teabags_4ebac076-3e39-4c51-8641-e432ae1e763e.png"
+            }
+          },
+          "1601049224575": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-bottle1",
+              "feature_text": "Dites non au plastique",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-bottle1.png"
+            }
+          },
+          "1601060516888": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-detox",
+              "feature_text": "Detox",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-detox1.png"
+            }
+          },
+          "1601060858972": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-energy",
+              "feature_text": "Vitalité & Brûle-graisse",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-energy.png"
+            }
+          },
+          "1601061937577": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-energy2",
+              "feature_text": "Vitalité & Énergie",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-energy.png"
+            }
+          },
+          "1601063304575": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-doubleparoi",
+              "feature_text": "Double paroi",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-doubleparoi.png"
+            }
+          },
+          "1601063849704": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-sport",
+              "feature_text": "Récupération musculaire",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-energy.png"
+            }
+          },
+          "1601063864244": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-hydratation",
+              "feature_text": "Hydratant & drainant",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-hydratation.png"
+            }
+          },
+          "1601626723751": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-hotcold2",
+              "feature_text": "12H Chaud & 12H froid",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-hotcold.png"
+            }
+          },
+          "1606137825165": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-hotcold3",
+              "feature_text": "4H Chaud & 12H foid",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-hotcold.png"
+            }
+          },
+          "d00a4be2-d674-47ed-b757-2099e241ebaa": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-kids",
+              "feature_text": "À boire tiède ou froid",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/pi-icedtea.png"
+            }
+          },
+          "3ea6eb01-7680-416e-b4eb-2df93afee845": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "pi-coffret",
+              "feature_text": "Coffrets et assortiments",
+              "icon_svg": "",
+              "feature_image": "shopify:\/\/shop_images\/Capture_d_ecran_2021-10-14_a_10.08.49.png"
+            }
+          },
+          "1b4e9fcd-3fc0-4e8f-8894-91c32b319f0b": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "",
+              "feature_text": "",
+              "icon_svg": ""
+            }
+          },
+          "3bfe5b02-3011-4390-9874-4cf7a9cf76ee": {
+            "type": "icon",
+            "settings": {
+              "feature_tag": "",
+              "feature_text": "",
+              "icon_svg": ""
+            }
+          }
+        },
+        "block_order": [
+          "1537376302823",
+          "1537375806539",
+          "1537802839504",
+          "1537375781966",
+          "1537376272482",
+          "1540392534534",
+          "1540392875566",
+          "1540393970398",
+          "1542645700120",
+          "1543423524663",
+          "1543425377325",
+          "1557765636707",
+          "1557765728604",
+          "1567763851786",
+          "1599723590213",
+          "1599723617250",
+          "1599723636243",
+          "1599723690184",
+          "1599723736379",
+          "1601048839341",
+          "1601048878449",
+          "1601048894609",
+          "1601048918094",
+          "1601048931034",
+          "1601048949641",
+          "1601048967587",
+          "1601048989253",
+          "1601049009303",
+          "1601049029264",
+          "1601049040292",
+          "1601049068641",
+          "1601049083165",
+          "1601049099283",
+          "1601049115809",
+          "1601049126627",
+          "1601049224575",
+          "1601060516888",
+          "1601060858972",
+          "1601061937577",
+          "1601063304575",
+          "1601063849704",
+          "1601063864244",
+          "1601626723751",
+          "1606137825165",
+          "d00a4be2-d674-47ed-b757-2099e241ebaa",
+          "3ea6eb01-7680-416e-b4eb-2df93afee845",
+          "1b4e9fcd-3fc0-4e8f-8894-91c32b319f0b",
+          "3bfe5b02-3011-4390-9874-4cf7a9cf76ee"
+        ],
+        "settings": {
+          "icon_description_size": 12,
+          "icon_description_size_movil": 12,
+          "icon_description_color": "#000000",
+          "line_section_size": 1,
+          "line_section_size_movil": 1,
+          "line_section_color": "#000000"
+        }
+      },
+      "accordions-product": {
+        "type": "accordions-product",
+        "settings": {
+          "title_accordions": "Informations sur le produits :",
+          "size_title_acc": 16,
+          "size_title_acc_movil": 15,
+          "color_title_acc": "#000000",
+          "bg_acc": "#f2f1f5",
+          "size_acc_btn": 16,
+          "size_acc_btn_movil": 15,
+          "color_acc_btn": "#000000",
+          "size_acc_content": 16,
+          "size_acc_content_movil": 12,
+          "color_acc_content": "#000000"
+        }
+      },
+      "ingredient-product": {
+        "type": "ingredient-product",
+        "blocks": {
+          "1537375904862": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-jojoba",
+              "ingredient_title": "Huile de Jojoba",
+              "ingredient_text": "L'huile représente la moitié du poids de la graine de Jojoba. Connue pour ses propriétés hydratantes exceptionnelles pour la peau et les cheveux.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Jojoba_2.png"
+            }
+          },
+          "1551452726805": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-nettle",
+              "ingredient_title": "Ortie",
+              "ingredient_text": "L'ortie est riche en minéraux et vitamines. C'est une plante réputée pour son effet diurétique et galactogène.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/nettle_2.png"
+            }
+          },
+          "1539610618173": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-cocoa",
+              "ingredient_title": "Cacao",
+              "ingredient_text": "Propriétés anti-stress et anti-fatigue. Impact positif sur l'humeur.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Cocoa_2.png"
+            }
+          },
+          "1540315502272": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-blacktea",
+              "ingredient_title": "Thé noir",
+              "ingredient_text": "Riche en antioxydants et énergisant, le thé noir fournit de l'énergie et est un bon bon allié des régimes.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Tea_2.png"
+            }
+          },
+          "1540315903742": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-cynorhodon",
+              "ingredient_title": "Cynorhodon",
+              "ingredient_text": "Riche en vitamine C et minéraux, le cynorhodon renforce les défenses immunitaires.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/cynohordon_2.png"
+            }
+          },
+          "1543417315159": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-sencha",
+              "ingredient_title": "Sencha",
+              "ingredient_text": "La richesse en catéchines du Sencha lui confère un pouvoir antioxydant très efficace.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Green_tea_sencha_2.png"
+            }
+          },
+          "1543417757954": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-rooibos",
+              "ingredient_title": "Rooibos",
+              "ingredient_text": "Originaire d'Afrique du Sud, le Rooibos est réputé pour ses effets drainants et tonifiants.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Roiibos_2.png"
+            }
+          },
+          "1551447958767": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-puerh",
+              "ingredient_title": "Thé Pu-erh",
+              "ingredient_text": "Active le métabolisme et favorise les dépenses énergétique.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Pu-erh_tea_2.png"
+            }
+          },
+          "1551446767180": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-mate",
+              "ingredient_title": "Maté vert",
+              "ingredient_text": "Stimulant, coupe-faim, renforce le métabolisme.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Yerba_mate_2.png"
+            }
+          },
+          "1551449267178": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-chunme",
+              "ingredient_title": "Thé Chun Mee",
+              "ingredient_text": "Effet diurétique, favorise l'élimination des toxines, active le métabolisme.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Green_tea_sencha_2_3b275e78-5efb-4ca8-8453-caca85abc6ff.png"
+            }
+          },
+          "1551449113926": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-peppermint",
+              "ingredient_title": "Menthe poivrée",
+              "ingredient_text": "Anti-ballonnements, aide à la digestion, soulage la colique",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Mint_2.png"
+            }
+          },
+          "1551448233753": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-ginger",
+              "ingredient_title": "Gingembre",
+              "ingredient_text": "Stimule l'activité cérébrale et aide à la digestion.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Ginger_2.png"
+            }
+          },
+          "1551450220604": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-cardamom",
+              "ingredient_title": "Cardamome",
+              "ingredient_text": "Apaise et facilite le process de digestion, brûle-graisse",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/cardamon_2.png"
+            }
+          },
+          "1551453041366": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-vervain",
+              "ingredient_title": "Verveine",
+              "ingredient_text": "Facilite l’endormissement et apaisant",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/verveine_2.png"
+            }
+          },
+          "1554343724329": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-sage",
+              "ingredient_title": "Feuille de sauge",
+              "ingredient_text": "La sauge est utilisée pour les problèmes digestifs, y compris la perte d'appétit, les ballonnements et les brûlures d'estomac.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Sage_2.png"
+            }
+          },
+          "1557757126724": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-moringa",
+              "ingredient_title": "Moringa",
+              "ingredient_text": "Super-aliment riche en vitamine C, calcium et potassium.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Moringga_2.png"
+            }
+          },
+          "1557759146813": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-matcha",
+              "ingredient_title": "Thé vert matcha",
+              "ingredient_text": "Superaliment riche en antioxydants - 10 fois plus qu’un thé classique - effet drainant et anti-âge sur la peau.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Green_tea_sencha_2_3b275e78-5efb-4ca8-8453-caca85abc6ff.png"
+            }
+          },
+          "1557759761390": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-carrot",
+              "ingredient_title": "Carotte",
+              "ingredient_text": "Riche en vitamine, embellit le teint et protège mieux la peau contre les ultraviolets.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Carrot_2.png"
+            }
+          },
+          "1557764308735": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-birch-leaves",
+              "ingredient_title": "Feuille de bouleau",
+              "ingredient_text": "Réputée pour ses effets diurétiques et dépuratives",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Birch_2.png"
+            }
+          },
+          "1567777761643": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-guaranaseeds",
+              "ingredient_title": "Guarana",
+              "ingredient_text": "Utilisées par les peuples d’Amazonie pour lutter contre la fatigue et réguler l’appétit.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Guarana_2.png"
+            }
+          },
+          "1567777970522": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-greentea",
+              "ingredient_title": "Thé vert",
+              "ingredient_text": "Riche en antioxydants, élimine les toxines et active le métabolisme",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Green_tea_sencha_2_3b275e78-5efb-4ca8-8453-caca85abc6ff.png"
+            }
+          },
+          "1567778045358": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-ginger2",
+              "ingredient_title": "Gingembre",
+              "ingredient_text": "Renforce le système immunitaire et les défenses naturelles.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Ginger_2.png"
+            }
+          },
+          "1588000127475": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-turmeric",
+              "ingredient_title": "Curcuma",
+              "ingredient_text": "Efficace pour réduire les sensations douloureuses de pression, de contraction et de tension dans les muscles.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Turmeric_2.png"
+            }
+          },
+          "1588239221401": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-peppermint-sportea",
+              "ingredient_title": "Menthe poivrée",
+              "ingredient_text": "Effets drainants et tonifiants et réputée pour ses effets anti-inflammatoire",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Mint_2.png"
+            }
+          },
+          "1588239949661": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-rooibos-sportea",
+              "ingredient_title": "Rooibos",
+              "ingredient_text": "Originaire d'Afrique du Sud, le Rooibos est réputé pour ses effets drainants et tonifiants.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Roiibos_2.png"
+            }
+          },
+          "1588240154390": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-ginger-sportea",
+              "ingredient_title": "Gingembre",
+              "ingredient_text": "Anti-inflammatoire naturel. Soulage les articulations et aide à la récupération des courbatures.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Ginger_2.png"
+            }
+          },
+          "1599576612716": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-lemonbalm",
+              "ingredient_title": "Mélisse",
+              "ingredient_text": "Largement reconnue pour ses propriétés relaxantes, la mélisse apaise et favorise un sommeil de qualité.\nIt soothes and promotes quality sleep.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Melisse_2.png"
+            }
+          },
+          "1599576820919": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-eschscholzia",
+              "ingredient_title": "Eschscholzia",
+              "ingredient_text": "Originaire de Californie, l'Eschscholzia apaise les symptôlmes liés au stress et régule le sommeil. Elle est considérée comme la plante du sommeil réparateur. \nIt is a restorative plant for sleep.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Eschscholzia_2.png"
+            }
+          },
+          "1599576871117": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-valerian",
+              "ingredient_title": "Valériane",
+              "ingredient_text": "Cultivée en Europe et en Asie du Nord, la valériane est utilisée depuis des millénaires pour ses bienfaits. Elle est relaxante et facilite l'endormissement.\nIt is relaxing and makes it easier to fall asleep.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Valiarne_2.png"
+            }
+          },
+          "1600107586359": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-matricariachamomile",
+              "ingredient_title": "Camomille Matricaire",
+              "ingredient_text": "Cultivée en Europe de l'Ouest et en Afrique du Nord, la Camomille Matricaire est utilisée depuis l'Antiquité pour apaiser et détendre. Elle est recommandée en cas de troubles anxieux pour ses propriétés réconfortantes. \nElle est recommandée en cas de troubles anxieux pour ses propriétés réconfortantes. \"",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Camomille_2_0c9e832c-e2c9-4cf2-aa6d-3bce2a363624.png"
+            }
+          },
+          "1600107782587": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-passiflore",
+              "ingredient_title": "Passiflore",
+              "ingredient_text": "Originaire des régions tropicales et subtropicales des Amériques, la Passiflore a des propriétés tranquilisantes.\n\nElle favorise la relaxation et soulage la nervosité.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Passiflore_2_7b01b2fb-4ca7-4903-89a6-853f6e3a012a.png"
+            }
+          },
+          "1600107853579": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-tulsi",
+              "ingredient_title": "Basilic sacré",
+              "ingredient_text": "Considérée en Inde comme la reine des plantes, la Basilic Sacré aide à retrouver son calme et se relaxer. Elle aide à rétablir l'équilibre et l'harmonie au sein du corps et de l'esprit\nElle aide à rétablir l'équilibre et l'harmonie au sein du corps et de l'esprit.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Tulsi_2_159c2388-8000-4dda-bf78-5a5789360109.png"
+            }
+          },
+          "1600156258395": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-fennel",
+              "ingredient_title": "Fenouil",
+              "ingredient_text": "Originaire du bassin méditerranéen, le Fénouil traite les troubles digestifs. Il a des propriétés carminatives et antispasmodiques. Il aide à lutter conntre les ballonnements, les maux d'estomac et l'aérophagie.\nIl aide à lutter conntre les ballonnements, les maux d'estomac et l'aérophagie.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Fenouil_2_35da5b53-5bf4-4a37-919a-bb67f74485a7.png"
+            }
+          },
+          "1600156309962": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-coriander",
+              "ingredient_title": "Coriandre",
+              "ingredient_text": "Originaire d'Afrique du Nord et d'Orient, la Coriandre a des propriétés stimulantes et facilite la digestion. \n\nElle renforce le système immunitaire et aide à lutter contre les affections gastro-intestinales.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Coriandre_2_8f139240-7571-4dbe-8c44-3ed9fd37dbc4.png"
+            }
+          },
+          "1600156342236": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-licorice",
+              "ingredient_title": "Réglisse",
+              "ingredient_text": "Originaire d'Asie et d'Europe, la Réglisse est connue pour ses propriétés anti-inflammatoires et sédatives.\n\n La Réglisse soulage les inflammations du système digestif : elle calme les maux d'estomac et facilite la digestion.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Reglisse_2_ede03c8c-08c7-40b7-8d60-77a5755bae6e.png"
+            }
+          },
+          "1600249362310": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-burdock",
+              "ingredient_title": "Burdock",
+              "ingredient_text": "Originaire d'Europe et d'Asie, la Bardane a des propriétés anti-inflammatoires et antioxydantes. \n\nElle est très utilisée pour lutter contre les imperfections et radicaux libres responsables de la détérioration de la peau. Elle purifie et apaise la peau et l'aide ainsi à se régénérer plus facilement.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Bardane_2.png"
+            }
+          },
+          "1600249446331": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-acelora",
+              "ingredient_title": "Acelora",
+              "ingredient_text": "Originaire d'Amérique Latine, elle est très concentrée en vitamine C. \n\nElle tonifie la peau et aide à la régénération des cellules. Elle permet de restaurer l'équilibre de la peau en apportant hydratation et confort à la peau.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Acerolla_2.png"
+            }
+          },
+          "1600249473733": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-cinnamon",
+              "ingredient_title": "Cannelle",
+              "ingredient_text": "Originaire d'Asie, la Cannelle est très riche en antioxydants. \n\nElle élimine et prévient les imperfections de la peau et atténue les pores. Elle est réputée pour ses proriétés antimicrobiennes et anti-inflammatoires naturel.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda-Vita_Illustrations-_Canelle-2.png"
+            }
+          },
+          "1600416418976": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-ginger3",
+              "ingredient_title": "Gingembre",
+              "ingredient_text": "Originaire d'Asie, le Gingembre est reconnu pour ses propriétés anti-inflammatoires et diminuer les douleurs.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Ginger_2.png"
+            }
+          },
+          "1600416473209": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-nettle3",
+              "ingredient_title": "Ortie",
+              "ingredient_text": "Originaire des régions tempérées de l'Eurasie, l'ortie aide à réguler naturellement le cycle et lutter contre les retentions d'eau.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/nettle_2.png"
+            }
+          },
+          "1600416573718": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-sage3",
+              "ingredient_title": "Sauge",
+              "ingredient_text": "La sauge est une plante originaire du bassin méditerranéen réputée pour régulariser les cycles menstruels et calmer les douleurs.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Sage_2.png"
+            }
+          },
+          "1601551980227": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-fleuroranger",
+              "ingredient_title": "Fleur d'oranger",
+              "ingredient_text": "La fleur d'oranger est réputée pour ses effets apaisants et relaxant.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/FLEUR_D_ORANGER_copy.png"
+            }
+          },
+          "1601552166375": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-lavande",
+              "ingredient_title": "Lavande",
+              "ingredient_text": "La lavande est réputée pour son effet drainant et calmant.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/LAVANDER_copy.png"
+            }
+          },
+          "1601552318120": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-citronnelle",
+              "ingredient_title": "Citronnelle",
+              "ingredient_text": "Délicieusement parfumée, la citronnelle est un excellent alliée pour mieux digérer.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/CITRONNELLE_-_LEMONGRASS_copy.png"
+            }
+          },
+          "1601552413434": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-millefeuille",
+              "ingredient_title": "Alchille millefeuille",
+              "ingredient_text": "Plante de la famille des Astéracées, elle est réputée pour réduire les troubles menstruels.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/ALCHILLE_MILLEFEUILLE_copy.png"
+            }
+          },
+          "1601571541732": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-spearmint",
+              "ingredient_title": "Menthe douce",
+              "ingredient_text": "La menthe est réputée pour faciliter la digestion.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Mint_2.png"
+            }
+          },
+          "1601571716007": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-thyme",
+              "ingredient_title": "Thym",
+              "ingredient_text": "Le thym est réputée pour ses bienfaits antispasmodique, dynamisante et sur la digestion.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Thym_2.png"
+            }
+          },
+          "1601571910995": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-lemonbalm2",
+              "ingredient_title": "Mélisse",
+              "ingredient_text": "Largement reconnue pour ses propriétés relaxantes, la mélisse apaise.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Melisse_2.png"
+            }
+          },
+          "1601626731925": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-turmeric2",
+              "ingredient_title": "Curcuma",
+              "ingredient_text": "Le curcuma est riche en antioxydants.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Turmeric_2.png"
+            }
+          },
+          "1601628048739": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-cinnamon2",
+              "ingredient_title": "Cannelle",
+              "ingredient_text": "Originaire d'Asie, la Cannelle est très riche en antioxydants. Elle est réputée pour ses proriétés antimicrobiennes et anti-inflammatoires naturel.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda-Vita_Illustrations-_Canelle-2.png"
+            }
+          },
+          "1601630451612": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-vervaine2",
+              "ingredient_title": "Verveine",
+              "ingredient_text": "Plante réputées pour ses effets galactogène qui agit sur le système nerveux et facilite l’endormissement.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/verveine_2.png"
+            }
+          },
+          "1601892481919": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-apple",
+              "ingredient_title": "Pomme",
+              "ingredient_text": "La pomme a de nombreux bienfaits. Elle est réputée pour faciliter la digestion et active le métabolisme.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Apple.png"
+            }
+          },
+          "1601892883152": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-hibiscus",
+              "ingredient_title": "Hibiscus",
+              "ingredient_text": "Plante riche en antioxydants et réputée pour aider à éliminer les toxines.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Hibiscus.png"
+            }
+          },
+          "1601892990297": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-blackberryleaves",
+              "ingredient_title": "Feuilles de mûres",
+              "ingredient_text": "Plante riche en micronutriments et  antixoydants.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Blacberry_Leaves.png"
+            }
+          },
+          "1602692972769": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-sageleaveeternitea",
+              "ingredient_title": "Feuille de sauge",
+              "ingredient_text": "La Sauge est reconnue pour ses vertus médicinales depuis l'Antiquité. Elle est réputée pour participer à la régulation hormonale et calmer les douleurs.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Sage_2.png"
+            }
+          },
+          "1602693133299": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-millefeuilleeternitea",
+              "ingredient_title": "Alchemillé millefeuille",
+              "ingredient_text": "Plante de la famille des Astéracées, elle est réputée pour lutter contre les bouffées de chaleurs.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/ALCHILLE_MILLEFEUILLE_copy.png"
+            }
+          },
+          "1608564291495": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-matevita",
+              "ingredient_title": "Maté",
+              "ingredient_text": "Stimulant, coupe-faim, active le métabolisme",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Yerba_mate_2.png"
+            }
+          },
+          "1608564358523": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-artichokevita",
+              "ingredient_title": "Artichaut",
+              "ingredient_text": "Favorise la digestion, drainant, excellent antioxydants",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/artichoke_colored.png"
+            }
+          },
+          "1608564388434": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-guaranavita",
+              "ingredient_title": "Guarana",
+              "ingredient_text": "énergisant, régule l'appétit, active le métabolisme",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Guarana_2_4546f552-db93-4fa6-82a3-a26b662ceae3.png"
+            }
+          },
+          "1608564614046": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-chicoryvita",
+              "ingredient_title": "Chicorée",
+              "ingredient_text": "Riche en fibre, aide à digérer, réputées pour ses bienfaits détox",
+              "ingredient_svg": ""
+            }
+          },
+          "51d14b99-5c3b-4f72-bcd3-61f97c2012b6": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-fennelvita",
+              "ingredient_title": "Fenouil",
+              "ingredient_text": "Réputée pour aider à la digestion et son effet détox l'organisme",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Fenouil_2_04792164-ecda-45ff-9f76-60cdc7208ce1.png"
+            }
+          },
+          "fd6663f9-a95b-4622-a818-0731dd99438c": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-paprikavita",
+              "ingredient_title": "Paprika Doux",
+              "ingredient_text": "Reconnu pour ses effets antioxydants et favorise la circulation",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/paprika_colored.png"
+            }
+          },
+          "3a9622fd-9826-4a29-9d88-52b1e9753933": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-blackradish",
+              "ingredient_title": "Radis noir",
+              "ingredient_text": "Drainant, aide à l'élimination des toxines",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/black_raddish_colored.png"
+            }
+          },
+          "76ccf00f-e8c1-4144-82a8-12ce813c300c": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-pineapplevita",
+              "ingredient_title": "Ananas",
+              "ingredient_text": "Riche en vitamines, minéraux et réputé pour aider à la digestion",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/pineapple_colored.png"
+            }
+          },
+          "22ae84bf-8fd1-4dba-b856-6dff2f6529b8": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-kids-no-added-sugar",
+              "ingredient_title": "Sans sucres ajoutés",
+              "ingredient_text": "Les Panda Tea pour les petits sont constitués de plantes biologiques et sont sans sucres ajoutés pour adopter un mode de vie sain dès le plus jeune âge.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/pi-teabags_319b022b-9436-45ea-9ed6-c502d3bd08b1.png"
+            }
+          },
+          "f416c44b-c44b-497c-b652-bfc1c1de973c": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-kids-no-coffee",
+              "ingredient_title": "Sans caféine",
+              "ingredient_text": "Les Panda Tea pour les petits sont 100% adaptés pour les enfants. Ils ne contiennent ni caféine ni théine : ils peuvent ainsi être consommés à toute heure de la journée.",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/15_Caffeine_Free_copy.png"
+            }
+          },
+          "4fe21b87-a3d3-44d1-8237-571357a3e489": {
+            "type": "ingredient",
+            "settings": {
+              "ingredient_tag": "ing-kids-taste",
+              "ingredient_title": "Savoureux et fruité",
+              "ingredient_text": "Les ingrédients des Panda Tea pour les petits ont été minutieusement sélectionnés pour leur goût fruité et savoureux pour convenir parfaitement au palais des enfants !",
+              "ingredient_svg": "",
+              "ingredient_image": "shopify:\/\/shop_images\/14_Digestion_copy.png"
+            }
+          }
+        },
+        "block_order": [
+          "1537375904862",
+          "1551452726805",
+          "1539610618173",
+          "1540315502272",
+          "1540315903742",
+          "1543417315159",
+          "1543417757954",
+          "1551447958767",
+          "1551446767180",
+          "1551449267178",
+          "1551449113926",
+          "1551448233753",
+          "1551450220604",
+          "1551453041366",
+          "1554343724329",
+          "1557757126724",
+          "1557759146813",
+          "1557759761390",
+          "1557764308735",
+          "1567777761643",
+          "1567777970522",
+          "1567778045358",
+          "1588000127475",
+          "1588239221401",
+          "1588239949661",
+          "1588240154390",
+          "1599576612716",
+          "1599576820919",
+          "1599576871117",
+          "1600107586359",
+          "1600107782587",
+          "1600107853579",
+          "1600156258395",
+          "1600156309962",
+          "1600156342236",
+          "1600249362310",
+          "1600249446331",
+          "1600249473733",
+          "1600416418976",
+          "1600416473209",
+          "1600416573718",
+          "1601551980227",
+          "1601552166375",
+          "1601552318120",
+          "1601552413434",
+          "1601571541732",
+          "1601571716007",
+          "1601571910995",
+          "1601626731925",
+          "1601628048739",
+          "1601630451612",
+          "1601892481919",
+          "1601892883152",
+          "1601892990297",
+          "1602692972769",
+          "1602693133299",
+          "1608564291495",
+          "1608564358523",
+          "1608564388434",
+          "1608564614046",
+          "51d14b99-5c3b-4f72-bcd3-61f97c2012b6",
+          "fd6663f9-a95b-4622-a818-0731dd99438c",
+          "3a9622fd-9826-4a29-9d88-52b1e9753933",
+          "76ccf00f-e8c1-4144-82a8-12ce813c300c",
+          "22ae84bf-8fd1-4dba-b856-6dff2f6529b8",
+          "f416c44b-c44b-497c-b652-bfc1c1de973c",
+          "4fe21b87-a3d3-44d1-8237-571357a3e489"
+        ],
+        "settings": {
+          "section_title": "Ingrédients :",
+          "section_title_size": 15,
+          "section_title_size_movil": 15,
+          "section_title_color": "#292929",
+          "section_description": "Nos ingrédients sont certifiés bios et choisis avec soin par une équipe d'experts en santé et nutrition.",
+          "section_description_size": 15,
+          "section_description_size_movil": 15,
+          "section_description_color": "#292929",
+          "block_title_size": 12,
+          "block_title_size_movil": 12,
+          "block_title_color": "#292929",
+          "block_description_size": 12,
+          "block_description_size_movil": 12,
+          "block_description_color": "#7e7e7e"
+        }
+      },
+      "product-recommendations": {
+        "type": "product-recommendations",
+        "settings": {
+          "show_product_recommendations": true,
+          "heading": "Vous pourriez aimer également",
+          "size_title_recomendations": 30,
+          "size_title_recomendations_movil": 25,
+          "color_title_recomendations": "#000000"
+        }
+      },
+      "reviews-product": {
+        "type": "reviews-product",
+        "settings": {
+          "section_title_reviews": "Avis clients",
+          "section_title_size": 15,
+          "section_title_size_movil": 15,
+          "section_title_color": "#000000",
+          "section_description_reviews": "Plus de 3000 avis clients positifs sur les mélanges Panda Tea :)",
+          "section_description_size": 15,
+          "section_description_size_movil": 15,
+          "section_description_color": "#000000"
+        }
+      },
+      "recomendation-by-tag": {
+        "type": "recomendation-by-tag",
+        "settings": {
+          "heading": "Vous pourriez aimer également",
+          "size_title_recomendations": 30,
+          "size_title_recomendations_movil": 30,
+          "color_title_recomendations": "#000000"
+        }
+      },
+      "main-account": {
+        "type": "main-account",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  }
+}

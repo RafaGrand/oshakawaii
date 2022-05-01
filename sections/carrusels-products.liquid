@@ -1,0 +1,316 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div>
+  <div class="width-panda">
+    {% render 'frag-headers-titles'
+      section: section
+      title : section.settings.title_section
+      subtitle : section.settings.subtitle_section
+      link : collections[section.settings.collection_id]
+      text_link : section.settings.url_section
+    %}
+  </div>
+
+  <div class="width-carrousels{% unless section.settings.carrusels_movil %} width-panda{% endunless %}">
+    <div class="carrousel_product-container_{{ section.id }}">
+      {% for block in section.blocks %}
+        
+        {% case block.type %}
+
+          {% when '@app' %}
+            {% render block %}
+
+          {% when 'product' %}
+            {% assign product = all_products[block.settings.product_id] %}
+      
+            <div class="contianer-card-carrousel_{{ section.id }} product-item-carrousel">
+              
+              {% render 'template-card'
+                product: product, 
+                bg_class : "bg_card",
+                image_class : "height-card-image",
+                tag_class : "tag-objective",
+                name_class : "name_product",
+                description_class : "description_product",
+                price_class : "price_product",
+                discount_class: "price_compare",
+                button_class : "btn-card-main",
+                choices_class : "btn-choices-card",
+                padding_class : "padding-card",
+                form_class : "form-add-product"
+              %}
+              
+            </div>
+        {% endcase %}
+
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .style_title_section_{{ section.id }} {
+    font-size: {{ section.settings.size_title_section }}px;
+    color: {{ section.settings.color_title_section }};
+  }
+
+  .style_subtitle_section_{{ section.id }} {
+    font-size: {{ section.settings.size_subtitle_section }}px;
+    color: {{ section.settings.color_subtitle_section }};
+  }
+
+  .style_btn_section_{{ section.id }} {
+    color: {{ section.settings.color_link_section }};
+    font-size: {{ section.settings.size_link_section }}px;
+  }
+
+  .carrousel_product-container_{{ section.id }} {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;}
+  .contianer-card-carrousel_{{ section.id }} {
+    width: 100%;
+    margin-right: 0;}
+
+  @media screen and (max-width: 600px) {
+    .style_title_section_{{ section.id }} {
+      font-size: {{ section.settings.size_title_section_movil }}px;
+    }
+
+    .style_subtitle_section_{{ section.id }} {
+      font-size: {{ section.settings.size_subtitle_section_movil }}px;
+    }
+
+    .style_btn_section_{{ section.id }} {
+      font-size: {{ section.settings.size_link_section_movil }}px;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+
+    {% if section.settings.carrusels_movil %}
+      .carrousel_product-container_{{ section.id }} {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        grid-gap: 0;
+        padding-right: 10px;
+        padding-left: 10px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+      }
+      .contianer-card-carrousel_{{ section.id }} {
+        width: 183px;
+        margin-right: 10px;
+        flex-shrink: 0;
+        scroll-snap-align: center;
+      }
+      .product-item-carrousel:last-of-type {padding-right: 10px;}
+    {% else %}
+
+      .carrousel_product-container_{{ section.id }} {display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px;}
+      @media only screen and (max-width: 320px) {
+        .carrousel_product-container_{{ section.id }} {grid-template-columns: repeat(1, 1fr);}
+      }
+
+      .contianer-card-carrousel_{{ section.id }} {width: 100%; margin-right: 0;}
+
+    {% endif %}
+  }
+  @media screen and (max-width: 600px) {
+    {% if section.settings.carrusels_movil %}
+      .contianer-card-carrousel_{{ section.id }} {
+        width: 163px;
+      }
+    {% endif %}
+  }
+</style>
+
+{% schema %}
+{
+  "name": {
+    "en": "Home / Carousels products",
+    "fr": "Home / Carrousels Produits"
+  },
+  "class": "section-carrusels-products",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Carousels movil"
+    },
+    {
+      "type": "checkbox",
+      "id": "carrusels_movil",
+      "label": "Carousels in movil",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Header titles"
+    },
+    {
+      "type": "text",
+      "id": "title_section",
+      "label": "Title section",
+      "default": "Accessoires"
+    },
+    {
+      "type": "range",
+      "id": "size_title_section",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size title",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "size_title_section_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size title - movil",
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "color_title_section",
+      "label": "Color title",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "subtitle_section",
+      "label": "subtitle section",
+      "default": "Accessoires"
+    },
+    {
+      "type": "range",
+      "id": "size_subtitle_section",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size subtitle",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_subtitle_section_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size subtitle - movil",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_subtitle_section",
+      "label": "Color subtitle",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "URL"
+    },
+    {
+      "type": "collection",
+      "id": "collection_id",
+      "label": {
+        "en": "Collection", 
+        "fr": "Collection"
+      },
+      "info": {
+        "en": "Redirect your customores to collection page", 
+        "fr": "Redirigez vos personnalisations vers la page de collection"
+      }
+    },
+    {
+      "type": "text",
+      "id": "url_section",
+      "label": "URL text section",
+      "default": "Voir tous"
+    },
+    {
+      "type": "range",
+      "id": "size_link_section",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Call to action",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_link_section_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Call to action - movil",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_link_section",
+      "label": "Color subtitle",
+      "default": "#45C391"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "product",
+      "name": "Product card",
+      "settings":[
+        {
+          "type": "product",
+          "id": "product_id",
+          "label": {
+            "en": "Products",
+            "fr": "Produits"
+          },
+          "info": {
+            "en": "Choose products in the loop", 
+            "fr": "Choisissez des produits dans la boucle"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Carousels products",
+        "fr": "Produits Carrousels"
+      },
+      "category": {
+        "en": "Product",
+        "fr": "Produits"
+      }
+    }
+  ]
+}
+{% endschema %}

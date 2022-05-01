@@ -1,0 +1,64 @@
+.container-dynamic-accordion {display: grid; grid-template-columns: 61% 39%; padding-top: 70px; padding-bottom: 140px;}
+.block-content-accordion {width: 80%;}
+.block-content-accordion a {color : #45C391}
+
+.sticky-section {position: sticky; position: -webkit-sticky; top: 100px; height: fit-content;}
+
+
+/* --- collection SEO --- */
+.grid-collection-seo {display: grid; grid-template-columns: 1fr 1fr; column-gap: 40px; row-gap: 40px; grid-column-gap: 40px; grid-row-gap: 40px;}
+
+.height-card-image-seo {padding-top: 65%;}
+.height-card-image-seo img {object-fit: contain;}
+.height-card-image-seo div {background-size: contain;}
+
+.item-seo-product {display: flex;}
+
+.margin-collection-title-seo {margin-bottom: 30px;}
+.margin-content-title-seo {margin-bottom: 5px;}
+
+/* --- accordions styles: design 2 --- */
+.section-accordion-seo {margin-top: 40px; margin-bottom: 40px;}
+.accordion-list {list-style: none;}
+
+.accordion-button {font-weight: 600; width: 100%; display: flex; align-items: center; padding: 12px 0; background: transparent; text-align: left; border-style: none; border-bottom: 1px solid var(--black-panda);}
+.content-button-accordion {width: 90%;}
+
+.plus-container {position: relative; display: flex; align-items: center; justify-content: center;}
+.style-button-plus {width: 27px; height: 27px; background: var(--green-panda); border-radius: 50%; margin-left: auto;}
+
+.padding-panel-seo {padding-top: 12px; padding-bottom: 30px; overflow: hidden;}
+
+@keyframes panelAnimationOpen {
+  0% {opacity: 0;} 100% {opacity: 1;}
+  } @keyframes panelAnimationClose {
+  0% {opacity: 1;} 100% {opacity: 0;}
+}
+
+.padding-panel-seo ul {padding-inline-start: 40px;}
+
+.line-plus {width: 8px; height: 1px; background: var(--white-panda); position: absolute; z-index: 1;}
+
+.top-plus {
+  transform: rotate(90deg);} @keyframes plusRotate {
+  0% {transform: rotate(90deg);} 100% {transform: rotate(0deg);}} .animation-plus {animation: plusRotate .5s ease forwards;}
+
+.blur-accordion {width: inherit; height: inherit; position: absolute; top: 0; left: 0; background: inherit; border-radius: 50%;}
+
+@keyframes blurAnimeOpen {
+  0% {transform: scale(1); opacity: 1;} 100%{transform: scale(2); opacity: 0;}
+} @keyframes blurAnimeClose {
+  0% {transform: scale(1); opacity: 1;} 100%{transform: scale(2); opacity: 0;}
+}
+
+/* --- CTA collection SEO --- */
+.cta-collection-seo {display: flex; justify-content: center; margin: 30px 0;}
+.width-button-cta-seo {width: 70%;}
+.title-navigation {display: block; font-weight: 600; margin-bottom: 30px;}
+.lowercase {text-transform: lowercase;}
+
+@media screen and (max-width: 850px) {
+  .container-dynamic-accordion {grid-template-columns: 100%; padding-top: 23px; padding-bottom: 60px;}
+  .block-content-accordion {width: 100%;}
+  .margin-content-title-seo {margin-bottom: 25px;}
+}

@@ -1,0 +1,103 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="contianer-instagram">
+  <div class="flex-instagram_flex">
+    {% liquid 
+      assign blocks = section.blocks
+      assign image_center = section.blocks[4]
+    %}
+    <div class="col-33 section_1-feed">
+      {% for block in blocks limit: 4 %}
+        {% render 'img-instagram' class: "url_image-insta", url: block.settings.url_image, img: block.settings.image_instagram %}
+      {% endfor %}
+    </div>
+    <div class="col-33 section_2-feed">
+      {% render 'img-instagram' class: "center_image", url: image_center.settings.url_image, img: image_center.settings.image_instagram %}
+    </div>
+    <div class="col-33 section_3-feed">
+      {% for block in blocks offset: 5 %}
+        {% render 'img-instagram' class: "url_image-insta", url: block.settings.url_image, img: block.settings.image_instagram %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": {
+    "en": "Instagram feed",
+    "fr": "Flux instagram"
+  },
+  "class": "section-instagram",
+  "max_blocks": 9,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title_section",
+      "label": {
+        "en": "Title section",
+        "fr": "Titre de section"
+      }
+    },
+    {
+      "type": "url",
+      "id": "url_instagram",
+      "label": {
+        "en": "URL section",
+        "fr": "URL de section"
+      }
+    }
+  ],
+  "blocks":[
+    {
+      "type": "image",
+      "name": "Image Instagram",
+      "settings":[
+        {
+          "type": "image_picker",
+          "id": "image_instagram",
+          "label": {
+            "en": "Image",
+            "fr": "Image"
+          }
+        },
+        {
+          "type": "url",
+          "id": "url_image",
+          "label": {
+            "en": "URL",
+            "fr": "URL"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Instagram feed",
+        "fr": "Flux instagram"
+      },
+      "category": {
+        "en": "Instagram",
+        "fr": "Instagram"
+      }
+    }
+  ]
+}
+{% endschema %}

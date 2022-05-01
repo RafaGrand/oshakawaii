@@ -1,0 +1,30 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid
+  if section.settings.text_icon != blank
+    assign img_url = section.settings.text_icon | append: '.svg' | file_url
+  else
+    assign img_url = section.settings.icon_image | img_url: '50x50'
+  endif
+%}
+
+{% capture img_id %}sectionImage-{{ section.id }}{% endcapture %}
+{% render 'img-upload' img_id: img_id, img_url: img_url, alt: "icon Panda Tea", class: "image-icon-suscription margin-icon-step" %}
+
+<h2 class="title-funnel margin-step-title">{{ title_frequency }}</h2>
+<p class="font-16px">{{ subtitle_frequency }}</p>

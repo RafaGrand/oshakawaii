@@ -1,0 +1,191 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid 
+  assign product_description = product.description
+  assign product_description = product_description | replace: '&lt;--', '<--'
+  assign product_description = product_description | replace: '--&gt;', '-->'
+  assign product_description = product_description | replace: '<p><--', '<--'
+  assign product_description = product_description | replace: '--></p>', '-->'
+  assign product_description = product_description | split: '<-- split -->'
+  assign description_under = product_description[1] | split: '[undertitle]'
+  assign accordions = description_under[0]
+  assign acc_content = accordions | split: '[title'
+%}
+
+<div class="width-panda width-accordions-products">
+  <div class="section-accordion">
+    
+    {% if section.settings.title_accordions != blank %}
+      <h2 class="styleTitleAcc margin-descriptions align-center uppercase">{{ section.settings.title_accordions }}</h2>
+    {% endif %}
+    
+    <div class="list-accordion">
+
+      {% render 'accordion-product-design'
+        acc_content: acc_content
+      %}
+      
+    </div>
+  </div>
+</div>
+
+<style>
+
+  .styleTitleAcc {
+    color: {{ section.settings.color_title_acc }};
+    font-size: {{ section.settings.size_title_acc }}px;
+  }
+
+  .styleBgAcc {
+    background: {{ section.settings.bg_acc }};
+  }
+  
+  .styleBtnAcc {
+    color: {{ section.settings.color_acc_btn }};
+    font-size: {{ section.settings.size_acc_btn }}px;
+  }
+
+  .styleContentAcc {
+    color: {{ section.settings.color_acc_content }};
+    font-size: {{ section.settings.size_acc_content }}px;
+  }
+
+  @media screen and (max-width: 600px) {
+    
+    .styleTitleAcc {
+      font-size: {{ section.settings.size_title_acc_movil }}px;
+    }
+    
+    .styleBtnAcc {
+      font-size: {{ section.settings.size_acc_btn_movil }}px;
+    }
+
+    .styleContentAcc {
+      font-size: {{ section.settings.size_acc_content_movil }}px;
+    }
+
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "Product / accordions",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Heading"
+      },
+      {
+        "type": "text",
+        "id": "title_accordions",
+        "label": "Title text (H2)",
+        "default": "Informations sur le produits :"
+      },
+      {
+        "type": "range",
+        "id": "size_title_acc",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size in title (H1)",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "size_title_acc_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size in title - movil (H1)",
+        "default": 15
+      },
+      {
+        "type": "color",
+        "id": "color_title_acc",
+        "label": "Color text in title (H1)",
+        "default": "#000"
+      },
+      {
+        "type": "header",
+        "content": "Accordions",
+        "info": "Customize accordion in product pages"
+      },
+      {
+        "type": "color",
+        "id": "bg_acc",
+        "label": "Background color accordion",
+        "default": "#F2F1F5"
+      },
+      {
+        "type": "range",
+        "id": "size_acc_btn",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Button size font accordion",
+        "default": 15
+      },
+      {
+        "type": "range",
+        "id": "size_acc_btn_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Button size font accordion - movil",
+        "default": 15
+      },
+      {
+        "type": "color",
+        "id": "color_acc_btn",
+        "label": "Button color font accordion",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "size_acc_content",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Content size font accordion",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "size_acc_content_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Content size font accordion - movil",
+        "default": 12
+      },
+      {
+        "type": "color",
+        "id": "color_acc_content",
+        "label": "Content color font accordion",
+        "default": "#000"
+      }
+    ]
+  }
+{% endschema %}

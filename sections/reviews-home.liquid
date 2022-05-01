@@ -1,0 +1,319 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="review-block-relative">
+  <div class="reviews-background"></div>
+  <div class="reviews-content">
+    <div class="width-review-panda">
+      <div class="header-reviews-home">
+        {% if section.settings.score %}
+          <span class="score-styles">{{ section.settings.score }}/5</span>
+        {% endif %}
+
+        <div class="stars-title-reviews head-stars-revs">
+          {% for item in (1..section.settings.stars_title) %}
+            <div class="star_{{ item }} star-container">
+              {% render 'star-icon' %}
+            </div>
+          {% endfor %}
+        </div>
+        
+        {% if section.settings.title != blank %}
+          
+          <h2 class="styles-titles-reviews">{{ section.settings.title | escape }}</h2>
+          
+        {% endif %}
+
+      </div>
+
+      {% if section.blocks.size > 0 %}
+        <div>
+          <div scroll-id="slider-reviews" class="container-scroll">
+            <div class="grid-reviews">
+              {% for block in section.blocks %}
+                
+                <div class="block-reviews-cont">
+                  <blockquote class="text-centerr blockquote-container">
+                    <div class="stars-title-reviews stars-in-revs">
+                      {% for item in (1..block.settings.stars) %}
+                        <div class="star_{{ item }} star-container_review">
+                          {% render 'star-icon' %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                    {% if block.settings.quote != blank %}
+                      <div class="styles-review-text">{{ block.settings.quote }}</div>
+                    {% endif %}
+                    {% if block.settings.author != blank %}
+                      <span class="styles-review-author">{{ block.settings.author | escape }}</span>
+                    {% endif %}
+                  </blockquote>
+                </div>
+
+              {% endfor %}
+            </div>
+            <button scroll-id="slider-reviews" class="btn-slider-left btn-slider-left-revs"></button>
+            <button scroll-id="slider-reviews" class="btn-slider-rigth btn-slider-rigth-revs"></button>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if section.blocks.size == 0 %}
+        {% render 'no-blocks' %}
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+<style>
+  .styles-titles-reviews {font-size: {{section.settings.size_title_reviews_home}}px; color: {{section.settings.color_title_reviews_home}};}
+  .score-styles {font-size: {{section.settings.size_score_reviews_home}}px; color: {{section.settings.color_score_reviews}};}
+  .styles-review-text {font-size: {{section.settings.size_content_reviews_home}}px; color: {{section.settings.color_content_reviews}};}
+  .styles-review-author {font-size: {{section.settings.size_author_reviews_home}}px; color: {{section.settings.color_author_reviews}};}
+
+  @media screen and (max-width: 600px) {
+    .styles-titles-reviews {font-size: {{section.settings.size_title_reviews_home_movil}}px;}
+    .score-styles {font-size: {{section.settings.size_score_reviews_home_movil}}px;}
+    .styles-review-text {font-size: {{section.settings.size_content_reviews_home_movil}}px;}
+    .styles-review-author {font-size: {{section.settings.size_author_reviews_home_movil}}px;}
+  }
+</style>
+
+{% schema %}
+{
+  "name": {
+    "en": "Home / Testimonials",
+    "fr": "Home / Témoignages"
+  },
+  "class": "section_reviews",
+  "max_blocks": 9,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": {
+        "en": "Heading",
+        "fr": "En-tête"
+      },
+      "default": {
+        "en": "Testimonials",
+        "fr": "Un petit mot des PandaTea"
+      }
+    },
+    {
+      "type": "range",
+      "id": "size_title_reviews_home",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in title (H2)",
+      "default": 26
+    },
+    {
+      "type": "range",
+      "id": "size_title_reviews_home_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in title - movil (H2)",
+      "default": 25
+    },
+    {
+      "type": "color",
+      "id": "color_title_reviews_home",
+      "label": "Colo text in title (H2)",
+      "default": "#000"
+    },
+    {
+      "type": "text",
+      "id": "score",
+      "label": {
+        "en": "Score",
+        "fr": "Score"
+      },
+      "default": {
+        "en": "4.7",
+        "fr": "4.7"
+      }
+    },
+    {
+      "type": "range",
+      "id": "size_score_reviews_home",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in score",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "size_score_reviews_home_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in score - movil",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_score_reviews",
+      "label": "Colo text in score",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "stars_title",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "unit": "STR",
+      "label": "Stars in your review custom",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Content Review - styles",
+      "info": "Customize your reviews styles"
+    },
+    {
+      "type": "range",
+      "id": "size_content_reviews_home",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in content",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "size_content_reviews_home_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in content - movil",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "color_content_reviews",
+      "label": "Colo text in content",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_author_reviews_home",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in author",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "size_author_reviews_home_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in author - movil",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "color_author_reviews",
+      "label": "Colo text in author",
+      "default": "#000"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "quote",
+      "name": {
+        "en": "Testimonial",
+        "fr": "Témoignage"
+      },
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": {
+            "en": "Text",
+            "fr": "Texte"
+          },
+          "default": {
+            "en": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "fr": "<p>Ajoutez des avis et témoignages pour mettre en avant vos clients satisfaits.</p>"
+          }
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": {
+            "en": "Author",
+            "fr": "Auteur"
+          },
+          "default": {
+            "en": "Author's name",
+            "fr": "Nom de l'auteur"
+          }
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "unit": "STR",
+          "label": "Stars in your review custom",
+          "default": 3
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": {
+        "en": "Home / Testimonials",
+        "fr": "Home / Témoignages"
+      },
+      "category": {
+        "en": "Reviews",
+        "fr": "Témoignages"
+      },
+      "blocks": [
+        {
+          "type": "quote"
+        },
+        {
+          "type": "quote"
+        },
+        {
+          "type": "quote"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

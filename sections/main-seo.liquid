@@ -1,0 +1,94 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% comment %} --- metafiled reference --- {% endcomment %}
+{% assign reference = page.metafields.collection.reference %}
+{% assign collection_reference = reference | split: '](' %}
+{% assign title_collection = collection_reference | first | remove: '[' %}
+{% assign handle_collection = collection_reference | last | remove: ')' %}
+{% assign collection = collections[handle_collection] %}
+
+{% assign cta = page.metafields.collection.cta %}
+{% assign cta_reference = cta | split: '](' %}
+{% assign cta_text = cta_reference | first | remove: '[' %}
+{% assign cta_link = cta_reference | last | remove: ')' %}
+
+{% assign title_navigation = page.metafields.collection.subtitle %}
+
+{% assign next = page.metafields.collection.next %}
+{% assign next_reference = next | split: '](' %}
+{% assign next_text = next_reference | first | remove: '[' %}
+{% assign next_link = next_reference | last | remove: ')' %}
+
+{% assign before = page.metafields.collection.before %}
+{% assign before_reference = before | split: '](' %}
+{% assign before_text = before_reference | first | remove: '[' %}
+{% assign before_link = before_reference | last | remove: ')' %}
+
+{% comment %} --- content REFERENCE --- {% endcomment %}
+{% assign content = page.content | split: '[accordion]' %}
+{% assign description_page = content[0] %}
+{% assign accordion_page = content[1] | remove: '[/accordion]' %}
+
+{% assign langify_title = page.title %}
+
+{% if description_page %}
+  {% assign page_content = description_page %}
+{% else %}
+  {% assign page_content = page.content %}
+{% endif %}
+
+{% comment %} --- content page HTML STRUCTURE --- {% endcomment %}
+<div class="width-panda">
+  <div class="container-dynamic-accordion">
+    
+    {% comment %} --- Accordions and content --- {% endcomment %}
+    <div class="block-content-accordion">
+
+      {%- if langify_title -%}
+        <h1 class="title-h1 margin-content-title-seo">{{ langify_title }}</h1>  
+      {%- endif -%}
+
+      {%- if page_content != blank -%}
+        <div class="content-style">
+          {{ page_content }}
+        </div>  
+      {%- endif -%}
+
+      {% if description_page != blank %}
+        {% render 'page-seo-accordion' accordion_page: accordion_page %}
+      {% endif %}
+
+    </div>
+
+    {% comment %} --- STICKY COLLECTION WITH METAFIELDS --- {% endcomment %}
+    <div class="sticky-section">
+      {% render 'collection-seo' 
+        title_collection: title_collection,
+        collection: collection,
+        cta_link: cta_link,
+        cta_text: cta_text,
+        title_navigation: title_navigation,
+        before_link: before_link,
+        before_text: before_text,
+        next_link: next_link,
+        next_text: next_text
+      %}
+    </div>
+
+  </div>
+</div>

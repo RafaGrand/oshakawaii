@@ -1,0 +1,338 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid 
+  assign current_variant = product.selected_or_first_available_variant
+  assign compare_at_price = current_variant.compare_at_price
+  assign price = current_variant.price
+
+  assign product_description = product.description
+  assign product_description = product_description | replace: '&lt;--', '<--'
+  assign product_description = product_description | replace: '--&gt;', '-->'
+  assign product_description = product_description | replace: '<p><--', '<--'
+  assign product_description = product_description | replace: '--></p>', '-->'
+  assign product_description = product_description | split: '<-- split -->'
+
+  assign description_under = product_description[1] | split: '[undertitle]'
+  assign accordions = description_under[0]
+%}
+
+<div class="width-panda">
+
+  <div class="grid-product-index">
+    
+    {% render 'media-product-index' product: product %}
+    
+    {% render 'index-detail-form-product'
+      product: product,
+      current_variant: current_variant,
+      compare_at_price: compare_at_price,
+      price: price,
+      product_description: product_description,
+      description_under: description_under
+    %}
+
+  </div>
+
+</div>
+
+{% comment %} Here a way to customize styles in your theme {% endcomment %}
+<style>
+
+  .styleTitleProduct {
+    color: {{ section.settings.color_title_product }};
+    font-size: {{ section.settings.size_title_product }}px;
+  }
+
+  .stylePriceProduct {
+    color: {{ section.settings.color_price }};
+    font-size: {{ section.settings.size_price }}px;
+  }
+
+  .styleSubTitleProduct {
+    color: {{ section.settings.color_subtitle }};
+    font-size: {{ section.settings.size_subtitle }}px;
+  }
+
+  .styleDescriptionProduct {
+    color: {{ section.settings.color_description }};
+    font-size: {{ section.settings.size_description }}px;
+  }
+
+  .styleOptionsProducts {
+    color: {{ section.settings.color_options }};
+    font-size: {{ section.settings.size_options }}px;
+  }
+
+  .link-reviews {
+    font-size: {{ section.settings.size_link_review }}px;
+    color: {{ section.settings.color_link_review }};
+  }
+
+  .product_cta {
+    font-size: {{ section.settings.cta_size }}px;
+  }
+
+  .product_cta-min-height {
+    min-height: calc({{ section.settings.cta_size }}px + 20px);
+  }
+
+  @media screen and (max-width: 600px) {
+    .product_cta {
+      font-size: {{ section.settings.cta_size_movil }}px;
+      padding: 10px;
+    }
+
+    .styleTitleProduct {
+      font-size: {{ section.settings.size_title_product_movil }}px;
+    }
+
+    .stylePriceProduct {
+      font-size: {{ section.settings.size_price_movil }}px;
+    }
+
+    .styleSubTitleProduct {
+      font-size: {{ section.settings.size_subtitle_movil }}px;
+    }
+
+    .styleDescriptionProduct {
+      font-size: {{ section.settings.size_description_movil }}px;
+    }
+
+    .styleOptionsProducts {
+      font-size: {{ section.settings.size_options_movil }}px;
+    }
+
+    .link-reviews {
+      font-size: {{ section.settings.size_link_review_movil }}px;
+    }
+  }
+
+</style>
+
+{% comment %} End scripts to customize styles {% endcomment %}
+
+{% schema %}
+{
+  "name": {
+    "en": "Product / index",
+    "fr": "Produit / index"
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Styles settings",
+      "info": "Here you customize styles in your product index"
+    },
+    {
+      "type": "range",
+      "id": "size_title_product",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in title (H1)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "size_title_product_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in title - movil (H1)",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "color_title_product",
+      "label": "Colo text in title (H1)",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_price",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in price",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "size_price_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in price - movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_price",
+      "label": "Colo text in price",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_subtitle",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in subtitle (H2)",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "size_subtitle_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in subtitle - movil (H2)",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_subtitle",
+      "label": "Colo text in subtitle (H2)",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_description",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in description index",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "size_description_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in description index - movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_description",
+      "label": "Colo text in description index",
+      "default": "#000"
+    },
+    {
+      "type": "range",
+      "id": "size_options",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in options",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "size_options_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in options movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_options",
+      "label": "Colo text in options",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Button styles",
+      "info": "To customize your buttons go to Theme settings / Product styles"
+    },
+    {
+      "type": "header",
+      "content": "Reviews link"
+    },
+    {
+      "type": "text",
+      "id": "text_reviews_link",
+      "label": "Call to reviews",
+      "default": "Lire tous les avis"
+    },
+    {
+      "type": "range",
+      "id": "size_link_review",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in link review",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "size_link_review_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in link review - movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_link_review",
+      "label": "Colo text in link review (H1)",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Product CTA"
+    },
+    {
+      "type": "range",
+      "id": "cta_size",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size CTA",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "cta_size_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Size CTA - movil",
+      "default": 16
+    }
+  ]
+}
+{% endschema %}

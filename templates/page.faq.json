@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "accordion-faq",
+      "settings": {}
+    },
+    "contact": {
+      "type": "contact-form",
+      "settings": {
+        "title_contact": "Contactez-nous",
+        "content_contact": "<p>Notre équipe vous répond du lundi au vendredi de 9h à 18H et même parfois plus tard à l'adresse contact@pandatea.fr.<\/p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "contact"
+  ]
+}

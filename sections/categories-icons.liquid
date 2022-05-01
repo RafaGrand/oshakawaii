@@ -1,0 +1,268 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="section-categories-home">
+  {% if section.settings.title_category_section != blank %}
+    <div class="width-panda">
+      <h2 class="style-title-categories">{{ section.settings.title_category_section }}</h2>
+    </div>
+  {% endif %}
+
+  <div scroll-id="slider-categories" class="width-out-margin container-scroll">
+    <div class="categories-container-index">
+
+      {% assign blocks = section.blocks %}
+
+      {% for block in blocks %}
+
+        {% liquid 
+          if block.settings.text_icon_categorie != blank
+            assign img_url = block.settings.text_icon_categorie | append: '.svg' | file_url
+          else
+            assign img_url = block.settings.icon_image_categorie | img_url: '50x50'
+          endif
+        %}
+
+        {% capture img_id %}BlockImage-{{ block.id }}{% endcapture %}
+
+        <div class="categorie-block-block">
+        
+          {% if block.settings.text_icon_categorie != blank %}
+            <a href="{{ block.settings.url_category }}" title="{{ block.settings.text_block_category }}">
+              {% render 'img-upload' img_id: img_id, img_url: img_url, alt: block.settings.text_block_category, class: "block-categorie-inside" %}
+            </a>
+          {% endif %}
+
+          {% if block.settings.url_category %}
+            <a class="name-categorie-style" href="{{ block.settings.url_category }}" title="{{ block.settings.text_block_category }}"><span>{{ block.settings.text_block_category }}</span></a>
+            <a class="link-categorie-style" href="{{ block.settings.url_category }}" title="{{ block.settings.text_block_category }}"><span>{{ block.settings.text_link }}</span></a> 
+          {% endif %}
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+    <button scroll-id="slider-categories" class="btn-slider-left btn-slider-left-categories"></button>
+    <button scroll-id="slider-categories" class="btn-slider-rigth btn-slider-rigth-categories"></button>
+
+  </div>
+</div>
+
+<style>
+  .style-title-categories {
+    font-size: {{section.settings.title_categories_size}}px;
+    color: {{ section.settings.title_categories_color }};
+  }
+  .name-categorie-style {
+    font-size: {{section.settings.name_categories_size}}px;
+    color: {{ section.settings.name_categories_color }};
+  }
+  .link-categorie-style {
+    font-size: {{section.settings.link_categories_size}}px;
+    color: {{ section.settings.link_categories_color }};
+  }
+  @media screen and (max-width: 600px) {
+    .style-title-categories {
+      font-size: {{section.settings.title_categories_size_movil}}px;
+    }
+    .name-categorie-style {
+      font-size: {{section.settings.name_categories_size_movil}}px;
+    }
+    .link-categorie-style {
+      font-size: {{section.settings.link_categories_size_movil}}px;
+    }
+  }
+</style>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Home / Categories",
+      "fr": "Home / Categories"
+    },
+    "class": "section-cateries-index",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title_category_section",
+        "label": "Title",
+        "default": "Thés & Infusions for :"
+      },
+      {
+        "type": "range",
+        "id": "title_categories_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font title size text",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "title_categories_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font title size text - movil",
+        "default": 25
+      },
+      {
+        "type": "color",
+        "id": "title_categories_color",
+        "label": "Text title color text",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "name_categories_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font name size text",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "name_categories_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font name size text - movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "name_categories_color",
+        "label": "Text name color text",
+        "default": "#000"
+      },
+      {
+        "type": "range",
+        "id": "link_categories_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font link size text",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "link_categories_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font link size text - movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "link_categories_color",
+        "label": "Text link color text",
+        "default": "#45C391"
+      }
+    ],
+    "blocks":[
+      {
+        "type": "categories",
+        "name": {
+          "en": "Categories images", 
+          "fr": "Categories images"
+        },
+        "settings":[
+          {
+            "type": "header",
+            "content": {
+              "en": "Icon in block", 
+              "fr": "Icône dans le bloc"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "en": "You can choose the a format you want for the icon of this block",
+              "fr": "Vous pouvez choisir le format que vous souhaitez pour l'icône de ce bloc" 
+            }
+          },
+          {
+            "type": "text",
+            "id": "text_icon_categorie",
+            "label": {
+              "en": "Icon SVG (Recommended*)", 
+              "fr": "Icône SVG (recommandé*)"
+            },
+            "info": {
+              "en": "You must upload the file in the files folder from backoffice and then put here the plain name (.svg)",
+              "fr": "Vous devez télécharger le fichier dans le dossier des fichiers depuis le backoffice puis mettre ici le nom brut (.svg)"
+            }
+          },
+          {
+            "type": "image_picker",
+            "id": "icon_image_categorie",
+            "label": {
+              "en": "Icon IMAGE", 
+              "fr": "Icône IMG"
+            }
+          },
+          {
+            "type": "header",
+            "content": "Text information"
+          },
+          {
+            "type": "text",
+            "id": "text_block_category",
+            "label": {
+              "en": "Text in block category", 
+              "fr": "Texte dans le bloc categorie"
+            },
+            "default": "Energy"
+          },
+          {
+            "type": "url",
+            "id": "url_category",
+            "label": "Category url link"
+          },
+          {
+            "type": "text",
+            "id": "text_link",
+            "label": "Link text",
+            "default": "Voir tous"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+          "en": "Home / Categories",
+          "fr": "Home / Categories"
+        },
+        "category": {
+          "en": "Block home",
+          "fr": "Blocs home"
+        }
+      }
+    ]
+  }
+{% endschema %}

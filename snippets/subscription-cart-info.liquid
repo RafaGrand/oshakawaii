@@ -1,0 +1,19 @@
+<span class="name-item">
+  {% comment %}ly_code_replace_for_[ item.product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with item.product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+    {% if frequency %}
+    — {{ settings.subscription_text }}
+    {% endif %}
+</span>
+<span class="variant-item">
+  {% comment %}ly_code_replace_for_[ item.variant.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with item.variant render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+  {% if frequency %}
+    {{ settings.assembly_2 }}
+     {{ frequency }} 
+     {{ unit | replace: 'month', settings.frequency_unit}}
+  {% endif %}
+</span>
+<style>
+  .name-item{
+    font-size:{{ section.settings.size_subscription_text }};
+  }
+</style>

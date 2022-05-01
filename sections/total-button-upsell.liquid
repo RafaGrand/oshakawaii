@@ -1,0 +1,153 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda">
+  <div class="paddings-checkout-upsell text-centerr">
+
+    <div class="total-upsell-container total-text-upsell">
+      <span>{{ section.settings.text_total_upsell }}</span>
+      <span id="total-pack-upsell"><div class="spinner-loader"></div></span>
+    </div>
+    
+    <form class="text-centerr" action="/checkout" method="post">
+      <div class="form-container-checkout">
+        
+        <input type="hidden" name="discount" value="" id="checkout-upsell" />
+        <div class="contianer-btn-upsell-checkout">
+          <button class="btn-checkout btn-checkout-upsell btn-animation" name="checkout" type="submit">
+            {{ section.settings.text_button_upsell }}
+          </button>
+        </div>
+    
+      </div>
+    </form>
+
+  </div>
+</div>
+
+<script src="{% comment %}ly_asset_replace_for_[ 'preview.js' | asset_url ]_begin{% endcomment %}{% assign ly_asset = 'preview.js' %}{% capture ly_translation %}{% render 'ly-asset' with ly_asset render:true %}{% endcapture %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" defer="defer"></script>
+
+<style>
+
+.btn-checkout-upsell {
+  font-size: {{ section.settings.size_text_checkout_upsell }}px;
+  color: {{ section.settings.color_text_checkout_upsell }};
+  background: {{ section.settings.color_bg_checkout_upsell }};
+}
+
+.total-text-upsell {
+  font-size: {{ section.settings.size_text_total_upsell }}px;
+  color: {{ section.settings.color_text_total_upsell }};
+}
+
+@media screen and (max-width: 600px) {
+  .btn-checkout-upsell {
+    font-size: {{ section.settings.size_text_checkout_upsell_movil }}px;
+  }
+
+  .total-text-upsell {
+    font-size: {{ section.settings.size_text_total_upsell_movil }}px;
+  }
+}
+
+</style>
+
+{% schema %}
+{
+  "name": "Button - Total / CHECKOUT",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Total"
+    },
+    {
+      "type": "text",
+      "id": "text_total_upsell",
+      "label": "Text Total",
+      "default": "Récapitulatif de votre panier :"
+    },
+    {
+      "type": "range",
+      "id": "size_text_total_upsell",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in total",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "size_text_total_upsell_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in total - movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_text_total_upsell",
+      "label": "Colo text in total",
+      "default": "#000"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "text_button_upsell",
+      "label": "Button checkout",
+      "default": "Étape suivante"
+    },
+    {
+      "type": "range",
+      "id": "size_text_checkout_upsell",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in button checkout",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "size_text_checkout_upsell_movil",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size in button checkout - movil",
+      "default": 15
+    },
+    {
+      "type": "color",
+      "id": "color_text_checkout_upsell",
+      "label": "Colo text in button checkout",
+      "default": "#fff"
+    },
+    {
+      "type": "color",
+      "id": "color_bg_checkout_upsell",
+      "label": "Colo text in button checkout",
+      "default": "#45C391"
+    }
+  ]
+}
+{% endschema %}

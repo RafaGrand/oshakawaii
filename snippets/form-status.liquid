@@ -1,0 +1,77 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% comment %}
+    Renders a form status message
+    Accepts:
+    - form: {Object} Form Liquid object (required)
+    - form_id: {String} Form's id attribute for accessibility purpose (required)
+    - success_message: {String} Success message locale key. Default to 'contact.form.post_success' (optional)
+
+    Usage:
+    {% include 'form-status', form: form, form_id: formId, success_message: post_message %}
+{% endcomment %}
+{%- if form.posted_successfully? -%}
+  <p class="form-message form-message--success" tabindex="-1" data-form-status>
+    {{ success_message | default: 'contact.form.post_success' | t }}
+  </p>
+{%- endif -%}
+
+{% comment %} We need to add this so the errors are output in the right order {% endcomment %}
+{% assign error_order = "author, email, body, password, form" | split: ", " %}
+
+{%- if form.errors -%}
+
+  {%- if form.errors.translated_fields.size == 1 and form.errors.first == 'form' -%}
+    <p class="form-message form-message--error" tabindex="-1" data-form-status>
+      {{ form.errors.messages['form'] }}
+    </p>
+
+  {% else %}
+    <div class="form-message form-message--error">
+      <h2 class="h3 form-message__title" tabindex="-1" data-form-status>{% comment %}ly_i18n_replace_for_[ 'contact.form.error_heading' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.error_heading' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844467' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h2>
+
+      <ul>
+        {% for error in error_order %}
+          {% for field in form.errors %}
+            {% if error == field %}
+
+              {% capture field_label %}
+                {% case field %}
+                  {% when 'author' %}
+                    {% comment %}ly_i18n_replace_for_[ 'contact.form.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.name' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844468' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                  {% when 'body' %}
+                    {% comment %}ly_i18n_replace_for_[ 'contact.form.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.message' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844469' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                  {% else %}
+                    {{ form.errors.translated_fields[field] }}
+                {% endcase %}
+              {% endcapture %}
+              <li>
+                {%- if field == 'form' -%}
+                  {{ form.errors.messages[field] }}
+                {%- else -%}
+                  {% comment %} the href should match the input's id {% endcomment %}
+                  <a href="#{{ form_id }}-{{ field }}" class="form-message__link">{{ field_label | strip | capitalize }} {{ form.errors.messages[field] }}</a>
+                {%- endif -%}
+              </li>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  {%- endif -%}
+{%- endif -%}

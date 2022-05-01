@@ -1,0 +1,72 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div>
+  <div class="container-collection-seo">
+    <h2 class="title-h2 text-centerr margin-collection-title-seo">{{ title_collection }}</h2>
+    <ul class="grid-collection-seo">
+      {% for product in collection.products limit: 4 %}
+        <li class="item-seo-product">
+
+          {% render 'template-card'
+            product: product, 
+            bg_class : "bg_card-seo",
+            image_class : "height-card-image-seo",
+            tag_class : "tag-objective-seo",
+            name_class : "name_product-seo",
+            description_class : "description_product-seo",
+            price_class : "price_product-seo",
+            discount_class: "price_compare-seo",
+            button_class : "btn-add-card-seo",
+            choices_class : "btn-choices-seo",
+            padding_class : "",
+            form_class : ""
+          %}
+
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="cta-collection-seo">
+      <div class="width-button-cta-seo">
+
+        {% render 'btn-link-panda' 
+          class: "btn-call-collection",
+          url: cta_link,
+          call_to: cta_text 
+        %}
+
+      </div>
+    </div>
+  </div>
+  <div class="navigation-container-seo">
+    <span class="title-navigation text-centerr title-nav">{{ title_navigation }}</span>
+    <div class="grid-collection-seo">
+
+      {% render 'btn-link-panda'
+        class: "btn-nav-collection lowercase",
+        url: before_link,
+        call_to: next_text 
+      %}
+
+      {% render 'btn-link-panda'
+        class: "btn-nav-collection lowercase",
+        url: next_link,
+        call_to: next_text
+      %}
+    </div>
+  </div>
+</div>

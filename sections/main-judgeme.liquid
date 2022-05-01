@@ -1,0 +1,29 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="paddings-form-page">
+  <div id='judgeme_all_reviews_page' class="width-panda page clearfix jdgm-all-reviews-page">
+    
+    <h1 class="title-principal">{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with page render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+    <div>{% comment %}ly_code_replace_for_[ page.content ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-content' with page render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
+    
+    <div class="jdgm-all-reviews-page__wrapper">
+      {% render 'judgeme_all_reviews' %}
+    </div>
+    
+  </div>
+</div>

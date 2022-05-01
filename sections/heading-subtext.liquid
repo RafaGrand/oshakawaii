@@ -1,0 +1,185 @@
+{% liquid
+  case section.settings.justify_content
+    when 'right'
+      assign text_align = 'hn_text-right'
+    when 'center'
+      assign text_align = 'hn_text-center'
+    when 'left'
+      assign text_align = 'hn_text-left'
+  endcase
+%}
+
+<div class="width-panda">
+  <div class="{{ text_align }} headings_paddings-section">
+    
+    {% if section.settings.heading_block != blank %}
+      <h2 class="headings_title-size">
+        {{ section.settings.heading_block }}
+      </h2>
+    {% endif %}
+
+    {% if section.settings.subtext_block != blank %}
+      <div class="headings_subtitle-size">
+        {{ section.settings.subtext_block }}
+      </div>
+    {% endif %}
+
+  </div>
+</div>
+
+<style>
+.headings_title-size {
+  font-size: {{ section.settings.hero_title_size }}px;
+  color: {{ section.settings.hero_title_color }};
+}
+.headings_subtitle-size {
+  font-size: {{ section.settings.hero_subtitle_size }}px;
+  color: {{ section.settings.hero_subtitle_color }};
+}
+.headings_paddings-section {
+  padding-top: {{ section.settings.content_paddings_top }}px;
+  padding-bottom: {{ section.settings.content_paddings_bottom }}px;
+}
+@media screen and (max-width: 600px) {
+  .headings_title-size {
+    font-size: {{ section.settings.hero_title_size_movil }}px;
+  }
+  .headings_subtitle-size {
+    font-size: {{ section.settings.hero_subtitle_size_movil }}px;
+  }
+}
+
+</style>
+
+{% schema %}
+  {
+    "name": "Heading + subtext",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading_block",
+        "label": "Heading",
+        "default": "Thés & infusiones"
+      },
+      {
+        "type": "text",
+        "id": "subtext_block",
+        "label": "Sub-heading",
+        "default": "L’infusion des sportifs"
+      },
+      {
+        "type": "header",
+        "content": "Align content + paddings"
+      },
+      {
+        "type": "select",
+        "id": "justify_content",
+        "label": "Justify Content",
+        "options": [
+          {
+          "value": "right",
+          "label": "Align right"
+          },
+          {
+          "value": "center",
+          "label": "Align center"
+          },
+          {
+          "value": "left",
+          "label": "Align left"
+          }
+        ],
+        "default": "left"
+      },
+      {
+        "type": "range",
+        "id": "content_paddings_top",
+        "min": 0,
+        "max": 155,
+        "step": 5,
+        "unit": "px",
+        "label": "Paddings top",
+        "default": 55
+      },
+      {
+        "type": "range",
+        "id": "content_paddings_bottom",
+        "min": 0,
+        "max": 155,
+        "step": 5,
+        "unit": "px",
+        "label": "Paddings bottom",
+        "default": 55
+      },
+      {
+        "type": "header",
+        "content": "Heading size"
+      },
+      {
+        "type": "range",
+        "id": "hero_title_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title",
+        "default": 40
+      },
+      {
+        "type": "range",
+        "id": "hero_title_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size title - movil",
+        "default": 30
+      },
+      {
+        "type": "color",
+        "id": "hero_title_color",
+        "label": "Text color title",
+        "default": "#24C485"
+      },
+      {
+        "type": "header",
+        "content": "Subtext size"
+      },
+      {
+        "type": "range",
+        "id": "hero_subtitle_size",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subtitle",
+        "default": 18
+      },
+      {
+        "type": "range",
+        "id": "hero_subtitle_size_movil",
+        "min": 10,
+        "max": 40,
+        "step": 1,
+        "unit": "px",
+        "label": "Font size subtitle - movil",
+        "default": 16
+      },
+      {
+        "type": "color",
+        "id": "hero_subtitle_color",
+        "label": "Text color subtitle",
+        "default": "#000"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Heading + subtext",
+        "category": {
+          "en": "Content",
+          "fr": "Contenu"
+        }
+      }
+    ]
+  }
+{% endschema %}

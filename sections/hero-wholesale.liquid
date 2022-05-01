@@ -1,0 +1,78 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<div class="width-panda">
+  
+  {% render 'hero-grid' 
+    title: section.settings.title_hero,
+    content: section.settings.content_hero,
+    url: section.settings.url_hero_call,
+    call: section.settings.text_hero_call,
+    img_url: section.settings.image_hero_whole,
+    title_size: "title-principal",
+    margin_inside: "margin-content-whole",
+    paddings_grid: "paddings-hero-whole"
+  %}
+
+</div>
+
+{% schema %}
+  {
+    "name": "hero_wholesale",
+    "class": "hero-wholesale",
+    "settings": [
+      {
+      "type": "richtext",
+      "id": "title_hero",
+      "label": "Title hero (H1)",
+      "default": "<p>Devenez distributeur ou<br>revendeur panda tea</p>"
+      },
+      {
+        "type": "richtext",
+        "id": "content_hero",
+        "label": "Content hero wholesale",
+        "default": "<p>Vous souhaitez proposer des thés & infusions parfumé bio et bien-être à vos clients sur votre point de vente ?<br> Contactez-nous ! Nous proposons des offres adaptées à toute les demandes : café, bar, restaurant, salon de coiffure, spa, complexe sportif, pharmacie.</p>"
+      },
+      {
+        "type": "url",
+        "id": "url_hero_call",
+        "label": {
+          "en":"Url", 
+          "fr": "Url"
+        }
+      },
+      {
+        "type": "text",
+        "id": "text_hero_call",
+        "label": {
+          "en": "Text 'call to action'",
+          "fr": "Texte 'Appel à l'action par'"
+        }, 
+        "default": "Faire une demande pour devenir distributeur",
+        "info": {
+          "en": "For example: Shop now", 
+          "fr": "Par exemple: Achetez maintenant"
+        }
+      },
+      {
+        "type": "image_picker",
+        "id": "image_hero_whole",
+        "label": "Image in hero"
+      }
+    ]
+  }
+{% endschema %}

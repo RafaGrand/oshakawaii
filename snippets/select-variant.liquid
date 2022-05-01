@@ -1,0 +1,55 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+<label class="rad-label">
+  
+  <input
+    {%- if variant.available == false %} disabled="disabled"{% endif %}
+    class="rad-input rad-options-input"
+    id_prod="{{ product.id }}"
+    {% if variant == current_variant %} checked {% endif %} 
+    type="radio" 
+    name="id" 
+    value="{{ variant.id }}" />
+  
+  {% if variant.available %}
+    
+    <div style="width: {{ size }}; height: {{ size }};" class="rad-design rad-options-design"></div>
+    
+    {% else %}
+
+    {% render 'icon-blocked' size: size %}
+
+  {% endif %}
+
+  <div class="{{ styles_font }} rad-text" {% unless variant.available %}style="color: {{ color }};"{% endunless %}>
+
+    {%- unless variant.available %}{% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844477' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %} - {% endunless %}
+    {% comment %}ly_code_replace_for_[ variant.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with variant render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+    
+    {%- if variant.available %}
+    <span>
+      <span>{{ variant.price | money }}</span>
+      {% if product.compare_at_price_max > product.price %}  
+        <span class="line-trg">{% if variant.compare_at_price %} - {{ variant.compare_at_price | money }}{% endif %}</span>
+      {% endif %}
+    </span>
+    {% endif %}
+
+  </div>
+
+</label>

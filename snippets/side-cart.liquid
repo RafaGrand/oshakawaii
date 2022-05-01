@@ -1,0 +1,406 @@
+{% comment %}
+  ly_global_begin
+{% endcomment %}
+{% capture ly-global-content %}
+  {% render 'ly-global' render:true %}
+{% endcapture %}
+{% assign ly-global-content = ly-global-content | split: '#ly#' %}
+{% assign langify_title = ly-global-content[0] %}
+{% assign langify_description = ly-global-content[1] %}
+{% assign langify_shop_name = ly-global-content[2] %}
+{% assign langify_shop_description = ly-global-content[3] %}
+{% assign canonical_langify_url = ly-global-content[4] %}
+{% assign langify_shop_url = ly-global-content[5] %}
+{% assign langify_shop_domain = ly-global-content[6] %}
+{% comment %}
+  ly_global_end
+{% endcomment %}
+{% liquid 
+if settings.collections_recomendations_1 == blank and settings.collections_recomendations_2 == blank
+  assign title_recommendation = 'hidden'
+endif
+if settings.show_recommendation_api == false
+  assign hide_recommendation = 'hidden_recommendations'
+endif
+if settings.show_shipping_bar == false
+  assign hide_bar_progress = 'hidden_bar-progress'
+endif
+if settings.show_livrason_total == false
+  assign hide_bar_progress2 = 'hidden_bar-progress'
+endif
+%}
+
+{% comment %}Check for is enabled collection for checkout upsell{% endcomment %}
+{% assign hide_checkout = '' %}
+{% assign hide_button_checkout = 'hidden' %}
+{% if settings.collections_recomendations_checkout_upsell != blank %}
+  {% assign hide_checkout = 'hidden' %}
+  {% assign hide_button_checkout = '' %}
+{% endif %}
+
+<div id="overlay"></div>
+
+<div 
+  id="cart-side" 
+  class="cart-side" 
+  data-api-recommendations-quantity="{{ settings.api_recommendations_quantity }}"
+>
+  <div id="cart-container-relative" class="cart-container-relative">
+    <div id="header-cart-slide" class="header-cart-slide padding-cart">
+      <button class="close-cart close-cart-side" id="close-cart">
+        {% render 'icon-close' %}
+      </button>
+      <button 
+        class="close-cart close-cart-upsell {{ hide_checkout }}" 
+        id="close-cart-upsell"
+      >
+        {% render 'icon-return' %}
+      </button>
+      <span class="cart-title-slide">
+        {% comment %}
+          ly_i18n_replace_for_[ "cart.general.title" | t ]_begin
+        {% endcomment %}
+        {% capture ly_template %}
+          {{ "cart.general.title" | t }}
+        {% endcapture %}
+        {% capture ly_translation %}
+          {% render 'ly-static-string' with '19844481' render:true %}
+        {% endcapture %}
+        {% if ly_translation != '' and ly_translation != nil  %}
+          {% assign escape_content = true %}
+          {% assign ly_template = ly_translation %}
+        {% else %}
+          {% assign escape_content = false %}
+        {% endif %}
+        {% if escape_content %}
+          {{ ly_template | escape}}
+        {% else %}
+          {{ ly_template }}
+        {% endif %}
+        {% comment %}
+          ly_i18n_replace_end
+        {% endcomment %}
+      </span>
+      <div class= "cart-title-upsell {{ hide_checkout }}">
+        {% render 'icon-upsell' %}
+        <span class="cart-title-slide cart-title-slide--font">
+          {{ settings.text_header_upsell }}
+        </span>
+      </div>
+      <button class="container-count-side">
+        {% render 'icon-cart-panda' %}
+        <span class="count-header">
+        </span>
+      </button>
+    </div>
+    <div class="block-scroll-cart">
+      <div class="container-item-cart padding-cart">
+        <div
+          id="msg-empty-cart"
+          class="{% unless cart.item_count == 0 %}hidden {% endunless %}msg-empty-cart">
+          {% assign livrason_img = "livraison_cart.svg" | file_url %}
+          {% render 'img-upload'
+            img_url: livrason_img,
+            alt: "cart icon livrason",
+            class: "img-empty-cart"
+          %}
+          <div id="message-country-geo">
+            {{ settings.text_livrason_head }}
+          </div>
+        </div>
+        <div id="items-cartJS"></div>
+      </div>
+
+      <p class="checkout-upsell-text padding-cart hidden">
+        {% if settings.collections_recomendations_checkout_upsell != blank %}
+          {{ settings.checkout_upsell_text }}
+        {% endif %}
+      </p>
+
+      <div class="contianer-recomendations-cart {{ hide_recommendation }}">
+        <div id="recomendations-by-setting" class="padding-cart">
+          <span class="title-cart-recomendations {{ title_recommendation }}">
+            {% comment %}
+              ly_i18n_replace_for_[ "cart.general.recomendation-title" | t ]_begin
+            {% endcomment %}
+            {% capture ly_template %}
+              {{ "cart.general.recomendation-title" | t }}
+            {% endcapture %}
+            {% capture ly_translation %}
+              {% render 'ly-static-string' with '19844482' render:true %}
+            {% endcapture %}
+            {% if ly_translation != '' and ly_translation != nil  %}
+              {% assign escape_content = true %}
+              {% assign ly_template = ly_translation %}
+            {% else %}
+              {% assign escape_content = false %}
+            {% endif %}
+            {% if escape_content %}
+              {{ ly_template | escape}}
+            {% else %}
+              {{ ly_template }}
+            {% endif %}
+            {% comment %}
+              ly_i18n_replace_end
+            {% endcomment %}
+          </span>
+          <ul class="scroll-touch recomendation-loop-container padding-cart">
+            {% for product in collections[settings.collections_recomendations_1].products limit: settings.collections_recomendations_quantity_1 %}
+              <li class="item-recomendations-cart">
+                {% render 'recomendations-card' product: product %}
+              </li>
+            {% endfor %}
+          </ul>
+          <ul class="scroll-touch recomendation-loop-container padding-cart">
+            {% for product in collections[settings.collections_recomendations_2].products limit: settings.collections_recomendations_quantity_2 %}
+              <li class="item-recomendations-cart">
+                {% render 'recomendations-card' product: product %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div id="recomendations-by-api" class="padding-cart hidden">
+          <span class="title-cart-recomendations">
+            {% comment %}
+              ly_i18n_replace_for_[ "cart.general.recomendation-title" | t ]_begin
+            {% endcomment %}
+            {% capture ly_template %}
+              {{ "cart.general.recomendation-title" | t }}
+            {% endcapture %}
+            {% capture ly_translation %}
+              {% render 'ly-static-string' with '19844482' render:true %}
+            {% endcapture %}
+            {% if ly_translation != '' and ly_translation != nil  %}
+              {% assign escape_content = true %}
+              {% assign ly_template = ly_translation %}
+            {% else %}
+              {% assign escape_content = false %}
+            {% endif %}
+            {% if escape_content %}
+              {{ ly_template | escape}}
+            {% else %}
+              {{ ly_template }}
+            {% endif %}
+            {% comment %}
+              ly_i18n_replace_end
+            {% endcomment %}
+          </span>
+          <ul
+            id="container-recomendation-api"
+            class="scroll-touch recomendation-loop-container padding-cart">
+          </ul>
+        </div>
+        
+        <div class="checkout-step-upsell-recomendations padding-cart hidden">
+          <span class="title-cart-recomendations {{ title_recommendation }}">
+            {% comment %}
+              ly_i18n_replace_for_[ "cart.general.recomendation-title" | t ]_begin
+            {% endcomment %}
+            {% capture ly_template %}
+              {{ "cart.general.conector-title" | t }} 
+              {{ settings.collections_recomendations_checkout_upsell| t }}
+            {% endcapture %}
+            {% capture ly_translation %}
+              {% render 'ly-static-string' with '19844482' render:true %}
+            {% endcapture %}
+            {% if ly_translation != '' and ly_translation != nil  %}
+              {% assign escape_content = true %}
+              {% assign ly_template = ly_translation %}
+            {% else %}
+              {% assign escape_content = false %}
+            {% endif %}
+            {% if escape_content %}
+              {{ ly_template | escape}}
+            {% else %}
+              {{ ly_template }}
+            {% endif %}
+            {% comment %}
+              ly_i18n_replace_end
+            {% endcomment %}
+          </span>
+          {% if settings.collections_recomendations_checkout_upsell != blank %}
+          <ul class="scroll-touch recomendation-loop-container padding-cart">
+            {% for product in collections[settings.collections_recomendations_checkout_upsell].products limit: settings.quantity_checkout_upsell %}
+              <li class="item-recomendations-cart">
+                {% render 'recomendations-card' product: product, goToCheckout: true %}
+              </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+          <span class="title-cart-recomendations {{ title_recommendation }}">
+            {% comment %}
+              ly_i18n_replace_for_[ "cart.general.recomendation-title" | t ]_begin
+            {% endcomment %}
+            {% capture ly_template %}
+              {{ "cart.general.conector-title"| t }} 
+              {{ settings.collections_recomendations_checkout_upsell_down| t }}
+            {% endcapture %}
+            {% capture ly_translation %}
+              {% render 'ly-static-string' with '19844482' render:true %}
+            {% endcapture %}
+            {% if ly_translation != '' and ly_translation != nil  %}
+              {% assign escape_content = true %}
+              {% assign ly_template = ly_translation %}
+            {% else %}
+              {% assign escape_content = false %}
+            {% endif %}
+            {% if escape_content %}
+              {{ ly_template | escape}}
+            {% else %}
+              {{ ly_template }}
+            {% endif %}
+            {% comment %}
+              ly_i18n_replace_end
+            {% endcomment %}
+          </span>
+          {% if settings.collections_recomendations_checkout_upsell_down != blank %}
+          <ul class="scroll-touch recomendation-loop-container padding-cart">
+            {% for product in collections[settings.collections_recomendations_checkout_upsell_down].products limit: settings.quantity_checkout_upsell %}
+              <li class="item-recomendations-cart">
+                {% render 'recomendations-card' product: product, goToCheckout: true %}
+              </li>
+            {% endfor %}
+          </ul>
+          {% endif %}
+        </div>
+
+      </div> 
+    </div>
+    {% assign find = false %}
+    {% for item in collections %}
+    {% for product in item.products %}
+      {% if product.handle == settings.url_gift and find == false %}
+      {% assign find = true %}
+        <input id="giftIdProfuct" type="hidden" value="{{ product.first_available_variant.id }}">      
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+    <div id="cart-sideButtons" class="cart-sideButtons padding-cart">
+      <div class="progress-bar-livrason {{ hide_bar_progress }}">
+
+        <div class="bar-progress-text">
+          <span id="free-shipping-1">
+            {{ settings.text_livrason_gratuit | split: '[value]' | first }} 
+          </span>
+          <div id="rest-text-shipping">
+            {{ settings.quantity_livrason_gratuit | times: 100 | money }}
+          </div>
+          <span id="free-shipping-2"> 
+            {{ settings.text_livrason_gratuit | split: '[value]' | last }}
+          </span>
+        </div>
+
+        <div id="bar-progress-gift" class="bar-progress-text">
+          <span id="free-gift-1">
+            {{ settings.text_gift_gratuit | split: '[value]' | first }} 
+          </span>
+          <div id="rest-text-gift">
+            {{ settings.quantity_cadeau_gratuit | times: 100 | money }}
+          </div>
+          <span id="free-gift-2"> 
+            {{ settings.text_gift_gratuit | split: '[value]' | last }}
+          </span>
+        </div>
+        
+
+        <div class="progress">
+          <div class="progress-offert progress-offert-gift-amount">
+            <input id="cadeau-amount" type="hidden" value="{{ settings.quantity_cadeau_gratuit }}">
+            <p 
+              id="progress-margin_gift" 
+              class="progress-offert_price"
+            >
+            {{ settings.euro_symbol }}{{ settings.quantity_cadeau_gratuit }}
+              <span> 
+                {{ settings.gift_product_text }}
+              </span>
+            </p>
+            <p class="progress-offert_line"></p>
+          </div>
+          
+          <div class="progress-offert progress-offert-shipping-amount">
+            <p class="progress-offert_line"></p>
+            <p id="progress-margin_shipping" class="progress-offert_price progress-offert_price-startFree"></p>
+          </div>
+
+          <progress
+            id="livrason-bar"
+            max="{{ settings.quantity_livrason_gratuit }}"
+            value="{{ cart.total_price | divided_by: 100.0 }}">
+            {{ cart.total_price | divided_by: 100 }}%
+          </progress> 
+        </div> 
+
+      </div>
+      <div class="total-checkout">
+        <div class="livrason-total {{ hide_bar_progress2 }}">
+          <span class="livrason-span total-text">
+            {{ settings.text_total_livrason }}
+          </span>
+          <span
+            id="total-shipping-cart"
+            class="livrason-price total-text">
+            {{ settings.price_total_livrason | times: 100 | money }}
+          </span>  
+        </div>
+
+        <div id="gift-total" class="livrason-total {{ hide_bar_progress2 }} ">
+          <span class="livrason-span total-text">
+            {{ settings.text_total_gift }}
+          </span>
+          <span
+            id="total-gift-cart"
+            class="livrason-price total-text">
+            {{ settings.price_total_livrason | times: 100 | money }}
+          </span>  
+        </div>
+        {% if settings.show_livrason_total == false %}
+          <div class="livrason_total_est">
+            <span class="livrason-span total-text">{{ settings.text_est_livrason }}</span>         
+          </div>
+        {% endif %}
+        <form
+          id="form-button-checkout"
+          action="/checkout"
+          method="post">
+          <div class="flex-checkout-form">
+            <input
+              type="hidden"
+              name="discount"
+              value=""
+              class="discount-checkout-form" />
+        
+            <div class="contianer-btn-cart">
+              <div class="contianer-btn-cart btn-return-upsell-cart {{ hide_checkout }}">
+                <div class="btn-retour">
+                  {{ settings.text_retour }}
+                </div>
+              </div>
+
+              <button
+                class="btn-checkout btn-checkout-upsell btn-animation {{ hide_checkout }}"
+                name="checkout"
+                type="submit">
+                {{ 'cart.general.checkout' | t }} - <span class="total-cart-items">{{ cart.total_price | money }}</span>
+              </button>
+            </div>
+          </div>
+        </form>
+        <div class="form-button-recharge" id="form-button-recharge">
+          <a href='#'>
+            <button class="btn-checkout btn-checkout-upsell btn-animation {{ hide_checkout }}">
+              {{ 'cart.general.checkout' | t }} - <span class="total-cart-items">{{ cart.total_price | money }}</span>
+            </button>
+          </a>
+        </div>
+        <button 
+          class="btn-checkout btn-checkout-upsell btn-step-checkout-upsell btn-animation {{ hide_button_checkout }}"
+          type="button"
+          >
+          {{ 'cart.general.checkout' | t }} - <span class="total-cart-items">{{ cart.total_price | money }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
