@@ -7,22 +7,25 @@
           "type": "image",
           "disabled": true,
           "settings": {
-            "image_bg": "shopify:\/\/shop_images\/hero2.jpg"
+            "image_bg": "shopify:\/\/shop_images\/flatlay-of-jade-face-roller-laying-on-a-grey-stone.jpg"
           }
         },
         "7020f74b-447e-4481-af58-a13f4b3b5c44": {
           "type": "image",
           "settings": {
-            "image_bg": "shopify:\/\/shop_images\/hero1.jpg"
+            "image_bg": "shopify:\/\/shop_images\/fashion-toronto-watch.jpg"
           }
         },
         "8c2a3282-d07e-472b-beab-c35d38dbc371": {
           "type": "heading",
           "settings": {
-            "heading_block": "Thés & infusiones",
-            "subtext_block": "L’infusion des sportifs",
+            "justify_content": "left",
+            "heading_block": "Soru",
+            "subtext_block": "Premium shirts",
             "text_url_block": "Shop now",
-            "url_link_block": "shopify:\/\/collections\/all-clothing-blends"
+            "url_link_block": "shopify:\/\/collections\/all-clothing-blends",
+            "content_paddings": 55,
+            "content_paddings_movil": 25
           }
         }
       },
@@ -33,16 +36,14 @@
       ],
       "settings": {
         "hero_bg": "#f6f6f6",
-        "title_block": "Thés & infusiones",
+        "section_margin_bottom": 40,
+        "section_margin_bottom_movil": 40,
         "hero_title_size": 40,
         "hero_title_size_movil": 30,
         "hero_title_color": "#000000",
-        "subtitle_block": "L’infusion des sportifs",
         "hero_subtitle_size": 18,
         "hero_subtitle_size_movil": 16,
         "hero_subtitle_color": "#000000",
-        "url_btn": "shopify:\/\/collections\/all-clothing-blends",
-        "text_btn": "Shop now",
         "hero_btn_size": 16,
         "hero_btn_size_movil": 16,
         "hero_btn_bg": "#45c391",
@@ -55,7 +56,7 @@
         "3fb3c7e5-a551-43df-80f1-b5838a3fd4e0": {
           "type": "iconText",
           "settings": {
-            "text_icon": "livraison-icon",
+            "text_icon": "shipping",
             "text_block": "<p>Une livraison rapide <br\/>en France et en Europe (2 à 4 jours)<\/p>"
           }
         },
@@ -152,7 +153,7 @@
           "settings": {
             "height_block": 625,
             "height_block_movil": 470,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card1.jpg",
+            "image_bg": "shopify:\/\/shop_images\/61FGJw3BRvL._SL1332.jpg",
             "text_tag": "",
             "title_block": "Achetex un pack",
             "subtitle_block": "Choisissez parmis notre selection",
@@ -165,7 +166,7 @@
           "settings": {
             "height_block": 625,
             "height_block_movil": 470,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card2.jpg",
+            "image_bg": "shopify:\/\/shop_images\/womens-fashion-woman-in-dress-in-vineyard.jpg",
             "text_tag": "",
             "title_block": "Simplifiez vous la vie, abonnez-vous !",
             "subtitle_block": "",
@@ -195,6 +196,8 @@
         "size_link_section_movil": 16,
         "color_link_section": "#45c391",
         "center_call_to": false,
+        "background_call_to": "#ffffff",
+        "opacity_call_to": 70,
         "size_tag": 14,
         "size_tag_movil": 14,
         "color_text_tag": "#7e7cb3",
@@ -369,7 +372,6 @@
           "settings": {
             "height_block": 430,
             "height_block_movil": 300,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card3.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -382,13 +384,11 @@
           "settings": {
             "height_block": 430,
             "height_block_movil": 395,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card4.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
             "url_btn": "shopify:\/\/collections\/accessoires",
             "text_btn": "Shop now|Show",
-            "image_bg_2": "shopify:\/\/shop_images\/soru-images-card5.jpg",
             "text_tag_2": "",
             "title_block_2": "Thés & infusiones",
             "subtitle_block_2": "L’infusion des sportifs",
@@ -418,6 +418,8 @@
         "size_link_section_movil": 16,
         "color_link_section": "#45c391",
         "center_call_to": false,
+        "background_call_to": "#ffffff",
+        "opacity_call_to": 70,
         "size_tag": 14,
         "size_tag_movil": 14,
         "color_text_tag": "#7e7cb3",
@@ -442,7 +444,6 @@
           "settings": {
             "height_block": 475,
             "height_block_movil": 190,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card6.jpg",
             "text_tag": "",
             "title_block": "Produit en vedette",
             "subtitle_block": "Suspendisse feugiat nunc massa",
@@ -498,6 +499,8 @@
         "size_link_section_movil": 16,
         "color_link_section": "#45c391",
         "center_call_to": false,
+        "background_call_to": "#ffffff",
+        "opacity_call_to": 70,
         "size_tag": 14,
         "size_tag_movil": 14,
         "color_text_tag": "#7e7cb3",
@@ -522,7 +525,6 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 265,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card10.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -535,7 +537,6 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 265,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card8.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -548,7 +549,6 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 265,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card9.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -579,6 +579,8 @@
         "size_link_section_movil": 16,
         "color_link_section": "#45c391",
         "center_call_to": true,
+        "background_call_to": "#ffffff",
+        "opacity_call_to": 70,
         "size_tag": 14,
         "size_tag_movil": 14,
         "color_text_tag": "#7e7cb3",
@@ -688,13 +690,10 @@
             "text_link_blog": "Voir tous",
             "article_id_one": "shopify:\/\/blogs\/new\/5-podcasts-a-ecouter-pour-sevader-depuis-chez-soi",
             "text_article_1": "Vitamines pour articulations & os : comment rester souple ?",
-            "img_article_1": "shopify:\/\/shop_images\/article-image-short1.jpg",
             "article_id_two": "shopify:\/\/blogs\/new\/comment-faciliter-la-digestion-naturellement",
             "text_article_2": "Vitamines pour articulations & os : comment rester souple ?",
-            "img_article_2": "shopify:\/\/shop_images\/article-image-short2.jpg",
-            "article_id_three": "shopify:\/\/blogs\/new\/soru-clothing-mecene-officiel-de-plastic-odyssey",
-            "text_article_3": "Vitamines pour articulations & os : comment rester souple ?",
-            "img_article_3": "shopify:\/\/shop_images\/article-image-short3.jpg"
+            "article_id_three": "shopify:\/\/blogs\/new\/panda-tea-mecene-officiel-de-plastic-odyssey",
+            "text_article_3": "Vitamines pour articulations & os : comment rester souple ?"
           }
         },
         "c13b71eb-acab-4a98-a468-117beb6b16e2": {
@@ -702,7 +701,6 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 290,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card10.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -715,7 +713,6 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 290,
-            "image_bg": "shopify:\/\/shop_images\/soru-images-card11.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -747,6 +744,8 @@
         "size_link_section_movil": 16,
         "color_link_section": "#45c391",
         "center_call_to": false,
+        "background_call_to": "#ffffff",
+        "opacity_call_to": 70,
         "size_tag": 14,
         "size_tag_movil": 14,
         "color_text_tag": "#7e7cb3",
