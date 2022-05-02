@@ -24,7 +24,7 @@
       </button>
       <span class="cart-title-slide">{% comment %}ly_i18n_replace_for_[ "cart.box.title-box" | t ]_begin{% endcomment %}{% capture ly_template %}{{ "cart.box.title-box" | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844394' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
       <button class="container-count-side">
-        {% render 'icon-cart-panda' %}
+        {% render 'icon-cart-soru' %}
         <span class="count-header">{{ cart.item_count }}</span>
       </button>
     </div>

@@ -97,11 +97,11 @@
     "collection": {
       "type": "collection-suscription",
       "settings": {
-        "title_collection": "<p>Choisissez vos thés préférés<br\/>(1 panda = 28 sachets) :<\/p>",
+        "title_collection": "<p>Choisissez vos thés préférés<br\/>(1 soru = 28 sachets) :<\/p>",
         "subtitle_collection": "Si vous le souhaitez vous pouvez changer de mélange avant chaque envois en vous connectant sur mon compte",
         "text_icon": "step-2-suscription",
         "resume_title": "Résumé de mon choix :",
-        "resume_message": "Panda Tea tous les|mois",
+        "resume_message": "Soru tous les|mois",
         "resume_button": "VOIR MON PANIER",
         "resume_button_empty": "Ajouter au pack",
         "discount_text": "<p>Vous bénéficiez de <strong>-15%<\/strong> sur les prix habituels.<\/p>"
@@ -117,7 +117,7 @@
       "type": "preview-product",
       "settings": {
         "title_reviews": "Avis clients",
-        "subtitle_reviews": "Plus de 3000 avis clients positifs sur les mélanges Panda Tea :)"
+        "subtitle_reviews": "Plus de 3000 avis clients positifs sur les mélanges Soru :)"
       }
     }
   },

@@ -26,7 +26,7 @@ const requestAddRecomendation = (id, quantity) => {
 export const dataNew = () => {
   let modalCart = document.getElementById("cart-side");
   let openCart = modalCart.getAttribute("open");
-  /* animationPandaAdd(); */
+  /* animationsoruAdd(); */
   if(openCart === "true") return null;
   openModalCart(false, modalCart);
 }

@@ -19,7 +19,7 @@ const createRipple = (e) => {
 }
 
 export const eventRipple = () => {
-  const btnCallTo = document.querySelectorAll(".panda-btn");
+  const btnCallTo = document.querySelectorAll(".soru-btn");
   for (let bb of btnCallTo) {
     bb.addEventListener("click", createRipple);
   }

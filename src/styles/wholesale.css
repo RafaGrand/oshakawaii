@@ -1,4 +1,4 @@
-.paddings-hero-whole {padding-top: 75px; padding-bottom: 50px; margin-bottom: 50px; border-bottom: 1px solid var(--black-panda);}
+.paddings-hero-whole {padding-top: 75px; padding-bottom: 50px; margin-bottom: 50px; border-bottom: 1px solid var(--black-soru);}
 .grid-hero-whole {display: grid; grid-template-columns: 149fr 111fr; column-gap: 15px;}
 .margin-content-whole {margin-top: 27px; margin-bottom: 44px;}
 .content-icon-block strong {font-weight: 600;}
@@ -12,10 +12,10 @@
 .image-steps-section {max-height: 56px; width: auto; margin-bottom: 18px;}
 
 .padding-steps-whole {padding-bottom: 50px;}
-.content-steps-info {width: 100%; padding-bottom: 50px; border-bottom: 1px solid var(--black-panda); font-size: 30px;}
+.content-steps-info {width: 100%; padding-bottom: 50px; border-bottom: 1px solid var(--black-soru); font-size: 30px;}
 .content-steps-info strong {font-weight: 600;}
 
-.grid-steps-wholesale {margin-top: 50px; padding-bottom: 50px; row-gap: 36px; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 44px; border-bottom: 1px solid var(--black-panda);}
+.grid-steps-wholesale {margin-top: 50px; padding-bottom: 50px; row-gap: 36px; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 44px; border-bottom: 1px solid var(--black-soru);}
 .paddings-hero-steps {padding-top: 50px; padding-bottom: 120px;}
 .title-step {font-size: 20px;}
 .margin-step-content-whole {margin-bottom: 66px; margin-top: 41px;}

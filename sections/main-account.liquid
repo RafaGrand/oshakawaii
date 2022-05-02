@@ -15,7 +15,7 @@
 {% comment %}
   ly_global_end
 {% endcomment %}
-<div class="width-panda padding-cotes">
+<div class="width-soru padding-cotes">
   <div class="container-title-forms">
     <h1 class="title-principal">{% comment %}ly_i18n_replace_for_[ 'customer.account.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.account.title' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844424' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
   </div>
@@ -72,7 +72,7 @@
             {% endif %}
 
             <div class="complete-container">
-              <input type="submit" class="btn-panda btn-complete bold-font uppercase btn-animation" value="{% comment %}ly_i18n_replace_for_[ 'customer.login.sign_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.login.sign_in' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844430' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+              <input type="submit" class="btn-soru btn-complete bold-font uppercase btn-animation" value="{% comment %}ly_i18n_replace_for_[ 'customer.login.sign_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.login.sign_in' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844430' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
 
               {% if form.password_needed %}
                 <div class="text-centerr padding-forgot">
@@ -126,7 +126,7 @@
               {%- endif -%}
 
               <div class="complete-container">
-                <input type="submit" class="btn-panda btn-complete bold-font uppercase btn-animation" value="{% comment %}ly_i18n_replace_for_[ 'customer.recover_password.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844435' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+                <input type="submit" class="btn-soru btn-complete bold-font uppercase btn-animation" value="{% comment %}ly_i18n_replace_for_[ 'customer.recover_password.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.recover_password.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844435' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
                 
                 <div class="text-centerr padding-forgot">
                   <button type="button" class="btn-forgot-pass underline btn-nostyle" id="HideRecoverPasswordLink">
@@ -225,7 +225,7 @@
                 disabled="disabled"
                 type="submit"
                 value="{% comment %}ly_i18n_replace_for_[ 'customer.register.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.register.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844445' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"
-                class="btn-panda btn-complete bold-font uppercase btn-animation">
+                class="btn-soru btn-complete bold-font uppercase btn-animation">
               <p class="content-register line-height text-centerr padding-forgot">
                 {% comment %}ly_i18n_replace_for_[ 'customer.register.alert' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.register.alert' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844446' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
               </p>

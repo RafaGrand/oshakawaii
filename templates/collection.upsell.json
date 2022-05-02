@@ -4,7 +4,7 @@
       "type": "collection-upsell",
       "settings": {}
     },
-    "collection-panda": {
+    "collection-soru": {
       "type": "total-button-upsell",
       "settings": {
       }
@@ -16,7 +16,7 @@
   },
   "order": [
     "head",
-    "collection-panda",
+    "collection-soru",
     "preview-modal"
   ]
 }

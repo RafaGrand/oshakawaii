@@ -54,7 +54,7 @@
         {% when 'image' %}
           <div class="width-images-hero {{ width_image_dynamic }}">
             {% capture id_img_block %}img_id-{{ block.id }}{% endcapture %}
-            {% capture alt_img_block %}Images panda hero {{ forloop.index }}{% endcapture %}
+            {% capture alt_img_block %}Images soru hero {{ forloop.index }}{% endcapture %}
             {% assign img_url = block.settings.image_bg | img_url: 'master' %}
               {% render 'img-upload'
                 img_id: id_img_bloc,
@@ -97,7 +97,7 @@
               {% if block.settings.url_link_block != blank %}
                 <div class="container-button-hero {{ margin_button }}">
                   {% capture class %}btn_hero_home container-btn-hero{% endcapture %}
-                  {% render 'btn-link-panda'
+                  {% render 'btn-link-soru'
                     url: block.settings.url_link_block,
                     call_to: block.settings.text_url_block,
                     class: class

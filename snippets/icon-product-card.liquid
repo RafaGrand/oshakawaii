@@ -32,7 +32,7 @@
   {% capture img_id %}BlockIcon-{{ block.id }}{% endcapture %}
 
   {% if block.settings.feature_text != blank %}
-    {% capture product_title %}{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} Panda Tea{% endcapture %}
+    {% capture product_title %}{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% capture ly_translation %}{% render 'ly-title' with product render:true %}{% endcapture %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} Soru{% endcapture %}
     {% render 'img-upload' 
       img_id: img_id,
       img_url: img_link,

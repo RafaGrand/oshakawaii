@@ -18,7 +18,7 @@
 {% liquid
   assign formId = 'ContactForm'
   if template contains "faq"
-    assign paddings_contact = "background-panda paddings-form-faq"
+    assign paddings_contact = "background-soru paddings-form-faq"
   else
     assign paddings_contact = "paddings-form-page"
   endif
@@ -101,7 +101,7 @@
             rows="10" id="{{ formId }}-message" 
             name="contact[{% comment %}ly_i18n_replace_for_[ 'contact.form.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.message' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844413' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
           
-          <input type="submit" class="btn-panda btn-complete uppercase btn-animation" value="{% comment %}ly_i18n_replace_for_[ 'contact.form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844414' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <input type="submit" class="btn-soru btn-complete uppercase btn-animation" value="{% comment %}ly_i18n_replace_for_[ 'contact.form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844414' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
 
         </div>
       {% endform %}
@@ -127,7 +127,7 @@
       "type": "richtext",
       "id": "content_contact",
       "label": "Content contact",
-      "default": "<p>Notre équipe vous répond du lundi au vendredi de 9h à 18H et même parfois plus tard à l'adresse contact@pandatea.fr.</p>"
+      "default": "<p>Notre équipe vous répond du lundi au vendredi de 9h à 18H et même parfois plus tard à l'adresse contact@sorutea.fr.</p>"
     }
   ],
   "presets": [

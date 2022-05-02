@@ -27,7 +27,7 @@
   <div class="logo-container-menu">
     
     <a
-      id="logo-panda"
+      id="logo-soru"
       class="logo_href text-in-menu"
       title="{{ langify_shop_name }}"
       href="{{ routes.root_url }}">
@@ -46,7 +46,7 @@
       
     </div>
 
-    {% render 'site-nav-panda'
+    {% render 'site-nav-soru'
       linklist: section.settings.main_linklist,
       login_url: section.settings.login_url,
       login_text: section.settings.login_text,
@@ -75,9 +75,9 @@
   .display-test-nav {background: {{ section.settings.bg_menu }};}
   .line-hover-anim {background: {{ section.settings.color_hover_menu }};}
   {% if section.settings.logo_svg != blank %}
-    #logo-panda::after {content: url('{{ img_logo }}');}
+    #logo-soru::after {content: url('{{ img_logo }}');}
   {% else %}
-    #logo-panda::after {content: '{{ langify_shop_name }}';}
+    #logo-soru::after {content: '{{ langify_shop_name }}';}
   {% endif %}
 
   #login-icon::after {content: url('{{ img_login }}');}

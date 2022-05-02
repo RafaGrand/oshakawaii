@@ -23,7 +23,7 @@
 
 {% paginate collection.products by limit %}
 
-<div class="width-panda">
+<div class="width-soru">
   <div class="collection-margin">
     <header class="collection-title-filter-pack">
       <div class="header-pack-titles">
@@ -50,7 +50,7 @@
         <label class="filter-sort-relative">
           <select 
             name="sort_by" 
-            id="sorting-panda"
+            id="sorting-soru"
             class="sort-select"
           >
             <option value="manual">{% comment %}ly_i18n_replace_for_[ 'collections.sorting.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.sorting.title' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844406' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</option>
@@ -93,7 +93,7 @@
       {% endif %}
 
       {%- if paginate.pages > 1 -%}
-        {% render 'pagination-panda', paginate: paginate %}
+        {% render 'pagination-soru', paginate: paginate %}
       {%- endif -%}
     </div>
   </div>

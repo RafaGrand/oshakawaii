@@ -15,7 +15,7 @@
 {% comment %}
   ly_global_end
 {% endcomment %}
-<div class="background-footer-panda">
+<div class="background-footer-soru">
   
   <div class="width-footer">
     <div class="prefooter-flex-container {% if section.settings.title_language != blank %} prefooter-flex-container-four {% endif %}">
@@ -84,7 +84,7 @@
                   data-form-status
                 {% endif %}>
                 
-                <button type="submit" class="button_newslatter_panda btn-call-no-custom uppercase btn-animation" name="commit" >
+                <button type="submit" class="button_newslatter_soru btn-call-no-custom uppercase btn-animation" name="commit" >
                   {% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.submit' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844417' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
                 </button>
                 
@@ -142,8 +142,8 @@
               
               {% if settings[social_link] != blank %}
                 <li>
-                  <a class="social-href-footer" target="_blank" rel="noreferrer" title="{{ social }} Panda Tea" href="{{ settings[social_link] | escape }}">
-                    {%- capture socialAlt -%}{{ social }} panda Tea{%- endcapture -%}
+                  <a class="social-href-footer" target="_blank" rel="noreferrer" title="{{ social }} Soru" href="{{ settings[social_link] | escape }}">
+                    {%- capture socialAlt -%}{{ social }} Soru{%- endcapture -%}
                     {%- capture socialId -%}social-media-{{ social | handleize }}{%- endcapture -%}
                     {% render 'img-upload' 
                       img_id: socialId, 
@@ -191,7 +191,7 @@
   color: {{ section.settings.color_link_footer }};
 }
 
-.button_newslatter_panda {
+.button_newslatter_soru {
   font-size: {{ section.settings.size_link_footer }}px;
 }
 
@@ -212,7 +212,7 @@
   .link-list-menu {
     font-size: {{ section.settings.size_link_footer_movil }}px;
   }
-  .button_newslatter_panda {
+  .button_newslatter_soru {
     font-size: {{ section.settings.size_link_footer_movil }}px;
   }
   .input-newslatter {
@@ -308,7 +308,7 @@
         "en": "Heading copyrigth ©",
         "fr": "Titre copyrigth ©"
       },
-      "default": "© 2020 PANDA SAS"
+      "default": "© 2020 soru SAS"
     },
     {
       "type": "text",

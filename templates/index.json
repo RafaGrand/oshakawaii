@@ -22,7 +22,7 @@
             "heading_block": "Thés & infusiones",
             "subtext_block": "L’infusion des sportifs",
             "text_url_block": "Shop now",
-            "url_link_block": "shopify:\/\/collections\/all-tea-blends"
+            "url_link_block": "shopify:\/\/collections\/all-clothing-blends"
           }
         }
       },
@@ -41,7 +41,7 @@
         "hero_subtitle_size": 18,
         "hero_subtitle_size_movil": 16,
         "hero_subtitle_color": "#000000",
-        "url_btn": "shopify:\/\/collections\/all-tea-blends",
+        "url_btn": "shopify:\/\/collections\/all-clothing-blends",
         "text_btn": "Shop now",
         "hero_btn_size": 16,
         "hero_btn_size_movil": 16,
@@ -111,7 +111,7 @@
         "504a0ef0-14c5-44fe-b4a6-73fcc8c7f475": {
           "type": "product",
           "settings": {
-            "product_id": "panda-fresh-skin-beauty-challenge"
+            "product_id": "soru-fresh-skin-beauty-challenge"
           }
         },
         "815e915c-6767-4624-bf26-80186611b02d": {
@@ -129,7 +129,7 @@
       ],
       "settings": {
         "carrusels_movil": false,
-        "title_section": "Infusiones PandaTea",
+        "title_section": "Infusiones soruTea",
         "size_title_section": 25,
         "size_title_section_movil": 25,
         "color_title_section": "#000000",
@@ -137,7 +137,7 @@
         "size_subtitle_section": 16,
         "size_subtitle_section_movil": 16,
         "color_subtitle_section": "#000000",
-        "collection_id": "all-tea-blends",
+        "collection_id": "all-clothing-blends",
         "url_section": "Voir tous",
         "size_link_section": 16,
         "size_link_section_movil": 16,
@@ -152,7 +152,7 @@
           "settings": {
             "height_block": 625,
             "height_block_movil": 470,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card1.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card1.jpg",
             "text_tag": "",
             "title_block": "Achetex un pack",
             "subtitle_block": "Choisissez parmis notre selection",
@@ -165,7 +165,7 @@
           "settings": {
             "height_block": 625,
             "height_block_movil": 470,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card2.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card2.jpg",
             "text_tag": "",
             "title_block": "Simplifiez vous la vie, abonnez-vous !",
             "subtitle_block": "",
@@ -217,7 +217,7 @@
         "4c562bd9-24f7-4858-83e0-9118bbf36e74": {
           "type": "product",
           "settings": {
-            "product_id": "panda-bundle-slim-fit"
+            "product_id": "soru-bundle-slim-fit"
           }
         },
         "d68fee46-52fb-4f7d-9e48-816781ab20ff": {
@@ -247,7 +247,7 @@
       ],
       "settings": {
         "carrusels_movil": true,
-        "title_section": "Thés PandaTea",
+        "title_section": "Thés soruTea",
         "size_title_section": 30,
         "size_title_section_movil": 25,
         "color_title_section": "#000000",
@@ -369,11 +369,11 @@
           "settings": {
             "height_block": 430,
             "height_block_movil": 300,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card3.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card3.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
-            "url_btn": "shopify:\/\/collections\/all-tea-blends",
+            "url_btn": "shopify:\/\/collections\/all-clothing-blends",
             "text_btn": "voir tous|voir"
           }
         },
@@ -382,13 +382,13 @@
           "settings": {
             "height_block": 430,
             "height_block_movil": 395,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card4.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card4.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
             "url_btn": "shopify:\/\/collections\/accessoires",
             "text_btn": "Shop now|Show",
-            "image_bg_2": "shopify:\/\/shop_images\/panda-images-card5.jpg",
+            "image_bg_2": "shopify:\/\/shop_images\/soru-images-card5.jpg",
             "text_tag_2": "",
             "title_block_2": "Thés & infusiones",
             "subtitle_block_2": "L’infusion des sportifs",
@@ -442,11 +442,11 @@
           "settings": {
             "height_block": 475,
             "height_block_movil": 190,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card6.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card6.jpg",
             "text_tag": "",
             "title_block": "Produit en vedette",
             "subtitle_block": "Suspendisse feugiat nunc massa",
-            "url_btn": "shopify:\/\/products\/panda-fresh-skin-beauty-challenge",
+            "url_btn": "shopify:\/\/products\/soru-fresh-skin-beauty-challenge",
             "text_btn": "Shop now|Show"
           }
         },
@@ -522,7 +522,7 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 265,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card10.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card10.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -535,7 +535,7 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 265,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card8.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card8.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -548,7 +548,7 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 265,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card9.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card9.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -647,7 +647,7 @@
         "f94e94d4-c016-4c12-a523-16743c2a75fd"
       ],
       "settings": {
-        "title": "Un petit mot des PandaTea",
+        "title": "Un petit mot des soruTea",
         "size_title_reviews_home": 26,
         "size_title_reviews_home_movil": 25,
         "color_title_reviews_home": "#000000",
@@ -672,7 +672,7 @@
           "settings": {
             "height_block": 390,
             "height_block_movil": 290,
-            "image_gif": "panda-rose",
+            "image_gif": "soru-rose",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -692,7 +692,7 @@
             "article_id_two": "shopify:\/\/blogs\/new\/comment-faciliter-la-digestion-naturellement",
             "text_article_2": "Vitamines pour articulations & os : comment rester souple ?",
             "img_article_2": "shopify:\/\/shop_images\/article-image-short2.jpg",
-            "article_id_three": "shopify:\/\/blogs\/new\/panda-tea-mecene-officiel-de-plastic-odyssey",
+            "article_id_three": "shopify:\/\/blogs\/new\/soru-clothing-mecene-officiel-de-plastic-odyssey",
             "text_article_3": "Vitamines pour articulations & os : comment rester souple ?",
             "img_article_3": "shopify:\/\/shop_images\/article-image-short3.jpg"
           }
@@ -702,7 +702,7 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 290,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card10.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card10.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -715,7 +715,7 @@
           "settings": {
             "height_block": 325,
             "height_block_movil": 290,
-            "image_bg": "shopify:\/\/shop_images\/panda-images-card11.jpg",
+            "image_bg": "shopify:\/\/shop_images\/soru-images-card11.jpg",
             "text_tag": "",
             "title_block": "Thés & infusiones",
             "subtitle_block": "L’infusion des sportifs",
@@ -793,7 +793,7 @@
       ],
       "settings": {
         "color_bg_sections": "#f6f6f6",
-        "brand_legend": "<p>Nous nous engageons à utiliser des plantes cultivées de manière responsable: 100% bio et non génétiquement modifiées. Chaque année, Panda Tea verse une part de son chiffre d'affaire à des associations à impact positif sur la planète via notre participation à l'organisme 1% For The Planet.<\/p>",
+        "brand_legend": "<p>Nous nous engageons à utiliser des plantes cultivées de manière responsable: 100% bio et non génétiquement modifiées. Chaque année, Soru verse une part de son chiffre d'affaire à des associations à impact positif sur la planète via notre participation à l'organisme 1% For The Planet.<\/p>",
         "size_title_brands_home": 14,
         "size_title_brands_home_movil": 14,
         "color_title_brands_home": "#000000",

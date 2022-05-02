@@ -81,9 +81,9 @@ export const templateItemCart = ({
 
   let optImage = imgOptm(image);
 
-  let template = `<div variant_id="${variant_id}" class="item-cart-panda">
+  let template = `<div variant_id="${variant_id}" class="item-cart-soru">
     <div class="img_item-cart">
-      <img class="img-product" src="${optImage}" alt="panda cart ${title}" width="100" heigth="100" />
+      <img class="img-product" src="${optImage}" alt="soru cart ${title}" width="100" heigth="100" />
     </div>
 
     <div class="container-name-quantity">

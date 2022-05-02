@@ -15,7 +15,7 @@
 {% comment %}
   ly_global_end
 {% endcomment %}
-<div class="width-panda">
+<div class="width-soru">
   <div class="flex-direction-step-movil">
     
     <div class="padding-steps-whole">
@@ -25,7 +25,7 @@
           <div class="text-centerr">
             <div class="container-step-margin">
               {% capture img_id %}step-img-{{ block.id }}{% endcapture %}
-              {% capture alt %}image step Panda Tea {{ block.settings.image_steps_whole }}{% endcapture %}
+              {% capture alt %}image step Soru {{ block.settings.image_steps_whole }}{% endcapture %}
               {% assign img_url = block.settings.image_steps_whole | append: '.svg' | file_url %}
                 {% render 'img-upload' img_id: img_id, class: "image-steps-section", img_url: img_url, alt: alt %}
             </div>
@@ -40,7 +40,7 @@
     <div class="content-steps-info text-centerr">
       {{ section.settings.content_step_info }}
       <div class="callTo-hero-whole movil-call-hero">
-        {% render 'btn-link-panda' url: section.settings.url_step_call, call_to: section.settings.text_step_call, class: "style-btn-hero btn-panda" %}    
+        {% render 'btn-link-soru' url: section.settings.url_step_call, call_to: section.settings.text_step_call, class: "style-btn-hero btn-soru" %}    
       </div>
     </div>
 

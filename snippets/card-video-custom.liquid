@@ -55,10 +55,10 @@
           {% capture class %}style_btn_{{ section.id }} container-btn-customBlock{% endcapture %}
           {% assign call_to_ = call_to | split: '|' %}
           <div class="button-desktop">
-            {% render 'btn-link-panda' url: url, call_to: call_to_[0], class: class %}
+            {% render 'btn-link-soru' url: url, call_to: call_to_[0], class: class %}
           </div>
           <div class="button-movil">
-            {% render 'btn-link-panda' url: url, call_to: call_to_[1], class: class %}
+            {% render 'btn-link-soru' url: url, call_to: call_to_[1], class: class %}
           </div>
         {% endif %}
 

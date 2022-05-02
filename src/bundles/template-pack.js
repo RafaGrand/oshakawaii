@@ -2,9 +2,9 @@ import { currency } from "../currency/index.js";
 
 // FETCH TEMPLATE ITEM CART MODAL
 export const templatePack = ({ image, product_title, variant_title, title, quantity, variant_id, url, price }, index) => {
-  let template = `<div variant_id="${variant_id}" class="item-cart-panda">
+  let template = `<div variant_id="${variant_id}" class="item-cart-soru">
     <div class="img_item-cart">
-      <img class="img-product" src="${image}" alt="panda cart ${title}" width="100" heigth="100" />
+      <img class="img-product" src="${image}" alt="soru cart ${title}" width="100" heigth="100" />
     </div>
 
     <div class="container-name-quantity">
@@ -38,10 +38,10 @@ export const templatePack = ({ image, product_title, variant_title, title, quant
 
 // FETCH TEMPLATE ITEM CART MODAL
 export const templateDiference = ({ image, product_title, variant_title, title, quantity, variant_id, url, original_price }, index) => {
-  let template = `<div variant_id="${variant_id}" class="item-diference-panda"> 
+  let template = `<div variant_id="${variant_id}" class="item-diference-soru"> 
   
   <div class="img_item-cart-diference">
-    <img class="img-product" src="${image}" alt="panda cart ${title}" width="100" heigth="100" />
+    <img class="img-product" src="${image}" alt="soru cart ${title}" width="100" heigth="100" />
   </div>
 
   <div class="container-name-quantity-diference">

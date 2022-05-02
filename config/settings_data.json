@@ -4,15 +4,15 @@
     "type_base_font": "avenir_next_n4",
     "type_button_font": "avenir_next_n4",
     "type_card_font": "avenir_next_n4",
-    "social_twitter_link": "https:\/\/twitter.com\/pandateatox",
+    "social_twitter_link": "https:\/\/twitter.com\/soruteatox",
     "social_twitter_img": "icon-twitter",
-    "social_facebook_link": "https:\/\/www.facebook.com\/pandateatox",
+    "social_facebook_link": "https:\/\/www.facebook.com\/soruteatox",
     "social_facebook_img": "icon-facebook",
-    "social_pinterest_link": "https:\/\/www.pinterest.fr\/pandatea",
+    "social_pinterest_link": "https:\/\/www.pinterest.fr\/sorutea",
     "social_pinterest_img": "icon-pinterest",
-    "social_instagram_link": "https:\/\/www.instagram.com\/pandateatox\/",
+    "social_instagram_link": "https:\/\/www.instagram.com\/soruteatox\/",
     "social_instagram_img": "icon-instagram",
-    "favicon": "shopify:\/\/shop_images\/panda-icon.png",
+    "favicon": "shopify:\/\/shop_images\/soru-icon.png",
     "bg_card": "#f6f6f6",
     "size_description_product": 15,
     "size_price_product": 16,
@@ -36,7 +36,7 @@
     "api_recommendations_quantity": 2,
     "collections_recomendations_1": "thes-infusions",
     "collections_recomendations_quantity_1": 2,
-    "collections_recomendations_2": "les-coffrets-panda-tea",
+    "collections_recomendations_2": "les-coffrets-soru-clothing",
     "collections_recomendations_quantity_2": 4,
     "size_title_recomendations_cart": 15,
     "size_title_recomendations_cart_movil": 12,
@@ -63,7 +63,7 @@
     "bg_button_sidePack": "#000000",
     "color_text_bartop": "#000000",
     "color_bg_bartop": "#97dbc0",
-    "img_panda_reference": "shopify:\/\/shop_images\/panda-icon.png",
+    "img_soru_reference": "shopify:\/\/shop_images\/soru-icon.png",
     "color_btn_product_add_upsell": "#000000",
     "bg_btn_product_add_upsell": "#f6f6f6",
     "show_btn_subscriptions": true,
@@ -178,18 +178,18 @@
           "f0a5cc17-23f8-41e7-9f84-fee6bfc37456"
         ],
         "settings": {
-          "title_section": "@pandateadetox",
+          "title_section": "@soruteashirt",
           "url_instagram": "shopify:\/\/pages\/deviens-ambassadeur"
         }
       },
-      "header-panda": {
-        "type": "header-panda",
+      "header-soru": {
+        "type": "header-soru",
         "settings": {
           "main_linklist": "",
-          "logo_svg": "logo-panda-tea",
-          "cart_svg": "cart-panda-tea",
-          "login_svg": "compte-panda-tea",
-          "faq_svg": "faq-panda-tea",
+          "logo_svg": "logo-soru-clothing",
+          "cart_svg": "cart-soru-clothing",
+          "login_svg": "compte-soru-clothing",
+          "faq_svg": "faq-soru-clothing",
           "faq_text": "Aide & questions",
           "faq_url": "shopify:\/\/pages\/questions",
           "login_text": "Mon compte",
@@ -202,16 +202,16 @@
           "color_hover_menu": "#45c391"
         }
       },
-      "footer-panda": {
-        "type": "footer-panda",
+      "footer-soru": {
+        "type": "footer-soru",
         "settings": {
           "title_menu_1": "AIDE",
           "menu_1": "aide-gradi",
-          "title_menu_2": "Panda tea",
+          "title_menu_2": "Soru",
           "menu_2": "plus-dinfos-gradi",
           "title_newslatter": "Infos toutes fraiches",
           "title_currency": "Modifier le pays :",
-          "title_copyrigth": "© 2020 PANDA SAS",
+          "title_copyrigth": "© 2020 soru SAS",
           "img_copyrigth": "copyrigth-footer",
           "title_social_media": "Suivez-nous sur les réseaux sociaux",
           "title_language": "Modifier la langue :",
@@ -749,7 +749,7 @@
             "type": "icon",
             "settings": {
               "feature_tag": "pi-customers",
-              "feature_text": "1.5 million cup of tea infused & more than 1,000 positive reviews on our products",
+              "feature_text": "1.5 million cup of clothing infused & more than 1,000 positive reviews on our products",
               "icon_svg": "",
               "feature_image": "shopify:\/\/shop_images\/1966413-200.png"
             }
@@ -767,7 +767,7 @@
             "type": "icon",
             "settings": {
               "feature_tag": "pi-percent",
-              "feature_text": "Panda Tea is a proud member of 1% for the planet",
+              "feature_text": "Soru is a proud member of 1% for the planet",
               "icon_svg": "",
               "feature_image": "shopify:\/\/shop_images\/percent.png"
             }
@@ -785,7 +785,7 @@
             "type": "icon",
             "settings": {
               "feature_tag": "pi-1ftp",
-              "feature_text": "Panda Tea is a member of 1% For The Planet movement",
+              "feature_text": "Soru is a member of 1% For The Planet movement",
               "icon_svg": "",
               "feature_image": "shopify:\/\/shop_images\/1738538-200.png"
             }
@@ -794,7 +794,7 @@
             "type": "icon",
             "settings": {
               "feature_tag": "pi-thermos",
-              "feature_text": "Keep your tea warm for up to 6 hours - 360mL",
+              "feature_text": "Keep your clothing warm for up to 6 hours - 360mL",
               "icon_svg": "",
               "feature_image": "shopify:\/\/shop_images\/1866065-200.png"
             }
@@ -830,7 +830,7 @@
             "type": "icon",
             "settings": {
               "feature_tag": "pi-infuser",
-              "feature_text": "450mL capacity with an integrated tea strainer",
+              "feature_text": "450mL capacity with an integrated clothing strainer",
               "icon_svg": "",
               "feature_image": "shopify:\/\/shop_images\/accesssories.png"
             }
@@ -1054,10 +1054,10 @@
           "1601060516888": {
             "type": "icon",
             "settings": {
-              "feature_tag": "pi-detox",
-              "feature_text": "Detox",
+              "feature_tag": "pi-shirt",
+              "feature_text": "Shirt",
               "icon_svg": "",
-              "feature_image": "shopify:\/\/shop_images\/pi-detox1.png"
+              "feature_image": "shopify:\/\/shop_images\/pi-shirt1.png"
             }
           },
           "1601060858972": {
@@ -1503,7 +1503,7 @@
               "ingredient_title": "Mélisse",
               "ingredient_text": "Largement reconnue pour ses propriétés relaxantes, la mélisse apaise et favorise un sommeil de qualité.\nIt soothes and promotes quality sleep.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Melisse_2.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Melisse_2.png"
             }
           },
           "1599576820919": {
@@ -1513,7 +1513,7 @@
               "ingredient_title": "Eschscholzia",
               "ingredient_text": "Originaire de Californie, l'Eschscholzia apaise les symptôlmes liés au stress et régule le sommeil. Elle est considérée comme la plante du sommeil réparateur. \nIt is a restorative plant for sleep.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Eschscholzia_2.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Eschscholzia_2.png"
             }
           },
           "1599576871117": {
@@ -1523,7 +1523,7 @@
               "ingredient_title": "Valériane",
               "ingredient_text": "Cultivée en Europe et en Asie du Nord, la valériane est utilisée depuis des millénaires pour ses bienfaits. Elle est relaxante et facilite l'endormissement.\nIt is relaxing and makes it easier to fall asleep.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Valiarne_2.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Valiarne_2.png"
             }
           },
           "1600107586359": {
@@ -1533,7 +1533,7 @@
               "ingredient_title": "Camomille Matricaire",
               "ingredient_text": "Cultivée en Europe de l'Ouest et en Afrique du Nord, la Camomille Matricaire est utilisée depuis l'Antiquité pour apaiser et détendre. Elle est recommandée en cas de troubles anxieux pour ses propriétés réconfortantes. \nElle est recommandée en cas de troubles anxieux pour ses propriétés réconfortantes. \"",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Camomille_2_0c9e832c-e2c9-4cf2-aa6d-3bce2a363624.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Camomille_2_0c9e832c-e2c9-4cf2-aa6d-3bce2a363624.png"
             }
           },
           "1600107782587": {
@@ -1543,7 +1543,7 @@
               "ingredient_title": "Passiflore",
               "ingredient_text": "Originaire des régions tropicales et subtropicales des Amériques, la Passiflore a des propriétés tranquilisantes.\n\nElle favorise la relaxation et soulage la nervosité.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Passiflore_2_7b01b2fb-4ca7-4903-89a6-853f6e3a012a.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Passiflore_2_7b01b2fb-4ca7-4903-89a6-853f6e3a012a.png"
             }
           },
           "1600107853579": {
@@ -1553,7 +1553,7 @@
               "ingredient_title": "Basilic sacré",
               "ingredient_text": "Considérée en Inde comme la reine des plantes, la Basilic Sacré aide à retrouver son calme et se relaxer. Elle aide à rétablir l'équilibre et l'harmonie au sein du corps et de l'esprit\nElle aide à rétablir l'équilibre et l'harmonie au sein du corps et de l'esprit.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Tulsi_2_159c2388-8000-4dda-bf78-5a5789360109.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Tulsi_2_159c2388-8000-4dda-bf78-5a5789360109.png"
             }
           },
           "1600156258395": {
@@ -1563,7 +1563,7 @@
               "ingredient_title": "Fenouil",
               "ingredient_text": "Originaire du bassin méditerranéen, le Fénouil traite les troubles digestifs. Il a des propriétés carminatives et antispasmodiques. Il aide à lutter conntre les ballonnements, les maux d'estomac et l'aérophagie.\nIl aide à lutter conntre les ballonnements, les maux d'estomac et l'aérophagie.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Fenouil_2_35da5b53-5bf4-4a37-919a-bb67f74485a7.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Fenouil_2_35da5b53-5bf4-4a37-919a-bb67f74485a7.png"
             }
           },
           "1600156309962": {
@@ -1573,7 +1573,7 @@
               "ingredient_title": "Coriandre",
               "ingredient_text": "Originaire d'Afrique du Nord et d'Orient, la Coriandre a des propriétés stimulantes et facilite la digestion. \n\nElle renforce le système immunitaire et aide à lutter contre les affections gastro-intestinales.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Coriandre_2_8f139240-7571-4dbe-8c44-3ed9fd37dbc4.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Coriandre_2_8f139240-7571-4dbe-8c44-3ed9fd37dbc4.png"
             }
           },
           "1600156342236": {
@@ -1583,7 +1583,7 @@
               "ingredient_title": "Réglisse",
               "ingredient_text": "Originaire d'Asie et d'Europe, la Réglisse est connue pour ses propriétés anti-inflammatoires et sédatives.\n\n La Réglisse soulage les inflammations du système digestif : elle calme les maux d'estomac et facilite la digestion.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Reglisse_2_ede03c8c-08c7-40b7-8d60-77a5755bae6e.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Reglisse_2_ede03c8c-08c7-40b7-8d60-77a5755bae6e.png"
             }
           },
           "1600249362310": {
@@ -1593,7 +1593,7 @@
               "ingredient_title": "Burdock",
               "ingredient_text": "Originaire d'Europe et d'Asie, la Bardane a des propriétés anti-inflammatoires et antioxydantes. \n\nElle est très utilisée pour lutter contre les imperfections et radicaux libres responsables de la détérioration de la peau. Elle purifie et apaise la peau et l'aide ainsi à se régénérer plus facilement.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Bardane_2.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Bardane_2.png"
             }
           },
           "1600249446331": {
@@ -1603,7 +1603,7 @@
               "ingredient_title": "Acelora",
               "ingredient_text": "Originaire d'Amérique Latine, elle est très concentrée en vitamine C. \n\nElle tonifie la peau et aide à la régénération des cellules. Elle permet de restaurer l'équilibre de la peau en apportant hydratation et confort à la peau.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Acerolla_2.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Acerolla_2.png"
             }
           },
           "1600249473733": {
@@ -1613,7 +1613,7 @@
               "ingredient_title": "Cannelle",
               "ingredient_text": "Originaire d'Asie, la Cannelle est très riche en antioxydants. \n\nElle élimine et prévient les imperfections de la peau et atténue les pores. Elle est réputée pour ses proriétés antimicrobiennes et anti-inflammatoires naturel.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda-Vita_Illustrations-_Canelle-2.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru-Vita_Illustrations-_Canelle-2.png"
             }
           },
           "1600416418976": {
@@ -1713,7 +1713,7 @@
               "ingredient_title": "Mélisse",
               "ingredient_text": "Largement reconnue pour ses propriétés relaxantes, la mélisse apaise.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Melisse_2.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Melisse_2.png"
             }
           },
           "1601626731925": {
@@ -1733,7 +1733,7 @@
               "ingredient_title": "Cannelle",
               "ingredient_text": "Originaire d'Asie, la Cannelle est très riche en antioxydants. Elle est réputée pour ses proriétés antimicrobiennes et anti-inflammatoires naturel.",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda-Vita_Illustrations-_Canelle-2.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru-Vita_Illustrations-_Canelle-2.png"
             }
           },
           "1601630451612": {
@@ -1842,7 +1842,7 @@
               "ingredient_title": "Fenouil",
               "ingredient_text": "Réputée pour aider à la digestion et son effet détox l'organisme",
               "ingredient_svg": "",
-              "ingredient_image": "shopify:\/\/shop_images\/Panda_Vita_Illustrations-_Fenouil_2_04792164-ecda-45ff-9f76-60cdc7208ce1.png"
+              "ingredient_image": "shopify:\/\/shop_images\/soru_Vita_Illustrations-_Fenouil_2_04792164-ecda-45ff-9f76-60cdc7208ce1.png"
             }
           },
           "fd6663f9-a95b-4622-a818-0731dd99438c": {
@@ -1880,7 +1880,7 @@
             "settings": {
               "ingredient_tag": "ing-kids-no-added-sugar",
               "ingredient_title": "Sans sucres ajoutés",
-              "ingredient_text": "Les Panda Tea pour les petits sont constitués de plantes biologiques et sont sans sucres ajoutés pour adopter un mode de vie sain dès le plus jeune âge.",
+              "ingredient_text": "Les Soru pour les petits sont constitués de plantes biologiques et sont sans sucres ajoutés pour adopter un mode de vie sain dès le plus jeune âge.",
               "ingredient_svg": "",
               "ingredient_image": "shopify:\/\/shop_images\/pi-teabags_319b022b-9436-45ea-9ed6-c502d3bd08b1.png"
             }
@@ -1890,7 +1890,7 @@
             "settings": {
               "ingredient_tag": "ing-kids-no-coffee",
               "ingredient_title": "Sans caféine",
-              "ingredient_text": "Les Panda Tea pour les petits sont 100% adaptés pour les enfants. Ils ne contiennent ni caféine ni théine : ils peuvent ainsi être consommés à toute heure de la journée.",
+              "ingredient_text": "Les Soru pour les petits sont 100% adaptés pour les enfants. Ils ne contiennent ni caféine ni théine : ils peuvent ainsi être consommés à toute heure de la journée.",
               "ingredient_svg": "",
               "ingredient_image": "shopify:\/\/shop_images\/15_Caffeine_Free_copy.png"
             }
@@ -1900,7 +1900,7 @@
             "settings": {
               "ingredient_tag": "ing-kids-taste",
               "ingredient_title": "Savoureux et fruité",
-              "ingredient_text": "Les ingrédients des Panda Tea pour les petits ont été minutieusement sélectionnés pour leur goût fruité et savoureux pour convenir parfaitement au palais des enfants !",
+              "ingredient_text": "Les ingrédients des Soru pour les petits ont été minutieusement sélectionnés pour leur goût fruité et savoureux pour convenir parfaitement au palais des enfants !",
               "ingredient_svg": "",
               "ingredient_image": "shopify:\/\/shop_images\/14_Digestion_copy.png"
             }
@@ -2009,7 +2009,7 @@
           "section_title_size": 15,
           "section_title_size_movil": 15,
           "section_title_color": "#000000",
-          "section_description_reviews": "Plus de 3000 avis clients positifs sur les mélanges Panda Tea :)",
+          "section_description_reviews": "Plus de 3000 avis clients positifs sur les mélanges Soru :)",
           "section_description_size": 15,
           "section_description_size_movil": 15,
           "section_description_color": "#000000"

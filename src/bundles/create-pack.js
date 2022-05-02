@@ -141,23 +141,23 @@ export const itemsBundles = () => {
     .then(itemsPack => renderListBundle(itemsPack))
 }
 
-const pandaUI = (quantity, maxCount) => {
-  let panda = '';
-  const countContainer = document.getElementById('panda-pack-count');
+const soruUI = (quantity, maxCount) => {
+  let soru = '';
+  const countContainer = document.getElementById('soru-pack-count');
 
   let count = maxCount === 0 ? 1 : maxCount;
   
   if(quantity >= maxCount) {
 
-    for (let i = 0; i < (count); i++) panda += `<div class='contianer-panda-icon limit-panda' style="z-index: ${count - i}"></div>`;
+    for (let i = 0; i < (count); i++) soru += `<div class='contianer-soru-icon limit-soru' style="z-index: ${count - i}"></div>`;
 
   } else {
 
-    for (let i = 0; i < (quantity + 1); i++) panda += `<div class='contianer-panda-icon' style="z-index: ${(quantity + 1) - i}"></div>`;
+    for (let i = 0; i < (quantity + 1); i++) soru += `<div class='contianer-soru-icon' style="z-index: ${(quantity + 1) - i}"></div>`;
 
   }
 
-  countContainer && (countContainer.innerHTML = panda);
+  countContainer && (countContainer.innerHTML = soru);
 }
 
 function validateIteration(message, message2, maxCount, quantity) {
@@ -167,7 +167,7 @@ function validateIteration(message, message2, maxCount, quantity) {
   messageDOM && (messageDOM.innerHTML = message);
   messageSIDE && (messageSIDE.innerHTML = message2);
  
-  pandaUI(quantity, maxCount);
+  soruUI(quantity, maxCount);
   
 }
 

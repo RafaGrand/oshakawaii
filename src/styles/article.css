@@ -2,7 +2,7 @@
 .paddings-article-template {padding: 75px 0 71px 0; max-width: 900px;}
 .date_article-content {padding: 13px 0 45px 0; display: block;}
 .btn-head-article {padding-bottom: 16px;}
-.return_blog {color: var(--green-panda); font-size: 15px; font-weight: 600; text-decoration: underline;}
+.return_blog {color: var(--green-soru); font-size: 15px; font-weight: 600; text-decoration: underline;}
 
 .content-article {font-size: 15px; line-height: 18.5px;}
 .content-article p {font-weight: 400;}
@@ -10,7 +10,7 @@
 .content-article h2, .content-article h3, .content-article h4, .content-article h5, .content-article h6 {font-weight: 800; margin: 20px 0;}
 
 .previous_next_buttons {width: 100%; padding: 40px 0 20px 0; display: flex; align-items: center; justify-content: space-between;}
-.btn_article {color: var(--black-panda); font-weight: 400;}
+.btn_article {color: var(--black-soru); font-weight: 400;}
 .nexts {font-weight: 800;}
 
 .container-retour_blog {display: flex; justify-content: center;}

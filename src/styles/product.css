@@ -27,7 +27,7 @@
 .contianer-link-imgs:last-of-type {margin-right: 0;}
 
 .contianer-link-imgs:active {transform: translateY(1px);}
-.contianer-link-imgs[active="true"] {border: 2px solid var(--green-panda);}
+.contianer-link-imgs[active="true"] {border: 2px solid var(--green-soru);}
 
 .video-icon::before {
   position: absolute;
@@ -51,7 +51,7 @@
   }
   100% {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    border: 2px solid var(--green-panda);
+    border: 2px solid var(--green-soru);
     transform: scale(.9);
   }
 }
@@ -76,7 +76,7 @@
 /*======= PRODUCT FORM =======*/
 .table-variant-select {border-radius: 4px; border: 1px solid #D1D1D2; margin-bottom: 15px;}
 .table-variant-select td {padding: 11px; border: 1px solid #d1d1d2;}
-.div-input {border-radius: 50%; width: 15px; height: 15px; border: 1px solid var(--black-panda); padding: 1px; display: flex; align-items: center; align-items: center;}
+.div-input {border-radius: 50%; width: 15px; height: 15px; border: 1px solid var(--black-soru); padding: 1px; display: flex; align-items: center; align-items: center;}
 
 .rad-label {
   width: 100%;
@@ -120,7 +120,7 @@
 }
 .rad-options-input:checked+.rad-design::before {
   transform: scale(1);
-  color: var(--black-panda) !important;
+  color: var(--black-soru) !important;
 }
 .rad-text {
   width: 75%;
@@ -223,7 +223,7 @@ ul.icons-product-list::-webkit-scrollbar {display: none;}
   border: 1px solid #D1D1D2;
   background: transparent;
 }
-.jdgm-form input:focus {border-color: var(--green-panda);}
+.jdgm-form input:focus {border-color: var(--green-soru);}
 .jdgm-form label {font-weight: 600;}
 
 .jdgm-form-wrapper {
@@ -234,7 +234,7 @@ ul.icons-product-list::-webkit-scrollbar {display: none;}
 .jdgm-curt {font-size: 100% !important;}
 
 .jdgm-rev {border-top: 1px solid #000 !important;}
-.jdgm-rev__author {color: var(--green-panda) !important; font-size: 12px !important; font-weight: 600;}
+.jdgm-rev__author {color: var(--green-soru) !important; font-size: 12px !important; font-weight: 600;}
 .jdgm-rev__buyer-badge {background-color: #727272 !important; font-size: 10px;}
 .jdgm-rev__title {font-weight: 600; font-size: 14px !important; color: #000 !important;}
 .jdgm-rev__body {font-size: 12px !important; font-weight: 600;}
@@ -329,7 +329,7 @@ a.jdgm-paginate__page {margin: 0 5px; cursor: pointer;}
     bottom: 0;
     left: 0;
     z-index: 1;
-    background: var(--white-panda); box-shadow: 0 -5px 10px rgb(0 0 0 / 15%);
+    background: var(--white-soru); box-shadow: 0 -5px 10px rgb(0 0 0 / 15%);
     } .container-fixed-movil[active="true"] .btn-form-fiche {
       width: calc(100% - 48px);
       position: relative;

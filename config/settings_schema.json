@@ -1,10 +1,10 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Panda",
+    "theme_name": "soru",
     "theme_author": "Gradiweb",
     "theme_version": "2.0",
-    "theme_documentation_url": "https:\/\/gradiweb.gitlab.io\/panda-tea-doc",
+    "theme_documentation_url": "https:\/\/gradiweb.gitlab.io\/soru-clothing-doc",
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
@@ -1480,7 +1480,7 @@
       },
       {
         "type": "image_picker",
-        "id": "img_panda_reference",
+        "id": "img_soru_reference",
         "label": "Image showing the number of elements in the box"
       }
     ]
@@ -1703,8 +1703,8 @@
         "type": "text",
         "id": "unit_product",
         "label": "Text to products in suscriptions",
-        "default": "Panda Tea",
-        "info": "Ex: Panda Tea"
+        "default": "Soru",
+        "info": "Ex: Soru"
       },
       {
         "type": "text",

@@ -23,7 +23,7 @@
       {{ content }}
     </div>
     <div class="callTo-hero-whole desktop-call-hero margin-top-50">
-      {% render 'btn-link-panda' url: url, call_to: call, class: "style-btn-hero btn-panda" %}  
+      {% render 'btn-link-soru' url: url, call_to: call, class: "style-btn-hero btn-soru" %}  
     </div>
   </div>
   
@@ -31,10 +31,10 @@
     <div class="hero-image-container">
       {% capture img_id %}hero-img-{{ section.id }}{% endcapture %}
       {% assign img_url = img_url | img_url: '444x' %}
-      {% render 'img-upload' img_id: img_id, class: "image-hero-section", img_url: img_url, alt: "image hero Panda Tea" %}
+      {% render 'img-upload' img_id: img_id, class: "image-hero-section", img_url: img_url, alt: "image hero Soru" %}
     </div>
     <div class="callTo-hero-whole movil-call-hero {{ display_call }}">
-      {% render 'btn-link-panda' url: url, call_to: call, class: "style-btn-hero btn-panda" %}    
+      {% render 'btn-link-soru' url: url, call_to: call, class: "style-btn-hero btn-soru" %}    
     </div>
   </div>
 

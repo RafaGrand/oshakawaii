@@ -20,7 +20,7 @@
     
     <div>
       
-      <a class="retour-account underline green-panda-txt block-href" href="{{ routes.account_url }}">
+      <a class="retour-account underline green-soru-txt block-href" href="{{ routes.account_url }}">
         << {% comment %}ly_i18n_replace_for_[ 'customer.account.return' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.account.return' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844506' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
       </a>
       <h1 class="title-principal padding-default-title">{% comment %}ly_i18n_replace_for_[ 'customer.addresses.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.addresses.title' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844507' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
@@ -337,7 +337,7 @@
 
         <div class="margin-pagination-account">
           {%- if paginate.pages > 1 -%}
-            {% include 'pagination-panda', paginate: paginate %}
+            {% include 'pagination-soru', paginate: paginate %}
           {%- endif -%}
         </div>
       {% endpaginate %}

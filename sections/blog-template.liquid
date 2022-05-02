@@ -17,13 +17,13 @@
 {% endcomment %}
 {% paginate blog.articles by 9 %}
 
-<div class="width-panda">
+<div class="width-soru">
   <div class="container-blog">
     <div class="section-header">
       <h1 class="title-principal">{{ langify_title }}</h1>
 
       {% if blog.tags.size > 0 %}
-        <div class="blog-filter-panda">
+        <div class="blog-filter-soru">
           <ul class="filter-ul-blog" id="BlogTagFilter" aria-describedby="a11y-refresh-page-message a11y-selection-message" data-blog-tag-filter>
             <li>
               <a class="item-filter-blog uppercase {% if request.path == blog.url %}selected-blog{% endif %}" href="{{ blog.url }}" title="{% comment %}ly_i18n_replace_for_[ 'blogs.article.all_topics' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.all_topics' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844388' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
@@ -117,7 +117,7 @@
 
     <div class="pagination-container">
       {%- if paginate.pages > 1 -%}
-        {% render 'pagination-panda', paginate: paginate %}
+        {% render 'pagination-soru', paginate: paginate %}
       {%- endif -%}
     </div>
 

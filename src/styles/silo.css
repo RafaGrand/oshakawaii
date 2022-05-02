@@ -21,11 +21,11 @@
 .section-accordion-seo {margin-top: 40px; margin-bottom: 40px;}
 .accordion-list {list-style: none;}
 
-.accordion-button {font-weight: 600; width: 100%; display: flex; align-items: center; padding: 12px 0; background: transparent; text-align: left; border-style: none; border-bottom: 1px solid var(--black-panda);}
+.accordion-button {font-weight: 600; width: 100%; display: flex; align-items: center; padding: 12px 0; background: transparent; text-align: left; border-style: none; border-bottom: 1px solid var(--black-soru);}
 .content-button-accordion {width: 90%;}
 
 .plus-container {position: relative; display: flex; align-items: center; justify-content: center;}
-.style-button-plus {width: 27px; height: 27px; background: var(--green-panda); border-radius: 50%; margin-left: auto;}
+.style-button-plus {width: 27px; height: 27px; background: var(--green-soru); border-radius: 50%; margin-left: auto;}
 
 .padding-panel-seo {padding-top: 12px; padding-bottom: 30px; overflow: hidden;}
 
@@ -37,7 +37,7 @@
 
 .padding-panel-seo ul {padding-inline-start: 40px;}
 
-.line-plus {width: 8px; height: 1px; background: var(--white-panda); position: absolute; z-index: 1;}
+.line-plus {width: 8px; height: 1px; background: var(--white-soru); position: absolute; z-index: 1;}
 
 .top-plus {
   transform: rotate(90deg);} @keyframes plusRotate {

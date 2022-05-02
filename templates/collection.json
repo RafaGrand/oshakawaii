@@ -4,8 +4,8 @@
       "type": "main-collection",
       "settings": {}
     },
-    "collection-panda": {
-      "type": "collection-panda",
+    "collection-soru": {
+      "type": "collection-soru",
       "settings": {
         "grid": 4,
         "rows": 4
@@ -14,6 +14,6 @@
   },
   "order": [
     "head",
-    "collection-panda"
+    "collection-soru"
   ]
 }

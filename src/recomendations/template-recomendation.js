@@ -26,7 +26,7 @@ export const templateRecomendation = ({ featured_image, description, title, pric
           <img
             class="card-img_product img-contain lazyload"
             data-src="${optImg}"
-            alt="panda cart ${title}"
+            alt="soru cart ${title}"
             width="100"
             heigth="100" />
         </div>

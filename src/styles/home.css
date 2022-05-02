@@ -171,7 +171,7 @@
 
 .title-card-custom {padding-bottom: 2px;}
 
-a.btn-call_panda {
+a.btn-call_soru {
   width: 100%;
   text-decoration: none;
   color: inherit;
@@ -221,7 +221,7 @@ span.tag-color {
 }
 
 .flex-card-article:hover .container_arrow {transform: scale(.9);}
-.article-title-width {width: 70%; color: var(--black-panda); font-size: 16px; transition: .3s ease;}
+.article-title-width {width: 70%; color: var(--black-soru); font-size: 16px; transition: .3s ease;}
 .article-title-width:hover {text-decoration: underline;}
 
 .flex-article_card {display: flex; align-items: center; justify-content: space-between;}
@@ -238,15 +238,15 @@ span.tag-color {
   margin-right: 0;
 }
 
-.style-title-blog {font-size: 30px; color: var(--black-panda);}
-.style-url-blog {font-size: 16px; color: var(--green-panda); font-weight: 600;}
+.style-title-blog {font-size: 30px; color: var(--black-soru);}
+.style-url-blog {font-size: 16px; color: var(--green-soru); font-weight: 600;}
 
 .container_arrow {
   display: flex;
   height: 31px;
   width: 31px;
   border-radius: 50%;
-  background: var(--green-panda);
+  background: var(--green-soru);
   align-items: center;
   justify-content: center;
   color: white;
@@ -267,7 +267,7 @@ svg.icon.icon-chevron-right {
 }
 
 /*================ REVIEWS ================*/
-.width-review-panda {max-width: 1040px; margin: 0 auto;}
+.width-review-soru {max-width: 1040px; margin: 0 auto;}
 
 .review-block-relative {position: relative;}
 .reviews-background {position: absolute; height: 64%; width: 100%; background: #EEF9F1;}
@@ -294,7 +294,7 @@ svg.icon.icon-chevron-right {
 .block-reviews-cont:last-of-type {margin: 0;}
 
 .blockquote-container {border: 1px solid #C2C2C2;
-  background: var(--white-panda);
+  background: var(--white-soru);
   border-radius: 4px;
   padding: 20px 11px;
   height: calc(100% - 42px);}
@@ -307,8 +307,8 @@ svg.icon.icon-chevron-right {
 .container-scroll {position: relative;}
 .block-reviews-cont {scroll-snap-align: start;}
 
-.btn-slider-left-revs {cursor: pointer; top: calc(50% - 18px); left: -66px; width: 36px; height: 36px; border-radius: 50%; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--green-panda); color: white; border-style: none;}
-.btn-slider-rigth-revs {cursor: pointer; top: calc(50% - 18px); right: -66px; width: 36px; height: 36px; border-radius: 50%; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--green-panda); color: white; border-style: none;}
+.btn-slider-left-revs {cursor: pointer; top: calc(50% - 18px); left: -66px; width: 36px; height: 36px; border-radius: 50%; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--green-soru); color: white; border-style: none;}
+.btn-slider-rigth-revs {cursor: pointer; top: calc(50% - 18px); right: -66px; width: 36px; height: 36px; border-radius: 50%; position: absolute; display: flex; align-items: center; justify-content: center; background-color: var(--green-soru); color: white; border-style: none;}
 
 .btn-slider-left-revs:active {transform: scale(.9);}
 .btn-slider-rigth-revs:active {transform: scale(.9);}
@@ -359,7 +359,7 @@ svg.icon.icon-chevron-left {width: 10px;height: 10px;}
   
   .container-button-hero {width: 80%; max-width: 80%; margin: 20px auto 0;}
   /*================ REVIEWS ================*/
-  .width-review-panda {padding-left: 16px; padding-right: 16px;}
+  .width-review-soru {padding-left: 16px; padding-right: 16px;}
   .width-out-margin {padding-left: 16px; padding-right: 16px;}
 
   /*================ BRANDS ICONS ================*/
@@ -422,7 +422,7 @@ svg.icon.icon-chevron-left {width: 10px;height: 10px;}
   .flex-container-iconText {flex-wrap: wrap; justify-content: center; text-align: center;}
   .container-text_icon {width: 100%;}
   /*================ REVIEWS ================*/
-  .width-review-panda {width: 100%; padding-left: 0; padding-right: 0;}
+  .width-review-soru {width: 100%; padding-left: 0; padding-right: 0;}
   .blockquote-container {padding: 20px;}
   .block-reviews-cont {width: 58.3%; scroll-snap-align: center; margin: 0 5px;}
   .block-reviews-cont:first-of-type {margin-left: 10px;}

@@ -3,11 +3,11 @@
     "hero": {
       "type": "hero-wholesale",
       "settings": {
-        "title_hero": "<p>Devenez distributeur ou<br\/>revendeur panda tea<\/p>",
+        "title_hero": "<p>Devenez distributeur ou<br\/>revendeur Soru<\/p>",
         "content_hero": "<p>Vous souhaitez proposer des thés & infusions parfumé bio et bien-être à vos clients sur votre point de vente ?<br\/> Contactez-nous ! Nous proposons des offres adaptées à toute les demandes : café, bar, restaurant, salon de coiffure, spa, complexe sportif, pharmacie.<\/p>",
         "url_hero_call": "shopify:\/\/pages\/contact-us",
         "text_hero_call": "Faire une demande pour devenir distributeur",
-        "image_hero_whole": "shopify:\/\/shop_images\/panda-images-card12_57ec369c-f599-4cdf-a4f2-d0f833944f53.png"
+        "image_hero_whole": "shopify:\/\/shop_images\/soru-images-card12_57ec369c-f599-4cdf-a4f2-d0f833944f53.png"
       }
     },
     "icons": {
@@ -65,7 +65,7 @@
         "81dd30a8-6918-4b3c-b576-4b2587f8e0d6"
       ],
       "settings": {
-        "title_icons": "Panda Tea c’est :"
+        "title_icons": "Soru c’est :"
       }
     },
     "steps": {
@@ -74,14 +74,14 @@
         "050d1440-c3bc-4d20-b2b5-9429b9d8c18b": {
           "type": "steps",
           "settings": {
-            "content_steps": "<p>Panda Tea est une marque bien-être ayant pour but de promouvoir un mode de vie sain et équilibré.<\/p>",
+            "content_steps": "<p>Soru est une marque bien-être ayant pour but de promouvoir un mode de vie sain et équilibré.<\/p>",
             "image_steps_whole": "one-icon"
           }
         },
         "6fae536a-8a31-4294-82e8-eba034438d22": {
           "type": "steps",
           "settings": {
-            "content_steps": "<p>Panda Tea propose des thés & infusions certifiés bio. Les mélanges sont formulés selon le bienfaits des plantes et délicatement parfumés. Ils peuvent être consommés de manière ponctuel ou sous forme de cure bien-être.<\/p>",
+            "content_steps": "<p>Soru propose des thés & infusions certifiés bio. Les mélanges sont formulés selon le bienfaits des plantes et délicatement parfumés. Ils peuvent être consommés de manière ponctuel ou sous forme de cure bien-être.<\/p>",
             "image_steps_whole": "two-icon"
           }
         },

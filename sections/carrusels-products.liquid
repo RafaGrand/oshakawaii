@@ -16,7 +16,7 @@
   ly_global_end
 {% endcomment %}
 <div>
-  <div class="width-panda">
+  <div class="width-soru">
     {% render 'frag-headers-titles'
       section: section
       title : section.settings.title_section
@@ -26,7 +26,7 @@
     %}
   </div>
 
-  <div class="width-carrousels{% unless section.settings.carrusels_movil %} width-panda{% endunless %}">
+  <div class="width-carrousels{% unless section.settings.carrusels_movil %} width-soru{% endunless %}">
     <div class="carrousel_product-container_{{ section.id }}">
       {% for block in section.blocks %}
         

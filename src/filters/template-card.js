@@ -99,7 +99,7 @@ export const templateCardProduct = ({ featured_image, description, title, price,
       variantsNon = "variants-non",
       radiOn = "radio-on",
       addChoices = `
-      <button type="button" class="panda-btn btn-choices-card btn-choices btn-animation">
+      <button type="button" class="soru-btn btn-choices-card btn-choices btn-animation">
         Choisir format
       </button>`
     ) :
@@ -157,7 +157,7 @@ export const templateCardProduct = ({ featured_image, description, title, price,
                 ${disabled}
                 type="submit" 
                 product_id="${id}" 
-                class="panda-btn btn-card-main btn-add-card btn-animation">
+                class="soru-btn btn-card-main btn-add-card btn-animation">
                 
                 <span product_id="${id}" class="class-sold ${sold}">
                   ${productStrings.soldOut}

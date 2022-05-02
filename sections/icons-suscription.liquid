@@ -18,10 +18,10 @@
 <div class="text-centerr">
   {% if section.settings.title_icons_suscription != blank %}
     <div class="green-bar-icons">
-      <span class="width-panda bold-font">{{ section.settings.title_icons_suscription }}</span>
+      <span class="width-soru bold-font">{{ section.settings.title_icons_suscription }}</span>
     </div>
   {% endif %}
-  <div class="block-icons-suscriptions width-panda">
+  <div class="block-icons-suscriptions width-soru">
     {% if section.settings.subtitle_icons_suscription != blank %}
       <h2 class="title-funnel-icons">{{ section.settings.subtitle_icons_suscription }}</h2>
     {% endif %}
@@ -38,7 +38,7 @@
 
         <div class="container-block-icons">
           {% capture img_id %}BlockImage-{{ block.id }}{% endcapture %}
-          {% render 'img-upload' img_id: img_id, img_url: img_url, alt: "icon Panda Tea", class: "image-icon-suscription" %}
+          {% render 'img-upload' img_id: img_id, img_url: img_url, alt: "icon Soru", class: "image-icon-suscription" %}
           <p class="font-16px margin-text-icon">{{ block.settings.text_block }}</p>
         </div>
 

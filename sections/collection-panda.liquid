@@ -29,8 +29,8 @@
 
 {% paginate collection.products by limit %}
 
-<div class="width-panda">
-  <div class="list-collection" id="collection-panda-list">
+<div class="width-soru">
+  <div class="list-collection" id="collection-soru-list">
 
     <ul id="array-collection" class="grid-collection {{ grid_item_width }}">
       {% for product in collection.products %}
@@ -63,7 +63,7 @@
     {% endif %}
 
     {%- if paginate.pages > 1 -%}
-      {% render 'pagination-panda', paginate: paginate %}
+      {% render 'pagination-soru', paginate: paginate %}
     {%- endif -%}
   </div>
 </div>

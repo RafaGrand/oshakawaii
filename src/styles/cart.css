@@ -8,7 +8,7 @@
   right: -510px;
   bottom: 0;
   box-shadow: -5px 0 15px rgba(0, 0, 0, 0.199);
-  background: var(--white-panda);}
+  background: var(--white-soru);}
   
 @keyframes animationCartOut {
   0% {
@@ -93,7 +93,7 @@
   justify-content: space-between; 
   position: sticky; 
   top: 0; 
-  background: var(--white-panda);
+  background: var(--white-soru);
   padding: 10px 0px!important;
   margin: 0 16px 10px;
   border-bottom: 1px solid rgb(183, 183, 183);
@@ -126,13 +126,13 @@
 
 .container-count-side {width: 28px; height: 25px; padding: 0; background: transparent; border-style: none; position: relative;}
 
-.msg-empty-cart {padding: 22px 0; margin-bottom: 16px; border-top: 1px solid var(--black-panda); border-bottom: 1px solid var(--black-panda); display: flex; align-items: center; justify-content: center;}
+.msg-empty-cart {padding: 22px 0; margin-bottom: 16px; border-top: 1px solid var(--black-soru); border-bottom: 1px solid var(--black-soru); display: flex; align-items: center; justify-content: center;}
 .img-empty-cart {width: 30px; height: 30px; margin-right: 12px;}
 
 /*================ ITEMS CART ================*/
 .container-item-cart {position: relative; margin-top: 0px;}
 
-.container-animation-lottie {display:none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--white-panda); align-items: flex-start; justify-content: center;}
+.container-animation-lottie {display:none; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--white-soru); align-items: flex-start; justify-content: center;}
 .container-animation-lottie svg {width: 70% !important; height: 200px !important;}
 
 @keyframes animeLottieOn {
@@ -148,9 +148,9 @@
 .animeLottieOn {display: flex; animation: animeLottieOn .05s linear;}
 .animeLottieOff {animation: animeLottieOn .5s ease reverse;}
 
-.line_items-cart {margin-top: 200px; margin-bottom: 13px; border-bottom: 1px solid var(--black-panda);}
-.item-cart-panda {display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;}
-.item-cart-panda:last-of-type {border-bottom: none; padding-bottom: 0; margin-bottom: 13px;}
+.line_items-cart {margin-top: 200px; margin-bottom: 13px; border-bottom: 1px solid var(--black-soru);}
+.item-cart-soru {display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;}
+.item-cart-soru:last-of-type {border-bottom: none; padding-bottom: 0; margin-bottom: 13px;}
 
 .img_item-cart { width: 63px; height: 63px; margin-right: 5px;}
 
@@ -207,8 +207,8 @@ input::-webkit-inner-spin-button {
     }
   }
 
-.suscription-product_title {margin-bottom: 5px; text-transform: initial; display: block; color: var(--black-panda);}
-.variant-item {display: block; color: var(--black-panda);}
+.suscription-product_title {margin-bottom: 5px; text-transform: initial; display: block; color: var(--black-soru);}
+.variant-item {display: block; color: var(--black-soru);}
 
 .remove-container-class {width: 20%; display: flex; flex-wrap: wrap; justify-content: flex-end; align-content: space-between;}
 
@@ -249,14 +249,14 @@ button.btn_recomendation {padding: 6px 4px; width: 100%; border-radius: 4px; tex
   text-transform: uppercase;
 }
 /*================ BUTTONS-TOTAL CART ================*/
-.line_sideButtons {border-top: 1px solid var(--black-panda); margin: 0;}
+.line_sideButtons {border-top: 1px solid var(--black-soru); margin: 0;}
 .cart-sideButtons {
   position: sticky;
   position: -webkit-sticky;
   padding-bottom: 8px;
   padding-top: 8px;
-  background: var(--white-panda);
-  border-top: 1px solid var(--black-panda);}
+  background: var(--white-soru);
+  border-top: 1px solid var(--black-soru);}
 
 .progress-bar-livrason {text-align: center; }
 .bar-progress-text {display: flex; justify-content: center;}
@@ -325,7 +325,7 @@ button.btn_recomendation {padding: 6px 4px; width: 100%; border-radius: 4px; tex
   border-radius: 5px; 
   width: 100%;
   height: 10px;
-  border: 1px solid var(--green-panda);
+  border: 1px solid var(--green-soru);
   background-color: transparent;
   overflow: hidden;
   margin-top: 28px;
@@ -340,7 +340,7 @@ button.btn_recomendation {padding: 6px 4px; width: 100%; border-radius: 4px; tex
 }
 
 #livrason-bar::-webkit-progress-value {
-  background-color: var(--green-panda);
+  background-color: var(--green-soru);
   background-size: 35px 20px, 100% 100%, 100% 100%;
   border-radius: 5px;
   height: 101%;
@@ -348,7 +348,7 @@ button.btn_recomendation {padding: 6px 4px; width: 100%; border-radius: 4px; tex
 }
 
 #livrason-bar::-moz-progress-bar {
-  background-color: var(--green-panda);
+  background-color: var(--green-soru);
   border-radius: 5px;
 }
 

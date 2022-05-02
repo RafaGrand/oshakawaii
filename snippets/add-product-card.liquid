@@ -39,7 +39,7 @@
     <button 
       type="button"
       {% unless product.available %}disabled="disabled"{% endunless %}
-      class="panda-btn {{ btn_choices }} btn-choices btn-animation">
+      class="soru-btn {{ btn_choices }} btn-choices btn-animation">
       {{ choose }}
     </button>
   {% endif %}
@@ -62,7 +62,7 @@
         {% unless current_variant.available %}disabled="disabled"{% endunless %}
         type="submit" 
         product_id="{{ product.id }}" 
-        class="panda-btn {{ btn_class }} btn-add-card btn-animation">
+        class="soru-btn {{ btn_class }} btn-add-card btn-animation">
         
         <span product_id="{{ product.id }}" class="class-sold{% if current_variant.available %} hidden{% endif %}">
           {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844458' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}

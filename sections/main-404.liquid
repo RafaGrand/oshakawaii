@@ -15,18 +15,18 @@
 {% comment %}
   ly_global_end
 {% endcomment %}
-<div class="width-panda">
+<div class="width-soru">
   <div class="empty-page-content text-centerr">
     
     {% assign img_url = '404.svg' | file_url %}
-    {% render 'img-upload' img_url: img_url, class: "panda-404-img", alt: "image-404 Panda Tea", img_id: "image-404" %}
+    {% render 'img-upload' img_url: img_url, class: "soru-404-img", alt: "image-404 Soru", img_id: "image-404" %}
 
     <h1 class="title-principal margin-text-404">{% comment %}ly_i18n_replace_for_[ 'general.404.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.404.title' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844422' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
     <p>{% comment %}ly_i18n_replace_for_[ 'general.404.subtext' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.404.subtext' | t }}{% endcapture %}{% capture ly_translation %}{% render 'ly-static-string' with '19844423' render:true %}{% endcapture %}{% if ly_translation != '' and ly_translation != nil  %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
     
-    <p class="button-return-panda">
+    <p class="button-return-soru">
       {% assign call = 'general.404.link' | t %}
-      {% render 'btn-link-panda' url: routes.root_url, call_to: call class: "btn-panda" %}
+      {% render 'btn-link-soru' url: routes.root_url, call_to: call class: "btn-soru" %}
     </p>
 
   </div>

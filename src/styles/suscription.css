@@ -43,20 +43,20 @@ input.frequency-input:checked ~ div.design-frequency-rad::before {transform: sca
 
 .fixed-suscription{position: fixed; display: none; bottom: 0; left: 0; width: 100%;}
 .fixed-suscription[active="true"] {display: block;}
-.button-resume-sticky {background: var(--green-panda); font-size: 12px; padding: 10px; color: #fff; box-shadow: 0 -5px 10px rgb(0 0 0 / 15%); border-style: none; cursor: pointer;}
+.button-resume-sticky {background: var(--green-soru); font-size: 12px; padding: 10px; color: #fff; box-shadow: 0 -5px 10px rgb(0 0 0 / 15%); border-style: none; cursor: pointer;}
 
 .text-resume-button {font-size: 16px;}
 .text-dynamic-suscription {margin-bottom: 0px;}
 .text-dynamic-suscription p:last-child {margin-bottom: 6px;}
 
-.text-decoration-message-suscription span {color: var(--green-panda);}
-.text-decoration-message-suscription strong {color: var(--green-panda);}
+.text-decoration-message-suscription span {color: var(--green-soru);}
+.text-decoration-message-suscription strong {color: var(--green-soru);}
 .text-decoration-message-suscription {font-size: 14px; width: 100%;}
 
 .title-resume-funnel {font-size: 20px;}
 
 /*================ CART ================*/
-.tag-suscription {background-color: var(--green-panda); font-size: 10px; padding: 2px 5px; color: white; border-radius: 2px;}
+.tag-suscription {background-color: var(--green-soru); font-size: 10px; padding: 2px 5px; color: white; border-radius: 2px;}
 /*================ FAQ ================*/
 .margin-faq-suscriptions {margin-top: 50px; margin-bottom: 120px;}
 .container-suscription-accordions {margin-top: 30px; display: flex; flex-wrap: wrap;}
