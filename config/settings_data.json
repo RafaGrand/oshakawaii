@@ -182,47 +182,6 @@
           "url_instagram": "shopify:\/\/pages\/deviens-ambassadeur"
         }
       },
-      "header-soru": {
-        "type": "header-soru",
-        "settings": {
-          "main_linklist": "",
-          "logo_svg": "oshiruko",
-          "cart_svg": "Shopping-Cart",
-          "login_svg": "oshiruko",
-          "faq_svg": "faq-soru-clothing",
-          "faq_text": "Aide & questions",
-          "faq_url": "shopify:\/\/pages\/questions",
-          "login_text": "Mi cuenta",
-          "login_url": "\/account",
-          "bg_menu": "#ffffff",
-          "size_text_menu": 14,
-          "size_text_menu_movil": 19,
-          "color_text_menu": "#000000",
-          "hover_checked": false,
-          "color_hover_menu": "#45c391"
-        }
-      },
-      "footer-soru": {
-        "type": "footer-soru",
-        "settings": {
-          "title_menu_1": "AIDE",
-          "menu_1": "",
-          "title_menu_2": "Panda tea",
-          "menu_2": "",
-          "title_newslatter": "Infos toutes fraiches",
-          "title_currency": "Modifier le pays :",
-          "title_copyrigth": "© 2020 soru SAS",
-          "img_copyrigth": "copyrigth-footer",
-          "title_social_media": "Suivez-nous sur les réseaux sociaux",
-          "title_language": "Modifier la langue :",
-          "size_title_footer": 20,
-          "size_title_footer_movil": 20,
-          "color_title_footer": "#000000",
-          "size_link_footer": 20,
-          "size_link_footer_movil": 21,
-          "color_link_footer": "#000000"
-        }
-      },
       "country-information": {
         "type": "country-information",
         "blocks": {
